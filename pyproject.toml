@@ -1,0 +1,17 @@
+[project]
+name = "rana"
+version = "0.1.0"
+description = "RANA — Residue Assessment for Noncanonical Amino acids: rank protein structure sites for ncAA incorporation"
+requires-python = ">=3.10"
+dependencies = [
+    # "rdkit",       # ncAA property computation (later than v1's minimal feature set)
+    # "biopython",   # PDB parsing
+    # "freesasa",    # SASA calculation
+]
+
+[project.scripts]
+rana = "rana.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
