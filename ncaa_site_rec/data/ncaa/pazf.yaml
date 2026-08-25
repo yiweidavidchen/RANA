@@ -1,0 +1,28 @@
+id: pAzF
+display_name: p-azido-L-phenylalanine
+aliases:
+  - AzF
+  - pAzF
+  - 4-azido-L-phenylalanine
+pdb_ccd_id: 4II
+parent_canonical_aa: PHE
+reactive_handle: azide
+identity:
+  smiles: null
+  inchikey: null
+  source: pdb-ccd
+  status: verify-before-hard-coding
+geometry:
+  source: pdb-experimental-or-ccd
+  status: pending
+rotamer_model:
+  method: canonical_parent_proxy
+  parent: PHE
+  approximation: true
+rosetta:
+  params_path: null
+  source: null
+  ncaa_specific_validated: false
+notes:
+  - "Do not treat short alias 'AzF' as the sole chemical identity."
+  - "v0.1 may use Phe-like chi states as a transparent steric proxy."
