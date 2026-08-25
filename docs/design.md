@@ -1,59 +1,148 @@
-# Design notes
+# RANA Design Notes
 
-## Design principle
+## 1. Core question
 
-RANA uses **exhaustive site enumeration with staged computational evaluation**. Cheap structural features are computed for every residue. Expensive calculations are reserved for plausible candidates rather than applied blindly to every position.
+RANA is a structure-aware recommender for non-canonical amino acid (ncAA) incorporation sites.
+
+Its core question is:
+
+> **Where can I install this ncAA in this protein, for this engineering objective, without introducing unacceptable structural or functional risk?**
+
+Conceptually:
 
 ```text
-all residues
-    ↓
-hard exclusions
-    ↓
-cheap structural features
-    ↓
-pAzF steric / rotamer compatibility
-    ↓
-shortlist
-    ↓
-optional expensive stability calculations
+Recommendation =
+    f(protein structural environment, ncAA chemistry, engineering objective)
 ```
 
-## v0.1 target ncAA
+v0.1 implements a restricted version:
 
-**p-azido-L-phenylalanine (pAzF / AzF)**
+```text
+protein structure + pAzF + safe-incorporation objective
+                         ↓
+                 ranked candidate sites
+```
 
-Canonical identity anchor:
+The first benchmark system is T4 lysozyme.
+
+## 2. Design principles
+
+### 2.1 Exhaustive site enumeration, staged evaluation
+
+RANA evaluates the entire protein rather than requiring pre-selected mutation sites.
+
+```text
+all protein residues
+        ↓
+functional / structural hard gates
+        ↓
+cheap structural features for all eligible sites
+        ↓
+ncAA-specific conformer / steric evaluation
+        ↓
+compatibility ranking
+        ↓
+optional expensive refinement
+```
+
+Cheap calculations should run exhaustively. Expensive calculations such as Rosetta stability estimates should be restricted to shortlisted candidates when possible.
+
+### 2.2 Separate generic protein features from ncAA-specific features
+
+```text
+RANA core
+├── structure parsing
+├── residue enumeration
+├── SASA / accessibility
+├── local packing
+├── functional-site annotations
+├── generic structural-risk features
+├── ranking / tiering infrastructure
+└── output / explanation
+
+ncAA-specific model
+├── chemical identity
+├── parent canonical amino acid
+├── geometry
+├── conformer / rotamer model
+├── steric envelope
+├── reactive-handle representation
+└── application-specific features
+```
+
+Future ncAAs should reuse the RANA core while supplying their own chemical and conformational models.
+
+### 2.3 Separate structural compatibility from engineering objective
+
+Long-term:
+
+```text
+Structural Compatibility Score
+            +
+Application / Objective Score
+            ↓
+Recommendation
+```
+
+Safe labeling generally favors exposed, non-functional sites; photocrosslinking may require proximity to an interaction partner; photocaging may deliberately target a functional residue; metal-binding ncAAs may require specific coordination geometry.
+
+v0.1 implements only the structural-compatibility / safe-incorporation problem.
+
+## 3. v0.1 target ncAA: pAzF
+
+The first supported ncAA is **p-azido-L-phenylalanine (pAzF / AzF)**.
 
 - PDB CCD ID: `4II`
-- parent canonical residue: `PHE`
-- chemical identity should be verified from authoritative chemistry resources before hard-coding
-- short aliases such as `AzF` are aliases, not the primary chemical identity
+- parent canonical amino acid: `PHE`
+- reactive handle: azide
 
-## Data sources
+RANA should retain authoritative identifiers wherever possible:
 
-| Data | Primary source | Notes |
+```text
+display_name
+aliases
+PDB_CCD_ID
+SMILES
+InChIKey
+parent_canonical_aa
+identity_source
+```
+
+## 4. Data sources
+
+No single ncAA database is assumed to contain every required resource.
+
+| Data | Preferred source | RANA use |
 |---|---|---|
-| ncAA chemical identity | PDB Chemical Component Dictionary | authoritative residue identity and polymer status |
-| SMILES / InChI cross-check | PubChem or equivalent authoritative chemistry source | identity cross-check and descriptor input |
-| experimentally observed ncAA geometry | PDB structures containing CCD `4II` | structural reference, not a universal rotamer library |
-| canonical parent rotamers | Rosetta / Dunbrack-style Phe rotamers | v0.1 proxy for pAzF chi states |
-| ncAA-specific rotamers | generated / literature | deferred unless a trustworthy source is established |
-| Rosetta ncAA params | RANA-generated and documented, or verified existing source | not assumed to be official |
-| physicochemical descriptors | RDKit where well-defined | method/provenance should be retained |
-| experimental site labels | primary literature | used for retrospective validation |
-| suppression/incorporation efficiency | not modeled in v0.1 | user is assumed to have a working orthogonal system |
+| ncAA chemical identity | PDB Chemical Component Dictionary | canonical residue identity |
+| SMILES / InChI cross-check | PubChem or equivalent authoritative source | chemistry validation and descriptors |
+| experimental ncAA geometry | PDB structures containing the ncAA | geometry reference / validation |
+| parent canonical rotamers | established canonical rotamer library | v0.1 conformational proxy |
+| ncAA-specific rotamers | validated literature or RANA-generated resource | future higher-accuracy modeling |
+| Rosetta ncAA parameters | verified existing resource or documented RANA-generated parameters | optional energetic refinement |
+| physicochemical descriptors | computed with documented methods | ncAA characterization |
+| experimental site outcomes | primary literature | retrospective validation |
+| suppression / aaRS efficiency | not modeled in v0.1 | future separate layer |
 
-SwissSidechain may be used opportunistically for ncAAs it contains, but it is **not** the mandatory primary source for RANA.
+SwissSidechain may be used when a target ncAA is available there, but it is optional rather than mandatory.
 
-## Required user inputs
+## 5. Required user inputs
 
-- Structure: PDB file
-- Target ncAA: `pAzF` in v0.1
-- Catalytic residue list: required, not inferred
-- Binding-site residue list: required, not inferred
-- Oligomer-interface residue list: optional
+### v0.1
 
-## Data schema
+Required:
+- protein structure (`PDB`)
+- target ncAA (`pAzF`)
+- catalytic residue list
+- binding-site residue list
+
+Optional:
+- oligomer-interface annotations
+- user-defined exclusion sites
+
+Catalytic and binding residues are user-supplied in v0.1 and are not inferred automatically.
+
+## 6. Data schema
 
 ```text
 NCAA
@@ -70,7 +159,9 @@ NCAA
 ├── parameter_source
 ├── reactive_handle
 └── properties
+```
 
+```text
 Structure
 ├── id
 ├── pdb_path
@@ -78,7 +169,9 @@ Structure
 ├── catalytic_residues
 ├── binding_site_residues
 └── oligomer_interfaces
+```
 
+```text
 CandidateSite
 ├── structure_id
 ├── chain
@@ -87,60 +180,286 @@ CandidateSite
 ├── target_ncaa_id
 ├── features
 │   ├── wt_sasa
+│   ├── relative_sasa
 │   ├── dist_to_catalytic_site
 │   ├── dist_to_binding_site
 │   ├── local_packing
 │   ├── steric_proxy
+│   ├── viable_rotamers
+│   ├── total_rotamers
 │   ├── stability_estimate
 │   │   ├── value
 │   │   ├── method
 │   │   ├── substitution
 │   │   └── is_proxy
-│   └── load_bearing_flag
-├── composite_score
+│   └── load_bearing_risk
+├── compatibility_score
 ├── recommendation_tier
+├── confidence
 └── reason
 ```
 
-## Accessibility
+## 7. v0.1 feature set
 
-v0.1 uses **WT residue SASA** as the inexpensive accessibility feature. Future versions should distinguish `wt_sasa`, `mutant_sasa`, and `reactive_handle_sasa`.
+### 7.1 Relative solvent accessibility
 
-## Functional-zone handling
+Use relative solvent accessibility where possible:
 
-Distance to catalytic and binding-site residues is a **hard safety gate** in the normal site-ranking mode. Sites inside the threshold are excluded rather than merely receiving a low score.
-
-## pAzF steric model in v0.1
-
-pAzF is treated as a Phe-derived ncAA. v0.1 may use Phe-like chi1/chi2 rotamer states, pAzF heavy-atom geometry from an authoritative definition or experimental structure, and a clash/local-packing test. This must be labeled as a **canonical-parent rotamer proxy**, not a validated pAzF energetic model.
-
-```yaml
-rotamer_model:
-  method: canonical_parent_proxy
-  parent: PHE
-  approximation: true
+```text
+relative_SASA = observed_residue_SASA / reference_maximum_SASA
 ```
 
-## Stability estimate
+Future versions should distinguish WT residue SASA, mutant ncAA SASA, and reactive-handle SASA.
 
-Do not expose a generic `ddg_predicted` field if the calculation is not truly pAzF-specific. Use a structured stability estimate with `value`, `method`, `substitution`, and `is_proxy`.
+### 7.2 Functional-site distance
 
-## Load-bearing feature
+Distance to catalytic and binding-site residues is primarily a **safety gate**, not a continuous weighted reward. Prefer minimum heavy-atom distances over C-alpha distance alone.
 
-Use neutral wording such as `load_bearing_heuristic` or `ROSELIA-inspired structural features` unless a trained and benchmarked classifier actually exists.
+### 7.3 Local packing
 
-## Scoring philosophy
+Possible implementations include neighboring heavy-atom density, side-chain contact density, buried-contact fraction, or local coordination number. Normalize to a packing-tolerance measure where high values indicate a permissive environment.
 
-1. hard exclusions first;
-2. independent feature calculations;
-3. few transparent weights or rules;
-4. expose all component features;
-5. generate a human-readable reason.
+### 7.4 pAzF conformer / rotamer compatibility
 
-## What v0.1 is not
+For v0.1:
 
-- an aaRS/tRNA compatibility predictor
-- an ncAA incorporation-efficiency predictor
-- an active-site ncAA design engine
-- a universally validated stability predictor
-- a general multi-ncAA framework
+```text
+Phe-like chi1 / chi2 states
+        +
+pAzF heavy-atom geometry
+        ↓
+site-specific steric evaluation
+```
+
+Initial metric:
+
+```text
+rotamer_compatibility =
+    number_of_viable_pAzF_rotamers / number_of_tested_pAzF_rotamers
+```
+
+This must be labeled as a canonical-parent proxy, not a validated pAzF energetic rotamer library.
+
+### 7.5 Load-bearing risk
+
+v0.1 may use a simple structural heuristic, ROSELIA-inspired structural features, or no load-bearing contribution to the composite score. Do not describe it as a validated classifier unless one has actually been trained and benchmarked.
+
+### 7.6 Stability estimate
+
+Stability is optional in v0.1. Canonical-analog calculations must be explicitly marked as proxies:
+
+```text
+stability_estimate
+├── value
+├── method
+├── substitution
+└── is_proxy
+```
+
+## 8. Recommendation architecture
+
+```text
+functional hard gates
+        ↓
+structural vetoes
+        ↓
+normalized sub-scores
+        ↓
+compatibility score
+        ↓
+warning / confidence logic
+        ↓
+recommendation tier
+```
+
+### 8.1 Hard gates
+
+For safe incorporation, sites closer than a configurable threshold to catalytic or binding residues are excluded. An initial default around 6 Å may be used as a modeling choice, not a biological constant.
+
+### 8.2 Structural vetoes
+
+Examples include extreme burial, severe steric clash, and near-zero viable rotamer fraction.
+
+### 8.3 Normalized sub-scores
+
+```text
+A = accessibility
+R = ncAA rotamer compatibility
+P = local packing tolerance
+L = load-bearing risk
+```
+
+### 8.4 Compatibility score
+
+A weighted geometric mean is preferred:
+
+```text
+Compatibility =
+    100 × A^wA × R^wR × P^wP × (1-L)^wL
+```
+
+with weights summing to 1.
+
+One initial pAzF hypothesis is:
+
+```text
+wA = 0.30
+wR = 0.35
+wP = 0.25
+wL = 0.10
+```
+
+Initial weights are hypotheses, not fitted truths, and should be frozen before an unbiased retrospective comparison.
+
+### 8.5 Recommendation tier
+
+Possible outputs:
+
+```text
+recommended
+conditional
+avoid
+```
+
+Compatibility score is not identical to recommendation tier. Warnings, missing annotations, proxy calculations, or applicability-domain concerns may downgrade a tier.
+
+### 8.6 Explanation
+
+Every recommendation should expose its reasoning, e.g.:
+
+```text
+Recommended:
+high solvent accessibility; outside the functional zone;
+7/9 pAzF conformers are sterically viable; low local packing.
+```
+
+## 9. Validation philosophy
+
+RANA is a ranking system. A published successful incorporation site is a known positive, but untested sites are not automatically negatives.
+
+Retrospective outputs should include raw rank, percentile rank, recommendation tier, feature values, and experimental outcome.
+
+Keep experimental outcomes separate where possible:
+
+```text
+incorporation success
+labeling / conjugation efficiency
+protein stability
+residual activity / function
+```
+
+## 10. v0.1 benchmark
+
+The first benchmark is T4 lysozyme with pAzF. RANA should scan the complete protein.
+
+Compare at least:
+
+```text
+Model 0: accessibility only
+Model 1: accessibility + pAzF steric compatibility
+Model 2: accessibility + sterics + packing
+Model 3: full v0.1 RANA
+```
+
+### Avoiding validation leakage
+
+```text
+define scoring rules
+        ↓
+freeze initial v0.1 configuration
+        ↓
+run complete T4L scan
+        ↓
+save ranking
+        ↓
+overlay literature outcomes
+```
+
+If T4L outcomes are used to tune weights or thresholds, T4L becomes a development dataset. v1.0 should evaluate a frozen model on an independent protein or dataset.
+
+## 11. Computational modes
+
+### Fast / local mode
+
+Normal workstation:
+- structure parsing
+- residue enumeration
+- SASA
+- functional-site distances
+- packing
+- ncAA conformer sterics
+- ranking
+- explanation
+
+### Optional high-accuracy mode
+
+May use workstation or HPC resources for:
+- Rosetta relaxation
+- ncAA-specific stability calculations
+- larger conformer ensembles
+- structure ensembles
+- other expensive refinement
+
+RANA should remain portable and should not depend specifically on UC Davis Hive.
+
+## 12. Future ncAA extension model
+
+Conceptually:
+
+```python
+class NCAAModel:
+    def generate_conformers(self, site):
+        ...
+
+    def steric_score(self, site):
+        ...
+
+    def handle_accessibility(self, site):
+        ...
+
+    def application_score(self, site, objective):
+        ...
+```
+
+pAzF is the first implementation.
+
+Future chemical regimes may include bulky rigid aromatic ncAAs, long flexible bioorthogonal handles, photocaged residues, and metal-binding ncAAs. These are architectural examples, not release commitments.
+
+New ncAAs should not merely change numerical weights: different chemistries and applications may introduce genuinely new structural requirements.
+
+## 13. What RANA v0.1 does not claim
+
+v0.1 does not claim to predict:
+- aaRS/tRNA compatibility
+- amber suppression efficiency
+- cellular ncAA uptake
+- expression yield
+- universal ncAA mutation tolerance
+- active-site ncAA engineering
+- photocrosslinking efficiency
+- photocaging effectiveness
+- metal coordination
+- general protein stability
+- all ncAA chemistries
+
+Its deliberately narrow claim is:
+
+> **RANA v0.1 provides an interpretable, structure-aware ranking of candidate pAzF incorporation sites for a safe-incorporation use case.**
+
+## 14. v0.1 stopping rule
+
+Tag `v0.1.0` when:
+
+1. RANA accepts a T4 lysozyme PDB structure.
+2. RANA accepts pAzF as the target ncAA.
+3. Catalytic and binding-site annotations can be supplied by the user.
+4. All protein residues are enumerated automatically.
+5. Functional-zone gates are applied.
+6. Accessibility, packing, and pAzF steric features run end-to-end.
+7. Every eligible site receives a compatibility score.
+8. Every site receives a recommendation tier and explanation.
+9. RANA produces a complete ranked CSV.
+10. Published T4L pAzF sites can be overlaid for the first retrospective sanity check.
+11. Approximations and limitations are explicitly documented.
+
+Anything beyond these requirements belongs to v1.0 or later.
