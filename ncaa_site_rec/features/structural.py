@@ -74,14 +74,42 @@ def compute_relative_sasa(
     return df
 
 
-def compute_functional_site_distances(*args, **kwargs):
-    """Compute minimum distances to user-defined catalytic/binding residues."""
-    raise NotImplementedError
+
+def compute_local_packing(
+    residue_df: pd.DataFrame,
+) -> pd.DataFrame:
+    """Count neighboring C-alpha atoms within a specified radius."""
+
+    import numpy as np
+
+    radius = 8.0
+
+    if radius <= 0:
+        raise ValueError("Radius must be positive.")
+
+    df = residue_df.copy()
+
+    coords = df[["ca_x", "ca_y", "ca_z"]].to_numpy(dtype=float)
+    valid = df["has_ca"].to_numpy(dtype=bool)
+
+    neighbor_counts = np.full(len(df), np.nan)
+
+    for i in range(len(df)):
+        if not valid[i]:
+            continue
+
+        distances = np.linalg.norm(coords[valid] - coords[i], axis=1)
+
+        # Exclude the residue itself.
+        neighbor_counts[i] = int(np.sum(distances < radius)) - 1
+
+    df["ca_neighbors_8a"] = neighbor_counts
+
+    return df
 
 
-def compute_local_packing(*args, **kwargs):
-    """Compute a simple local packing / crowding descriptor."""
-    raise NotImplementedError
+
+
 
 
 def compute_pazf_steric_proxy(*args, **kwargs):

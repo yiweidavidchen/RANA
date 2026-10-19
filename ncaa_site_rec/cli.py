@@ -8,6 +8,7 @@ from ncaa_site_rec.io.structure import pdb_to_residue_table
 from ncaa_site_rec.features.structural import (
     compute_sasa,
     compute_relative_sasa,
+    compute_local_packing,
 )
 from ncaa_site_rec.features.asa_reference import TIEN_2013_MAX_ASA
 
@@ -91,6 +92,7 @@ def run_inspect(args: argparse.Namespace) -> int:
         )
 
     df = df.drop(columns=["_merge"])
+    df = compute_local_packing(df)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(args.output, index=False)

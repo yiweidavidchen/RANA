@@ -25,3 +25,49 @@ def test_pdb_to_residue_table(tmp_path):
 
     assert df.loc[0, "ca_x"] == 10.0
     assert df.loc[1, "ca_z"] == 15.0
+
+def test_compute_local_packing():
+    """Check 8 Å C-alpha neighbor counts."""
+
+    import pandas as pd
+    from ncaa_site_rec.features.structural import compute_local_packing
+
+    residues = pd.DataFrame({
+        "residue_number": [1, 2, 3, 4],
+        "has_ca": [True, True, True, False],
+        "ca_x": [0.0, 3.0, 20.0, float("nan")],
+        "ca_y": [0.0, 0.0, 0.0, float("nan")],
+        "ca_z": [0.0, 0.0, 0.0, float("nan")],
+    })
+
+    result = compute_local_packing(residues)
+
+    assert result.loc[0, "ca_neighbors_8a"] == 1
+    assert result.loc[1, "ca_neighbors_8a"] == 1
+    assert result.loc[2, "ca_neighbors_8a"] == 0
+    assert pd.isna(result.loc[3, "ca_neighbors_8a"])
+
+def test_local_packing_mini_pdb():
+    """Check neighbor counts using a known PDB geometry."""
+    from pathlib import Path
+
+    from ncaa_site_rec.io.structure import pdb_to_residue_table
+    from ncaa_site_rec.features.structural import compute_local_packing
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+
+    residues = pdb_to_residue_table(pdb_path)
+    result = compute_local_packing(residues)
+
+    assert len(result) == 4
+
+    assert result["ca_neighbors_8a"].tolist() == [
+        1.0,
+        2.0,
+        1.0,
+        0.0,
+    ]

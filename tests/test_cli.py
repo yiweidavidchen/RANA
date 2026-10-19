@@ -94,3 +94,36 @@ def test_inspect_output_includes_sasa(tmp_path):
     assert df["rsa"].tolist() == pytest.approx(
         (df["sasa_abs"] / df["sasa_max"]).tolist()
     )
+
+def test_inspect_output_includes_local_packing(tmp_path):
+    """Check that inspect exports 8 Å C-alpha neighbor counts."""
+    from pathlib import Path
+
+    import pandas as pd
+    from ncaa_site_rec.cli import main
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+    output_path = tmp_path / "inspect_packing.csv"
+
+    main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+    ])
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 4
+    assert "ca_neighbors_8a" in df.columns
+    assert df["ca_neighbors_8a"].notna().all()
+
+    assert df["ca_neighbors_8a"].tolist() == [
+        1.0,
+        2.0,
+        1.0,
+        0.0,
+    ]
