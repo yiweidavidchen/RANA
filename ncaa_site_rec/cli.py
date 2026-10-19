@@ -5,7 +5,11 @@ import argparse
 from pathlib import Path
 
 from ncaa_site_rec.io.structure import pdb_to_residue_table
-from ncaa_site_rec.features.structural import compute_sasa
+from ncaa_site_rec.features.structural import (
+    compute_sasa,
+    compute_relative_sasa,
+)
+from ncaa_site_rec.features.asa_reference import TIEN_2013_MAX_ASA
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -59,7 +63,10 @@ def run_inspect(args: argparse.Namespace) -> int:
     residues = pdb_to_residue_table(args.pdb)
 
     # M2: Compute protein-only absolute SASA.
-    sasa = compute_sasa(args.pdb)
+    sasa = compute_relative_sasa(
+        compute_sasa(args.pdb),
+        TIEN_2013_MAX_ASA,
+    )
 
     # Match features using original PDB residue identities.
     keys = [

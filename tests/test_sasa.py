@@ -32,3 +32,56 @@ def test_compute_sasa_missing_file(tmp_path):
 
     with pytest.raises(FileNotFoundError):
         compute_sasa(missing_path)
+
+
+def test_compute_relative_sasa():
+    """Check residue-specific SASA normalization."""
+
+    import pandas as pd
+    from ncaa_site_rec.features.structural import compute_relative_sasa
+
+    sasa_df = pd.DataFrame({
+        "residue_name": ["ALA", "GLY", "ALA"],
+        "sasa_abs": [50.0, 20.0, 0.0],
+    })
+
+    max_asa = {
+        "ALA": 100.0,
+        "GLY": 80.0,
+    }
+
+    result = compute_relative_sasa(sasa_df, max_asa)
+
+    assert result["rsa"].tolist() == pytest.approx([
+        0.50,
+        0.25,
+        0.00,
+    ])
+
+    assert result["sasa_max"].tolist() == [
+        100.0,
+        80.0,
+        100.0,
+    ]
+
+    # The original input must remain unchanged.
+    assert "rsa" not in sasa_df.columns
+
+
+def test_compute_relative_sasa_missing_reference():
+    """Reject residues without a maximum ASA reference."""
+
+    import pandas as pd
+    from ncaa_site_rec.features.structural import compute_relative_sasa
+
+    sasa_df = pd.DataFrame({
+        "residue_name": ["ALA", "TRP"],
+        "sasa_abs": [50.0, 80.0],
+    })
+
+    max_asa = {
+        "ALA": 100.0,
+    }
+
+    with pytest.raises(ValueError, match="Missing maximum ASA reference"):
+        compute_relative_sasa(sasa_df, max_asa)

@@ -4,6 +4,7 @@ import sys
 
 import pandas as pd
 
+import pytest
 
 def test_inspect_command(tmp_path):
     """Test the complete RANA inspect CLI workflow."""
@@ -79,3 +80,17 @@ def test_inspect_output_includes_sasa(tmp_path):
     assert "sasa_abs" in df.columns
     assert df.loc[0, "sasa_abs"] > 0
     assert df["sasa_abs"].notna().all()
+
+    # Check RSA normalization in the exported CSV.
+    assert "sasa_max" in df.columns
+    assert "rsa" in df.columns
+
+    assert df["sasa_max"].notna().all()
+    assert df["rsa"].notna().all()
+
+    assert (df["sasa_max"] > 0).all()
+    assert (df["rsa"] >= 0).all()
+
+    assert df["rsa"].tolist() == pytest.approx(
+        (df["sasa_abs"] / df["sasa_max"]).tolist()
+    )

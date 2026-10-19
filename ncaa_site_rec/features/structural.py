@@ -48,6 +48,32 @@ def compute_sasa(
     return pd.DataFrame(rows)
 
 
+def compute_relative_sasa(
+    sasa_df: pd.DataFrame,
+    max_asa: dict[str, float],
+) -> pd.DataFrame:
+    """Normalize absolute SASA by residue-specific maximum ASA."""
+
+    df = sasa_df.copy()
+
+    df["sasa_max"] = df["residue_name"].map(max_asa)
+
+    if df["sasa_max"].isna().any():
+        missing = sorted(
+            df.loc[df["sasa_max"].isna(), "residue_name"].unique()
+        )
+        raise ValueError(
+            f"Missing maximum ASA reference for: {missing}"
+        )
+
+    if (df["sasa_max"] <= 0).any():
+        raise ValueError("Maximum ASA values must be positive.")
+
+    df["rsa"] = df["sasa_abs"] / df["sasa_max"]
+
+    return df
+
+
 def compute_functional_site_distances(*args, **kwargs):
     """Compute minimum distances to user-defined catalytic/binding residues."""
     raise NotImplementedError
