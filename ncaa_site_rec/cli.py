@@ -5,6 +5,7 @@ import argparse
 from pathlib import Path
 
 from ncaa_site_rec.io.structure import pdb_to_residue_table
+from ncaa_site_rec.features.structural import compute_sasa
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -52,8 +53,37 @@ def run_rank(args: argparse.Namespace) -> int:
     )
 
 
+
 def run_inspect(args: argparse.Namespace) -> int:
-    df = pdb_to_residue_table(args.pdb)
+    # M1: Parse residue identities and coordinates.
+    residues = pdb_to_residue_table(args.pdb)
+
+    # M2: Compute protein-only absolute SASA.
+    sasa = compute_sasa(args.pdb)
+
+    # Match features using original PDB residue identities.
+    keys = [
+        "chain",
+        "residue_number",
+        "insertion_code",
+        "residue_name",
+    ]
+
+    df = residues.merge(
+        sasa,
+        on=keys,
+        how="left",
+        validate="one_to_one",
+        indicator=True,
+    )
+
+    # Stop if any residue failed to match.
+    if not (df["_merge"] == "both").all():
+        raise ValueError(
+            "SASA merge failed: some residues were not matched."
+        )
+
+    df = df.drop(columns=["_merge"])
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(args.output, index=False)
@@ -61,14 +91,17 @@ def run_inspect(args: argparse.Namespace) -> int:
     print(f"Parsed residues: {len(df)}")
     print(f"Chains: {', '.join(df['chain'].unique())}")
     print(f"Missing CA: {(~df['has_ca']).sum()}")
+    print(f"Missing SASA: {df['sasa_abs'].isna().sum()}")
+    print(f"Total SASA (A^2): {df['sasa_abs'].sum():.2f}")
     print(f"Output: {args.output}")
 
     return 0
 
 
-def main() -> int:
+
+def main(argv=None) -> int:
     parser = build_parser()
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.command == "rank":
         return run_rank(args)
