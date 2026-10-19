@@ -127,3 +127,71 @@ def test_inspect_output_includes_local_packing(tmp_path):
         1.0,
         0.0,
     ]
+
+def test_inspect_output_includes_functional_distances(tmp_path):
+    """Check that inspect exports functional-site C-alpha distances."""
+    from pathlib import Path
+
+    import pandas as pd
+    import pytest
+
+    from ncaa_site_rec.cli import main
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+    output_path = tmp_path / "inspect_functional.csv"
+
+    result = main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+        "--functional-residues", "A:2,A:4",
+    ])
+
+    assert result == 0
+    assert output_path.exists()
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 4
+    assert "distance_to_functional_site_ca" in df.columns
+
+    assert df["distance_to_functional_site_ca"].tolist() == pytest.approx(
+        [3.0, 0.0, 5.0, 0.0]
+    )
+
+def test_inspect_without_functional_residues(tmp_path):
+    """Keep the original inspect output when no functional sites are given."""
+    from pathlib import Path
+
+    import pandas as pd
+
+    from ncaa_site_rec.cli import main
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+    output_path = tmp_path / "inspect_default.csv"
+
+    result = main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+    ])
+
+    assert result == 0
+    assert output_path.exists()
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 4
+    assert "ca_neighbors_8a" in df.columns
+    assert "sasa_abs" in df.columns
+    assert "rsa" in df.columns
+
+    assert "distance_to_functional_site_ca" not in df.columns

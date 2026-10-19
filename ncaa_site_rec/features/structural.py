@@ -108,9 +108,79 @@ def compute_local_packing(
     return df
 
 
+def compute_functional_site_distances(
+    residue_df: pd.DataFrame,
+    functional_residues: list[tuple[str, int, str]],
+) -> pd.DataFrame:
+    """Compute minimum C-alpha distance to specified functional residues."""
+    import numpy as np
 
+    if not functional_residues:
+        raise ValueError("At least one functional residue is required.")
 
+    df = residue_df.copy()
 
+    functional_ids = set(functional_residues)
+
+    residue_ids = list(
+        zip(
+            df["chain"],
+            df["residue_number"],
+            df["insertion_code"],
+        )
+    )
+
+    # Validate every requested functional residue.
+    available_ids = set(residue_ids)
+
+    missing_ids = functional_ids - available_ids
+
+    if missing_ids:
+        raise ValueError(
+            f"Missing functional residue(s): {sorted(missing_ids)}"
+        )
+
+    residues_with_ca = set(
+        residue_id
+        for residue_id, has_ca in zip(residue_ids, df["has_ca"])
+        if has_ca
+    )
+
+    missing_ca_ids = functional_ids - residues_with_ca
+
+    if missing_ca_ids:
+        raise ValueError(
+            "No functional residues with C-alpha coordinates found "
+            f"for: {sorted(missing_ca_ids)}"
+        )
+
+    functional_mask = pd.Series(
+        [residue_id in functional_ids for residue_id in residue_ids],
+        index=df.index,
+    ) & df["has_ca"]
+
+    if not functional_mask.any():
+        raise ValueError("No functional residues with C-alpha coordinates found.")
+
+    coords = df[["ca_x", "ca_y", "ca_z"]].to_numpy(dtype=float)
+    functional_coords = coords[functional_mask.to_numpy()]
+
+    min_distances = np.full(len(df), np.nan)
+
+    for i in range(len(df)):
+        if not df.iloc[i]["has_ca"]:
+            continue
+
+        distances = np.linalg.norm(
+            functional_coords - coords[i],
+            axis=1,
+        )
+
+        min_distances[i] = distances.min()
+
+    df["distance_to_functional_site_ca"] = min_distances
+
+    return df
 
 def compute_pazf_steric_proxy(*args, **kwargs):
     """Estimate pAzF steric compatibility using a Phe-derived rotamer proxy."""
