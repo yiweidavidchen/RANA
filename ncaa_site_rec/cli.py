@@ -6,6 +6,7 @@ from pathlib import Path
 
 import re
 import math
+import sys
 
 from ncaa_site_rec.features.site_features import build_ranked_pazf_table
 
@@ -211,12 +212,41 @@ def run_rank(args: argparse.Namespace) -> int:
 
     write_run_metadata(metadata, metadata_path)
 
-    print(f"RANA pAzF screening completed: {len(result)} residues")
+    # Evaluate screening status after exporting diagnostic artifacts.
+    status_counts = result["status"].value_counts()
+
+    n_scored = int(status_counts.get("scored", 0))
+    n_failed = int(status_counts.get("failed", 0))
+    n_skipped = int(status_counts.get("skipped", 0))
+    n_total = len(result)
+
+    print(f"RANA pAzF screening: {n_total} residues")
     print(f"Chain: {args.chain}")
+    print(f"Scored: {n_scored}")
+    print(f"Failed: {n_failed}")
+    print(f"Skipped: {n_skipped}")
     print(f"Output: {args.output}")
     print(f"Metadata: {metadata_path}")
+
     print("\nGeometric screening tiers:")
     print(result["candidate_tier"].value_counts().to_string())
+
+    if n_scored == 0:
+        print(
+            "\nERROR: No residues were successfully scored. "
+            "Screening results are not usable for ranking. "
+            "Diagnostic CSV and metadata were saved.",
+            file=sys.stderr,
+        )
+        return 1
+
+    if n_failed > 0:
+        print(
+            f"\nWARNING: {n_failed} residues failed scoring. "
+            "Review the CSV 'reason' column before interpreting "
+            "the rankings.",
+            file=sys.stderr,
+        )
 
     return 0
 

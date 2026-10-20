@@ -189,3 +189,73 @@ def test_rank_writes_complete_csv(tmp_path, monkeypatch):
     assert "software" in metadata
     assert "git_commit" in metadata["software"]
     assert "tracked_worktree_modified" in metadata["software"]
+
+@pytest.mark.parametrize(
+    ("statuses", "expected_exit_code", "expected_message"),
+    [
+        (["failed", "failed"], 1, "No residues were successfully scored"),
+        (["skipped", "skipped"], 1, "No residues were successfully scored"),
+        (["scored", "failed"], 0, "WARNING: 1 residues failed scoring"),
+    ],
+)
+def test_rank_reports_scoring_failures(
+    tmp_path,
+    monkeypatch,
+    capsys,
+    statuses,
+    expected_exit_code,
+    expected_message,
+):
+    import ncaa_site_rec.cli as cli
+
+    tiers = [
+        "geometry_favorable" if status == "scored"
+        else "not_evaluated"
+        for status in statuses
+    ]
+
+    fake_result = pd.DataFrame({
+        "chain": ["A"] * len(statuses),
+        "residue_number": list(range(1, len(statuses) + 1)),
+        "residue_name": ["ALA"] * len(statuses),
+        "status": statuses,
+        "candidate_tier": tiers,
+        "n_rotamers": [
+            12 if status == "scored" else 0
+            for status in statuses
+        ],
+        "reason": [
+            "" if status == "scored" else "test diagnostic"
+            for status in statuses
+        ],
+    })
+
+    monkeypatch.setattr(
+        cli,
+        "build_ranked_pazf_table",
+        lambda **kwargs: fake_result.copy(),
+    )
+
+    pdb = tmp_path / "example.pdb"
+    pdb.write_text("TEST PDB")
+
+    output = tmp_path / "results.csv"
+
+    exit_code = cli.main([
+        "rank",
+        "--pdb", str(pdb),
+        "--ncaa", "pazf",
+        "--output", str(output),
+    ])
+
+    captured = capsys.readouterr()
+
+    assert exit_code == expected_exit_code
+    assert expected_message in captured.err
+
+    # Even unsuccessful runs preserve diagnostic artifacts.
+    assert output.is_file()
+    assert output.with_suffix(".metadata.json").is_file()
+
+    exported = pd.read_csv(output)
+    assert exported["status"].tolist() == statuses
