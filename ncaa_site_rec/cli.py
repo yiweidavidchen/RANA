@@ -5,6 +5,9 @@ import argparse
 from pathlib import Path
 
 import re
+import math
+
+from ncaa_site_rec.features.site_features import build_ranked_pazf_table
 
 from ncaa_site_rec.io.structure import pdb_to_residue_table
 from ncaa_site_rec.features.structural import (
@@ -14,6 +17,12 @@ from ncaa_site_rec.features.structural import (
     compute_functional_site_distances,
 )
 from ncaa_site_rec.features.asa_reference import TIEN_2013_MAX_ASA
+
+from ncaa_site_rec.io.run_metadata import (
+    build_run_metadata,
+    write_run_metadata,
+    sha256_file,
+)
 
 def parse_functional_residues(
     value: str,
@@ -65,6 +74,36 @@ def build_parser() -> argparse.ArgumentParser:
     rank.add_argument("--binding-site-residues", nargs="*", type=int, default=[])
     rank.add_argument("--output", required=True, type=Path)
 
+    rank.add_argument(
+        "--chain",
+        default="A",
+        help="Target protein chain (default: A)",
+    )
+    rank.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Rotamer sampling seed (default: 42)",
+    )
+    rank.add_argument(
+        "--low-clash-threshold",
+        type=float,
+        default=10.0,
+        help="Low-clash steric threshold (default: 10.0)",
+    )
+    rank.add_argument(
+        "--favorable-fraction",
+        type=float,
+        default=0.5,
+        help="Minimum low-clash fraction for favorable tier",
+    )
+    rank.add_argument(
+        "--functional-residues",
+        type=str,
+        default=None,
+        help="Comma-separated residue IDs, e.g. A:11,A:20",
+    )
+
     # New structure inspection command
     inspect = subparsers.add_parser(
         "inspect",
@@ -92,12 +131,94 @@ def run_rank(args: argparse.Namespace) -> int:
             "v0.1 currently supports pAzF / AzF / CCD 4II only."
         )
 
-    raise NotImplementedError(
-        "End-to-end ranking is not implemented yet. "
-        "See docs/design.md for the v0.1 pipeline."
+    if not args.pdb.is_file():
+        raise SystemExit(f"PDB file not found: {args.pdb}")
+
+    if (
+        not math.isfinite(args.low_clash_threshold)
+        or args.low_clash_threshold < 0
+    ):
+        raise SystemExit(
+            "--low-clash-threshold must be finite and >= 0."
+        )
+
+    if (
+        not math.isfinite(args.favorable_fraction)
+        or not 0 < args.favorable_fraction <= 1
+    ):
+        raise SystemExit(
+            "--favorable-fraction must be finite and in (0, 1]."
+        )
+
+    if args.catalytic_residues or args.binding_site_residues:
+        raise SystemExit(
+            "--catalytic-residues and --binding-site-residues "
+            "are legacy placeholders. Use --functional-residues "
+            "with chain-qualified IDs instead."
+        )
+
+    functional_residues = None
+
+    if args.functional_residues is not None:
+        try:
+            functional_residues = parse_functional_residues(
+                args.functional_residues
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+
+    result = build_ranked_pazf_table(
+        pdb_path=args.pdb,
+        chain=args.chain,
+        functional_residues=functional_residues,
+        seed=args.seed,
+        low_clash_threshold=args.low_clash_threshold,
+        favorable_fraction=args.favorable_fraction,
     )
 
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    result.to_csv(args.output, index=False)
 
+    metadata = build_run_metadata(
+        pdb_path=args.pdb,
+        chain=args.chain,
+        ncaa=args.ncaa,
+        seed=args.seed,
+        low_clash_threshold=args.low_clash_threshold,
+        favorable_fraction=args.favorable_fraction,
+        result=result,
+    )
+
+    metadata["configuration"]["functional_residues"] = (
+        [
+            {
+                "chain": chain,
+                "residue_number": number,
+                "insertion_code": insertion_code,
+            }
+            for chain, number, insertion_code in functional_residues
+        ]
+        if functional_residues is not None
+        else None
+    )
+
+    metadata_path = args.output.with_suffix(".metadata.json")
+
+    metadata["output"] = {
+        "csv_path": str(args.output),
+        "csv_sha256": sha256_file(args.output),
+    }
+
+    write_run_metadata(metadata, metadata_path)
+
+    print(f"RANA pAzF screening completed: {len(result)} residues")
+    print(f"Chain: {args.chain}")
+    print(f"Output: {args.output}")
+    print(f"Metadata: {metadata_path}")
+    print("\nGeometric screening tiers:")
+    print(result["candidate_tier"].value_counts().to_string())
+
+    return 0
 
 def run_inspect(args: argparse.Namespace) -> int:
     # M1: Parse residue identities and coordinates.
