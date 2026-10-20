@@ -396,6 +396,14 @@ def score_pazf_site(
         insertion_code,
     )
 
+    # RANA v0.1 uses heavy-atom-only steric scoring.
+    # PDB structures may contain explicit hydrogen/deuterium atoms.
+    environment = environment.loc[
+        ~environment["element"].astype(str).str.strip().str.upper().isin(
+            {"H", "D"}
+        )
+    ].copy()
+
     environment_coords = environment[
         ["x", "y", "z"]
     ].to_numpy(dtype=float)
