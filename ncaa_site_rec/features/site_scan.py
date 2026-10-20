@@ -68,7 +68,7 @@ def scan_pazf_sites(
     if candidate_residues is not None:
         residues = residues.loc[
             residues["residue_number"].isin(candidate_residues)
-        ]    
+        ]
 
     results = []
 
