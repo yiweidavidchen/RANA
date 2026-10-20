@@ -288,3 +288,39 @@ def test_functional_site_distances_partial_invalid():
                 ("A", 999, ""),
             ],
         )
+
+def test_pdb_to_atom_table():
+    """Check atom-level PDB parsing and residue identities."""
+    from pathlib import Path
+
+    from ncaa_site_rec.io.structure import pdb_to_atom_table
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+
+    atoms = pdb_to_atom_table(pdb_path)
+
+    assert len(atoms) == 4
+
+    assert atoms["atom_name"].tolist() == [
+        "CA", "CA", "CA", "CA"
+    ]
+
+    assert atoms["residue_number"].tolist() == [
+        1, 2, 3, 4
+    ]
+
+    assert atoms["chain"].tolist() == [
+        "A", "A", "A", "A"
+    ]
+
+    assert atoms["element"].tolist() == [
+        "C", "C", "C", "C"
+    ]
+
+    assert atoms["x"].tolist() == [
+        0.0, 3.0, 8.0, 20.0
+    ]
