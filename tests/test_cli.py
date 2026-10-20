@@ -1,0 +1,197 @@
+
+import subprocess
+import sys
+
+import pandas as pd
+
+import pytest
+
+def test_inspect_command(tmp_path):
+    """Test the complete RANA inspect CLI workflow."""
+
+    pdb_content = (
+        "ATOM      1  CA  ALA A   1      10.000  11.000  12.000  1.00 20.00           C\n"
+        "ATOM      2  CA  GLY A   2      13.000  14.000  15.000  1.00 20.00           C\n"
+        "TER\n"
+        "END\n"
+    )
+
+    pdb_path = tmp_path / "input.pdb"
+    output_path = tmp_path / "results" / "residues.csv"
+
+    pdb_path.write_text(pdb_content)
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "ncaa_site_rec.cli",
+            "inspect",
+            "--pdb",
+            str(pdb_path),
+            "--output",
+            str(output_path),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert output_path.is_file()
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 2
+    assert df["residue_name"].tolist() == ["ALA", "GLY"]
+    assert df["residue_number"].tolist() == [1, 2]
+    assert df["ca_x"].tolist() == [10.0, 13.0]
+
+
+def test_inspect_output_includes_sasa(tmp_path):
+    """Check that the inspect CLI exports residue-level SASA."""
+
+    import pandas as pd
+    from ncaa_site_rec.cli import main
+
+    pdb_content = (
+        "ATOM      1  CA  ALA A   1      10.000  11.000  12.000  1.00 20.00           C\n"
+        "TER\n"
+        "END\n"
+    )
+
+    pdb_path = tmp_path / "test.pdb"
+    output_path = tmp_path / "features.csv"
+
+    pdb_path.write_text(pdb_content)
+
+    result = main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+    ])
+
+    assert result == 0
+    assert output_path.exists()
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 1
+    assert "sasa_abs" in df.columns
+    assert df.loc[0, "sasa_abs"] > 0
+    assert df["sasa_abs"].notna().all()
+
+    # Check RSA normalization in the exported CSV.
+    assert "sasa_max" in df.columns
+    assert "rsa" in df.columns
+
+    assert df["sasa_max"].notna().all()
+    assert df["rsa"].notna().all()
+
+    assert (df["sasa_max"] > 0).all()
+    assert (df["rsa"] >= 0).all()
+
+    assert df["rsa"].tolist() == pytest.approx(
+        (df["sasa_abs"] / df["sasa_max"]).tolist()
+    )
+
+def test_inspect_output_includes_local_packing(tmp_path):
+    """Check that inspect exports 8 Å C-alpha neighbor counts."""
+    from pathlib import Path
+
+    import pandas as pd
+    from ncaa_site_rec.cli import main
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+    output_path = tmp_path / "inspect_packing.csv"
+
+    main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+    ])
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 4
+    assert "ca_neighbors_8a" in df.columns
+    assert df["ca_neighbors_8a"].notna().all()
+
+    assert df["ca_neighbors_8a"].tolist() == [
+        1.0,
+        2.0,
+        1.0,
+        0.0,
+    ]
+
+def test_inspect_output_includes_functional_distances(tmp_path):
+    """Check that inspect exports functional-site C-alpha distances."""
+    from pathlib import Path
+
+    import pandas as pd
+    import pytest
+
+    from ncaa_site_rec.cli import main
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+    output_path = tmp_path / "inspect_functional.csv"
+
+    result = main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+        "--functional-residues", "A:2,A:4",
+    ])
+
+    assert result == 0
+    assert output_path.exists()
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 4
+    assert "distance_to_functional_site_ca" in df.columns
+
+    assert df["distance_to_functional_site_ca"].tolist() == pytest.approx(
+        [3.0, 0.0, 5.0, 0.0]
+    )
+
+def test_inspect_without_functional_residues(tmp_path):
+    """Keep the original inspect output when no functional sites are given."""
+    from pathlib import Path
+
+    import pandas as pd
+
+    from ncaa_site_rec.cli import main
+
+    pdb_path = (
+        Path(__file__).parent
+        / "fixtures"
+        / "mini_protein.pdb"
+    )
+    output_path = tmp_path / "inspect_default.csv"
+
+    result = main([
+        "inspect",
+        "--pdb", str(pdb_path),
+        "--output", str(output_path),
+    ])
+
+    assert result == 0
+    assert output_path.exists()
+
+    df = pd.read_csv(output_path)
+
+    assert len(df) == 4
+    assert "ca_neighbors_8a" in df.columns
+    assert "sasa_abs" in df.columns
+    assert "rsa" in df.columns
+
+    assert "distance_to_functional_site_ca" not in df.columns

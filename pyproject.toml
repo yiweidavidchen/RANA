@@ -10,7 +10,12 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Yiwei Chen"}]
-dependencies = ["numpy>=1.24", "pandas>=2.0"]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "biopython>=1.88",
+    "rdkit>=2024.9",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
