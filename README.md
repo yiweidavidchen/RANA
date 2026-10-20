@@ -1,93 +1,154 @@
 # RANA
 
-**RANA** is a structure-aware recommender for selecting protein sites for non-canonical amino acid (ncAA) incorporation.
+**RANA** is a structure-guided screening tool for prioritizing protein sites for non-canonical amino acid (ncAA) incorporation.
 
-> **Core question:** Where can I install this ncAA without breaking the protein?
+> **Core question:** Where can we introduce new chemical functionality into an existing protein structure?
 
-RANA v0.1 focuses on **p-azido-L-phenylalanine (pAzF / AzF; PDB CCD `4II`)** and a first benchmark on **T4 lysozyme**.
+RANA v0.1 focuses on **p-azido-L-phenylalanine (pAzF / AzF; PDB CCD `4II`)**, an aromatic ncAA containing a bioorthogonal azide handle.
 
-## What v0.1 does
+The current implementation evaluates fixed-structure geometric accommodation. It does **not** predict experimental incorporation success, protein stability, retained activity, or labeling efficiency.
 
-Given a protein structure (`.pdb`), a target ncAA (`pAzF` in v0.1), and user-supplied catalytic/binding-site residues, RANA enumerates the whole protein, excludes functional-zone positions, computes inexpensive structural features, estimates pAzF steric compatibility using a Phe-like rotamer proxy, assigns recommendation tiers, and returns an interpretable ranked table.
+## Current capabilities
 
-### v0.1 feature set
+Given a protein PDB structure, RANA can:
 
-- solvent-accessible surface area (SASA)
-- distance to catalytic residues
-- distance to binding-site residues
-- local packing / steric crowding
-- pAzF rotamer-clash proxy using Phe-like chi states
-- optional load-bearing heuristic hook
+- Enumerate residues in a selected protein chain.
+- Compute solvent-accessible surface area (SASA) and relative SASA (RSA).
+- Estimate local packing using neighboring Cα atoms.
+- Optionally calculate distances to user-specified functional residues.
+- Generate and evaluate 12 discrete pAzF side-chain rotamers per site.
+- Calculate heuristic van der Waals overlap scores using heavy atoms.
+- Report minimum steric score and low-clash rotamer fraction.
+- Provide independent steric, accessibility, and rotamer-robustness ranks.
+- Assign interpretable geometric screening tiers.
+- Export a residue-level CSV and JSON reproducibility metadata.
 
-### Deliberately deferred to v1.0
+The current scoring uses a fixed protein backbone and discrete side-chain sampling. It does not explicitly model protein relaxation or energetic consequences of substitution.
 
-- validated pAzF-specific Rosetta polymer parameterization
-- ncAA-specific Cartesian ddG as a required feature
-- independent-protein validation
-- multi-ncAA support
-- suppression / aaRS / tRNA efficiency modeling
-- automatic active-site inference
-- sequence-to-structure prediction
+## Installation
 
-## Scientific scope
+RANA requires Python 3.10 or later.
 
-RANA predicts **structural site compatibility**, not genetic incorporation efficiency. Catalytic- and binding-zone positions are excluded from the normal safe-incorporation ranking.
+```bash
+git clone https://github.com/yiweidavidchen/RANA.git
+cd rana
+pip install -e .
+```
 
-## v0.1 benchmark
+The pAzF conformer-generation workflow also requires RDKit. Its installation requirements should be verified against the project's dependency configuration before distribution.
 
-The first benchmark target is **T4 lysozyme** because it is small enough for exhaustive scanning and has published site-specific pAzF data with experimentally measured consequences for conjugation, stability, and activity.
+For development and testing:
 
-The intended v0.1 stopping rule is:
-
-> **Given a T4 lysozyme structure, RANA automatically produces a complete pAzF site-ranking CSV and overlays published test sites without using those labels to tune the initial scoring rules.**
+```bash
+pip install -e ".[dev]"
+python -m pytest tests/ -q
+```
 
 ## Quick start
 
+Download a test protein structure from the RCSB Protein Data Bank:
+
 ```bash
-pip install -e .
+mkdir -p data/raw
+curl -L https://files.rcsb.org/download/1L63.pdb -o data/raw/1L63.pdb
 ```
+
+Run the pAzF geometric screening:
 
 ```bash
 rana rank \
   --pdb data/raw/1L63.pdb \
-  --ncaa pAzF \
-  --catalytic-residues 11 20 \
-  --binding-site-residues 11 20 26 \
-  --output data/processed/t4l_pazf_ranking.csv
+  --chain A \
+  --ncaa pazf \
+  --seed 42 \
+  --output data/processed/t4l_pazf_ranked.csv
 ```
 
-The residue lists above are examples only. Use literature-supported annotations for the actual benchmark.
+Optionally provide functional residues:
+
+```bash
+rana rank \
+  --pdb data/raw/1L63.pdb \
+  --chain A \
+  --ncaa pazf \
+  --functional-residues A:11,A:20 \
+  --output data/processed/t4l_pazf_ranked.csv
+```
+
+The functional-residue IDs above are syntax examples, not validated catalytic-site annotations for this structure.
+
+**Important:** Functional-residue annotations currently provide distance features. They do not automatically exclude residues from geometric screening.
 
 ## Output
 
-Planned columns:
+A successful ranking run produces two files:
 
 ```text
-rank
-chain
-residue_number
-wt_residue
-target_ncaa
-sasa
-dist_to_catalytic_site
-dist_to_binding_site
-local_packing
-steric_proxy
-load_bearing_flag
-composite_score
-recommendation_tier
-reason
+data/processed/t4l_pazf_ranked.csv
+data/processed/t4l_pazf_ranked.metadata.json
 ```
 
-## Version roadmap
+The CSV contains residue identities, structural features, steric scores, rotamer statistics, ranking information, screening tiers, and diagnostic status fields.
 
-| Version | Scope |
+The metadata records input structure identity and SHA-256 hash, selected parameters, output hash, available Git revision information, and run summary statistics.
+
+### Screening tiers
+
+| Tier | Interpretation |
 |---|---|
-| v0.1 | pAzF + T4 lysozyme + exhaustive structural scan + interpretable ranking + first literature sanity check |
-| v1.0 | frozen scoring + quantitative retrospective benchmark + independent validation + robust packaging |
-| v1.x | additional ncAAs and stronger ncAA-specific parameterization |
-| v2.0 | general ncAA-specific recommendation framework with cross-ncAA validation |
+| `geometry_favorable` | Low minimum steric overlap and sufficiently many low-clash rotamers |
+| `geometry_limited` | At least one low-clash rotamer, but limited rotamer robustness |
+| `geometry_unfavorable` | No rotamer meets the minimum-overlap threshold |
+| `not_evaluated` | Geometric screening was skipped or failed |
+
+Default thresholds:
+
+- Low-clash steric score: ≤ 10.0
+- Favorable low-clash rotamer fraction: ≥ 0.5
+
+These thresholds are engineering heuristics, **not experimentally calibrated success probabilities**.
+
+## Computational smoke validation
+
+The current pipeline has been tested on two experimental protein structures:
+
+| Protein | PDB | Residues scored | Rotamers per site |
+|---|---|---:|---:|
+| T4 lysozyme | 1L63 | 162/162 | 12 |
+| Bovine pancreatic RNase A | 7RSA | 124/124 | 12 |
+| **Total** | | **286/286** | |
+
+The test suite currently contains **85 passing tests**.
+
+These results demonstrate successful execution on two different protein structures. They do not establish predictive accuracy for ncAA incorporation or experimental protein function.
+
+See [Validation](docs/validation.md) for the scientific benchmarking plan and limitations.
+
+## Important limitations
+
+- Only pAzF is currently supported.
+- Protein structures are treated as fixed during site scoring.
+- Steric overlap is a geometric heuristic, not a substitution free energy.
+- Explicit hydrogen and deuterium atoms are excluded from steric scoring.
+- The 12 sampled rotamers do not exhaust all possible side-chain conformations.
+- The azide handle's chemical accessibility is not independently evaluated.
+- Functional-site distances do not establish functional tolerance.
+- Disulfide bonds and other structural constraints are not automatically incorporated into the recommendation tiers.
+- Incorporation efficiency depends on the expression system, orthogonal translation machinery, and experimental conditions.
+- The current thresholds have not been calibrated against experimental outcomes.
+
+## Roadmap
+
+| Stage | Scope |
+|---|---|
+| v0.1 development | pAzF structural features, geometric scanning, interpretable ranking, CLI, metadata |
+| M4.4 | Cross-protein computational smoke validation |
+| M5 | Literature-based retrospective benchmark and baseline comparisons |
+| v1.0 | Improved scoring validation, independent experimental datasets, and robust packaging |
+| Future | Additional ncAAs, functional-group accessibility, stronger structural and energetic models |
 
 ## Status
 
-Early research software. Interfaces and scoring rules may change before v1.0.
+**Research software under active development.**
+
+RANA currently prioritizes sites based on geometric accommodation, not experimentally validated incorporation success. Interfaces, ranking heuristics, and scientific scope may evolve as additional evidence becomes available.
