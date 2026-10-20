@@ -15,6 +15,7 @@ from ncaa_site_rec.features.structural import (
     compute_functional_site_distances,
 )
 from ncaa_site_rec.features.site_scan import scan_pazf_sites
+from ncaa_site_rec.features.site_ranking import rank_pazf_sites
 
 
 RESIDUE_KEYS = [
@@ -99,3 +100,27 @@ def build_pazf_feature_table(
     return combined.sort_values(
         ["chain", "residue_number", "insertion_code"]
     ).reset_index(drop=True)
+
+def build_ranked_pazf_table(
+    pdb_path: str | Path,
+    chain: str = "A",
+    functional_residues: list[tuple[str, int, str]] | None = None,
+    seed: int = 42,
+    low_clash_threshold: float = 10.0,
+    favorable_fraction: float = 0.5,
+) -> pd.DataFrame:
+    """Build and rank a complete pAzF site-screening table."""
+
+    features = build_pazf_feature_table(
+        pdb_path=pdb_path,
+        chain=chain,
+        functional_residues=functional_residues,
+        seed=seed,
+        low_clash_threshold=low_clash_threshold,
+    )
+
+    return rank_pazf_sites(
+        features,
+        low_clash_threshold=low_clash_threshold,
+        favorable_fraction=favorable_fraction,
+    )

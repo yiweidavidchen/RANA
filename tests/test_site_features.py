@@ -1,9 +1,11 @@
 
 import numpy as np
 import pytest
+import pandas as pd
 
 from ncaa_site_rec.features.site_features import (
     build_pazf_feature_table,
+    build_ranked_pazf_table,
 )
 
 
@@ -199,3 +201,34 @@ def test_packing_includes_other_chains(tmp_path):
     # Original T4L A:20 has 9 CA neighbors within 8 Å.
     # The additional chain B CA must be counted.
     assert site20["ca_neighbors_8a"] == 10
+
+def test_ranked_pipeline_matches_manual_ranking():
+    from ncaa_site_rec.features.site_ranking import rank_pazf_sites
+
+    pdb_path = "data/raw/1L63.pdb"
+
+    features = build_pazf_feature_table(
+        pdb_path,
+        chain="A",
+        seed=42,
+        low_clash_threshold=5.0,
+    )
+
+    expected = rank_pazf_sites(
+        features,
+        low_clash_threshold=5.0,
+        favorable_fraction=0.75,
+    )
+
+    actual = build_ranked_pazf_table(
+        pdb_path,
+        chain="A",
+        seed=42,
+        low_clash_threshold=5.0,
+        favorable_fraction=0.75,
+    )
+
+    pd.testing.assert_frame_equal(actual, expected)
+
+    assert len(actual) == 162
+    assert actual["candidate_tier"].notna().all()
