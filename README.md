@@ -4,6 +4,8 @@
 
 > **Core question:** Where can we introduce new chemical functionality into an existing protein structure?
 
+**Mission**: RANA aims to reduce the experimental search burden of ncAA incorporation through structure-guided site prioritization.
+
 RANA `0.1.0.dev0` focuses on **p-azido-L-phenylalanine (pAzF / AzF; PDB CCD `4II`)**, an aromatic ncAA containing a bioorthogonal azide handle.
 
 The current implementation evaluates fixed-structure geometric accommodation. It does **not** predict experimental incorporation success, protein stability, retained activity, or labeling efficiency.
