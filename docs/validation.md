@@ -1,94 +1,85 @@
-# Validation plan
+# Validation status and research plan
 
-## v0.1 goal
+RANA `0.1.0.dev0` has computational smoke validation on two structures.
+Experimental predictive validity has not been demonstrated for ncAA incorporation,
+expression, stability, retained function, or labeling efficiency. Geometric
+accommodation is the scope of the implemented screen.
 
-Demonstrate that RANA can produce a complete, interpretable pAzF site ranking for a real protein and compare the ranking with published site-specific measurements. The first benchmark target is **T4 lysozyme**.
+## M4.6 reproducibility check
 
-## Important distinction
+On 2026-10-20, the unchanged existing suite completed with **85 passed in
+185.00 seconds**, exit 0, on Python 3.12.14. Independent public screens scored
+162/162 residues for 1L63 and 124/124 for 7RSA, with 12 rotamers per site and no
+failed or skipped sites. These reproduce the reported M4.4 tier counts.
 
-Published incorporation sites are not automatically "the correct sites." A published site establishes that it was tested and may establish that it worked under a particular protocol. It does not prove that untested positions would fail.
+See [public examples](examples.md) for commands, input hashes, dependency versions,
+current run summaries, and the independently rerun automated test results.
+The historical M4.4 results below remain a record of that phase, not a claim that
+all environments reproduce identical numbers. Dependency ranges are not a lockfile.
 
-Therefore RANA should be evaluated as a **ranking / enrichment** method rather than a binary classifier unless true negative labels are available.
+## M5 retrospective benchmark — planned, not implemented
 
-## Development-vs-validation split
+The earlier sections titled "v0.1 goal" and "v0.1 stopping rule" combined
+software execution with an uncompleted experimental benchmark. The following
+research belongs to M5; no literature outcomes or benchmark metrics are added
+by M4.6, and no release tag is authorized.
 
-1. define the initial v0.1 feature set and scoring rules;
-2. run the full T4 lysozyme scan;
-3. save the ranking;
-4. overlay published pAzF test sites;
-5. inspect agreement and failure modes;
-6. if T4L labels are used to tune thresholds or weights, treat T4L as a development set;
-7. freeze v1.0 scoring;
-8. evaluate on an independent protein/dataset.
+- Curate primary literature with explicit experimentally tested sites, structure
+  and sequence mapping, protocols, and separately recorded incorporation,
+  expression, conjugation/labeling, stability, and retained-function outcomes.
+- Keep untested sites unlabeled. Published positives do not establish that
+  untested sites fail; use ranking/enrichment evaluation unless justified
+  negative labels are available.
+- Freeze the implemented configuration before comparing to outcomes. Any protein
+  used to tune thresholds is a development set; use independent data for claims
+  of generalization.
+- Compare the independent RANA ranks to prespecified simple baselines, including
+  RSA-only, steric-only, and rotamer-robustness-only rankings. Define any rule
+  combining features before evaluation. The current pipeline has no full
+  composite score or functional-zone exclusion baseline.
+- Prespecify evaluation metrics, tie handling, missing/failed-site handling,
+  uncertainty estimates, and sensitivity analyses. Account for limited tested
+  sites and positive-unlabeled bias; do not report a success probability from
+  geometric tiers.
+- If a percentile is used, define the rank and denominator explicitly. The
+  historical suggestion `1 - (rank - 1)/(N - 1)` needs an explicit policy for
+  ties and N <= 1; no percentile is currently emitted by the CLI.
 
-## Primary v0.1 outputs
+## Known scientific limitations
 
-For each literature-tested site:
+- Only pAzF is supported, using 12 discrete proxy conformers without energetic
+  weighting, protein relaxation, or exhaustive conformational sampling.
+- WT SASA is not mutant or reactive-handle SASA. Explicit H/D atoms are excluded
+  from sterics but are retained by the SASA calculation.
+- Optional annotations provide minimum C-alpha distances only. There are no
+  active functional-site or disulfide-preservation gates in `rana rank`.
+- Glycine/proline caution flags do not veto a site.
+- A confirmed insertion-code forwarding omission in `score_pazf_site` makes
+  the bonded-neighbor exclusion helper use a blank insertion code. At nonblank
+  insertion-code sites, target CB-to-N/C penalties can remain and contacts to a
+  blank-code residue with the same chain and number can be incorrectly excluded.
+  Clash scores, steric and rotamer-robustness rankings, and geometric tiers may
+  change. Neither public example covers this case. See [design](design.md) for
+  details; a code fix and regression test are outside M4.6 scope.
+- Input preparation, missing coordinates, alternate locations, chain selection,
+  ligand omission, and software versions can affect results.
+- Geometric accommodation does not establish functional tolerance, folding,
+  translational incorporation efficiency, or suitability for a labeling experiment.
 
-- raw rank
-- percentile rank among eligible residues
-- recommendation tier
-- individual structural features
-- reason
-- experimental outcome(s), if available
+## Release criteria
 
-Suggested percentile:
-
-```text
-percentile = 1 - (rank - 1) / (N_eligible - 1)
-```
-
-## Experimental outcomes should remain separate
-
-Where available, keep these labels separate:
-
-```text
-incorporation_success
-conjugation_or_labeling_efficiency
-protein_stability
-residual_function
-```
-
-RANA v0.1 primarily addresses structural accessibility and structural/functional tolerance, **not** translational incorporation efficiency.
-
-## First benchmark: T4 lysozyme
-
-Run RANA across the entire protein, not only the published test sites. Ask whether experimentally tolerated pAzF sites are enriched toward the top, disruptive sites rank lower, and the full method improves on a SASA-only baseline.
-
-## Baselines
-
-At minimum compare:
-
-1. SASA-only ranking
-2. SASA + functional-zone exclusion
-3. full v0.1 RANA
-
-## Known limitations
-
-- v0.1 supports one ncAA: pAzF.
-- pAzF rotamers may use a Phe-derived proxy rather than a validated pAzF-specific energetic library.
-- WT SASA is not equivalent to reactive-handle SASA.
-- structural site compatibility is not the same as aaRS/tRNA suppression efficiency.
-- user-defined catalytic/binding annotations can be incomplete or subjective.
-- retrospective literature datasets may contain positive-unlabeled bias.
-- a small number of experimentally tested sites limits statistical power.
-- catalytic-zone ncAA engineering is outside the normal ranking scope.
-
-## v0.1 stopping rule
-
-Tag `v0.1.0` when:
-
-1. the CLI accepts a T4 lysozyme PDB, pAzF, and functional-site annotations;
-2. all residues are enumerated;
-3. the v0.1 feature set runs end-to-end;
-4. a ranked CSV is produced;
-5. each site receives a tier and explanation;
-6. published T4L pAzF sites can be overlaid for a first retrospective sanity check;
-7. approximations and limitations are documented.
+M4.6 completion concerns documentation consistency and reproducible software
+execution, with limitations and failures disclosed. The historical instruction
+to tag `v0.1.0` after a T4L scan and literature overlay is superseded.
+Stable-release scope, scientific evidence requirements, and packaging validation
+need a separate maintainer decision. The current version remains `0.1.0.dev0`.
 
 ---
 
 ## M4.4 — Cross-protein computational smoke validation
+
+The following results and debugging history were reported at M4.4. Current
+independently rerun results are recorded in [examples.md](examples.md).
 
 ### Objective
 
@@ -135,7 +126,7 @@ A regression test was added to verify that adding explicit H/D records does not 
 
 ### CLI failure reporting
 
-The ranking CLI now distinguishes between successful, partially failed, and unsuccessful screening runs.
+After completing feature generation and writing artifacts, the ranking CLI distinguishes between successful, partially failed, and unsuccessful screening runs. Input and earlier pipeline errors can stop before artifacts are written.
 
 - Fully successful runs return exit code 0.
 - Runs with at least one successfully scored residue but some failed sites return exit code 0 with a warning.
