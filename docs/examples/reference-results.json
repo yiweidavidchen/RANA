@@ -1,0 +1,108 @@
+{
+  "run_date": "2026-10-20",
+  "purpose": "Computational smoke validation only; no experimental predictive validation",
+  "implementation_commit": "0f938eca19a8f5dd0eed06986b2d7cda29d1f78f",
+  "worktree_note": "Documentation edits only; implementation, tests, pyproject.toml and .gitignore unchanged",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "machine": "AMD64",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "rdkit": "2026.9.1",
+      "pytest": "9.1.1"
+    }
+  },
+  "runs": {
+    "t4l_pazf_ranked": {
+      "input": {
+        "pdb_path": "data/raw/1L63.pdb",
+        "pdb_sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+        "chain": "A"
+      },
+      "output": {
+        "csv_path": "data/processed/t4l_pazf_ranked.csv",
+        "csv_sha256": "84e0e69451dd06d2f443d23921b0936f6025fe9300af4ffe20cc179adb3a0d15"
+      },
+      "configuration": {
+        "ncaa": "pazf",
+        "seed": 42,
+        "low_clash_threshold": 10.0,
+        "favorable_fraction": 0.5,
+        "functional_residues": null
+      },
+      "sampling": {
+        "method": "discrete_chi1_chi2_rotamer_sampling",
+        "n_rotamers_observed": [
+          12
+        ]
+      },
+      "results": {
+        "n_residues": 162,
+        "status_counts": {
+          "scored": 162
+        },
+        "tier_counts": {
+          "geometry_limited": 63,
+          "geometry_favorable": 60,
+          "geometry_unfavorable": 39
+        }
+      },
+      "software": {
+        "git_commit": "0f938eca19a8f5dd0eed06986b2d7cda29d1f78f",
+        "tracked_worktree_modified": true
+      },
+      "exit_code": 0
+    },
+    "rnase_a_pazf_ranked": {
+      "input": {
+        "pdb_path": "data/raw/7RSA.pdb",
+        "pdb_sha256": "d8d8a22d3260fb1c72a805d9f8a6affcc496ec65c8aadcb4d7ea8dccf6c63b5f",
+        "chain": "A"
+      },
+      "output": {
+        "csv_path": "data/processed/rnase_a_pazf_ranked.csv",
+        "csv_sha256": "0d85f64e173d3aa1f358acd8d87af37ea83750228dc29bd841f06fcbd52bc71d"
+      },
+      "configuration": {
+        "ncaa": "pazf",
+        "seed": 42,
+        "low_clash_threshold": 10.0,
+        "favorable_fraction": 0.5,
+        "functional_residues": null
+      },
+      "sampling": {
+        "method": "discrete_chi1_chi2_rotamer_sampling",
+        "n_rotamers_observed": [
+          12
+        ]
+      },
+      "results": {
+        "n_residues": 124,
+        "status_counts": {
+          "scored": 124
+        },
+        "tier_counts": {
+          "geometry_favorable": 54,
+          "geometry_limited": 40,
+          "geometry_unfavorable": 30
+        }
+      },
+      "software": {
+        "git_commit": "0f938eca19a8f5dd0eed06986b2d7cda29d1f78f",
+        "tracked_worktree_modified": true
+      },
+      "exit_code": 0
+    }
+  },
+  "tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest tests/ -q --basetemp=data/processed/pytest-m46",
+    "passed": 85,
+    "failed": 0,
+    "skipped": 0,
+    "elapsed_seconds": 185.0,
+    "exit_code": 0
+  }
+}

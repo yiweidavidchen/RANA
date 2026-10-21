@@ -1,465 +1,192 @@
-# RANA Design Notes
+# RANA design and implementation status
 
-## 1. Core question
+This document describes `0.1.0.dev0` at M4.6. The active CLI and its tests,
+rather than historical design sketches, define current behavior. RANA screens
+fixed-structure **geometric accommodation** of pAzF; it has not demonstrated
+predictive validity for incorporation, expression, retained function, stability,
+or labeling efficiency.
 
-RANA is a structure-aware recommender for non-canonical amino acid (ncAA) incorporation sites.
+## Implemented pipeline
 
-Its core question is:
-
-> **Where can I install this ncAA in this protein, for this engineering objective, without introducing unacceptable structural or functional risk?**
-
-Conceptually:
-
-```text
-Recommendation =
-    f(protein structural environment, ncAA chemistry, engineering objective)
-```
-
-v0.1 implements a restricted version:
+`rana rank` calls `build_ranked_pazf_table` in
+[`site_features.py`](../ncaa_site_rec/features/site_features.py):
 
 ```text
-protein structure + pAzF + safe-incorporation objective
-                         ↓
-                 ranked candidate sites
+PDB first model, standard amino acids, all supplied protein chains
+    -> residue identities and C-alpha packing
+    -> selected-chain structural features and optional functional distances
+    -> 12 pAzF rotamers per selected-chain site in the protein environment
+    -> three independent ranks, geometric tiers, and diagnostics
+    -> residue-ordered CSV and JSON run metadata
 ```
 
-The first benchmark system is T4 lysozyme.
+There is no composite score, functional exclusion gate, structural veto, or
+objective-specific scoring in this path. Rows are sorted in ascending order by
+chain ID, residue number, and insertion code, matching `build_pazf_feature_table`.
+The CSV is not sorted by a single overall recommendation rank.
 
-## 2. Design principles
+### Inputs and structure handling
 
-### 2.1 Exhaustive site enumeration, staged evaluation
+- Required CLI arguments: `--pdb`, `--ncaa`, and `--output`.
+- Supported ncAA aliases: `pazf`, `azf`, and `4ii` (case insensitive).
+- Defaults: chain `A`, seed `42`, low-clash threshold `10.0`, favorable fraction
+  `0.5`. No catalytic or binding-site annotation is required.
+- `--functional-residues A:11,A:20,A:10B` optionally supplies chain-qualified
+  residue numbers with insertion codes. In `rank`, these must occur in the
+  selected chain and have C-alpha coordinates; other-chain annotations are
+  rejected because the distance table has already been filtered to that chain.
+- Nonempty `--catalytic-residues` and `--binding-site-residues` lists are legacy
+  placeholders rejected by the CLI. There is no user exclusion-list option.
+- The parser uses the first PDB model and Biopython's selected alternate
+  locations. Only standard amino-acid residues are retained. Waters, ligands,
+  nonstandard residues, and their atoms do not contribute to the calculations.
+  Supplied protein chains contribute to the environment; biological assemblies
+  and crystal symmetry mates are not generated automatically.
+- Sites missing N, CA, or C are retained as `skipped` with
+  `incomplete_backbone`; handled site-scoring errors are retained as `failed`.
+  Nonstandard residues are filtered upstream of the CLI scan, even though the
+  lower-level scanner can mark them as skipped.
 
-RANA evaluates the entire protein rather than requiring pre-selected mutation sites.
+`rana inspect --pdb ... --output ...` exports structural features for all
+retained chains, optionally with functional distances, without pAzF screening
+or a metadata sidecar.
+
+### Structural features
+
+[`structural.py`](../ncaa_site_rec/features/structural.py) computes:
+
+- WT residue SASA with Biopython Shrake-Rupley, 500 sampling points per atom.
+  Only standard protein residues remain, but explicit H/D atoms are not removed
+  by this SASA function. The heavy-atom-only policy below applies to sterics.
+- RSA as observed SASA divided by the residue-specific Tien 2013 maximum ASA
+  constants in `asa_reference.py`; it is not clipped to [0, 1].
+- `ca_neighbors_8a`: other C-alpha atoms at distance strictly less than 8 Å,
+  across all supplied protein chains. This is a count, not a normalized packing
+  tolerance score.
+- Optional `distance_to_functional_site_ca`: minimum C-alpha distance to the
+  supplied annotations, including zero at an annotated residue. This feature
+  does not alter ranks or tiers and does not establish functional tolerance.
+
+### pAzF geometry and steric score
+
+[`pazf.py`](../ncaa_site_rec/features/pazf.py) builds L-pAzF from its hard-coded
+SMILES using RDKit ETKDGv3 and the supplied seed. The rotamer grid is the
+Cartesian product:
 
 ```text
-all protein residues
-        ↓
-functional / structural hard gates
-        ↓
-cheap structural features for all eligible sites
-        ↓
-ncAA-specific conformer / steric evaluation
-        ↓
-compatibility ranking
-        ↓
-optional expensive refinement
+chi1 = -60, 60, 180 degrees
+chi2 = -90, 0, 90, 180 degrees
+3 x 4 = 12 equally counted conformers per successfully scored site
 ```
 
-Cheap calculations should run exhaustively. Expensive calculations such as Rosetta stability estimates should be restricted to shortlisted candidates when possible.
+These are discrete Phe-like proxy states, not a validated pAzF energetic
+rotamer library or a probability-weighted conformational ensemble. The seed
+controls initial embedding, not random selection of the 12 angle pairs.
+The side chain is placed using the target N/CA/C geometry and a constructed
+CB, with rigid side-chain alignment and no protein relaxation.
 
-### 2.2 Separate generic protein features from ncAA-specific features
+The environment removes the target side chain and target CA, retains its
+N/C/O/OXT, and includes other retained protein residues across chains.
+Hydrogen and deuterium are removed from the steric environment. pAzF scoring
+uses side-chain heavy atoms. The radius lookup supports C/N/O/S with radii
+1.70/1.55/1.52/1.80 Å. Unsupported environment elements can cause site failures.
+CB-to-target-N/C contacts are excluded from the overlap penalty for the
+blank-insertion-code sites in the public examples. A confirmed omission in
+`score_pazf_site` leaves `insertion_code` out of the call to
+`exclude_bonded_neighbor_overlaps`, so the helper uses its blank-code default.
+For nonblank insertion codes, target CB-to-N/C penalties can remain, while
+contacts to a different blank-code residue with the same chain and residue
+number can be incorrectly excluded. This can alter clash scores, steric and
+rotamer-robustness rankings, and geometric tiers. Both public examples have
+blank insertion codes and do not test this case. A fix and focused regression
+test belong to separate maintainer-authorized work; M4.6 documents the omission
+without changing scientific code.
 
 ```text
-RANA core
-├── structure parsing
-├── residue enumeration
-├── SASA / accessibility
-├── local packing
-├── functional-site annotations
-├── generic structural-risk features
-├── ranking / tiering infrastructure
-└── output / explanation
-
-ncAA-specific model
-├── chemical identity
-├── parent canonical amino acid
-├── geometry
-├── conformer / rotamer model
-├── steric envelope
-├── reactive-handle representation
-└── application-specific features
+overlap(i,j) = max(0, radius(i) + radius(j) - distance(i,j))
+steric_score = sum(overlap(i,j)^2) over included atom pairs
+low_clash_fraction = count(rotamer score <= threshold) / 12
 ```
 
-Future ncAAs should reuse the RANA core while supplying their own chemical and conformational models.
-
-### 2.3 Separate structural compatibility from engineering objective
-
-Long-term:
-
-```text
-Structural Compatibility Score
-            +
-Application / Objective Score
-            ↓
-Recommendation
-```
-
-Safe labeling generally favors exposed, non-functional sites; photocrosslinking may require proximity to an interaction partner; photocaging may deliberately target a functional residue; metal-binding ncAAs may require specific coordination geometry.
-
-v0.1 implements only the structural-compatibility / safe-incorporation problem.
-
-## 3. v0.1 target ncAA: pAzF
-
-The first supported ncAA is **p-azido-L-phenylalanine (pAzF / AzF)**.
-
-- PDB CCD ID: `4II`
-- parent canonical amino acid: `PHE`
-- reactive handle: azide
-
-RANA should retain authoritative identifiers wherever possible:
-
-```text
-display_name
-aliases
-PDB_CCD_ID
-SMILES
-InChIKey
-parent_canonical_aa
-identity_source
-```
-
-## 4. Data sources
-
-No single ncAA database is assumed to contain every required resource.
-
-| Data | Preferred source | RANA use |
-|---|---|---|
-| ncAA chemical identity | PDB Chemical Component Dictionary | canonical residue identity |
-| SMILES / InChI cross-check | PubChem or equivalent authoritative source | chemistry validation and descriptors |
-| experimental ncAA geometry | PDB structures containing the ncAA | geometry reference / validation |
-| parent canonical rotamers | established canonical rotamer library | v0.1 conformational proxy |
-| ncAA-specific rotamers | validated literature or RANA-generated resource | future higher-accuracy modeling |
-| Rosetta ncAA parameters | verified existing resource or documented RANA-generated parameters | optional energetic refinement |
-| physicochemical descriptors | computed with documented methods | ncAA characterization |
-| experimental site outcomes | primary literature | retrospective validation |
-| suppression / aaRS efficiency | not modeled in v0.1 | future separate layer |
-
-SwissSidechain may be used when a target ncAA is available there, but it is optional rather than mandatory.
-
-## 5. Required user inputs
-
-### v0.1
-
-Required:
-- protein structure (`PDB`)
-- target ncAA (`pAzF`)
-- catalytic residue list
-- binding-site residue list
-
-Optional:
-- oligomer-interface annotations
-- user-defined exclusion sites
-
-Catalytic and binding residues are user-supplied in v0.1 and are not inferred automatically.
-
-## 6. Data schema
-
-```text
-NCAA
-├── id
-├── display_name
-├── aliases
-├── smiles
-├── inchikey
-├── pdb_ccd_id
-├── parent_canonical_aa
-├── identity_source
-├── geometry_source
-├── rotamer_source
-├── parameter_source
-├── reactive_handle
-└── properties
-```
-
-```text
-Structure
-├── id
-├── pdb_path
-├── source
-├── catalytic_residues
-├── binding_site_residues
-└── oligomer_interfaces
-```
-
-```text
-CandidateSite
-├── structure_id
-├── chain
-├── residue_number
-├── wt_residue
-├── target_ncaa_id
-├── features
-│   ├── wt_sasa
-│   ├── relative_sasa
-│   ├── dist_to_catalytic_site
-│   ├── dist_to_binding_site
-│   ├── local_packing
-│   ├── steric_proxy
-│   ├── viable_rotamers
-│   ├── total_rotamers
-│   ├── stability_estimate
-│   │   ├── value
-│   │   ├── method
-│   │   ├── substitution
-│   │   └── is_proxy
-│   └── load_bearing_risk
-├── compatibility_score
-├── recommendation_tier
-├── confidence
-└── reason
-```
-
-## 7. v0.1 feature set
-
-### 7.1 Relative solvent accessibility
-
-Use relative solvent accessibility where possible:
-
-```text
-relative_SASA = observed_residue_SASA / reference_maximum_SASA
-```
-
-Future versions should distinguish WT residue SASA, mutant ncAA SASA, and reactive-handle SASA.
-
-### 7.2 Functional-site distance
-
-Distance to catalytic and binding-site residues is primarily a **safety gate**, not a continuous weighted reward. Prefer minimum heavy-atom distances over C-alpha distance alone.
-
-### 7.3 Local packing
-
-Possible implementations include neighboring heavy-atom density, side-chain contact density, buried-contact fraction, or local coordination number. Normalize to a packing-tolerance measure where high values indicate a permissive environment.
-
-### 7.4 pAzF conformer / rotamer compatibility
-
-For v0.1:
-
-```text
-Phe-like chi1 / chi2 states
-        +
-pAzF heavy-atom geometry
-        ↓
-site-specific steric evaluation
-```
-
-Initial metric:
-
-```text
-rotamer_compatibility =
-    number_of_viable_pAzF_rotamers / number_of_tested_pAzF_rotamers
-```
-
-This must be labeled as a canonical-parent proxy, not a validated pAzF energetic rotamer library.
-
-### 7.5 Load-bearing risk
-
-v0.1 may use a simple structural heuristic, ROSELIA-inspired structural features, or no load-bearing contribution to the composite score. Do not describe it as a validated classifier unless one has actually been trained and benchmarked.
-
-### 7.6 Stability estimate
-
-Stability is optional in v0.1. Canonical-analog calculations must be explicitly marked as proxies:
-
-```text
-stability_estimate
-├── value
-├── method
-├── substitution
-└── is_proxy
-```
-
-## 8. Recommendation architecture
-
-```text
-functional hard gates
-        ↓
-structural vetoes
-        ↓
-normalized sub-scores
-        ↓
-compatibility score
-        ↓
-warning / confidence logic
-        ↓
-recommendation tier
-```
-
-### 8.1 Hard gates
-
-For safe incorporation, sites closer than a configurable threshold to catalytic or binding residues are excluded. An initial default around 6 Å may be used as a modeling choice, not a biological constant.
-
-### 8.2 Structural vetoes
-
-Examples include extreme burial, severe steric clash, and near-zero viable rotamer fraction.
-
-### 8.3 Normalized sub-scores
-
-```text
-A = accessibility
-R = ncAA rotamer compatibility
-P = local packing tolerance
-L = load-bearing risk
-```
-
-### 8.4 Compatibility score
-
-A weighted geometric mean is preferred:
-
-```text
-Compatibility =
-    100 × A^wA × R^wR × P^wP × (1-L)^wL
-```
-
-with weights summing to 1.
-
-One initial pAzF hypothesis is:
-
-```text
-wA = 0.30
-wR = 0.35
-wP = 0.25
-wL = 0.10
-```
-
-Initial weights are hypotheses, not fitted truths, and should be frozen before an unbiased retrospective comparison.
-
-### 8.5 Recommendation tier
-
-Possible outputs:
-
-```text
-recommended
-conditional
-avoid
-```
-
-Compatibility score is not identical to recommendation tier. Warnings, missing annotations, proxy calculations, or applicability-domain concerns may downgrade a tier.
-
-### 8.6 Explanation
-
-Every recommendation should expose its reasoning, e.g.:
-
-```text
-Recommended:
-high solvent accessibility; outside the functional zone;
-7/9 pAzF conformers are sterically viable; low local packing.
-```
-
-## 9. Validation philosophy
-
-RANA is a ranking system. A published successful incorporation site is a known positive, but untested sites are not automatically negatives.
-
-Retrospective outputs should include raw rank, percentile rank, recommendation tier, feature values, and experimental outcome.
-
-Keep experimental outcomes separate where possible:
-
-```text
-incorporation success
-labeling / conjugation efficiency
-protein stability
-residual activity / function
-```
-
-## 10. v0.1 benchmark
-
-The first benchmark is T4 lysozyme with pAzF. RANA should scan the complete protein.
-
-Compare at least:
-
-```text
-Model 0: accessibility only
-Model 1: accessibility + pAzF steric compatibility
-Model 2: accessibility + sterics + packing
-Model 3: full v0.1 RANA
-```
-
-### Avoiding validation leakage
-
-```text
-define scoring rules
-        ↓
-freeze initial v0.1 configuration
-        ↓
-run complete T4L scan
-        ↓
-save ranking
-        ↓
-overlay literature outcomes
-```
-
-If T4L outcomes are used to tune weights or thresholds, T4L becomes a development dataset. v1.0 should evaluate a frozen model on an independent protein or dataset.
-
-## 11. Computational modes
-
-### Fast / local mode
-
-Normal workstation:
-- structure parsing
-- residue enumeration
-- SASA
-- functional-site distances
-- packing
-- ncAA conformer sterics
-- ranking
-- explanation
-
-### Optional high-accuracy mode
-
-May use workstation or HPC resources for:
-- Rosetta relaxation
-- ncAA-specific stability calculations
-- larger conformer ensembles
-- structure ensembles
-- other expensive refinement
-
-RANA should remain portable and should not depend specifically on UC Davis Hive.
-
-## 12. Future ncAA extension model
-
-Conceptually:
-
-```python
-class NCAAModel:
-    def generate_conformers(self, site):
-        ...
-
-    def steric_score(self, site):
-        ...
-
-    def handle_accessibility(self, site):
-        ...
-
-    def application_score(self, site, objective):
-        ...
-```
-
-pAzF is the first implementation.
-
-Future chemical regimes may include bulky rigid aromatic ncAAs, long flexible bioorthogonal handles, photocaged residues, and metal-binding ncAAs. These are architectural examples, not release commitments.
-
-New ncAAs should not merely change numerical weights: different chemistries and applications may introduce genuinely new structural requirements.
-
-## 13. What RANA v0.1 does not claim
-
-v0.1 does not claim to predict:
-- aaRS/tRNA compatibility
-- amber suppression efficiency
-- cellular ncAA uptake
-- expression yield
-- universal ncAA mutation tolerance
-- active-site ncAA engineering
-- photocrosslinking efficiency
-- photocaging effectiveness
-- metal coordination
-- general protein stability
-- all ncAA chemistries
-
-Its deliberately narrow claim is:
-
-> **RANA v0.1 provides an interpretable, structure-aware ranking of candidate pAzF incorporation sites for a safe-incorporation use case.**
-
-## 14. v0.1 stopping rule
-
-Tag `v0.1.0` when:
-
-1. RANA accepts a T4 lysozyme PDB structure.
-2. RANA accepts pAzF as the target ncAA.
-3. Catalytic and binding-site annotations can be supplied by the user.
-4. All protein residues are enumerated automatically.
-5. Functional-zone gates are applied.
-6. Accessibility, packing, and pAzF steric features run end-to-end.
-7. Every eligible site receives a compatibility score.
-8. Every site receives a recommendation tier and explanation.
-9. RANA produces a complete ranked CSV.
-10. Published T4L pAzF sites can be overlaid for the first retrospective sanity check.
-11. Approximations and limitations are explicitly documented.
-
-Anything beyond these requirements belongs to v1.0 or later.
+The score is a squared-distance overlap penalty (Å²), not an energy or a
+substitution free energy. The scan reports all rotamer scores, their minimum,
+mean and median, best sampled chi1/chi2, and low-clash fraction.
+
+### Ranks and tiers
+
+[`site_ranking.py`](../ncaa_site_rec/features/site_ranking.py) ranks scored
+sites independently by minimum steric score ascending, RSA descending, and
+low-clash fraction descending. Ties receive the minimum shared rank
+(`1, 1, 3`, for example). Missing values remain unranked.
+
+With threshold `T = 10.0` and favorable fraction `F = 0.5`:
+
+- `geometry_favorable`: minimum score <= T and low-clash fraction >= F
+  (at least 6 of 12 at defaults).
+- `geometry_limited`: minimum score <= T and low-clash fraction < F.
+- `geometry_unfavorable`: minimum score > T.
+- `not_evaluated`: unscored or missing tier-defining values.
+
+RSA, packing, and functional distances do not enter the tier rules. Glycine
+and proline receive backbone caution flags without changing the tier. The
+`reason` column describes scan diagnostics; `ranking_reason` explains tier
+assignment. None of these tiers establishes experimental suitability.
+
+### Output and reproducibility
+
+The CSV preserves residue identity, features, ranks, tiers, and diagnostics.
+The `.metadata.json` sidecar records input/output SHA-256 hashes, parameters
+(including optional functional IDs), observed rotamer counts, status/tier
+counts, and available Git revision and tracked-change status. Git lookup uses
+the working directory; run from the repository root. The sidecar does not
+record dependency versions, timestamps, or all hard-coded scientific constants.
+See [reproducible examples](examples.md) for a separate environment record.
+
+After producing artifacts, `rank` exits 1 if no site was scored; it exits 0
+with a warning if some sites failed and at least one scored. Earlier input or
+feature-building errors may stop before artifacts are produced.
+
+## Historical proposals and inactive scaffolding
+
+Earlier design notes described a broader safe-incorporation recommender.
+Those proposals are retained here as historical context, not current behavior:
+
+- Catalytic/binding annotations as required inputs, a 6 Å functional exclusion
+  zone, structural vetoes, and user-defined exclusions.
+- A weighted geometric-mean compatibility score using accessibility, rotamer
+  compatibility, packing tolerance, and load-bearing risk. Proposed weights
+  0.30/0.35/0.25/0.10 were hypotheses; they were never implemented in the active
+  pipeline or fitted to experimental evidence.
+- `recommended`, `conditional`, and `avoid` tiers, confidence downgrades,
+  minimum heavy-atom functional distances, and energetic refinement.
+- Rich `NCAA`/`Structure`/`CandidateSite` schemas as the main pipeline interface.
+
+`models.py` and `scoring/rank.py` retain dataclass scaffolding and a separate
+functional-gate function with unit tests. They are not called by `rana rank`.
+The latter's `score_site` returns a placeholder 0.0 for ungated sites.
+`features/ddg.py` returns a not-run stability record; `load_bearing.py` returns
+None; `structural.compute_pazf_steric_proxy` raises `NotImplementedError`.
+The pAzF YAML contains pending identity/geometry fields and is not loaded by
+the active conformer generator. It is not a runtime parameter file.
+Presence of these modules does not mean these features are implemented.
+
+## Future research and release decisions
+
+- M1–M4.5 cover the initial pipeline and computational smoke validation.
+- M4.6 is documentation and reproducibility cleanup, with no scoring changes.
+- M5 is a literature-grounded retrospective benchmark: experimentally tested
+  sites, baseline comparisons, evaluation metrics, and uncertainty analysis.
+  It remains unimplemented; see [validation plan](validation.md).
+- Later work may address functional/disulfide constraints, reactive-handle
+  accessibility, additional ncAAs, energetic/ensemble methods, experimental
+  validation, and potentially ML. These are research directions, not release
+  commitments or available CLI modes.
+
+The former instruction to tag `v0.1.0` after a T4L scan, functional gates, and
+literature overlay was an outdated proposal. The version remains
+`0.1.0.dev0`. M4.6 completion means documentation agrees with code, examples
+and automated checks have been run with their environment and limitations
+recorded, and unresolved issues are disclosed. It does not authorize a release
+tag or establish experimental predictive validity. A stable release's scope,
+evidence requirements, and packaging checks require a separate maintainer
+decision.
