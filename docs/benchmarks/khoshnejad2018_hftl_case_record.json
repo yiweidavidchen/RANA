@@ -1,0 +1,449 @@
+{
+  "case": "Khoshnejad2018_hFTL_2FG8_reference",
+  "stage": "computational_only",
+  "status": "assembly_and_monomer_scans_completed",
+  "reference_identity_status": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+  "maintainer_authorization": "Use 2FG8 as an explicitly labeled reference; retain uncertainty about authors exact PDB.",
+  "source_retrieval_date_America_Los_Angeles": "2026-10-22",
+  "paper_doi": "https://doi.org/10.1021/acs.bioconjchem.8b00004",
+  "supporting_information_doi": "https://doi.org/10.1021/acs.bioconjchem.8b00004.s001",
+  "reference_structure_publication_doi": "https://doi.org/10.1107/S0907444906018294",
+  "source_files": {
+    "data\\raw\\khoshnejad2018_hftl\\PMC6686135.html": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6686135/",
+      "sha256": "84886db6c3fc22ceedd645554036c385b4f0eb63e72bf05ec6060cf7ebe59801"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\figshare_5899219.json": {
+      "url": "https://api.figshare.com/v2/articles/5899219",
+      "sha256": "7693d68b02e5833469fa1029767bc536b69697dc014399c0d9b597fc48d0b4f4"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\bc8b00004_si_001.pdf": {
+      "url": "https://ndownloader.figshare.com/files/10510153",
+      "sha256": "3e5edfa5c68ec796c685a184e715604c55fd894c125da16a6e63283dd2711228"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\2FG8_asymmetric_unit.cif": {
+      "url": "https://files.rcsb.org/download/2FG8.cif",
+      "sha256": "a207ffcf32213248bbf1bc277975fe28fb7df865e940692961a122db9e74d853"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\2FG8-assembly1.cif.gz": {
+      "url": "https://files.rcsb.org/download/2FG8-assembly1.cif.gz",
+      "sha256": "9bedf6e9e326d9504675eb88ffe1847b99b02850430be6ceaff11cc008f5fd66"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\2FG8_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/2FG8",
+      "sha256": "9caa1452317927a6d7f274466465cc5552bf08abf332305a069f88915992740d"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\2FG8_assembly1.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/assembly/2FG8/1",
+      "sha256": "4f2277e4fb0e59e05133fb562fb49eb58c2e4c5d78907bb94b834899ea08a21c"
+    },
+    "data\\raw\\khoshnejad2018_hftl\\P02792.fasta": {
+      "url": "https://rest.uniprot.org/uniprotkb/P02792.fasta",
+      "sha256": "76af1b383158103028639b03f2d5188ddf20a6f04e6a788025f7811471229a89"
+    }
+  },
+  "git_commit": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+  "scientific_implementation_matches_M46_base_commit": "0f938eca19a8f5dd0eed06986b2d7cda29d1f78f",
+  "branch": "codex/m5-khoshnejad-hftl-computational-case",
+  "frozen_configuration": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "low_clash_threshold": 10.0,
+    "favorable_fraction": 0.5,
+    "functional_residues": null
+  },
+  "environment": {
+    "python": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "E:\\Github Repos\\rana\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "rdkit": "2026.9.1",
+      "pytest": "9.1.1"
+    },
+    "pip_freeze_file": "data\\processed\\khoshnejad2018_hftl\\environment.txt",
+    "pip_freeze_sha256": "557980a1a1cff28a32a7dc262c8763d7bd22a08cc64b375ac8aa4409a38d8141"
+  },
+  "preparation_script": "docs\\benchmarks\\khoshnejad2018_hftl_prepare.py",
+  "preparation_script_sha256": "178a037568227735875ca1e372cbc2497f5b2228ad4492eb496ca78b60a6a00c",
+  "preparation_manifest": "data\\processed\\khoshnejad2018_hftl\\preparation_manifest.json",
+  "preparation_manifest_sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+  "chain_mapping": [
+    {
+      "source_assembly_label_asym_id": "A",
+      "source_asymmetric_unit_label_asym_id": "A",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "A",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "B",
+      "source_asymmetric_unit_label_asym_id": "B",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "B",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "C",
+      "source_asymmetric_unit_label_asym_id": "C",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "C",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "D",
+      "source_asymmetric_unit_label_asym_id": "D",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "D",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "E",
+      "source_asymmetric_unit_label_asym_id": "E",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "E",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "F",
+      "source_asymmetric_unit_label_asym_id": "F",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "F",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "G",
+      "source_asymmetric_unit_label_asym_id": "G",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "G",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "H",
+      "source_asymmetric_unit_label_asym_id": "H",
+      "assembly_operation_id": "1",
+      "prepared_pdb_chain_id": "H",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "A-2",
+      "source_asymmetric_unit_label_asym_id": "A",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "I",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "B-2",
+      "source_asymmetric_unit_label_asym_id": "B",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "J",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "C-2",
+      "source_asymmetric_unit_label_asym_id": "C",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "K",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "D-2",
+      "source_asymmetric_unit_label_asym_id": "D",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "L",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "E-2",
+      "source_asymmetric_unit_label_asym_id": "E",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "M",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "F-2",
+      "source_asymmetric_unit_label_asym_id": "F",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "N",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "G-2",
+      "source_asymmetric_unit_label_asym_id": "G",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "O",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "H-2",
+      "source_asymmetric_unit_label_asym_id": "H",
+      "assembly_operation_id": "2",
+      "prepared_pdb_chain_id": "P",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "A-3",
+      "source_asymmetric_unit_label_asym_id": "A",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "Q",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "B-3",
+      "source_asymmetric_unit_label_asym_id": "B",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "R",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "C-3",
+      "source_asymmetric_unit_label_asym_id": "C",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "S",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "D-3",
+      "source_asymmetric_unit_label_asym_id": "D",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "T",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "E-3",
+      "source_asymmetric_unit_label_asym_id": "E",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "U",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "F-3",
+      "source_asymmetric_unit_label_asym_id": "F",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "V",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "G-3",
+      "source_asymmetric_unit_label_asym_id": "G",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "W",
+      "standard_residues": 174
+    },
+    {
+      "source_assembly_label_asym_id": "H-3",
+      "source_asymmetric_unit_label_asym_id": "H",
+      "assembly_operation_id": "3",
+      "prepared_pdb_chain_id": "X",
+      "standard_residues": 174
+    }
+  ],
+  "literature_site_mapping": [
+    {
+      "reference_uniprot_position": 2,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 5,
+      "insertion_code": "",
+      "parent_residue": "SER",
+      "literature_position_candidate": 2,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 5,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 8,
+      "insertion_code": "",
+      "parent_residue": "ILE",
+      "literature_position_candidate": 5,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 9,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 12,
+      "insertion_code": "",
+      "parent_residue": "TYR",
+      "literature_position_candidate": 9,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 79,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 82,
+      "insertion_code": "",
+      "parent_residue": "PHE",
+      "literature_position_candidate": 79,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 83,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 86,
+      "insertion_code": "",
+      "parent_residue": "LYS",
+      "literature_position_candidate": 83,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 105,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 108,
+      "insertion_code": "",
+      "parent_residue": "LYS",
+      "literature_position_candidate": 105,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 112,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 115,
+      "insertion_code": "",
+      "parent_residue": "LEU",
+      "literature_position_candidate": 112,
+      "literature_site_parent_match": true
+    },
+    {
+      "reference_uniprot_position": 155,
+      "pdb_author_chain": "A",
+      "pdb_author_residue_number": 158,
+      "insertion_code": "",
+      "parent_residue": "LEU",
+      "literature_position_candidate": 155,
+      "literature_site_parent_match": true
+    }
+  ],
+  "mapping_and_construct_limits": [
+    "mmCIF _struct_ref_seq db_align_beg/end=1/174 disagrees with current P02792 175-aa sequence; use saved sequence and full residue mapping instead",
+    "hFTL full-length cDNA SC120074 in pRSET A; full expressed fusion/junction/tag sequence unconfirmed",
+    "No proof that 2FG8 is the exact author-used PDB; adopted by maintainer authorization.",
+    "2FG8 metadata keywords describe perdeuterated crystal material; no explicit H atoms in deposited coordinates."
+  ],
+  "missing_reference_positions": [
+    {
+      "uniprot_position": 1,
+      "residue": "MET",
+      "reason": "not in deposited entity; not rebuilt; no scan output row"
+    }
+  ],
+  "omitted_nonprotein_residues": {
+    "CS": 30,
+    "HOH": 441
+  },
+  "cases": {
+    "assembly1": {
+      "input_pdb": "data\\raw\\khoshnejad2018_hftl\\2FG8_assembly1_protein_A-X.pdb",
+      "input_sha256": "b0921f426e5c6581a2f01ed66816ed4707d619a6a8b3e6f7d7debffc1e94edf3",
+      "csv": "data\\processed\\khoshnejad2018_hftl\\assembly1_chainA_pazf_ranked.csv",
+      "csv_sha256": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+      "metadata": "data\\processed\\khoshnejad2018_hftl\\assembly1_chainA_pazf_ranked.metadata.json",
+      "metadata_sha256": "faae0f970ca63ac7dfb878fafd9953c2b91c0ab20a996d83f109216919446049",
+      "exit_code": 0,
+      "software_recorded_by_cli": {
+        "git_commit": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+        "tracked_worktree_modified": false
+      },
+      "command": ".\\.venv\\Scripts\\python.exe -B -m ncaa_site_rec.cli rank --pdb data/raw/khoshnejad2018_hftl/2FG8_assembly1_protein_A-X.pdb --chain A --ncaa pazf --seed 42 --low-clash-threshold 10.0 --favorable-fraction 0.5 --output data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.csv",
+      "results": {
+        "n_residues": 174,
+        "status_counts": {
+          "scored": 174
+        },
+        "tier_counts": {
+          "geometry_limited": 81,
+          "geometry_unfavorable": 57,
+          "geometry_favorable": 36
+        }
+      },
+      "observed_rotamers": [
+        12
+      ],
+      "retained_chains_for_SASA_packing_and_sterics": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X"
+      ],
+      "retained_standard_protein_residues": 4176,
+      "retained_selected_protein_atoms": 33648,
+      "target_chain": "A",
+      "target_unscored_rows": []
+    },
+    "monomer": {
+      "input_pdb": "data\\raw\\khoshnejad2018_hftl\\2FG8_monomer_A.pdb",
+      "input_sha256": "8cbbf423c182d136091d072966bcf5555a8050925d1ef02b41f5eb7d59d6860c",
+      "csv": "data\\processed\\khoshnejad2018_hftl\\monomer_chainA_pazf_ranked.csv",
+      "csv_sha256": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+      "metadata": "data\\processed\\khoshnejad2018_hftl\\monomer_chainA_pazf_ranked.metadata.json",
+      "metadata_sha256": "4e95b5432b40401f87a7e98e95a1e9b6468d3aee02944a65ad71a15fa1d9ac1d",
+      "exit_code": 0,
+      "software_recorded_by_cli": {
+        "git_commit": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+        "tracked_worktree_modified": false
+      },
+      "command": ".\\.venv\\Scripts\\python.exe -B -m ncaa_site_rec.cli rank --pdb data/raw/khoshnejad2018_hftl/2FG8_monomer_A.pdb --chain A --ncaa pazf --seed 42 --low-clash-threshold 10.0 --favorable-fraction 0.5 --output data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.csv",
+      "results": {
+        "n_residues": 174,
+        "status_counts": {
+          "scored": 174
+        },
+        "tier_counts": {
+          "geometry_limited": 66,
+          "geometry_favorable": 66,
+          "geometry_unfavorable": 42
+        }
+      },
+      "observed_rotamers": [
+        12
+      ],
+      "retained_chains_for_SASA_packing_and_sterics": [
+        "A"
+      ],
+      "retained_standard_protein_residues": 174,
+      "retained_selected_protein_atoms": 1402,
+      "target_chain": "A",
+      "target_unscored_rows": []
+    }
+  },
+  "environment_sensitivity": {
+    "scope": "structural_environment_sensitivity_only; no experimental correlations",
+    "matched_target_sites": 174,
+    "sites_with_lower_assembly_SASA": 86,
+    "sites_with_extra_cross_subunit_CA_neighbors": 60,
+    "sites_with_higher_assembly_min_steric_score": 69,
+    "sites_with_lower_assembly_low_clash_fraction": 59,
+    "sites_with_different_tier": 41,
+    "checks": {
+      "assembly_SASA_never_greater": true,
+      "all_corresponding_rotamer_scores_never_lower": true,
+      "cross_subunit_packing_counts_match_coordinate_audit": true,
+      "identical_target_atom_coordinates_and_seed": true
+    }
+  },
+  "experimental_values_entered": false,
+  "experimental_correlation_computed": false,
+  "scientific_code_modified": false,
+  "protected_files_verified_unchanged": true,
+  "raw_inputs_and_outputs_gitignored": true
+}

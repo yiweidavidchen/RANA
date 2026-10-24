@@ -1,0 +1,1527 @@
+{
+  "record_type": "append_only_experimental_addendum_to_preserved_computational_case",
+  "curation_date": "2026-10-23",
+  "inventory": "literature_inventory.json",
+  "prior_record": "../khoshnejad2018_hftl_case_record.json",
+  "prior_record_sha256": "8ad004582cf4bf1e40ae6fe22bb9543baa77aec9b19887fa20e2b9b21f49adf6",
+  "prior_record_status_note": "The prior computational-only record remains unchanged; experimental values first entered in this separate addendum.",
+  "frozen_git_commit": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+  "frozen_configuration": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "low_clash_threshold": 10.0,
+    "favorable_fraction": 0.5,
+    "functional_residues": null
+  },
+  "conditions": {
+    "K_TLC_Alexa488": {
+      "construct": "SC120074 hFTL cDNA in pRSET A; full fusion/junction/tag equivalence to reference remains unconfirmed",
+      "expression": "E. coli T7 Express Crystal; pEVOL-pAzF; 1 mM IPTG and 1 mM pAzF added at OD600 0.8, harvest after 4 h; heat precipitation and FPLC purification",
+      "reaction": "1 µM final hFTL-X; hFTL-X:DBCO-AlexaFluor488 molar ratio 1:24, overnight at room temperature",
+      "assay": "quantitative TLC; alumina-backed silica, mobile phase 75% methanol/25% ammonium acetate; conjugated versus free fluorophore",
+      "denominator_scope": "Retain the reported percent fluorophore conjugated; not an incorporation fraction or independently measured probability of a subunit being labeled.",
+      "source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 7,
+        "printed_page": 1215,
+        "location": "Methods: construction, production, and Coupling of AlexaFluor488-DBCO to hFTL-X Nanocages"
+      }
+    }
+  },
+  "scans": {
+    "assembly1": {
+      "file": "data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.csv",
+      "sha256": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+      "metadata_file": "data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.metadata.json",
+      "metadata_sha256": "faae0f970ca63ac7dfb878fafd9953c2b91c0ab20a996d83f109216919446049",
+      "structure_file": "data/raw/khoshnejad2018_hftl/2FG8_assembly1_protein_A-X.pdb",
+      "structure_sha256": "b0921f426e5c6581a2f01ed66816ed4707d619a6a8b3e6f7d7debffc1e94edf3",
+      "rank_population_n_scored": 174
+    },
+    "monomer": {
+      "file": "data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.csv",
+      "sha256": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+      "metadata_file": "data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.metadata.json",
+      "metadata_sha256": "4e95b5432b40401f87a7e98e95a1e9b6468d3aee02944a65ad71a15fa1d9ac1d",
+      "structure_file": "data/raw/khoshnejad2018_hftl/2FG8_monomer_A.pdb",
+      "structure_sha256": "8cbbf423c182d136091d072966bcf5555a8050925d1ef02b41f5eb7d59d6860c",
+      "rank_population_n_scored": 174
+    }
+  },
+  "observations": [
+    {
+      "observation_id": "K2018_S2pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|S2pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "S2",
+      "mapping": {
+        "reference_uniprot_position": 2,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 5,
+        "insertion_code": "",
+        "parent_residue": "SER",
+        "literature_position_candidate": 2,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 2 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=2]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 30,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-2"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-2X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3a, FTLX-2 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4a"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5a"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 85.78,
+        "side_chain_random_coil_ratio_percent": 100,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 2, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 2,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "5",
+            "insertion_code": "",
+            "residue_name": "SER",
+            "sasa_abs": "127.57475203441513",
+            "sasa_max": "155.0",
+            "rsa": "0.8230629163510653",
+            "ca_neighbors_8a": "6.0",
+            "status": "scored",
+            "min_steric_score": "0.46812466124192553",
+            "mean_steric_score": "28.01581326899306",
+            "median_steric_score": "22.476980273668026",
+            "low_clash_fraction": "0.4166666666666667",
+            "n_rotamers": "12",
+            "rotamer_scores": "[0.808827322047821, 2.071965171874268, 0.46812466124192553, 2.207476384235588, 57.12658173453867, 50.47073998453128, 78.8150174974407, 59.20581378201451, 31.618773398354975, 30.457187771132663, 14.496772776203393, 8.442478744300903]",
+            "reason": "",
+            "steric_rank": "35.0",
+            "rsa_rank": "1.0",
+            "rotamer_robustness_rank": "37.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 5,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 2,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "5",
+            "insertion_code": "",
+            "residue_name": "SER",
+            "sasa_abs": "127.57475203441513",
+            "sasa_max": "155.0",
+            "rsa": "0.8230629163510653",
+            "ca_neighbors_8a": "6.0",
+            "status": "scored",
+            "min_steric_score": "0.46812466124192553",
+            "mean_steric_score": "27.7128183366856",
+            "median_steric_score": "20.671222788301705",
+            "low_clash_fraction": "0.4166666666666667",
+            "n_rotamers": "12",
+            "rotamer_scores": "[0.808827322047821, 2.071965171874268, 0.46812466124192553, 2.207476384235588, 57.12658173453867, 50.47073998453128, 78.8150174974407, 59.20581378201451, 31.618773398354975, 29.26207855497145, 12.080367021631965, 8.418054527344033]",
+            "reason": "",
+            "steric_rank": "67.0",
+            "rsa_rank": "2.0",
+            "rotamer_robustness_rank": "67.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 5,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_I5pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|I5pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "I5",
+      "mapping": {
+        "reference_uniprot_position": 5,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 8,
+        "insertion_code": "",
+        "parent_residue": "ILE",
+        "literature_position_candidate": 5,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 5 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=5]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 57,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-5"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-5X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3a, FTLX-5 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4b"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5b"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 75.11,
+        "side_chain_random_coil_ratio_percent": 51,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 5, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 5,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "8",
+            "insertion_code": "",
+            "residue_name": "ILE",
+            "sasa_abs": "7.554680845229921",
+            "sasa_max": "197.0",
+            "rsa": "0.03834863373213158",
+            "ca_neighbors_8a": "11.0",
+            "status": "scored",
+            "min_steric_score": "11.682619309217102",
+            "mean_steric_score": "31.589472777957724",
+            "median_steric_score": "27.49052435976011",
+            "low_clash_fraction": "0.0",
+            "n_rotamers": "12",
+            "rotamer_scores": "[57.918854066976465, 51.65990773329506, 39.12029545223928, 42.69291151994878, 13.429259879511662, 11.682619309217102, 24.779453308209465, 12.203818958154505, 51.484604948703286, 27.504040573906675, 19.12089943971691, 27.477008145613542]",
+            "reason": "",
+            "steric_rank": "125.0",
+            "rsa_rank": "121.0",
+            "rotamer_robustness_rank": "118.0",
+            "candidate_tier": "geometry_unfavorable",
+            "ranking_reason": "No low-clash rotamer under current threshold"
+          },
+          "number_of_low_clash_rotamers": 0,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 5,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "8",
+            "insertion_code": "",
+            "residue_name": "ILE",
+            "sasa_abs": "86.51209276013464",
+            "sasa_max": "197.0",
+            "rsa": "0.439147678985455",
+            "ca_neighbors_8a": "7.0",
+            "status": "scored",
+            "min_steric_score": "0.7109980536712756",
+            "mean_steric_score": "4.108752813210465",
+            "median_steric_score": "2.010850380355111",
+            "low_clash_fraction": "0.8333333333333334",
+            "n_rotamers": "12",
+            "rotamer_scores": "[1.5406685487250136, 1.161762756111886, 0.9780344375244523, 1.7654413378382605, 5.125208448610226, 8.719588570238669, 12.851955756200695, 10.077539681004678, 0.7109980536712756, 2.2562594228719615, 1.030991512893485, 3.0865852328349757]",
+            "reason": "",
+            "steric_rank": "80.0",
+            "rsa_rank": "53.0",
+            "rotamer_robustness_rank": "13.0",
+            "candidate_tier": "geometry_favorable",
+            "ranking_reason": "Multiple low-clash pAzF rotamers"
+          },
+          "number_of_low_clash_rotamers": 10,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_Y9pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|Y9pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "Y9",
+      "mapping": {
+        "reference_uniprot_position": 9,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 12,
+        "insertion_code": "",
+        "parent_residue": "TYR",
+        "literature_position_candidate": 9,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 9 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=9]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 10,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-9"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-9X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3a, FTLX-9 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4c"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5c"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 0.0,
+        "side_chain_random_coil_ratio_percent": 0,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 9, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 9,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "12",
+            "insertion_code": "",
+            "residue_name": "TYR",
+            "sasa_abs": "15.180854286159056",
+            "sasa_max": "263.0",
+            "rsa": "0.05772187941505345",
+            "ca_neighbors_8a": "11.0",
+            "status": "scored",
+            "min_steric_score": "4.969732888600232",
+            "mean_steric_score": "43.26000831570986",
+            "median_steric_score": "51.91003102359941",
+            "low_clash_fraction": "0.08333333333333333",
+            "n_rotamers": "12",
+            "rotamer_scores": "[52.06790218750962, 53.96728924785893, 51.7521598596892, 48.277063499912344, 70.83310069785196, 58.52948107016123, 67.66269871132707, 66.50678976568412, 15.304556959882229, 15.791179748462664, 13.458145151578728, 4.969732888600232]",
+            "reason": "",
+            "steric_rank": "90.0",
+            "rsa_rank": "115.0",
+            "rotamer_robustness_rank": "100.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 1,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 9,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "12",
+            "insertion_code": "",
+            "residue_name": "TYR",
+            "sasa_abs": "15.180854286159056",
+            "sasa_max": "263.0",
+            "rsa": "0.05772187941505345",
+            "ca_neighbors_8a": "11.0",
+            "status": "scored",
+            "min_steric_score": "4.969732888600232",
+            "mean_steric_score": "42.43965523489123",
+            "median_steric_score": "49.07429993369922",
+            "low_clash_fraction": "0.08333333333333333",
+            "n_rotamers": "12",
+            "rotamer_scores": "[46.31326412784064, 51.75831382990745, 50.674622923293875, 47.473976944104564, 70.83310069785196, 58.52948107016123, 67.66269871132707, 66.50678976568412, 15.304556959882227, 15.791179748462662, 13.458145151578728, 4.969732888600232]",
+            "reason": "",
+            "steric_rank": "121.0",
+            "rsa_rank": "134.0",
+            "rotamer_robustness_rank": "126.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 1,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_F79pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|F79pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "F79",
+      "mapping": {
+        "reference_uniprot_position": 79,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 82,
+        "insertion_code": "",
+        "parent_residue": "PHE",
+        "literature_position_candidate": 79,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 79 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=79]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 14,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-79"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-79X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3a, FTLX-79 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4d"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5d"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 96.53,
+        "side_chain_random_coil_ratio_percent": 53.6,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 79, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 79,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "82",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "sasa_abs": "15.076367427774782",
+            "sasa_max": "240.0",
+            "rsa": "0.06281819761572825",
+            "ca_neighbors_8a": "10.0",
+            "status": "scored",
+            "min_steric_score": "2.05598115287558",
+            "mean_steric_score": "39.21885193708801",
+            "median_steric_score": "30.473799740132847",
+            "low_clash_fraction": "0.25",
+            "n_rotamers": "12",
+            "rotamer_scores": "[2.381277825348703, 13.378738773608697, 4.640011229026827, 2.05598115287558, 20.829160041120385, 38.44542792806167, 22.502171552204025, 39.78868534784555, 72.41415053994282, 83.6769878358321, 78.77977651479256, 91.73385450439723]",
+            "reason": "",
+            "steric_rank": "67.0",
+            "rsa_rank": "111.0",
+            "rotamer_robustness_rank": "71.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 3,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 79,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "82",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "sasa_abs": "127.0117987370848",
+            "sasa_max": "240.0",
+            "rsa": "0.5292158280711867",
+            "ca_neighbors_8a": "6.0",
+            "status": "scored",
+            "min_steric_score": "0.19350906018890618",
+            "mean_steric_score": "8.360294343267237",
+            "median_steric_score": "2.7793098412665835",
+            "low_clash_fraction": "0.5833333333333334",
+            "n_rotamers": "12",
+            "rotamer_scores": "[0.19350906018890618, 13.362571142390593, 4.640011229026827, 0.8839317370157656, 0.25799989410204743, 0.5483732807723468, 0.26615843805471606, 0.9186084535063402, 10.759742367420095, 11.219072214907953, 24.602736219050307, 32.670818082770936]",
+            "reason": "",
+            "steric_rank": "20.0",
+            "rsa_rank": "24.0",
+            "rotamer_robustness_rank": "51.0",
+            "candidate_tier": "geometry_favorable",
+            "ranking_reason": "Multiple low-clash pAzF rotamers"
+          },
+          "number_of_low_clash_rotamers": 7,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_K83pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|K83pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "K83",
+      "mapping": {
+        "reference_uniprot_position": 83,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 86,
+        "insertion_code": "",
+        "parent_residue": "LYS",
+        "literature_position_candidate": 83,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 83 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=83]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 16,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-83"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-83X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3a, FTLX-83 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4e"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5e"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 131.54,
+        "side_chain_random_coil_ratio_percent": 80,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 83, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 83,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "86",
+            "insertion_code": "",
+            "residue_name": "LYS",
+            "sasa_abs": "105.47929504336503",
+            "sasa_max": "236.0",
+            "rsa": "0.44694616543798743",
+            "ca_neighbors_8a": "8.0",
+            "status": "scored",
+            "min_steric_score": "0.12832656708969978",
+            "mean_steric_score": "23.767095724420113",
+            "median_steric_score": "2.585115754782216",
+            "low_clash_fraction": "0.6666666666666666",
+            "n_rotamers": "12",
+            "rotamer_scores": "[0.15607218330119427, 0.2994649362747466, 0.12832656708969978, 0.45645424627913617, 65.88499189141908, 67.43459461223807, 71.58674171662442, 69.12497971355111, 1.7233348924811605, 2.5402784135744323, 2.6299530959899995, 3.2399564242182666]",
+            "reason": "",
+            "steric_rank": "1.0",
+            "rsa_rank": "22.0",
+            "rotamer_robustness_rank": "6.0",
+            "candidate_tier": "geometry_favorable",
+            "ranking_reason": "Multiple low-clash pAzF rotamers"
+          },
+          "number_of_low_clash_rotamers": 8,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 83,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "86",
+            "insertion_code": "",
+            "residue_name": "LYS",
+            "sasa_abs": "127.34289495675782",
+            "sasa_max": "236.0",
+            "rsa": "0.5395885379523636",
+            "ca_neighbors_8a": "5.0",
+            "status": "scored",
+            "min_steric_score": "0.12832656708969978",
+            "mean_steric_score": "23.767095724420113",
+            "median_steric_score": "2.585115754782216",
+            "low_clash_fraction": "0.6666666666666666",
+            "n_rotamers": "12",
+            "rotamer_scores": "[0.15607218330119427, 0.2994649362747466, 0.12832656708969978, 0.45645424627913617, 65.88499189141908, 67.43459461223807, 71.58674171662442, 69.12497971355111, 1.7233348924811605, 2.5402784135744323, 2.6299530959899995, 3.239956424218266]",
+            "reason": "",
+            "steric_rank": "4.0",
+            "rsa_rank": "21.0",
+            "rotamer_robustness_rank": "18.0",
+            "candidate_tier": "geometry_favorable",
+            "ranking_reason": "Multiple low-clash pAzF rotamers"
+          },
+          "number_of_low_clash_rotamers": 8,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_K105pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|K105pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "K105",
+      "mapping": {
+        "reference_uniprot_position": 105,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 108,
+        "insertion_code": "",
+        "parent_residue": "LYS",
+        "literature_position_candidate": 105,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 105 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=105]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 18,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-105"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-105X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3b, FTLX-105 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4f"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5f"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 131.15,
+        "side_chain_random_coil_ratio_percent": 68.8,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 105, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 105,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "108",
+            "insertion_code": "",
+            "residue_name": "LYS",
+            "sasa_abs": "58.92578023533328",
+            "sasa_max": "236.0",
+            "rsa": "0.24968550947175117",
+            "ca_neighbors_8a": "10.0",
+            "status": "scored",
+            "min_steric_score": "9.883021964531611",
+            "mean_steric_score": "16.410181743635913",
+            "median_steric_score": "16.580999451965432",
+            "low_clash_fraction": "0.08333333333333333",
+            "n_rotamers": "12",
+            "rotamer_scores": "[20.464359878938943, 18.225265291509587, 17.24672289351428, 26.766388304161143, 13.302336465120565, 18.566199111363105, 17.793633648657256, 15.915276010416585, 11.665233025516338, 11.38978054793749, 9.883021964531611, 15.703963781964102]",
+            "reason": "",
+            "steric_rank": "117.0",
+            "rsa_rank": "52.0",
+            "rotamer_robustness_rank": "100.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 1,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 105,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "108",
+            "insertion_code": "",
+            "residue_name": "LYS",
+            "sasa_abs": "121.04278777490896",
+            "sasa_max": "236.0",
+            "rsa": "0.5128931685377498",
+            "ca_neighbors_8a": "9.0",
+            "status": "scored",
+            "min_steric_score": "0.20766006452809394",
+            "mean_steric_score": "11.280818142754873",
+            "median_steric_score": "14.363151458429227",
+            "low_clash_fraction": "0.4166666666666667",
+            "n_rotamers": "12",
+            "rotamer_scores": "[15.42396645173789, 7.190462414395763, 17.166477065896864, 26.766293884678372, 13.302336465120565, 18.566199111363105, 17.793633648657256, 15.915276010416585, 0.20766006452809394, 0.9004407440338704, 0.800075860852312, 1.3369959913778344]",
+            "reason": "",
+            "steric_rank": "25.0",
+            "rsa_rank": "32.0",
+            "rotamer_robustness_rank": "67.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 5,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_L112pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|L112pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "L112",
+      "mapping": {
+        "reference_uniprot_position": 112,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 115,
+        "insertion_code": "",
+        "parent_residue": "LEU",
+        "literature_position_candidate": 112,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 112 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=112]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 14,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-112"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-112X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3b, FTLX-112 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4g"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5g"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 80.47,
+        "side_chain_random_coil_ratio_percent": 55,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 112, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 112,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "115",
+            "insertion_code": "",
+            "residue_name": "LEU",
+            "sasa_abs": "23.57707481214313",
+            "sasa_max": "201.0",
+            "rsa": "0.11729887966240364",
+            "ca_neighbors_8a": "10.0",
+            "status": "scored",
+            "min_steric_score": "2.56898354065046",
+            "mean_steric_score": "33.863380326584306",
+            "median_steric_score": "18.93628834300756",
+            "low_clash_fraction": "0.3333333333333333",
+            "n_rotamers": "12",
+            "rotamer_scores": "[8.303691888025524, 2.56898354065046, 5.993440278351692, 9.658608886003899, 71.4156308562408, 77.96737702425222, 74.23540595663141, 68.50582986230157, 15.353598040264089, 12.592544163031635, 22.51897864575103, 37.2464747775074]",
+            "reason": "",
+            "steric_rank": "69.0",
+            "rsa_rank": "84.0",
+            "rotamer_robustness_rank": "42.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 4,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 112,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "115",
+            "insertion_code": "",
+            "residue_name": "LEU",
+            "sasa_abs": "77.86587685714848",
+            "sasa_max": "201.0",
+            "rsa": "0.3873924221748681",
+            "ca_neighbors_8a": "9.0",
+            "status": "scored",
+            "min_steric_score": "0.21127171146891244",
+            "mean_steric_score": "26.755652625914554",
+            "median_steric_score": "7.148566083188608",
+            "low_clash_fraction": "0.6666666666666666",
+            "n_rotamers": "12",
+            "rotamer_scores": "[8.303691888025524, 2.2333955488839323, 5.993440278351692, 9.658608886003899, 71.4156308562408, 77.96737702425222, 74.23540595663141, 68.50582986230157, 0.21127171146891244, 0.9238491034857621, 0.2531308366854593, 1.3661995586435651]",
+            "reason": "",
+            "steric_rank": "27.0",
+            "rsa_rank": "68.0",
+            "rotamer_robustness_rank": "18.0",
+            "candidate_tier": "geometry_favorable",
+            "ranking_reason": "Multiple low-clash pAzF rotamers"
+          },
+          "number_of_low_clash_rotamers": 8,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    },
+    {
+      "observation_id": "K2018_L155pAzF_Alexa488",
+      "original_data_source": "Khoshnejad2018",
+      "deduplication_key": "Khoshnejad2018|hFTL|L155pAzF|DBCO_AlexaFluor488_1to24_rt_overnight|TLC_percent_fluorophore_conjugated",
+      "protein": "human ferritin light chain",
+      "ncaa": "pAzF",
+      "literature_site": "L155",
+      "mapping": {
+        "reference_uniprot_position": 155,
+        "pdb_author_chain": "A",
+        "pdb_author_residue_number": 158,
+        "insertion_code": "",
+        "parent_residue": "LEU",
+        "literature_position_candidate": 155,
+        "literature_site_parent_match": true
+      },
+      "mapping_sources": [
+        {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a, residue 155 table row"
+        },
+        {
+          "file": "data/processed/khoshnejad2018_hftl/preparation_manifest.json",
+          "sha256": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+          "field": "residue_mapping[reference_uniprot_position=155]"
+        }
+      ],
+      "reference_identity_caveat": "maintainer_authorized_reference; authors_exact_PDB_not_confirmed",
+      "experimental_endpoint": "percent fluorophore conjugated measured by quantitative TLC",
+      "value": 18,
+      "unit": "%",
+      "conditions_id": "K_TLC_Alexa488",
+      "value_source": {
+        "source_id": "K-M",
+        "pdf_page_1_based": 3,
+        "printed_page": 1211,
+        "location": "Results, conjugation-efficiency list, hFTLX-155"
+      },
+      "supporting_figure": {
+        "source_id": "K-S",
+        "pdf_page_1_based": 2,
+        "printed_page": null,
+        "location": "Figure S2a/b, FTL-155X"
+      },
+      "extraction_method": "direct_transcription_of_explicit_text_number; no_plot_digitization",
+      "experimental_n_exact": null,
+      "experimental_n_minimum": null,
+      "uncertainty_value": null,
+      "uncertainty_type": null,
+      "missing_reason": "Figure S2 shows error bars but does not define their type or numerical values; site-specific N not reported in text/caption. No N or error inferred from other experiments.",
+      "assembly_evidence": {
+        "reported_interpretation": "Authors report proper assembly; qualitative variant-resolved characterization is available. No quantitative assembled fraction or assembly-failure label extracted.",
+        "native_page": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 2,
+          "printed_page": null,
+          "location": "Figure S3a, FTLX-155 lane"
+        },
+        "tem": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 3,
+          "printed_page": null,
+          "location": "Figure S4h"
+        },
+        "sec_hplc": [
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 3,
+            "printed_page": null,
+            "location": "Figure S5h"
+          },
+          {
+            "source_id": "K-S",
+            "pdf_page_1_based": 4,
+            "printed_page": null,
+            "location": "Figure S5 method continuation: BioSep SEC-s3000; 100% PBS pH 7.4"
+          }
+        ],
+        "interpretation_source": {
+          "source_id": "K-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 1211,
+          "location": "Results, proper-assembly statement citing S3–S6"
+        },
+        "quantitative_assembled_fraction": null,
+        "experimental_n_exact": null,
+        "uncertainty_type": null,
+        "missing_reason": "No per-variant numerical assembled fraction, exact N, or assembly-error model reported."
+      },
+      "literature_structural_descriptors": {
+        "side_chain_sasa_A2": 48.07,
+        "side_chain_random_coil_ratio_percent": 32.9,
+        "source": {
+          "source_id": "K-S",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Figure S1a table, residue 155, Side Chain SASA and Ratio columns"
+        },
+        "extraction_method": "transcription_of_printed_table_numbers; not_plot_digitization",
+        "not_rana_fields": "Reported side-chain SASA/random-coil ratio is not RANA whole-residue sasa_abs/rsa; exact author-used PDB remains unconfirmed."
+      },
+      "existing_computation": {
+        "assembly1": {
+          "source_scan_id": "assembly1",
+          "csv_line_1_based": 155,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "158",
+            "insertion_code": "",
+            "residue_name": "LEU",
+            "sasa_abs": "6.5140345619136095",
+            "sasa_max": "201.0",
+            "rsa": "0.032408132148823925",
+            "ca_neighbors_8a": "13.0",
+            "status": "scored",
+            "min_steric_score": "44.919896154950166",
+            "mean_steric_score": "61.06242772775747",
+            "median_steric_score": "61.820584665001746",
+            "low_clash_fraction": "0.0",
+            "n_rotamers": "12",
+            "rotamer_scores": "[58.182918941330506, 65.458250388673, 54.54770661772116, 44.919896154950166, 50.4045239042155, 66.99083821948409, 52.09057866354087, 49.267237396156624, 67.69342950245986, 88.82141199863119, 66.15168479055919, 68.2206561553676]",
+            "reason": "",
+            "steric_rank": "173.0",
+            "rsa_rank": "126.0",
+            "rotamer_robustness_rank": "118.0",
+            "candidate_tier": "geometry_unfavorable",
+            "ranking_reason": "No low-clash rotamer under current threshold"
+          },
+          "number_of_low_clash_rotamers": 0,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        },
+        "monomer": {
+          "source_scan_id": "monomer",
+          "csv_line_1_based": 155,
+          "identity_fields": [
+            "chain",
+            "residue_number",
+            "insertion_code"
+          ],
+          "csv_fields_as_written": {
+            "chain": "A",
+            "residue_number": "158",
+            "insertion_code": "",
+            "residue_name": "LEU",
+            "sasa_abs": "58.8706314612551",
+            "sasa_max": "201.0",
+            "rsa": "0.29288871373758757",
+            "ca_neighbors_8a": "10.0",
+            "status": "scored",
+            "min_steric_score": "0.4987919278903047",
+            "mean_steric_score": "42.59756509384604",
+            "median_steric_score": "51.24755128387818",
+            "low_clash_fraction": "0.3333333333333333",
+            "n_rotamers": "12",
+            "rotamer_scores": "[1.0420737204314154, 0.4987919278903047, 0.7168349804343667, 1.0395382305976635, 50.404523904215495, 66.99083821948409, 52.09057866354087, 49.267237396156624, 66.54373616298197, 88.82141199863119, 65.534559766421, 68.2206561553676]",
+            "reason": "",
+            "steric_rank": "69.0",
+            "rsa_rank": "85.0",
+            "rotamer_robustness_rank": "77.0",
+            "candidate_tier": "geometry_limited",
+            "ranking_reason": "Limited low-clash rotamer availability"
+          },
+          "number_of_low_clash_rotamers": 4,
+          "count_derivation": "count of rotamer_scores <= 10.0; not an experimental acceptability probability",
+          "overall_rank": null,
+          "overall_rank_missing_reason": "Implementation defines three separate ranks and no composite rank."
+        }
+      },
+      "incorporation_efficiency": null,
+      "soluble_expression_yield": null,
+      "activity": null,
+      "other_endpoint_missing_reason": "Not inferred from fluorophore conjugation, qualitative images, or geometric scores.",
+      "binary_failure_label": null,
+      "binary_label_missing_reason": "All eight are tested continuous conjugation observations; no prespecified failed-site definition."
+    }
+  ],
+  "experimental_correlations_computed": false,
+  "binary_labels_inferred": false
+}

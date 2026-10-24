@@ -1,0 +1,84 @@
+{
+  "engine": "marked GFM + headless Microsoft Edge",
+  "checks": "source pipe counts, parsed and rendered table cells, local targets and external URL syntax",
+  "documents": [
+    {
+      "file": "docs/benchmarks/README.md",
+      "sha256": "7396f01f010a714ce8bfdd47f3852648b71837b16c9fcb71424243f86a22574c",
+      "tables": [],
+      "links_checked": 23
+    },
+    {
+      "file": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "sha256": "0b94d528602d8f36cb7252530a2d5f8d25bc623b94526735db5d4386f8a893a5",
+      "tables": [],
+      "links_checked": 12
+    },
+    {
+      "file": "docs/benchmarks/m6_plan.md",
+      "sha256": "ead7ac4c483ddf30f8e158c0f6249e971b0d3ed071d1ef72efbf4812e15b51eb",
+      "tables": [],
+      "links_checked": 2
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "sha256": "3363067c4bf8e7759e6dac0892dd55cbc483c669d9d87fe54e6c6a133f85e760",
+      "tables": [],
+      "links_checked": 2
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "sha256": "1d6ae2d5f09592674f56777661cbe5339e176dea648cfa8fdd705dcf2573d394",
+      "tables": [],
+      "links_checked": 4
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "sha256": "3eb185283dd154c1efdc811fd56eb006dc34fe09b7ec0f79523c9e7400919ada",
+      "tables": [],
+      "links_checked": 18
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "sha256": "dad4a017eee7dc2ddd886c9c88101d974df8fce85bac2444484775f69d6ff0bf",
+      "tables": [
+        {
+          "columns": 7,
+          "body_rows": 8
+        }
+      ],
+      "links_checked": 4
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "sha256": "8456280464d062c5d9d62e3ac0905623e9b237b8ff820cdd368c3d6481540819",
+      "tables": [
+        {
+          "columns": 3,
+          "body_rows": 6
+        }
+      ],
+      "links_checked": 4
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "sha256": "a22c248bcadd67448b3df2bb305876c7ed2b84fd07adfbe1346ecd8b3243d536",
+      "tables": [
+        {
+          "columns": 8,
+          "body_rows": 6
+        },
+        {
+          "columns": 3,
+          "body_rows": 11
+        },
+        {
+          "columns": 3,
+          "body_rows": 6
+        }
+      ],
+      "links_checked": 6
+    }
+  ],
+  "human_digitization_review": "Yiwei Chen, 2026-10-24, six pass; maintainer image check, not blinded, independent redigitization or prediction-performance validation. Rendering check is automated."
+}

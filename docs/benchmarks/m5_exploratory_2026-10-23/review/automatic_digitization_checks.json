@@ -1,0 +1,56 @@
+{
+  "status": "automatic_integrity_checks_passed_not_independent_human_review",
+  "script_sha256": "857cb610b9b6274be15fe6784646e56df7a54f67a1b431bc0394dac5b63a7ef4",
+  "frozen_calibration_sha256": "92376639934ab851659c0640d3b7d37665732fac44b6f7d16897eb3dfbecc1f5",
+  "digitization_script_sha256": "02112636dae0dfcc24ffb117e29f7e7ffe62bb0d3a25b93704c667806de71e69",
+  "verified_source_and_image_sha256": {
+    "E:\\Papers for RANA\\Wilding_2018.pdf": "c9042894c0b0080686f3be8debbe6ab73d611ec4911231ad766fc490d26e6f15",
+    "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_native.png": "f06e96f10b6d4554b5f23a5cdda8b2c15f971dae18cc0686711efe768e02e3c3",
+    "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_crop.png": "506b4f0de33b42440217ed1561f7c685c5bebe590f2185184a522d1113eeed02",
+    "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_annotated.png": "c391734c0529cb2dc66e3851ea5743e60beec95b6b69f6d83489e15f517a379c",
+    "E:\\Papers for RANA\\Wilkerson_2020.pdf": "ce06cf47c48c00e8e4e81808e814c2928f71414f0c3fc734f6fb41e6788d6f16",
+    "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_native.png": "1cdb77427ced4ce2873a43d784e44f2e98996aec71cae3c713c03ebd03656152",
+    "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_crop.png": "1cdb77427ced4ce2873a43d784e44f2e98996aec71cae3c713c03ebd03656152",
+    "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_annotated.png": "677a4cfda26f4a6a30d5d20aefd0ab7121f32a41c5f8a285ff587767a4a9c183"
+  },
+  "rows": [
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "K16",
+      "automatic_check": "pass",
+      "human_review": "pending"
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "S44",
+      "automatic_check": "pass",
+      "human_review": "pending"
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "N53",
+      "automatic_check": "pass",
+      "human_review": "pending"
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "L91",
+      "automatic_check": "pass",
+      "human_review": "pending"
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "K135",
+      "automatic_check": "pass",
+      "human_review": "pending"
+    },
+    {
+      "study_id": "Wilkerson2020",
+      "literature_site": "H31",
+      "automatic_check": "pass",
+      "human_review": "pending"
+    }
+  ],
+  "numeric_changes": false,
+  "human_review_status": "pending"
+}

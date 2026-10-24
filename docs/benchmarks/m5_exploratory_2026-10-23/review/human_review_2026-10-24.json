@@ -1,0 +1,33 @@
+{
+  "record_type": "append_only_human_digitization_review",
+  "reviewer": "Yiwei Chen",
+  "review_date": "2026-10-24",
+  "review_date_as_reported": "10/24/2026",
+  "evidence_source": "explicit reviewer feedback in the project conversation",
+  "reviewer_reported_materials": [
+    "original paper figures",
+    "unannotated images",
+    "annotated images"
+  ],
+  "status": "all_six_sites_pass_as_reported_by_reviewer",
+  "decisions": [
+    {"study_id": "Wilding2018", "literature_site": "K16", "observation_id": "T4L_STAB_W2018_K16_pAzF_UC", "decision": "pass", "decision_as_reported": "通过"},
+    {"study_id": "Wilding2018", "literature_site": "S44", "observation_id": "T4L_STAB_W2018_S44_pAzF_UC", "decision": "pass", "decision_as_reported": "通过"},
+    {"study_id": "Wilding2018", "literature_site": "N53", "observation_id": "T4L_STAB_W2018_N53_pAzF_UC", "decision": "pass", "decision_as_reported": "通过"},
+    {"study_id": "Wilding2018", "literature_site": "L91", "observation_id": "T4L_STAB_W2018_L91_pAzF_UC", "decision": "pass", "decision_as_reported": "通过"},
+    {"study_id": "Wilding2018", "literature_site": "K135", "observation_id": "T4L_STAB_W2018_K135_pAzF_UC", "decision": "pass", "decision_as_reported": "通过"},
+    {"study_id": "Wilkerson2020", "literature_site": "H31", "observation_id": "T4L_STAB_WK2020_H31_pAzF_UC", "decision": "pass", "decision_as_reported": "通过"}
+  ],
+  "reviewed_snapshot_sha256": {
+    "human_review_checklist.md": "a22c248bcadd67448b3df2bb305876c7ed2b84fd07adfbe1346ecd8b3243d536",
+    "../../m5_frozen_pilot_2026-10-23/t4l_stability_master.csv": "e091f26ba7dc0c6e6666dd73476063ce76c6833a905d8e7aa65d3ecc20cd69d8",
+    "../../m5_frozen_pilot_2026-10-23/digitization_calibration.json": "92376639934ab851659c0640d3b7d37665732fac44b6f7d16897eb3dfbecc1f5"
+  },
+  "problems_reported": [],
+  "numerical_corrections_reported": [],
+  "numeric_values_changed": false,
+  "historical_pending_records_preserved": true,
+  "detailed_per_marker_comments": null,
+  "scope_limit": "One named human review reported for six sites; no claim of two independent human readers, blinded review or scientific validation of RANA.",
+  "future_revision_policy": "Preserve frozen versions and this review; append a dated revision with old/new values, reasons and source/extraction provenance if a problem is identified."
+}

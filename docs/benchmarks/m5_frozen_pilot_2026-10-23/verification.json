@@ -1,0 +1,479 @@
+{
+  "freeze_id": "M5_evidence_and_T4L_stability_pilot_2026-10-23_v1",
+  "checks": {
+    "protected_preexisting_files_unchanged": 101,
+    "source_file_hashes_verified": 12,
+    "digitization_reproduction_byte_identical": true,
+    "digitization_source_images_and_script_hashes_verified": true,
+    "csv_json_round_trip_all_fields": true,
+    "csv_markdown_display_values_match": true,
+    "six_reference_parents_and_backbones_verified": true,
+    "raw_scan_fields_hashes_and_rotamer_counts_match": true,
+    "nine_presentations_resolve_to_six_unique_observations": true,
+    "SD_SEM_and_N_lower_bounds_preserved": true,
+    "ferritin_eight_values_and_both_scan_environments_match": true,
+    "seven_exploratory_scripts_unchanged_and_untracked": true,
+    "tracked_changes_and_index_empty": true,
+    "git_diff_check_new_files_pass": true,
+    "generated_digitization_outputs_gitignored": true
+  },
+  "software_tests": "Full pytest not rerun for data/documentation additions; extraction/reproduction/schema/mapping/preservation checks performed. Historical 85-test result is not scientific validation.",
+  "scientific_validation": "None claimed; six nonduplicate site records in one scaffold with unresolved complete construct equivalence; no pooled correlations, significance tests or binary metrics.",
+  "protected_file_sha256": {
+    ".gitignore": "8a3f01c647bd28df3b89cdfad3cb76213f4cc92735fccf999d07e5708bc85838",
+    "AGENTS.md": "6445cbf448914eb38dc07c76c863c640013ca9f2c4787d26966c7d3f0ec56c67",
+    "data/processed/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.csv": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+    "data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.metadata.json": "faae0f970ca63ac7dfb878fafd9953c2b91c0ab20a996d83f109216919446049",
+    "data/processed/khoshnejad2018_hftl/assembly1_exit_code.txt": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "data/processed/khoshnejad2018_hftl/assembly1_scan.log": "8bca51b8d7274e74014b001c85283a886ecac74608cf3581d5e52c5c6d3539d5",
+    "data/processed/khoshnejad2018_hftl/computational_audit.json": "f6b7c8b21e21be97fdb5a50a914a2a4401b9a7119a56ff980ee24d185d950abf",
+    "data/processed/khoshnejad2018_hftl/environment.txt": "557980a1a1cff28a32a7dc262c8763d7bd22a08cc64b375ac8aa4409a38d8141",
+    "data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.csv": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+    "data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.metadata.json": "4e95b5432b40401f87a7e98e95a1e9b6468d3aee02944a65ad71a15fa1d9ac1d",
+    "data/processed/khoshnejad2018_hftl/monomer_exit_code.txt": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "data/processed/khoshnejad2018_hftl/monomer_scan.log": "7878a78d55ef6169eb92d6e02ebf079ddc0e81f11a99eb7faff2a214c065c3c9",
+    "data/processed/khoshnejad2018_hftl/preparation_manifest.json": "9365d5840e792e153ca2d9864d3bb8ca1f0502d92c289b080e7c0405d69025b0",
+    "data/processed/khoshnejad2018_hftl/protected_files_before.json": "523a8f1f6fd961af736ed8a8a21815409489cb3a8ad3e41325e598f52999ab37",
+    "data/processed/rnase_a_pazf_ranked.csv": "0d85f64e173d3aa1f358acd8d87af37ea83750228dc29bd841f06fcbd52bc71d",
+    "data/processed/rnase_a_pazf_ranked.metadata.json": "1a894b2d448c24189dd9b9f9883b92154b939715d49d4c7c29c2d90fbae58314",
+    "data/processed/t4l_functional.csv": "ef64528e0c3bc226a1a76a953ab07d1a48896790cb72357821ef1678d7dc0841",
+    "data/processed/t4l_pazf_features.csv": "887ca911d858c739b1b851ca3e21ff619bec6e43caf9e2946ae2aee3b622c529",
+    "data/processed/t4l_pazf_ranked.csv": "84e0e69451dd06d2f443d23921b0936f6025fe9300af4ffe20cc179adb3a0d15",
+    "data/processed/t4l_pazf_ranked.metadata.json": "53cd65ab834522ab2ff66f2c30d6e23fb162b1eb79f5c7185c0ddf940bdbd100",
+    "data/processed/t4l_pazf_site_scan.csv": "ed9a2757e9d915ec0b86e5ae4b329fff686cd1e49d69035483298bffb875105c",
+    "data/processed/t4l_residues.csv": "32f856e781c359c4264363eac26d2b6a189fcbff7b02f0b7c44d48579915a348",
+    "data/processed/t4l_rsa_vs_steric.png": "3fec1f21b9977cfc529a99a805e0da70f822a150922b6f233fc6dd9f0228f828",
+    "data/processed/t4l_topology_sensitivity.csv": "85c3a971ebf7c8023a9dec385920fb8dec7c245489a534d045d2650ab9519f86",
+    "data/raw/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/raw/1L63.pdb": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+    "data/raw/7RSA.pdb": "d8d8a22d3260fb1c72a805d9f8a6affcc496ec65c8aadcb4d7ea8dccf6c63b5f",
+    "data/raw/khoshnejad2018_hftl/2FG8-assembly1.cif": "d585f2abd0278ca291a8cd080f0ef4dcd76a3bc777ad42e3a21088b39797f674",
+    "data/raw/khoshnejad2018_hftl/2FG8-assembly1.cif.gz": "9bedf6e9e326d9504675eb88ffe1847b99b02850430be6ceaff11cc008f5fd66",
+    "data/raw/khoshnejad2018_hftl/2FG8_assembly1.json": "4f2277e4fb0e59e05133fb562fb49eb58c2e4c5d78907bb94b834899ea08a21c",
+    "data/raw/khoshnejad2018_hftl/2FG8_assembly1_protein_A-X.pdb": "b0921f426e5c6581a2f01ed66816ed4707d619a6a8b3e6f7d7debffc1e94edf3",
+    "data/raw/khoshnejad2018_hftl/2FG8_asymmetric_unit.cif": "a207ffcf32213248bbf1bc277975fe28fb7df865e940692961a122db9e74d853",
+    "data/raw/khoshnejad2018_hftl/2FG8_entry.json": "9caa1452317927a6d7f274466465cc5552bf08abf332305a069f88915992740d",
+    "data/raw/khoshnejad2018_hftl/2FG8_monomer_A.pdb": "8cbbf423c182d136091d072966bcf5555a8050925d1ef02b41f5eb7d59d6860c",
+    "data/raw/khoshnejad2018_hftl/bc8b00004_si_001.pdf": "3e5edfa5c68ec796c685a184e715604c55fd894c125da16a6e63283dd2711228",
+    "data/raw/khoshnejad2018_hftl/figshare_5899219.json": "7693d68b02e5833469fa1029767bc536b69697dc014399c0d9b597fc48d0b4f4",
+    "data/raw/khoshnejad2018_hftl/P02792.fasta": "76af1b383158103028639b03f2d5188ddf20a6f04e6a788025f7811471229a89",
+    "data/raw/khoshnejad2018_hftl/PMC6686135.html": "84886db6c3fc22ceedd645554036c385b4f0eb63e72bf05ec6060cf7ebe59801",
+    "data/raw/khoshnejad2018_hftl/pmc_supplement_download.response.html": "f3517c64e15eb7f5907bb6d726563f263cb1d076415669707cd8722e3a1b81af",
+    "docs/benchmarks/khoshnejad2018_hftl_case_record.json": "8ad004582cf4bf1e40ae6fe22bb9543baa77aec9b19887fa20e2b9b21f49adf6",
+    "docs/benchmarks/khoshnejad2018_hftl_computational_case.md": "37a008f2c292d9c238a3e818d421e880e4926fe5642850dd1fada09c05d22c4b",
+    "docs/benchmarks/khoshnejad2018_hftl_prepare.py": "178a037568227735875ca1e372cbc2497f5b2228ad4492eb496ca78b60a6a00c",
+    "docs/benchmarks/literature_m5_2026-10-23/curation_verification.json": "653683c65f1a60027f5e212900ce3ce0f23b47430d56ae8a3b4af603062eab5d",
+    "docs/benchmarks/literature_m5_2026-10-23/data_availability.md": "2b2091dd96309f45cd67c88f6c0c9a2029004e9746cca479ab2404a06d2b60d1",
+    "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md": "65c7f94ebcfda13a8678949275294117e165928a8555d1840cdd0f95c7a279c9",
+    "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_observations.json": "ee7e2626b2d1a9eb832465d9dab24d7eae443900d604738ed53b0222182a97a5",
+    "docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json": "98c29fbf81f791b2ea41357fcde8847b61edb32861d9318000c8be3a925a59aa",
+    "docs/benchmarks/literature_m5_2026-10-23/README.md": "2edae3d15372fff7a11f625c2655607214c924682db0734a199430a4d7721beb",
+    "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md": "e810d177c6f93575b1d001e5a08d6f5c6cd43f88cef97d2a535f11452948dfc5",
+    "docs/benchmarks/literature_m5_2026-10-23/wilding2018_observations.json": "8d3403ec302305da5456aea41865605944dce3c009b2589ae4dd53a6ad084c43",
+    "docs/benchmarks/wilkerson2020_stability_pilot.csv": "64dcada6748b3ed0b52a6ded31814e153dfc47a1da4de7983702457ae94e1722",
+    "docs/benchmarks/wilkerson2020_stability_pilot.md": "11b176a21c204f9a574c9248f45186897d150481992437f98a54cf041b2f1279",
+    "docs/design.md": "f1da3fb27ba566d32f68d6a67cc1bf497806e3b6777ccf0f524415507c24c236",
+    "docs/examples/reference-results.json": "1e4aab86718c1bc49355be0280066580f1d3332586dccfcd0586a2b74387da55",
+    "docs/examples/requirements-m46.txt": "8d0bb1b50ea77710b218325f7b93ae70577c6241d0e80a6b8a72a893c81a4f64",
+    "docs/examples.md": "b28594dcbb1d0c8027189b4d42a16f4338dadbe4b888f5f1f348844a11684b48",
+    "docs/validation.md": "a9c5d16dc69a366dff4bcba8edbaa9d25b0a2e270c66e7ec8c152fab7639d3ee",
+    "inspect_site_clashes.py": "d86f0e5fb79e30c85986fdf0d48308baf8c5e4d78f19dbe28a21e1c7befb7743",
+    "inspect_t4l_scan.py": "fcb21f0ffeb26aeed859f16004ac6d4aa1ca8e4cca4e6c3ba528dda0f118f266",
+    "inspect_topology_sensitivity.py": "8f800bbeed3f4f8da25d2718e6f1396ec4141800f390d11ed1101740b47bd69c",
+    "LICENSE": "ad6354769a6d2efe503b2a081444bb56c05fec1218f1beccab5017efb25897ab",
+    "ncaa_site_rec/__init__.py": "a9b84c8789a0d893280857e52b0211bc0a54eb7451f00c6f62ad4e4ffffcb202",
+    "ncaa_site_rec/cli.py": "05b7aa841676ae4095738ff72e44f093d476be36fc09d666d98558bdfd55841e",
+    "ncaa_site_rec/data/ncaa/pazf.yaml": "3f75a86880205ebe1bd5b0fdcee2ff4c271b1ecd8fa28a9e015bebe66bd8c84b",
+    "ncaa_site_rec/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/features/asa_reference.py": "17e826c507b8768fd1310c91b608a4175754eddd90c2fb3c6cbbbd8d257870d4",
+    "ncaa_site_rec/features/ddg.py": "bb6caaa2d5642eb81e3654729984b4e3fafdef01ee8c349f288161d5d07fbb40",
+    "ncaa_site_rec/features/geometry.py": "e97d27e8734a3633527b7eb5bfab5222660b8636a47f4aafa7322dfaa773d74f",
+    "ncaa_site_rec/features/load_bearing.py": "f580498c0dfbc51749a4b41533e0924d9819c3d12070b03f2547d22f0ec5d23c",
+    "ncaa_site_rec/features/pazf.py": "fd1a0b5539dfe225460a75ea6cedf533d8c0877123ec267cf25c8bac5e513928",
+    "ncaa_site_rec/features/site_features.py": "a553c540147690144ffbd24585c15d349c7a7c481a13ca4746c39a043e4f7cda",
+    "ncaa_site_rec/features/site_ranking.py": "52ca7e5cc1ffd801429bc4a48f6960909ec3833958d294519f9e663ef3e66260",
+    "ncaa_site_rec/features/site_scan.py": "5503a1c6109930651bddf94ed892c34074e05a3b065b8dc0f6488338eca5a714",
+    "ncaa_site_rec/features/structural.py": "874345ec69fdcd33f7f5c0c90a01a90d556521345e772cc907c96b883922b9ba",
+    "ncaa_site_rec/io/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/io/run_metadata.py": "c6eae59416154e7d7e21d7bdb6f9146cd0957b0f5c7eed4713d6269fccbfe4d1",
+    "ncaa_site_rec/io/structure.py": "96296998fceaa8b4b922ce95f24fe84414dc0872a5b94c36052a8a23322c93f4",
+    "ncaa_site_rec/models.py": "a9c82fb9c3d77e8194419e0f7f0055c34c43d6370ba0fd7b74dc89b726652e8c",
+    "ncaa_site_rec/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/scoring/rank.py": "32a3c3389d334f3b800539408808c93fccf1f63f7ff10e886851738f2745b4f2",
+    "pyproject.toml": "bd88619631eb36a7e70fe7b55c2d6338e30c391360458c8cfa966626001c60f6",
+    "README.md": "a64e39bb5ff9d3c8a0328ab4f0624101eee4ee6f14a873391db491c6261ec9f1",
+    "run_t4l_scan.py": "cd0dd9b89cc1c848d40187c5d69481a88e52c297397914f9a8089ba72e0490fe",
+    "test_rotamer_distances.py": "d9c276e694f4ba894c5ea3825b1d67a581aa3ed074c917cf051647afb45b19fb",
+    "test_site_scan.py": "99246b26f5e2d29a0f1deabb354dec8a112872cbfdceb00d95d8ff48c5702670",
+    "test_site_scoring.py": "70dc1f3ae08d606afb3a6adf8ba8eb64e1b336a5086a74b552ff3f9c0505c7d3",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/fixtures/mini_protein.pdb": "df296caf4888112faf62c431fb5e558b36502a94eafb0f359c50a0b19e225b71",
+    "tests/test_cli.py": "aa34847a7c342ca0d9825c6330fde0577d6d5806ee07f97611910f948be68672",
+    "tests/test_cli_rank.py": "d2141eefbe10baef2c533a9f5a5afb8a5bf513df5cc1d36f28c92b658908ee31",
+    "tests/test_geometry.py": "fec83f6fdbd8a66fcc7eb5d6a3bb4d45a5db91d6116f3ba2c72f70cbf19e1a5c",
+    "tests/test_placeholder.py": "385ad0216f176246410ba31fd8952bc1ea5f8ce54a1b156fafc0da103758aa7b",
+    "tests/test_run_metadata.py": "765dbaf237a917d87405683ef208f654e891a64ff6e4e7cbad0e688c21fb15d9",
+    "tests/test_sasa.py": "988bfa02b0ea73a76f1d49443d0a7263f5f25bd1208441b7a755e5c4a82ed5f8",
+    "tests/test_scoring.py": "65231e17b2471301a588b5680986ef854382c648ab9b4784716370ae93accca1",
+    "tests/test_site_features.py": "e5db5e749c9025241721df0111fd6983f1937335ca9456eae14b3fa5a5f97fc0",
+    "tests/test_site_ranking.py": "74fd86051947401af6603ed4f8be3885e748ed7a1172283c19d746dae9d8988c",
+    "tests/test_site_scan.py": "1911977ddca63690af405a0043cbf97c81ce3790bd4d45ad7223b766b5b62fde",
+    "tests/test_site_scoring.py": "ab3d5e644326c2e72ebbe887afb1710197b34b5018d6a3b17a003d771aca88c8",
+    "tests/test_structure.py": "b782476e66e51ba5e0e471b543ea2c1d775f459cca96d7d0eb872ffd63ba3af0"
+  },
+  "new_artifact_sha256": {
+    "digitization_calibration.json": "92376639934ab851659c0640d3b7d37665732fac44b6f7d16897eb3dfbecc1f5",
+    "digitization_method.md": "db7912aa2c90626a92e2ed3d7b551cb7f5c1b6a4335bb65c5b1ed4b70bdf981d",
+    "digitize_stability.py": "02112636dae0dfcc24ffb117e29f7e7ffe62bb0d3a25b93704c667806de71e69",
+    "evidence_scope.md": "5dbded1283b6bdeff8dde84196a58d72eedf1c51799c648c6ff70c5e6fcbafff",
+    "export_tables.mjs": "858606533f6bb0aaa58e68d2e8c90766cfdc17c6bb93ab2511ee9e511cd5a360",
+    "ferritin_conjugation_comparison.csv": "325d95ddb34e4b32fc32afcdc3b5ddcfbec4d2e4a4f6426c822d65d2b1f748bd",
+    "ferritin_conjugation_comparison.md": "d789ef4a4625719a9cb8a9f6a920e0df0c6ae593713c985cf200caf89021e4bf",
+    "frozen_records.json": "5feeed701d1cc8caf5620cf255a67bbf5abda9b74467a42d8de59317daf7cd06",
+    "observation_presentations.csv": "a2bf6ca4de430769da35ec2e0938354d5469171f2ce69bc86173196463e203ce",
+    "README.md": "38d98a25a7c37efcb3258826faa815e10b1869f5dbb783ce9ef789b770588ce9",
+    "t4l_stability_comparison.md": "6750c6b1b49d43cb230700c8303d1965397bb64269ff5627d6ccb00a3dc1b56a",
+    "t4l_stability_master.csv": "e091f26ba7dc0c6e6666dd73476063ce76c6833a905d8e7aa65d3ecc20cd69d8",
+    "unresolved_and_next_steps.md": "08be0e7a7cd75cf82415f70f2973e7ed01bc5049855e75b0ac40b20cb6a68ee4"
+  },
+  "resume_review": {
+    "date_America_Los_Angeles": "2026-10-23",
+    "status": "completed",
+    "authorization": "Maintainer requested resumption from the saved unfinished steps with original scope/frozen configuration.",
+    "scope": "Reader-facing GFM rendering, links, prose/source review, data consistency and preservation only; no new digitization, scientific scan, full pytest or performance analysis.",
+    "prior_verification_sha256": "da5360f51bb67e0c67f752868435c83152a3172543685725956e9d468483f545",
+    "historical_snapshot_note": "Top-level new_artifact_sha256 is the pre-pause snapshot and remains unchanged. Current digests are in resume_review.final_artifact_sha256. PAUSE_AND_RESUME.md remains an unchanged historical handoff.",
+    "editorial_changes": {
+      "README.md": "Use nonduplicate wording for the six underlying records.",
+      "evidence_scope.md": "Clarify that Wilding Figure 3A is on PDF page 4, distinct from the site-list page 2.",
+      "t4l_stability_comparison.md": "Use nonduplicate heading and explicit angstrom/angstrom-squared display units.",
+      "ferritin_conjugation_comparison.md": "Use explicit angstrom/angstrom-squared display units."
+    },
+    "quantitative_artifacts_unchanged_from_pause": [
+      "t4l_stability_master.csv",
+      "observation_presentations.csv",
+      "ferritin_conjugation_comparison.csv",
+      "frozen_records.json",
+      "digitization_calibration.json",
+      "digitize_stability.py",
+      "export_tables.mjs"
+    ],
+    "consistency_checks": {
+      "protected_preexisting_files_unchanged": 101,
+      "source_file_hashes_verified": 12,
+      "digitization_reproduction_byte_identical": true,
+      "digitization_source_images_and_script_hashes_verified": true,
+      "csv_json_round_trip_all_fields": true,
+      "csv_markdown_display_values_match": true,
+      "six_reference_parents_and_backbones_verified": true,
+      "raw_scan_fields_hashes_and_rotamer_counts_match": true,
+      "nine_presentations_resolve_to_six_unique_observations": true,
+      "SD_SEM_and_N_lower_bounds_preserved": true,
+      "ferritin_eight_values_and_both_scan_environments_match": true,
+      "seven_exploratory_scripts_unchanged_and_untracked": true,
+      "tracked_changes_and_index_empty": true,
+      "git_diff_check_new_files_pass": true,
+      "generated_digitization_outputs_gitignored": true
+    },
+    "markdown_review": {
+      "engine": "marked GFM; headless Microsoft Edge; source pipe counts and rendered DOM cells checked",
+      "documents": [
+        {
+          "file": "PAUSE_AND_RESUME.md",
+          "sha256": "2bcb04c7eeddd0df08cf0c3bc5310bffe7341c727c432708ea22fd268733f8e5",
+          "tables": [],
+          "local_links": [],
+          "doi_links": [],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\PAUSE_AND_RESUME.md.png",
+            "sha256": "c83582b168c4999f081f934bb6f52afd69bf2572af15b67087f153c219572ce1"
+          },
+          "table_screenshots": []
+        },
+        {
+          "file": "README.md",
+          "sha256": "6ae6a9c31242f4fe97e6315a77d063e5ac792fe62f32094cbf067e081a0be1e9",
+          "tables": [],
+          "local_links": [
+            {
+              "href": "evidence_scope.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\evidence_scope.md"
+            },
+            {
+              "href": "t4l_stability_comparison.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\t4l_stability_comparison.md"
+            },
+            {
+              "href": "t4l_stability_master.csv",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\t4l_stability_master.csv"
+            },
+            {
+              "href": "observation_presentations.csv",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\observation_presentations.csv"
+            },
+            {
+              "href": "digitization_method.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\digitization_method.md"
+            },
+            {
+              "href": "digitization_calibration.json",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\digitization_calibration.json"
+            },
+            {
+              "href": "digitize_stability.py",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\digitize_stability.py"
+            },
+            {
+              "href": "ferritin_conjugation_comparison.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\ferritin_conjugation_comparison.md"
+            },
+            {
+              "href": "ferritin_conjugation_comparison.csv",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\ferritin_conjugation_comparison.csv"
+            },
+            {
+              "href": "unresolved_and_next_steps.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\unresolved_and_next_steps.md"
+            },
+            {
+              "href": "frozen_records.json",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\frozen_records.json"
+            },
+            {
+              "href": "verification.json",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\verification.json"
+            }
+          ],
+          "doi_links": [],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\README.md.png",
+            "sha256": "738ce51f3ebdc2c3a3d62dfbf3e98e84c9b3fbfaf3e6a62d0425aa3692493e8f"
+          },
+          "table_screenshots": []
+        },
+        {
+          "file": "digitization_method.md",
+          "sha256": "db7912aa2c90626a92e2ed3d7b551cb7f5c1b6a4335bb65c5b1ed4b70bdf981d",
+          "tables": [],
+          "local_links": [
+            {
+              "href": "digitize_stability.py",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\digitize_stability.py"
+            },
+            {
+              "href": "digitization_calibration.json",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\digitization_calibration.json"
+            },
+            {
+              "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_native.png",
+              "target": "E:\\Github Repos\\rana\\data\\processed\\m5_frozen_pilot_2026-10-23\\digitization_final\\Wilding2018_native.png"
+            },
+            {
+              "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_crop.png",
+              "target": "E:\\Github Repos\\rana\\data\\processed\\m5_frozen_pilot_2026-10-23\\digitization_final\\Wilding2018_crop.png"
+            },
+            {
+              "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_annotated.png",
+              "target": "E:\\Github Repos\\rana\\data\\processed\\m5_frozen_pilot_2026-10-23\\digitization_final\\Wilding2018_annotated.png"
+            },
+            {
+              "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_native.png",
+              "target": "E:\\Github Repos\\rana\\data\\processed\\m5_frozen_pilot_2026-10-23\\digitization_final\\Wilkerson2020_native.png"
+            },
+            {
+              "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_crop.png",
+              "target": "E:\\Github Repos\\rana\\data\\processed\\m5_frozen_pilot_2026-10-23\\digitization_final\\Wilkerson2020_crop.png"
+            },
+            {
+              "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_annotated.png",
+              "target": "E:\\Github Repos\\rana\\data\\processed\\m5_frozen_pilot_2026-10-23\\digitization_final\\Wilkerson2020_annotated.png"
+            }
+          ],
+          "doi_links": [],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\digitization_method.md.png",
+            "sha256": "0348d80a9d462822b28d1103fbb2b83e5e70bf4da0e4cb4cba2dd4b0b4f437e2"
+          },
+          "table_screenshots": []
+        },
+        {
+          "file": "evidence_scope.md",
+          "sha256": "6128c81c2f67eaa754de5b4747213d39243ce37031293220499c5bc5b42bb210",
+          "tables": [
+            {
+              "columns": 3,
+              "body_rows": 5
+            },
+            {
+              "columns": 4,
+              "body_rows": 6
+            },
+            {
+              "columns": 3,
+              "body_rows": 7
+            }
+          ],
+          "local_links": [
+            {
+              "href": "../literature_m5_2026-10-23/README.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\literature_m5_2026-10-23\\README.md"
+            }
+          ],
+          "doi_links": [
+            "https://doi.org/10.1021/acssynbio.7b00316",
+            "https://doi.org/10.1021/acs.jcim.0c00725",
+            "https://doi.org/10.1021/acs.bioconjchem.8b00004"
+          ],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\evidence_scope.md.png",
+            "sha256": "b5a0fe18a7dc7d2086064e056c90708520a3e53d131b459f59bec9867613ab46"
+          },
+          "table_screenshots": [
+            {
+              "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\evidence_scope.md.table1.png",
+              "sha256": "ef7baad0f523724f1ada051cb13b34bc20c2a7fe53fd61e06cb2f7c3ba910055"
+            },
+            {
+              "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\evidence_scope.md.table2.png",
+              "sha256": "95a1bbad372f950585783ab0f81fabfa183bf5c79c46a66ce1d6b629e81a4891"
+            },
+            {
+              "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\evidence_scope.md.table3.png",
+              "sha256": "838c56637ebe9a82cc80e0e80241e8e26cde00d47c4634c515207325b1dc8878"
+            }
+          ]
+        },
+        {
+          "file": "ferritin_conjugation_comparison.md",
+          "sha256": "39ba4a32a75d18c4c4852f2d65442b48c94dc1104cbdca47b39f4319f43bbc9b",
+          "tables": [
+            {
+              "columns": 10,
+              "body_rows": 8
+            }
+          ],
+          "local_links": [
+            {
+              "href": "../literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\literature_m5_2026-10-23\\khoshnejad2018_evidence_addendum.md"
+            },
+            {
+              "href": "ferritin_conjugation_comparison.csv",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\ferritin_conjugation_comparison.csv"
+            }
+          ],
+          "doi_links": [],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\ferritin_conjugation_comparison.md.png",
+            "sha256": "2d87dd69cf4d062be801659109a5037547fa1b5e62cc772a8d70e48e97cb4896"
+          },
+          "table_screenshots": [
+            {
+              "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\ferritin_conjugation_comparison.md.table1.png",
+              "sha256": "d66c5882d0361b705c7f6891253d0d2cfec0ce806ac3d9e83558417f61a60cfc"
+            }
+          ]
+        },
+        {
+          "file": "t4l_stability_comparison.md",
+          "sha256": "6cb845da903743fb624cf806c3b9d7ebc72f624031efd4cab52189e66c929e28",
+          "tables": [
+            {
+              "columns": 11,
+              "body_rows": 6
+            },
+            {
+              "columns": 5,
+              "body_rows": 6
+            }
+          ],
+          "local_links": [
+            {
+              "href": "t4l_stability_master.csv",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\t4l_stability_master.csv"
+            },
+            {
+              "href": "frozen_records.json",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\frozen_records.json"
+            },
+            {
+              "href": "digitization_method.md",
+              "target": "E:\\Github Repos\\rana\\docs\\benchmarks\\m5_frozen_pilot_2026-10-23\\digitization_method.md"
+            }
+          ],
+          "doi_links": [],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\t4l_stability_comparison.md.png",
+            "sha256": "c8741b8c76fd0f9e8212513b12bd0ff5ebb2dbf52abdbf0b76a1a1c0e90fee76"
+          },
+          "table_screenshots": [
+            {
+              "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\t4l_stability_comparison.md.table1.png",
+              "sha256": "00399a35a2f9a36f1c92dd74f92af7f9dc28f2813fb0673c1066b04eca7f7d27"
+            },
+            {
+              "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\t4l_stability_comparison.md.table2.png",
+              "sha256": "12d24849ca18faa08a3a52ff769d1cb80e6858238be92cd8afcc6c6b401de260"
+            }
+          ]
+        },
+        {
+          "file": "unresolved_and_next_steps.md",
+          "sha256": "08be0e7a7cd75cf82415f70f2973e7ed01bc5049855e75b0ac40b20cb6a68ee4",
+          "tables": [],
+          "local_links": [],
+          "doi_links": [],
+          "screenshot": {
+            "file": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-freeze-work\\resume_review_2026-10-23\\unresolved_and_next_steps.md.png",
+            "sha256": "42b808cba3f673d017283abf920598e055f1ecb3a7deb671aed76d6d71d83157"
+          },
+          "table_screenshots": []
+        }
+      ],
+      "documents_checked": 7,
+      "tables_checked": 6,
+      "local_links_checked": 26,
+      "broken_local_links": 0,
+      "visual_review": "All seven document opening views and quantitative/candidate tables reviewed; no clipping, broken cells or missing labels observed."
+    },
+    "public_doi_checks": {
+      "direct_doi_host_open": "Unavailable through web tool; no direct HTTP redirect-status claim.",
+      "identity_check": "Exact DOI and article title matched to indexed ACS publisher landing pages; no new quantitative values imported from web.",
+      "publisher_pages": [
+        "https://pubs.acs.org/doi/10.1021/acssynbio.7b00316",
+        "https://pubs.acs.org/doi/10.1021/acs.jcim.0c00725",
+        "https://pubs.acs.org/doi/10.1021/acs.bioconjchem.8b00004"
+      ]
+    },
+    "source_and_prose_review": {
+      "conditional_construct_inclusion_retained": true,
+      "SD_SEM_unconverted_and_N_lower_bound_retained": true,
+      "ferritin_reported_TLC_denominator_retained": true,
+      "assembly_primary_and_monomer_sensitivity_retained": true,
+      "discordant_sites_retained": true,
+      "no_new_composite_rank_or_scientific_claim": true
+    },
+    "remaining_scientific_questions": "Exact experimental N; complete clone/tag/junction sequences; three reused-point SD/SEM provenance; legacy T4L local execution provenance; ferritin author-used PDB/construct and TLC errors/N. See unresolved_and_next_steps.md.",
+    "software_validation_boundary": "Data/software integrity checks only. Historical 85 tests were not rerun and do not establish experimental predictive validation.",
+    "git_branch": "codex/m5-khoshnejad-hftl-computational-case",
+    "git_HEAD": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+    "staged_files": [],
+    "final_artifact_sha256": {
+      "digitization_calibration.json": "92376639934ab851659c0640d3b7d37665732fac44b6f7d16897eb3dfbecc1f5",
+      "digitization_method.md": "db7912aa2c90626a92e2ed3d7b551cb7f5c1b6a4335bb65c5b1ed4b70bdf981d",
+      "digitize_stability.py": "02112636dae0dfcc24ffb117e29f7e7ffe62bb0d3a25b93704c667806de71e69",
+      "evidence_scope.md": "6128c81c2f67eaa754de5b4747213d39243ce37031293220499c5bc5b42bb210",
+      "export_tables.mjs": "858606533f6bb0aaa58e68d2e8c90766cfdc17c6bb93ab2511ee9e511cd5a360",
+      "ferritin_conjugation_comparison.csv": "325d95ddb34e4b32fc32afcdc3b5ddcfbec4d2e4a4f6426c822d65d2b1f748bd",
+      "ferritin_conjugation_comparison.md": "39ba4a32a75d18c4c4852f2d65442b48c94dc1104cbdca47b39f4319f43bbc9b",
+      "frozen_records.json": "5feeed701d1cc8caf5620cf255a67bbf5abda9b74467a42d8de59317daf7cd06",
+      "observation_presentations.csv": "a2bf6ca4de430769da35ec2e0938354d5469171f2ce69bc86173196463e203ce",
+      "PAUSE_AND_RESUME.md": "2bcb04c7eeddd0df08cf0c3bc5310bffe7341c727c432708ea22fd268733f8e5",
+      "README.md": "6ae6a9c31242f4fe97e6315a77d063e5ac792fe62f32094cbf067e081a0be1e9",
+      "t4l_stability_comparison.md": "6cb845da903743fb624cf806c3b9d7ebc72f624031efd4cab52189e66c929e28",
+      "t4l_stability_master.csv": "e091f26ba7dc0c6e6666dd73476063ce76c6833a905d8e7aa65d3ecc20cd69d8",
+      "unresolved_and_next_steps.md": "08be0e7a7cd75cf82415f70f2973e7ed01bc5049855e75b0ac40b20cb6a68ee4"
+    }
+  }
+}
