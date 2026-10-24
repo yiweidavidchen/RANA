@@ -1,0 +1,368 @@
+{
+  "status": "proposed_only_not_staged_not_published",
+  "files": [
+    {
+      "file": "docs/benchmarks/khoshnejad2018_hftl_case_record.json",
+      "bytes": 16554,
+      "sha256": "8ad004582cf4bf1e40ae6fe22bb9543baa77aec9b19887fa20e2b9b21f49adf6",
+      "git_status": "?? docs/benchmarks/khoshnejad2018_hftl_case_record.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/khoshnejad2018_hftl_computational_case.md",
+      "bytes": 16166,
+      "sha256": "37a008f2c292d9c238a3e818d421e880e4926fe5642850dd1fada09c05d22c4b",
+      "git_status": "?? docs/benchmarks/khoshnejad2018_hftl_computational_case.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/khoshnejad2018_hftl_prepare.py",
+      "bytes": 9742,
+      "sha256": "178a037568227735875ca1e372cbc2497f5b2228ad4492eb496ca78b60a6a00c",
+      "git_status": "?? docs/benchmarks/khoshnejad2018_hftl_prepare.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/curation_verification.json",
+      "bytes": 15328,
+      "sha256": "653683c65f1a60027f5e212900ce3ce0f23b47430d56ae8a3b4af603062eab5d",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/curation_verification.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "bytes": 16572,
+      "sha256": "2b2091dd96309f45cd67c88f6c0c9a2029004e9746cca479ab2404a06d2b60d1",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "bytes": 8867,
+      "sha256": "65c7f94ebcfda13a8678949275294117e165928a8555d1840cdd0f95c7a279c9",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_observations.json",
+      "bytes": 68836,
+      "sha256": "ee7e2626b2d1a9eb832465d9dab24d7eae443900d604738ed53b0222182a97a5",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_observations.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json",
+      "bytes": 12537,
+      "sha256": "98c29fbf81f791b2ea41357fcde8847b61edb32861d9318000c8be3a925a59aa",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "bytes": 7547,
+      "sha256": "2edae3d15372fff7a11f625c2655607214c924682db0734a199430a4d7721beb",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "bytes": 6684,
+      "sha256": "e810d177c6f93575b1d001e5a08d6f5c6cd43f88cef97d2a535f11452948dfc5",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_observations.json",
+      "bytes": 77863,
+      "sha256": "8d3403ec302305da5456aea41865605944dce3c009b2589ae4dd53a6ad084c43",
+      "git_status": "?? docs/benchmarks/literature_m5_2026-10-23/wilding2018_observations.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "bytes": 5366,
+      "sha256": "0b94d528602d8f36cb7252530a2d5f8d25bc623b94526735db5d4386f8a893a5",
+      "git_status": "?? docs/benchmarks/m5_closeout_2026-10-24.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/analyze.py",
+      "bytes": 15963,
+      "sha256": "549813adf78f76a0e60a9b3ef1e26e5dbbe2dcd82f5f8cf8b3436aca963d971f",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/analyze.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/audit_delivery.py",
+      "bytes": 12974,
+      "sha256": "c861f43909a23a69765a4b3234d6f03d90aadad54b58874b72042292a70ab855",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/audit_delivery.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "bytes": 2338,
+      "sha256": "4f3dc37f2a6a101bbf31f9649192ece2d19ce4db4a82054b7d08cb9157f37eaf",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "bytes": 4747,
+      "sha256": "3363067c4bf8e7759e6dac0892dd55cbc483c669d9d87fe54e6c6a133f85e760",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_evidence.json",
+      "bytes": 3577,
+      "sha256": "5ab487c55817fc2c87efc27844b295059db98b6dc54bc8fb9b98f4f0a4fc6f49",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_evidence.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "bytes": 4128,
+      "sha256": "1d6ae2d5f09592674f56777661cbe5339e176dea648cfa8fdd705dcf2573d394",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/prepare_review.py",
+      "bytes": 8058,
+      "sha256": "857cb610b9b6274be15fe6784646e56df7a54f67a1b431bc0394dac5b63a7ef4",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/prepare_review.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/probe_insertion_code.py",
+      "bytes": 3763,
+      "sha256": "f6eb28b62ece351b436076db73a6eb40dbc0cd025f98f464578c5d2758a4345b",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/probe_insertion_code.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "bytes": 10071,
+      "sha256": "3eb185283dd154c1efdc811fd56eb006dc34fe09b7ec0f79523c9e7400919ada",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/render_checks.json",
+      "bytes": 2681,
+      "sha256": "3345be5ab80ec8e26e20a64ba04a6d7aec9d9c63d35d78680c8efbb1ef03c62b",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/render_checks.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/requirements-analysis.txt",
+      "bytes": 141,
+      "sha256": "84b53a0e99560e13ce3ace001dc9619d320ee00ab6e97167f52ef8f4895df213",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/requirements-analysis.txt",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/results/ferritin_scatter.png",
+      "bytes": 312050,
+      "sha256": "e85054a0fc4773cda945c251ee91610f83b33d65de010d1002596e0580f9c23a",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/results/ferritin_scatter.png",
+      "purpose": "original analysis scatter plot"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.json",
+      "bytes": 26658,
+      "sha256": "6ae1dea34dad88489ca57fc8ee6f37d7b37d1ba68e39bbe72c12e2f2419301b5",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/results/results.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "bytes": 4287,
+      "sha256": "dad4a017eee7dc2ddd886c9c88101d974df8fce85bac2444484775f69d6ff0bf",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/results/t4l_scatter.png",
+      "bytes": 188348,
+      "sha256": "f21391cc34bd8fc1e1800dc6135a76f3689a00c3c4fe88904a50f83b44c43f62",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/results/t4l_scatter.png",
+      "purpose": "original analysis scatter plot"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/automatic_digitization_checks.json",
+      "bytes": 2598,
+      "sha256": "9a3da201e00df2c955e057632a8f6496a351f94f0072634dfc8e724c2eebe29b",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/review/automatic_digitization_checks.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "bytes": 2355,
+      "sha256": "5a14daed5d655870c3fa44bb7b392c00ac6bd696fd16c3197c2c194e221cf4da",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "bytes": 2781,
+      "sha256": "8456280464d062c5d9d62e3ac0905623e9b237b8ff820cdd368c3d6481540819",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "bytes": 5457,
+      "sha256": "a22c248bcadd67448b3df2bb305876c7ed2b84fd07adfbe1346ecd8b3243d536",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_exploratory_2026-10-23/verify_curated_reproduction.py",
+      "bytes": 4651,
+      "sha256": "a82db82c266ae561a9511702388351d265f59b7b3e8f3116562b4c8be533df92",
+      "git_status": "?? docs/benchmarks/m5_exploratory_2026-10-23/verify_curated_reproduction.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_calibration.json",
+      "bytes": 14200,
+      "sha256": "92376639934ab851659c0640d3b7d37665732fac44b6f7d16897eb3dfbecc1f5",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_calibration.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "bytes": 8518,
+      "sha256": "db7912aa2c90626a92e2ed3d7b551cb7f5c1b6a4335bb65c5b1ed4b70bdf981d",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitize_stability.py",
+      "bytes": 12460,
+      "sha256": "02112636dae0dfcc24ffb117e29f7e7ffe62bb0d3a25b93704c667806de71e69",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/digitize_stability.py",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/evidence_scope.md",
+      "bytes": 7345,
+      "sha256": "6128c81c2f67eaa754de5b4747213d39243ce37031293220499c5bc5b42bb210",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/evidence_scope.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/export_tables.mjs",
+      "bytes": 2958,
+      "sha256": "858606533f6bb0aaa58e68d2e8c90766cfdc17c6bb93ab2511ee9e511cd5a360",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/export_tables.mjs",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "bytes": 22215,
+      "sha256": "325d95ddb34e4b32fc32afcdc3b5ddcfbec4d2e4a4f6426c822d65d2b1f748bd",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "bytes": 5025,
+      "sha256": "39ba4a32a75d18c4c4852f2d65442b48c94dc1104cbdca47b39f4319f43bbc9b",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/frozen_records.json",
+      "bytes": 189857,
+      "sha256": "5feeed701d1cc8caf5620cf255a67bbf5abda9b74467a42d8de59317daf7cd06",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/frozen_records.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/observation_presentations.csv",
+      "bytes": 4066,
+      "sha256": "a2bf6ca4de430769da35ec2e0938354d5469171f2ce69bc86173196463e203ce",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/observation_presentations.csv",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "bytes": 2044,
+      "sha256": "6ae6a9c31242f4fe97e6315a77d063e5ac792fe62f32094cbf067e081a0be1e9",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "bytes": 6086,
+      "sha256": "6cb845da903743fb624cf806c3b9d7ebc72f624031efd4cab52189e66c929e28",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "bytes": 18233,
+      "sha256": "e091f26ba7dc0c6e6666dd73476063ce76c6833a905d8e7aa65d3ecc20cd69d8",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/unresolved_and_next_steps.md",
+      "bytes": 4287,
+      "sha256": "08be0e7a7cd75cf82415f70f2973e7ed01bc5049855e75b0ac40b20cb6a68ee4",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/unresolved_and_next_steps.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m5_frozen_pilot_2026-10-23/verification.json",
+      "bytes": 32979,
+      "sha256": "775c813ba9a0df47cb8431f6c9f7e626312b51b66da053b0f2b0da8050b74436",
+      "git_status": "?? docs/benchmarks/m5_frozen_pilot_2026-10-23/verification.json",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/m6_plan.md",
+      "bytes": 3840,
+      "sha256": "ead7ac4c483ddf30f8e158c0f6249e971b0d3ed071d1ef72efbf4812e15b51eb",
+      "git_status": "?? docs/benchmarks/m6_plan.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/README.md",
+      "bytes": 5622,
+      "sha256": "7396f01f010a714ce8bfdd47f3852648b71837b16c9fcb71424243f86a22574c",
+      "git_status": "?? docs/benchmarks/README.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/wilkerson2020_stability_pilot.csv",
+      "bytes": 8737,
+      "sha256": "64dcada6748b3ed0b52a6ded31814e153dfc47a1da4de7983702457ae94e1722",
+      "git_status": "?? docs/benchmarks/wilkerson2020_stability_pilot.csv",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    },
+    {
+      "file": "docs/benchmarks/wilkerson2020_stability_pilot.md",
+      "bytes": 15055,
+      "sha256": "11b176a21c204f9a574c9248f45186897d150481992437f98a54cf041b2f1279",
+      "git_status": "?? docs/benchmarks/wilkerson2020_stability_pilot.md",
+      "purpose": "curated data, provenance, documentation or reproducible helper"
+    }
+  ],
+  "audit_reports_to_include_after_review": [
+    "docs/benchmarks/m5_exploratory_2026-10-23/public_manifest.json",
+    "docs/benchmarks/m5_exploratory_2026-10-23/delivery_checks.json"
+  ],
+  "excluded": [
+    "paper PDFs and DOCX",
+    "publisher native/crop/annotated rasters",
+    "data/raw/**",
+    "data/processed/**",
+    "seven root exploratory scripts",
+    "historical local pause handoff"
+  ],
+  "self_hash_policy": "Manifest and changing audit report omitted from content hash list to avoid circular hashes."
+}

@@ -1,0 +1,945 @@
+{
+  "git_head": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+  "branch": "codex/m5-khoshnejad-hftl-computational-case",
+  "tracked_diff_empty": true,
+  "index_empty": true,
+  "preexisting_files_checked": 151,
+  "preexisting_files_changed": 0,
+  "protected_exploratory_scripts": [
+    {
+      "file": "inspect_site_clashes.py",
+      "sha256": "d86f0e5fb79e30c85986fdf0d48308baf8c5e4d78f19dbe28a21e1c7befb7743",
+      "status": "?? inspect_site_clashes.py"
+    },
+    {
+      "file": "inspect_t4l_scan.py",
+      "sha256": "fcb21f0ffeb26aeed859f16004ac6d4aa1ca8e4cca4e6c3ba528dda0f118f266",
+      "status": "?? inspect_t4l_scan.py"
+    },
+    {
+      "file": "inspect_topology_sensitivity.py",
+      "sha256": "8f800bbeed3f4f8da25d2718e6f1396ec4141800f390d11ed1101740b47bd69c",
+      "status": "?? inspect_topology_sensitivity.py"
+    },
+    {
+      "file": "run_t4l_scan.py",
+      "sha256": "cd0dd9b89cc1c848d40187c5d69481a88e52c297397914f9a8089ba72e0490fe",
+      "status": "?? run_t4l_scan.py"
+    },
+    {
+      "file": "test_rotamer_distances.py",
+      "sha256": "d9c276e694f4ba894c5ea3825b1d67a581aa3ed074c917cf051647afb45b19fb",
+      "status": "?? test_rotamer_distances.py"
+    },
+    {
+      "file": "test_site_scan.py",
+      "sha256": "99246b26f5e2d29a0f1deabb354dec8a112872cbfdceb00d95d8ff48c5702670",
+      "status": "?? test_site_scan.py"
+    },
+    {
+      "file": "test_site_scoring.py",
+      "sha256": "70dc1f3ae08d606afb3a6adf8ba8eb64e1b336a5086a74b552ff3f9c0505c7d3",
+      "status": "?? test_site_scoring.py"
+    }
+  ],
+  "rows": {
+    "T4L": 6,
+    "presentations": 9,
+    "deduplicated_T4L_ids": 6,
+    "ferritin": 8
+  },
+  "scan_and_structure_dependencies": {
+    "data/processed/t4l_pazf_ranked.csv": {
+      "sha256": "84e0e69451dd06d2f443d23921b0936f6025fe9300af4ffe20cc179adb3a0d15",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/raw/1L63.pdb": {
+      "sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/processed/t4l_pazf_ranked.metadata.json": {
+      "sha256": "53cd65ab834522ab2ff66f2c30d6e23fb162b1eb79f5c7185c0ddf940bdbd100",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.csv": {
+      "sha256": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/raw/khoshnejad2018_hftl/2FG8_assembly1_protein_A-X.pdb": {
+      "sha256": "b0921f426e5c6581a2f01ed66816ed4707d619a6a8b3e6f7d7debffc1e94edf3",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/processed/khoshnejad2018_hftl/assembly1_chainA_pazf_ranked.metadata.json": {
+      "sha256": "faae0f970ca63ac7dfb878fafd9953c2b91c0ab20a996d83f109216919446049",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.csv": {
+      "sha256": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/raw/khoshnejad2018_hftl/2FG8_monomer_A.pdb": {
+      "sha256": "8cbbf423c182d136091d072966bcf5555a8050925d1ef02b41f5eb7d59d6860c",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    },
+    "data/processed/khoshnejad2018_hftl/monomer_chainA_pazf_ranked.metadata.json": {
+      "sha256": "4e95b5432b40401f87a7e98e95a1e9b6468d3aee02944a65ad71a15fa1d9ac1d",
+      "ignored": true,
+      "fresh_clone": "absent; analysis uses curated CSV, rescan needs reconstruction"
+    }
+  },
+  "structure_insertion_code_check": {
+    "data/raw/1L63.pdb": {
+      "insertion_codes": [
+        ""
+      ]
+    },
+    "data/raw/khoshnejad2018_hftl/2FG8_assembly1_protein_A-X.pdb": {
+      "insertion_codes": [
+        ""
+      ]
+    },
+    "data/raw/khoshnejad2018_hftl/2FG8_monomer_A.pdb": {
+      "insertion_codes": [
+        ""
+      ]
+    }
+  },
+  "analysis_pairs_checked": 52,
+  "coefficient_MD_JSON_consistency": "pass",
+  "new_python_syntax_files_checked": 5,
+  "new_text_trailing_whitespace": "pass",
+  "git_diff_check": "pass; new untracked text checked separately",
+  "render_checks": {
+    "report": "render_checks.json",
+    "documents": 9,
+    "tables": 5
+  },
+  "local_links": [
+    {
+      "document": "docs/benchmarks/khoshnejad2018_hftl_computational_case.md",
+      "href": "khoshnejad2018_hftl_prepare.py",
+      "target": "docs/benchmarks/khoshnejad2018_hftl_prepare.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/khoshnejad2018_hftl_computational_case.md",
+      "href": "khoshnejad2018_hftl_case_record.json",
+      "target": "docs/benchmarks/khoshnejad2018_hftl_case_record.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "href": "literature_inventory.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "href": "khoshnejad2018_evidence_addendum.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "href": "khoshnejad2018_observations.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_observations.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "href": "wilding2018_context_addendum.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "href": "wilding2018_observations.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_observations.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "href": "../khoshnejad2018_hftl_computational_case.md",
+      "target": "docs/benchmarks/khoshnejad2018_hftl_computational_case.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "href": "literature_inventory.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "href": "khoshnejad2018_observations.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_observations.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "data_availability.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "khoshnejad2018_evidence_addendum.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "wilding2018_context_addendum.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "literature_inventory.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "khoshnejad2018_observations.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_observations.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "wilding2018_observations.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_observations.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "href": "curation_verification.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/curation_verification.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "href": "../wilkerson2020_stability_pilot.md",
+      "target": "docs/benchmarks/wilkerson2020_stability_pilot.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "href": "literature_inventory.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/literature_inventory.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_context_addendum.md",
+      "href": "wilding2018_observations.json",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/wilding2018_observations.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "README.md",
+      "target": "docs/benchmarks/README.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/public_delivery.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/analyze.py",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/analyze.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/public_manifest.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/public_manifest.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/results/results.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m6_plan.md",
+      "target": "docs/benchmarks/m6_plan.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "href": "m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "href": "../m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "href": "../m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "href": "../../../ncaa_site_rec/features/site_scan.py",
+      "target": "ncaa_site_rec/features/site_scan.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "existing_repository_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "href": "../../../ncaa_site_rec/features/pazf.py",
+      "target": "ncaa_site_rec/features/pazf.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "existing_repository_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "href": "probe_insertion_code.py",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/probe_insertion_code.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "href": "insertion_code_evidence.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_evidence.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "review/human_review_2026-10-24.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "review/human_review_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "public_manifest.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/public_manifest.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "delivery_checks.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/delivery_checks.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "requirements-analysis.txt",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/requirements-analysis.txt",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "curated_reproduction_check_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "verify_curated_reproduction.py",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/verify_curated_reproduction.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "../../examples.md",
+      "target": "docs/examples.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "existing_repository_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "../m5_closeout_2026-10-24.md",
+      "target": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "href": "../m6_plan.md",
+      "target": "docs/benchmarks/m6_plan.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "href": "../evaluation_plan.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "href": "results.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "href": "t4l_scatter.png",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/results/t4l_scatter.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "href": "ferritin_scatter.png",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/results/ferritin_scatter.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "href": "human_review_checklist.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "href": "../../m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "href": "../../m5_frozen_pilot_2026-10-23/digitization_calibration.json",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_calibration.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "href": "human_review_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "href": "../../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_native.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_native.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "href": "../../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_crop.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_crop.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "href": "../../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_annotated.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_annotated.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "href": "../../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_native.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_native.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "href": "../../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_crop.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_crop.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "href": "../../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_annotated.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_annotated.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "digitize_stability.py",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitize_stability.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "digitization_calibration.json",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_calibration.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_native.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_native.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_crop.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_crop.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_annotated.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilding2018_annotated.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_native.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_native.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_crop.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_crop.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "href": "../../../data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_annotated.png",
+      "target": "data/processed/m5_frozen_pilot_2026-10-23/digitization_final/Wilkerson2020_annotated.png",
+      "exists_locally": true,
+      "fresh_clone_classification": "local_only_ignored_regenerate_from_supplied_PDF"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/evidence_scope.md",
+      "href": "../literature_m5_2026-10-23/README.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "href": "../literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/khoshnejad2018_evidence_addendum.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "href": "ferritin_conjugation_comparison.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "evidence_scope.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/evidence_scope.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "t4l_stability_comparison.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "t4l_stability_master.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "observation_presentations.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/observation_presentations.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "digitization_method.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "digitization_calibration.json",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_calibration.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "digitize_stability.py",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitize_stability.py",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "ferritin_conjugation_comparison.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "ferritin_conjugation_comparison.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "unresolved_and_next_steps.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/unresolved_and_next_steps.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "frozen_records.json",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/frozen_records.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/README.md",
+      "href": "verification.json",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/verification.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "href": "t4l_stability_master.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "href": "frozen_records.json",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/frozen_records.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "href": "digitization_method.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/digitization_method.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m6_plan.md",
+      "href": "m5_closeout_2026-10-24.md",
+      "target": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/m6_plan.md",
+      "href": "m5_exploratory_2026-10-23/insertion_code_review.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_closeout_2026-10-24.md",
+      "target": "docs/benchmarks/m5_closeout_2026-10-24.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "literature_m5_2026-10-23/README.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/README.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "literature_m5_2026-10-23/data_availability.md",
+      "target": "docs/benchmarks/literature_m5_2026-10-23/data_availability.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/evidence_scope.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/evidence_scope.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_comparison.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/observation_presentations.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/observation_presentations.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "khoshnejad2018_hftl_computational_case.md",
+      "target": "docs/benchmarks/khoshnejad2018_hftl_computational_case.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_checklist.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/review/automatic_digitization_checks.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/review/automatic_digitization_checks.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/evaluation_plan.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/results/results.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/results/results.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/insertion_code_review.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/insertion_code_review.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_frozen_pilot_2026-10-23/unresolved_and_next_steps.md",
+      "target": "docs/benchmarks/m5_frozen_pilot_2026-10-23/unresolved_and_next_steps.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/public_delivery.md",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/public_delivery.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "wilkerson2020_stability_pilot.md",
+      "target": "docs/benchmarks/wilkerson2020_stability_pilot.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/public_manifest.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/public_manifest.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "target": "docs/benchmarks/m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/README.md",
+      "href": "m6_plan.md",
+      "target": "docs/benchmarks/m6_plan.md",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    },
+    {
+      "document": "docs/benchmarks/wilkerson2020_stability_pilot.md",
+      "href": "wilkerson2020_stability_pilot.csv",
+      "target": "docs/benchmarks/wilkerson2020_stability_pilot.csv",
+      "exists_locally": true,
+      "fresh_clone_classification": "proposed_benchmark_file"
+    }
+  ],
+  "broken_local_links": [],
+  "fresh_clone_local_only_link_count": 12,
+  "manifest_file_count": 50,
+  "publisher_images_or_full_papers_in_manifest": 0,
+  "human_review_status": "all_six_pass_reported_by_maintainer_2026-10-24",
+  "human_review_record": {
+    "file": "docs/benchmarks/m5_exploratory_2026-10-23/review/human_review_2026-10-24.json",
+    "sha256": "5a14daed5d655870c3fa44bb7b392c00ac6bd696fd16c3197c2c194e221cf4da",
+    "reviewer": "Yiwei Chen",
+    "date": "2026-10-24",
+    "scope": "maintainer image check of agent digitization; not blinded, second independent digitization or prediction-performance validation"
+  },
+  "curated_replay_record": {
+    "file": "docs/benchmarks/m5_exploratory_2026-10-23/curated_reproduction_check_2026-10-24.json",
+    "sha256": "4f3dc37f2a6a101bbf31f9649192ece2d19ce4db4a82054b7d08cb9157f37eaf",
+    "status": "pass; same-environment curated-table replay only"
+  },
+  "scientific_validation": "not established by human image review or these automatic checks",
+  "full_pytest": "not rerun; no scientific implementation changes",
+  "script_sha256": "c861f43909a23a69765a4b3234d6f03d90aadad54b58874b72042292a70ab855"
+}

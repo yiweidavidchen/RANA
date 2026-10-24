@@ -1,0 +1,806 @@
+{
+  "analysis_type": "already_seen_retrospective_exploratory_not_preregistered",
+  "human_digitization_review_status": "pending",
+  "executed_utc": "2026-10-24T02:30:42.746244+00:00",
+  "executable": "E:\\Github Repos\\rana\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "docs/benchmarks/m5_exploratory_2026-10-23/analyze.py",
+    "--output",
+    "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-exploratory-work\\delivery_analysis"
+  ],
+  "working_directory": "E:\\Github Repos\\rana",
+  "git_head": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+  "git_status_at_execution": "?? docs/benchmarks/\n?? inspect_site_clashes.py\n?? inspect_t4l_scan.py\n?? inspect_topology_sensitivity.py\n?? run_t4l_scan.py\n?? test_rotamer_distances.py\n?? test_site_scan.py\n?? test_site_scoring.py\n",
+  "python": "3.13.12",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "script_sha256": "549813adf78f76a0e60a9b3ef1e26e5dbbe2dcd82f5f8cf8b3436aca963d971f",
+  "input_sha256": {
+    "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv": "e091f26ba7dc0c6e6666dd73476063ce76c6833a905d8e7aa65d3ecc20cd69d8",
+    "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv": "325d95ddb34e4b32fc32afcdc3b5ddcfbec4d2e4a4f6426c822d65d2b1f748bd",
+    "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md": "3363067c4bf8e7759e6dac0892dd55cbc483c669d9d87fe54e6c6a133f85e760"
+  },
+  "t4l_results": [
+    {
+      "cohort": "Wilding_primary",
+      "field": "rsa",
+      "n_sites": 5,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC"
+      ],
+      "spearman_rho": 0.7,
+      "kendall_tau_b": 0.6,
+      "missing_reason": "",
+      "concordant_pairs": 8,
+      "discordant_pairs": 2,
+      "tied_x_only_pairs": 0,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": 0.4,
+          "kendall_tau_b": 0.3333333333333333,
+          "missing_reason": "",
+          "concordant_pairs": 4,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": 1.0,
+          "kendall_tau_b": 1.0,
+          "missing_reason": "",
+          "concordant_pairs": 6,
+          "discordant_pairs": 0,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": 0.8,
+          "kendall_tau_b": 0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 5,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": 0.4,
+          "kendall_tau_b": 0.3333333333333333,
+          "missing_reason": "",
+          "concordant_pairs": 4,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": 0.8,
+          "kendall_tau_b": 0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 5,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": 0.4,
+          "maximum": 1.0,
+          "n_defined": 5
+        },
+        "kendall_tau_b": {
+          "minimum": 0.3333333333333333,
+          "maximum": 1.0,
+          "n_defined": 5
+        }
+      }
+    },
+    {
+      "cohort": "Wilding_primary",
+      "field": "ca_neighbors_8a",
+      "n_sites": 5,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC"
+      ],
+      "spearman_rho": -0.7905694150420948,
+      "kendall_tau_b": -0.6708203932499369,
+      "missing_reason": "",
+      "concordant_pairs": 1,
+      "discordant_pairs": 7,
+      "tied_x_only_pairs": 2,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": -0.6324555320336759,
+          "kendall_tau_b": -0.5477225575051661,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 4,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": -0.9486832980505138,
+          "kendall_tau_b": -0.9128709291752769,
+          "missing_reason": "",
+          "concordant_pairs": 0,
+          "discordant_pairs": 5,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": -0.8944271909999159,
+          "kendall_tau_b": -0.8164965809277261,
+          "missing_reason": "",
+          "concordant_pairs": 0,
+          "discordant_pairs": 4,
+          "tied_x_only_pairs": 2,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": -0.6324555320336759,
+          "kendall_tau_b": -0.5477225575051661,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 4,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": -0.7378647873726218,
+          "kendall_tau_b": -0.5477225575051661,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 4,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": -0.9486832980505138,
+          "maximum": -0.6324555320336759,
+          "n_defined": 5
+        },
+        "kendall_tau_b": {
+          "minimum": -0.9128709291752769,
+          "maximum": -0.5477225575051661,
+          "n_defined": 5
+        }
+      }
+    },
+    {
+      "cohort": "Wilding_primary",
+      "field": "min_steric_score",
+      "n_sites": 5,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC"
+      ],
+      "spearman_rho": -0.8,
+      "kendall_tau_b": -0.6,
+      "missing_reason": "",
+      "concordant_pairs": 2,
+      "discordant_pairs": 8,
+      "tied_x_only_pairs": 0,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": -0.8,
+          "kendall_tau_b": -0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 5,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": -0.8,
+          "kendall_tau_b": -0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 5,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": -0.8,
+          "kendall_tau_b": -0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 5,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": -0.6,
+          "kendall_tau_b": -0.3333333333333333,
+          "missing_reason": "",
+          "concordant_pairs": 2,
+          "discordant_pairs": 4,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": -0.8,
+          "kendall_tau_b": -0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 5,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": -0.8,
+          "maximum": -0.6,
+          "n_defined": 5
+        },
+        "kendall_tau_b": {
+          "minimum": -0.6666666666666666,
+          "maximum": -0.3333333333333333,
+          "n_defined": 5
+        }
+      }
+    },
+    {
+      "cohort": "Wilding_primary",
+      "field": "low_clash_fraction",
+      "n_sites": 5,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC"
+      ],
+      "spearman_rho": 0.41039134083406165,
+      "kendall_tau_b": 0.31622776601683794,
+      "missing_reason": "",
+      "concordant_pairs": 6,
+      "discordant_pairs": 3,
+      "tied_x_only_pairs": 1,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": 0.6324555320336759,
+          "kendall_tau_b": 0.5477225575051661,
+          "missing_reason": "",
+          "concordant_pairs": 4,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": 0.8,
+          "kendall_tau_b": 0.6666666666666666,
+          "missing_reason": "",
+          "concordant_pairs": 5,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": 0.31622776601683794,
+          "kendall_tau_b": 0.18257418583505536,
+          "missing_reason": "",
+          "concordant_pairs": 3,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": -0.21081851067789195,
+          "kendall_tau_b": -0.18257418583505536,
+          "missing_reason": "",
+          "concordant_pairs": 2,
+          "discordant_pairs": 3,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": 0.4,
+          "kendall_tau_b": 0.3333333333333333,
+          "missing_reason": "",
+          "concordant_pairs": 4,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": -0.21081851067789195,
+          "maximum": 0.8,
+          "n_defined": 5
+        },
+        "kendall_tau_b": {
+          "minimum": -0.18257418583505536,
+          "maximum": 0.6666666666666666,
+          "n_defined": 5
+        }
+      }
+    },
+    {
+      "cohort": "six_site_cross_study_sensitivity",
+      "field": "rsa",
+      "n_sites": 6,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC",
+        "T4L_STAB_WK2020_H31_pAzF_UC"
+      ],
+      "spearman_rho": 0.8285714285714286,
+      "kendall_tau_b": 0.7333333333333333,
+      "missing_reason": "",
+      "concordant_pairs": 13,
+      "discordant_pairs": 2,
+      "tied_x_only_pairs": 0,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": 0.7,
+          "kendall_tau_b": 0.6,
+          "missing_reason": "",
+          "concordant_pairs": 8,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": 1.0,
+          "kendall_tau_b": 1.0,
+          "missing_reason": "",
+          "concordant_pairs": 10,
+          "discordant_pairs": 0,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": 0.9,
+          "kendall_tau_b": 0.8,
+          "missing_reason": "",
+          "concordant_pairs": 9,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": 0.7,
+          "kendall_tau_b": 0.6,
+          "missing_reason": "",
+          "concordant_pairs": 8,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": 0.9,
+          "kendall_tau_b": 0.8,
+          "missing_reason": "",
+          "concordant_pairs": 9,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "H31",
+          "omitted_observation_id": "T4L_STAB_WK2020_H31_pAzF_UC",
+          "spearman_rho": 0.7,
+          "kendall_tau_b": 0.6,
+          "missing_reason": "",
+          "concordant_pairs": 8,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": 0.7,
+          "maximum": 1.0,
+          "n_defined": 6
+        },
+        "kendall_tau_b": {
+          "minimum": 0.6,
+          "maximum": 1.0,
+          "n_defined": 6
+        }
+      }
+    },
+    {
+      "cohort": "six_site_cross_study_sensitivity",
+      "field": "ca_neighbors_8a",
+      "n_sites": 6,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC",
+        "T4L_STAB_WK2020_H31_pAzF_UC"
+      ],
+      "spearman_rho": -0.7944613465542745,
+      "kendall_tau_b": -0.6445033866354896,
+      "missing_reason": "",
+      "concordant_pairs": 2,
+      "discordant_pairs": 11,
+      "tied_x_only_pairs": 2,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": -0.7181848464596079,
+          "kendall_tau_b": -0.5270462766947299,
+          "missing_reason": "",
+          "concordant_pairs": 2,
+          "discordant_pairs": 7,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": -0.8207826816681233,
+          "kendall_tau_b": -0.7378647873726218,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 8,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": -0.7905694150420948,
+          "kendall_tau_b": -0.6708203932499369,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 7,
+          "tied_x_only_pairs": 2,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": -0.8207826816681233,
+          "kendall_tau_b": -0.7378647873726218,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 8,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": -0.7181848464596079,
+          "kendall_tau_b": -0.5270462766947299,
+          "missing_reason": "",
+          "concordant_pairs": 2,
+          "discordant_pairs": 7,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "H31",
+          "omitted_observation_id": "T4L_STAB_WK2020_H31_pAzF_UC",
+          "spearman_rho": -0.7905694150420948,
+          "kendall_tau_b": -0.6708203932499369,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 7,
+          "tied_x_only_pairs": 2,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": -0.8207826816681233,
+          "maximum": -0.7181848464596079,
+          "n_defined": 6
+        },
+        "kendall_tau_b": {
+          "minimum": -0.7378647873726218,
+          "maximum": -0.5270462766947299,
+          "n_defined": 6
+        }
+      }
+    },
+    {
+      "cohort": "six_site_cross_study_sensitivity",
+      "field": "min_steric_score",
+      "n_sites": 6,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC",
+        "T4L_STAB_WK2020_H31_pAzF_UC"
+      ],
+      "spearman_rho": -0.8857142857142857,
+      "kendall_tau_b": -0.7333333333333333,
+      "missing_reason": "",
+      "concordant_pairs": 2,
+      "discordant_pairs": 13,
+      "tied_x_only_pairs": 0,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": -0.9,
+          "kendall_tau_b": -0.8,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 9,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": -0.9,
+          "kendall_tau_b": -0.8,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 9,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": -0.9,
+          "kendall_tau_b": -0.8,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 9,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": -0.8,
+          "kendall_tau_b": -0.6,
+          "missing_reason": "",
+          "concordant_pairs": 2,
+          "discordant_pairs": 8,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": -0.9,
+          "kendall_tau_b": -0.8,
+          "missing_reason": "",
+          "concordant_pairs": 1,
+          "discordant_pairs": 9,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "H31",
+          "omitted_observation_id": "T4L_STAB_WK2020_H31_pAzF_UC",
+          "spearman_rho": -0.8,
+          "kendall_tau_b": -0.6,
+          "missing_reason": "",
+          "concordant_pairs": 2,
+          "discordant_pairs": 8,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": -0.9,
+          "maximum": -0.8,
+          "n_defined": 6
+        },
+        "kendall_tau_b": {
+          "minimum": -0.8,
+          "maximum": -0.6,
+          "n_defined": 6
+        }
+      }
+    },
+    {
+      "cohort": "six_site_cross_study_sensitivity",
+      "field": "low_clash_fraction",
+      "n_sites": 6,
+      "observation_ids": [
+        "T4L_STAB_W2018_K16_pAzF_UC",
+        "T4L_STAB_W2018_S44_pAzF_UC",
+        "T4L_STAB_W2018_N53_pAzF_UC",
+        "T4L_STAB_W2018_L91_pAzF_UC",
+        "T4L_STAB_W2018_K135_pAzF_UC",
+        "T4L_STAB_WK2020_H31_pAzF_UC"
+      ],
+      "spearman_rho": 0.6667366910003157,
+      "kendall_tau_b": 0.5520524474738834,
+      "missing_reason": "",
+      "concordant_pairs": 11,
+      "discordant_pairs": 3,
+      "tied_x_only_pairs": 1,
+      "tied_y_only_pairs": 0,
+      "leave_one_out": [
+        {
+          "omitted_site": "K16",
+          "omitted_observation_id": "T4L_STAB_W2018_K16_pAzF_UC",
+          "spearman_rho": 0.8207826816681233,
+          "kendall_tau_b": 0.7378647873726218,
+          "missing_reason": "",
+          "concordant_pairs": 8,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "S44",
+          "omitted_observation_id": "T4L_STAB_W2018_S44_pAzF_UC",
+          "spearman_rho": 0.9,
+          "kendall_tau_b": 0.8,
+          "missing_reason": "",
+          "concordant_pairs": 9,
+          "discordant_pairs": 1,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "N53",
+          "omitted_observation_id": "T4L_STAB_W2018_N53_pAzF_UC",
+          "spearman_rho": 0.6668859288553503,
+          "kendall_tau_b": 0.5270462766947299,
+          "missing_reason": "",
+          "concordant_pairs": 7,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "L91",
+          "omitted_observation_id": "T4L_STAB_W2018_L91_pAzF_UC",
+          "spearman_rho": 0.41039134083406165,
+          "kendall_tau_b": 0.31622776601683794,
+          "missing_reason": "",
+          "concordant_pairs": 6,
+          "discordant_pairs": 3,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "K135",
+          "omitted_observation_id": "T4L_STAB_W2018_K135_pAzF_UC",
+          "spearman_rho": 0.7,
+          "kendall_tau_b": 0.6,
+          "missing_reason": "",
+          "concordant_pairs": 8,
+          "discordant_pairs": 2,
+          "tied_x_only_pairs": 0,
+          "tied_y_only_pairs": 0
+        },
+        {
+          "omitted_site": "H31",
+          "omitted_observation_id": "T4L_STAB_WK2020_H31_pAzF_UC",
+          "spearman_rho": 0.41039134083406165,
+          "kendall_tau_b": 0.31622776601683794,
+          "missing_reason": "",
+          "concordant_pairs": 6,
+          "discordant_pairs": 3,
+          "tied_x_only_pairs": 1,
+          "tied_y_only_pairs": 0
+        }
+      ],
+      "leave_one_out_ranges": {
+        "spearman_rho": {
+          "minimum": 0.41039134083406165,
+          "maximum": 0.9,
+          "n_defined": 6
+        },
+        "kendall_tau_b": {
+          "minimum": 0.31622776601683794,
+          "maximum": 0.8,
+          "n_defined": 6
+        }
+      }
+    }
+  ],
+  "value_source_fields": {
+    "t4l_x": [
+      "rsa",
+      "ca_neighbors_8a",
+      "min_steric_score",
+      "low_clash_fraction"
+    ],
+    "t4l_y": "value",
+    "experimental_error": "uncertainty_value; uncertainty_type",
+    "reading_bounds": "digitization_mean_reading_bound_degC; digitization_error_reading_bound_degC",
+    "ferritin_x": [
+      "assembly_rsa",
+      "assembly_min_steric_score",
+      "assembly_low_clash_fraction",
+      "monomer_rsa",
+      "monomer_min_steric_score",
+      "monomer_low_clash_fraction"
+    ],
+    "ferritin_y": "value"
+  },
+  "ferritin_correlations": "not calculated; separate descriptive case",
+  "output_sha256": {
+    "ferritin_scatter.png": "e85054a0fc4773cda945c251ee91610f83b33d65de010d1002596e0580f9c23a",
+    "results.md": "dad4a017eee7dc2ddd886c9c88101d974df8fce85bac2444484775f69d6ff0bf",
+    "t4l_scatter.png": "f21391cc34bd8fc1e1800dc6135a76f3689a00c3c4fe88904a50f83b44c43f62"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "check_type": "same_environment_replay_of_unchanged_frozen_analysis_not_new_analysis",
+  "checked_utc": "2026-10-24T08:41:26.708409+00:00",
+  "status": "pass",
+  "verifier_sha256": "a82db82c266ae561a9511702388351d265f59b7b3e8f3116562b4c8be533df92",
+  "analysis_script_sha256": "549813adf78f76a0e60a9b3ef1e26e5dbbe2dcd82f5f8cf8b3436aca963d971f",
+  "input_sha256": {
+    "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv": "e091f26ba7dc0c6e6666dd73476063ce76c6833a905d8e7aa65d3ecc20cd69d8",
+    "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv": "325d95ddb34e4b32fc32afcdc3b5ddcfbec4d2e4a4f6426c822d65d2b1f748bd",
+    "docs/benchmarks/m5_exploratory_2026-10-23/evaluation_plan.md": "3363067c4bf8e7759e6dac0892dd55cbc483c669d9d87fe54e6c6a133f85e760"
+  },
+  "original_results_sha256": "6ae1dea34dad88489ca57fc8ee6f37d7b37d1ba68e39bbe72c12e2f2419301b5",
+  "replay_results_sha256": "1c79234cfa8d755f8a97478263c1f07383e13bccf4bd0440b2f99247011ba5ca",
+  "original_results_unchanged": true,
+  "cohort_metric_results_equal": 8,
+  "leave_one_out_results_equal": 44,
+  "replayed_output_matches": {
+    "ferritin_scatter.png": true,
+    "results.md": true,
+    "t4l_scatter.png": true
+  },
+  "curated_csvs_read": [
+    "docs/benchmarks/m5_frozen_pilot_2026-10-23/ferritin_conjugation_comparison.csv",
+    "docs/benchmarks/m5_frozen_pilot_2026-10-23/t4l_stability_master.csv"
+  ],
+  "denied_input_access_attempts": [],
+  "denied_categories": [
+    "ignored raw structures",
+    "ignored processed scans",
+    "paper PDFs/DOCX",
+    "RANA scientific source"
+  ],
+  "software": {
+    "python": "3.13.12",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "matplotlib": "3.11.2"
+    },
+    "git_head": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee"
+  },
+  "replay_output_directory": "C:\\Users\\David\\.codex\\visualizations\\2026\\10\\21\\01a15c07-2857-78f2-a7a4-9dc4a2c524d4\\m5-closeout-2026-10-24\\curated_replay_verified",
+  "scope_limit": "Uses existing installed analysis environment and repository Git metadata. Does not establish clean-install, PDF digitization or structure-to-scan reproducibility. Historical pending review fields in replay output are unchanged execution-snapshot metadata, not current human-review status."
+}

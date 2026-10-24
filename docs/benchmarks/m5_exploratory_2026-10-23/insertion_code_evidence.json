@@ -1,0 +1,140 @@
+{
+  "python": "3.13.12",
+  "git_head": "b3029b934779fa8d03d00dbf7fe4c4d7e4a592ee",
+  "script_sha256": "f6eb28b62ece351b436076db73a6eb40dbc0cd025f98f464578c5d2758a4345b",
+  "synthetic_environment": [
+    {
+      "chain": "A",
+      "residue_number": 31,
+      "insertion_code": "A",
+      "atom_name": "N"
+    },
+    {
+      "chain": "A",
+      "residue_number": 31,
+      "insertion_code": "A",
+      "atom_name": "C"
+    },
+    {
+      "chain": "A",
+      "residue_number": 31,
+      "insertion_code": "",
+      "atom_name": "N"
+    },
+    {
+      "chain": "A",
+      "residue_number": 31,
+      "insertion_code": "",
+      "atom_name": "C"
+    }
+  ],
+  "input_overlap": [
+    [
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ]
+  ],
+  "omitted_argument": [
+    [
+      1.0,
+      2.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "explicit_nonblank_argument": [
+    [
+      0.0,
+      0.0,
+      3.0,
+      4.0
+    ]
+  ],
+  "interpretation": "For target A:31:A omission leaves its CB/N,C self contacts and wrongly excludes blank-code A:31 contacts.",
+  "label_only_real_geometry_probe": {
+    "source": "data\\raw\\1L63.pdb",
+    "source_sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+    "target": "1L63 A:31 blank versus identical geometry relabeled A:31:A in memory",
+    "blank_min_steric_score": 0.7073242040962118,
+    "nonblank_min_steric_score": 2.1260110962059193,
+    "blank_low_clash_count": 4,
+    "nonblank_low_clash_count": 4,
+    "forwarding_calls": [
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      },
+      {
+        "chain": "A",
+        "residue_number": 31,
+        "insertion_code_keyword_present": false,
+        "n_positional_arguments": 3
+      }
+    ],
+    "scope": "Diagnostic relabeling only, not a new frozen scan or experimental variant."
+  }
+}

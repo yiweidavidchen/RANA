@@ -1,0 +1,327 @@
+{
+  "curation_date": "2026-10-23",
+  "scope": "Five supplied main/supplement pairs; no figure digitization or performance analysis",
+  "source_id_convention": "K/W/S/L/R = paper; M = main, S = supplement. PDF pages are 1-based physical pages, distinct from printed journal pages. DOCX locations use named sections, table rows, and body paragraph indices (blank paragraphs included).",
+  "bibliographic_verification": "Title/author/year/DOI transcribed from supplied main publications; supplement title/authors independently matched. No DOI inferred from filenames.",
+  "papers": [
+    {
+      "paper_id": "Khoshnejad2018",
+      "title": "Ferritin Nanocages with Biologically Orthogonal Conjugation for Vascular Targeting and Imaging",
+      "authors": [
+        "Makan Khoshnejad",
+        "Colin F. Greineder",
+        "Katherine W. Pulsipher",
+        "Carlos H. Villa",
+        "Burcin Altun",
+        "Daniel C. Pan",
+        "Andrew Tsourkas",
+        "Ivan J. Dmochowski",
+        "Vladimir R. Muzykantov"
+      ],
+      "publication_year": 2018,
+      "doi": "10.1021/acs.bioconjchem.8b00004",
+      "doi_url": "https://doi.org/10.1021/acs.bioconjchem.8b00004",
+      "journal": "Bioconjugate Chemistry 29, 1209–1218",
+      "bibliographic_evidence": [
+        {
+          "source_id": "K-M",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Title, author list, DOI, and citation/footer"
+        }
+      ],
+      "supplement_pairing_evidence": "Matching title and complete author list on supplement PDF page 1",
+      "year_note": null
+    },
+    {
+      "paper_id": "Wilding2018",
+      "title": "The Locational Impact of Site-Specific PEGylation: Streamlined Screening with Cell-Free Protein Expression and Coarse-Grain Simulation",
+      "authors": [
+        "Kristen M. Wilding",
+        "Addison K. Smith",
+        "Joshua W. Wilkerson",
+        "Derek B. Bush",
+        "Thomas A. Knotts IV",
+        "Bradley C. Bundy"
+      ],
+      "publication_year": 2018,
+      "doi": "10.1021/acssynbio.7b00316",
+      "doi_url": "https://doi.org/10.1021/acssynbio.7b00316",
+      "journal": "ACS Synthetic Biology 7, 510–521",
+      "bibliographic_evidence": [
+        {
+          "source_id": "W-M",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Title, author list, DOI, and citation/footer"
+        }
+      ],
+      "supplement_pairing_evidence": "Matching title and complete author list on supplement PDF page 1",
+      "year_note": null
+    },
+    {
+      "paper_id": "Schinn2017",
+      "title": "Rapid In Vitro Screening for the Location-Dependent Effects of Unnatural Amino Acids on Protein Expression and Activity",
+      "authors": [
+        "Song-Min Schinn",
+        "William Bradley",
+        "Ashtyn Groesbeck",
+        "Jeffrey C. Wu",
+        "Andrew Broadbent",
+        "Bradley C. Bundy"
+      ],
+      "publication_year": 2017,
+      "doi": "10.1002/bit.26305",
+      "doi_url": "https://doi.org/10.1002/bit.26305",
+      "journal": "Biotechnology and Bioengineering 114, 2412–2417",
+      "bibliographic_evidence": [
+        {
+          "source_id": "S-M",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Title, author list, DOI, and citation/footer"
+        }
+      ],
+      "supplement_pairing_evidence": "Matching title and complete author list in DOCX body paragraphs 3 and 7",
+      "year_note": null
+    },
+    {
+      "paper_id": "Lopez2014",
+      "title": "Stationary-Phase EPR for Exploring Protein Structure, Conformation, and Dynamics in Spin-Labeled Proteins",
+      "authors": [
+        "Carlos J. López",
+        "Mark R. Fleissner",
+        "Evan K. Brooks",
+        "Wayne L. Hubbell"
+      ],
+      "publication_year": 2014,
+      "doi": "10.1021/bi5011128",
+      "doi_url": "https://doi.org/10.1021/bi5011128",
+      "journal": "Biochemistry 53, 7067–7075",
+      "bibliographic_evidence": [
+        {
+          "source_id": "L-M",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Title, author list, DOI, and citation/footer"
+        }
+      ],
+      "supplement_pairing_evidence": "Matching title and complete author list on supplement PDF page 1",
+      "year_note": null
+    },
+    {
+      "paper_id": "Reddington2015",
+      "title": "Directed evolution of GFP with non-natural amino acids identifies residues for augmenting and photoswitching fluorescence",
+      "authors": [
+        "Samuel C. Reddington",
+        "Amy J. Baldwin",
+        "Rebecca Thompson",
+        "Andrea Brancale",
+        "Eric M. Tippmann",
+        "D. Dafydd Jones"
+      ],
+      "publication_year": 2015,
+      "doi": "10.1039/c4sc02827a",
+      "doi_url": "https://doi.org/10.1039/c4sc02827a",
+      "journal": "Chemical Science 6, 1159–1166",
+      "bibliographic_evidence": [
+        {
+          "source_id": "R-M",
+          "pdf_page_1_based": 1,
+          "printed_page": null,
+          "location": "Title, author list, DOI, and citation/footer"
+        }
+      ],
+      "supplement_pairing_evidence": "Matching title and complete author list on supplement PDF page 1",
+      "year_note": "Publication citation is 2015; acceptance and SI copyright are 2014. Filename year is not used as evidence."
+    }
+  ],
+  "attachments": [
+    {
+      "source_id": "K-M",
+      "paper_id": "Khoshnejad2018",
+      "role": "main",
+      "file": "Khoshnejad_2018.pdf",
+      "local_path": "E:\\Papers for RANA\\Khoshnejad_2018.pdf",
+      "sha256": "bcb05ed8f13bc83cc7ba3b223fb9fad85978f73ab6de55a960b140b05d51270c",
+      "bytes": 3407600,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 10,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "K-S",
+      "paper_id": "Khoshnejad2018",
+      "role": "supplement",
+      "file": "Khoshnejad_2018_Supp.pdf",
+      "local_path": "E:\\Papers for RANA\\Khoshnejad_2018_Supp.pdf",
+      "sha256": "22bca251e6eb0b46d17515cd8152cae84ef4aad51151cc177a379e001de9eb1a",
+      "bytes": 1248695,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 6,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "W-M",
+      "paper_id": "Wilding2018",
+      "role": "main",
+      "file": "Wilding_2018.pdf",
+      "local_path": "E:\\Papers for RANA\\Wilding_2018.pdf",
+      "sha256": "c9042894c0b0080686f3be8debbe6ab73d611ec4911231ad766fc490d26e6f15",
+      "bytes": 2140687,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 12,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "W-S",
+      "paper_id": "Wilding2018",
+      "role": "supplement",
+      "file": "Wilding_2018_Supp.pdf",
+      "local_path": "E:\\Papers for RANA\\Wilding_2018_Supp.pdf",
+      "sha256": "d3a835c426789cb07c6c00cf9b805ddd904e392cbb8dbe8ef17ae0e8fe80136f",
+      "bytes": 1308297,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 10,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "S-M",
+      "paper_id": "Schinn2017",
+      "role": "main",
+      "file": "Schinn_2017.pdf",
+      "local_path": "E:\\Papers for RANA\\Schinn_2017.pdf",
+      "sha256": "0c55560b2392e1c170177e12b731d1dd12f42a4d14cfda0cdc9f27eb17f049e9",
+      "bytes": 1591641,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 6,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "S-S",
+      "paper_id": "Schinn2017",
+      "role": "supplement",
+      "file": "Schinn_2017_Supp.docx",
+      "local_path": "E:\\Papers for RANA\\Schinn_2017_Supp.docx",
+      "sha256": "7a51ffc790de18e08b3183b678fb0db9375174252fee8a49a94ddb072be6061b",
+      "bytes": 6677010,
+      "format": "DOCX",
+      "valid_container": true,
+      "pdf_pages": null,
+      "validation_method": "ZIP CRC check; required OOXML parts; parse document.xml; inspect paragraphs/tables and embedded media inventory",
+      "docx_paragraphs": 245,
+      "docx_tables": 2,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "L-M",
+      "paper_id": "Lopez2014",
+      "role": "main",
+      "file": "Lopez_2014.pdf",
+      "local_path": "E:\\Papers for RANA\\Lopez_2014.pdf",
+      "sha256": "b134f551ffe9861e95f90b4e19f6ab50454eaad1da3ca13b17fdde9122904964",
+      "bytes": 4412150,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 9,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "L-S",
+      "paper_id": "Lopez2014",
+      "role": "supplement",
+      "file": "Lopez_2014_Supp.pdf",
+      "local_path": "E:\\Papers for RANA\\Lopez_2014_Supp.pdf",
+      "sha256": "cad034f9eef495d17e1891bf510588a02589726c6ac5c6365bdd37362a843384",
+      "bytes": 1627300,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 13,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "R-M",
+      "paper_id": "Reddington2015",
+      "role": "main",
+      "file": "Reddington_2015.pdf",
+      "local_path": "E:\\Papers for RANA\\Reddington_2015.pdf",
+      "sha256": "ce627f9bc6839ccb50ecc03ad5b22abc0501be1f91fba08e3716ffd8114af4c2",
+      "bytes": 1989255,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 8,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    },
+    {
+      "source_id": "R-S",
+      "paper_id": "Reddington2015",
+      "role": "supplement",
+      "file": "Reddington_2015_Supp.pdf",
+      "local_path": "E:\\Papers for RANA\\Reddington_2015_Supp.pdf",
+      "sha256": "d340f447e78f3070a4de565bb0826f2ea82c2ef41c648f683d568a0e543bb7ff",
+      "bytes": 1146771,
+      "format": "PDF",
+      "valid_container": true,
+      "pdf_pages": 17,
+      "validation_method": "PDF signature; strict pypdf parse; every page extracted successfully",
+      "docx_paragraphs": null,
+      "docx_tables": null,
+      "not_html_error_page": true
+    }
+  ],
+  "supporting_context_not_one_of_the_ten_attachments": [
+    {
+      "source_id": "WK-M",
+      "paper_id": "Wilkerson2020",
+      "local_path": "E:\\Papers for RANA\\Wilkerson_2020.pdf",
+      "sha256": "ce06cf47c48c00e8e4e81808e814c2928f71414f0c3fc734f6fb41e6788d6f16",
+      "bytes": 3418183,
+      "doi_url": "https://doi.org/10.1021/acs.jcim.0c00725",
+      "used_locations": [
+        {
+          "source_id": "WK-M",
+          "pdf_page_1_based": 3,
+          "printed_page": 5119,
+          "location": "Experimental Techniques"
+        },
+        {
+          "source_id": "WK-M",
+          "pdf_page_1_based": 4,
+          "printed_page": 5120,
+          "location": "Experimental Data and Figure 2 caption"
+        }
+      ]
+    }
+  ],
+  "extraction_tools": "pypdf text extraction; Python zipfile and ElementTree for DOCX; pdftoppm rendering and visual inspection of selected source pages; no OCR estimates or plot digitization",
+  "attachment_instructions_policy": "Article methods are evidence about experiments, not instructions to execute protocols or change RANA."
+}

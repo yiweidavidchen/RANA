@@ -1,0 +1,502 @@
+{
+  "method": "calibrated_native_raster_bar_and_error_cap_digitization",
+  "coordinate_convention": "Native raster coordinates, origin at top left; integer indices are pixel centers; crop boxes use Pillow left/top/right/bottom exclusive bounds.",
+  "script_sha256": "02112636dae0dfcc24ffb117e29f7e7ffe62bb0d3a25b93704c667806de71e69",
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "pypdf": "6.10.0",
+      "pdfplumber": "0.11.9",
+      "numpy": "2.3.5",
+      "Pillow": "12.3.0"
+    }
+  },
+  "figures": [
+    {
+      "study_id": "Wilding2018",
+      "source_file": "E:\\Papers for RANA\\Wilding_2018.pdf",
+      "source_sha256": "c9042894c0b0080686f3be8debbe6ab73d611ec4911231ad766fc490d26e6f15",
+      "pdf_page_1_based": 4,
+      "printed_page": 513,
+      "figure": "3",
+      "panel": "A",
+      "embedded_image_name": "Im4",
+      "native_size_pixels": [
+        969,
+        1669
+      ],
+      "pdf_page_size_points": [
+        625.436,
+        818.362
+      ],
+      "pdf_image_bbox_points_top_origin": {
+        "x0": 64.176,
+        "x1": 296.73,
+        "top": 69.16599999999994,
+        "bottom": 469.70099999999996
+      },
+      "crop_box_native_pixels_xyxy": [
+        0,
+        0,
+        969,
+        555
+      ],
+      "ticks": [
+        {
+          "y_pixel": 128.0,
+          "value_degC": 0,
+          "roi_xyxy": [
+            103,
+            126,
+            113,
+            133
+          ]
+        },
+        {
+          "y_pixel": 163.0,
+          "value_degC": -2,
+          "roi_xyxy": [
+            103,
+            160,
+            113,
+            167
+          ]
+        },
+        {
+          "y_pixel": 197.5,
+          "value_degC": -4,
+          "roi_xyxy": [
+            103,
+            195,
+            113,
+            202
+          ]
+        },
+        {
+          "y_pixel": 232.5,
+          "value_degC": -6,
+          "roi_xyxy": [
+            103,
+            229,
+            113,
+            236
+          ]
+        },
+        {
+          "y_pixel": 267.0,
+          "value_degC": -8,
+          "roi_xyxy": [
+            103,
+            264,
+            113,
+            271
+          ]
+        },
+        {
+          "y_pixel": 302.0,
+          "value_degC": -10,
+          "roi_xyxy": [
+            103,
+            299,
+            113,
+            306
+          ]
+        },
+        {
+          "y_pixel": 335.5,
+          "value_degC": -12,
+          "roi_xyxy": [
+            103,
+            334,
+            113,
+            341
+          ]
+        },
+        {
+          "y_pixel": 371.0,
+          "value_degC": -14,
+          "roi_xyxy": [
+            103,
+            368,
+            113,
+            375
+          ]
+        },
+        {
+          "y_pixel": 406.0,
+          "value_degC": -16,
+          "roi_xyxy": [
+            103,
+            403,
+            113,
+            410
+          ]
+        },
+        {
+          "y_pixel": 440.5,
+          "value_degC": -18,
+          "roi_xyxy": [
+            103,
+            438,
+            113,
+            445
+          ]
+        },
+        {
+          "y_pixel": 474.5,
+          "value_degC": -20,
+          "roi_xyxy": [
+            103,
+            472,
+            113,
+            479
+          ]
+        }
+      ],
+      "calibration_equation": "delta_Tm_degC = slope * native_y_pixel + intercept",
+      "slope": -0.05768922001591837,
+      "intercept": 7.398544309346284,
+      "max_tick_residual_degC": 0.04381099400567123,
+      "endpoint_only_slope": -0.05772005772005772,
+      "endpoint_only_intercept": 7.388167388167388,
+      "files": {
+        "Wilding2018_native.png": "f06e96f10b6d4554b5f23a5cdda8b2c15f971dae18cc0686711efe768e02e3c3",
+        "Wilding2018_crop.png": "506b4f0de33b42440217ed1561f7c685c5bebe590f2185184a522d1113eeed02",
+        "Wilding2018_annotated.png": "c391734c0529cb2dc66e3851ea5743e60beec95b6b69f6d83489e15f517a379c"
+      }
+    },
+    {
+      "study_id": "Wilkerson2020",
+      "source_file": "E:\\Papers for RANA\\Wilkerson_2020.pdf",
+      "source_sha256": "ce06cf47c48c00e8e4e81808e814c2928f71414f0c3fc734f6fb41e6788d6f16",
+      "pdf_page_1_based": 4,
+      "printed_page": 5120,
+      "figure": "2",
+      "panel": "whole figure",
+      "embedded_image_name": "Im0",
+      "native_size_pixels": [
+        1000,
+        722
+      ],
+      "pdf_page_size_points": [
+        625.436,
+        818.362
+      ],
+      "pdf_image_bbox_points_top_origin": {
+        "x0": 60.4910011,
+        "x1": 300.4720039,
+        "top": 335.1689915999999,
+        "bottom": 508.42199759999994
+      },
+      "crop_box_native_pixels_xyxy": [
+        0,
+        0,
+        1000,
+        722
+      ],
+      "ticks": [
+        {
+          "y_pixel": 20.0,
+          "value_degC": 0,
+          "roi_xyxy": [
+            130,
+            17,
+            141,
+            24
+          ]
+        },
+        {
+          "y_pixel": 141.0,
+          "value_degC": -2,
+          "roi_xyxy": [
+            130,
+            138,
+            141,
+            145
+          ]
+        },
+        {
+          "y_pixel": 262.0,
+          "value_degC": -4,
+          "roi_xyxy": [
+            130,
+            259,
+            141,
+            266
+          ]
+        },
+        {
+          "y_pixel": 383.0,
+          "value_degC": -6,
+          "roi_xyxy": [
+            130,
+            380,
+            141,
+            387
+          ]
+        },
+        {
+          "y_pixel": 504.0,
+          "value_degC": -8,
+          "roi_xyxy": [
+            130,
+            501,
+            141,
+            508
+          ]
+        },
+        {
+          "y_pixel": 625.0,
+          "value_degC": -10,
+          "roi_xyxy": [
+            130,
+            622,
+            141,
+            629
+          ]
+        }
+      ],
+      "calibration_equation": "delta_Tm_degC = slope * native_y_pixel + intercept",
+      "slope": -0.016528925619834708,
+      "intercept": 0.3305785123966962,
+      "max_tick_residual_degC": 3.552713678800501e-15,
+      "endpoint_only_slope": -0.01652892561983471,
+      "endpoint_only_intercept": 0.3305785123966942,
+      "files": {
+        "Wilkerson2020_native.png": "1cdb77427ced4ce2873a43d784e44f2e98996aec71cae3c713c03ebd03656152",
+        "Wilkerson2020_crop.png": "1cdb77427ced4ce2873a43d784e44f2e98996aec71cae3c713c03ebd03656152",
+        "Wilkerson2020_annotated.png": "677a4cfda26f4a6a30d5d20aefd0ab7121f32a41c5f8a285ff587767a4a9c183"
+      }
+    }
+  ],
+  "measurements": [
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "K16",
+      "mean_y_pixel": 221.2872340425532,
+      "mean_edge_method": "blue_chroma_fractional_edge",
+      "bar_x_extent_pixel": [
+        131,
+        150
+      ],
+      "bar_center_x_pixel": 140.5,
+      "error_upper_y_pixel": 208.5,
+      "error_lower_y_pixel": 235.0,
+      "error_upper_cap_roi_xyxy": [
+        133,
+        206,
+        148,
+        213
+      ],
+      "error_lower_cap_roi_xyxy": [
+        133,
+        231,
+        148,
+        238
+      ],
+      "unrounded_mean_degC": -5.3673436220485895,
+      "unrounded_error_halfspan_degC": 0.7643821652109184,
+      "unrounded_error_up_degC": 0.7376855580758925,
+      "unrounded_error_down_degC": 0.7910787723459443,
+      "value": -5.4,
+      "uncertainty_value": 0.8,
+      "uncertainty_type": "SD",
+      "n_reported": "N >= 3",
+      "n_exact": null,
+      "digitization_reading_bound_degC": 0.2,
+      "reading_bound_interpretation": "Conservative image-reading bound on mean and error length; not a confidence interval, SD, SEM, or biological uncertainty.",
+      "image_method_sensitivity_max_degC": 0.04541491788487306,
+      "reported_precision_decimals": 1
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "S44",
+      "mean_y_pixel": 164.98138297872342,
+      "mean_edge_method": "blue_chroma_fractional_edge",
+      "bar_x_extent_pixel": [
+        253,
+        272
+      ],
+      "bar_center_x_pixel": 262.5,
+      "error_upper_y_pixel": 159.5,
+      "error_lower_y_pixel": 171.5,
+      "error_upper_cap_roi_xyxy": [
+        255,
+        157,
+        270,
+        164
+      ],
+      "error_lower_cap_roi_xyxy": [
+        255,
+        168,
+        270,
+        175
+      ],
+      "unrounded_mean_degC": -2.119102991843781,
+      "unrounded_error_halfspan_degC": 0.34613532009551023,
+      "unrounded_error_up_degC": 0.3162167086510852,
+      "unrounded_error_down_degC": 0.3760539315399352,
+      "value": -2.1,
+      "uncertainty_value": 0.3,
+      "uncertainty_type": "SD",
+      "n_reported": "N >= 3",
+      "n_exact": null,
+      "digitization_reading_bound_degC": 0.2,
+      "reading_bound_interpretation": "Conservative image-reading bound on mean and error length; not a confidence interval, SD, SEM, or biological uncertainty.",
+      "image_method_sensitivity_max_degC": 0.029918611444424315,
+      "reported_precision_decimals": 1
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "N53",
+      "mean_y_pixel": 179.18351063829786,
+      "mean_edge_method": "blue_chroma_fractional_edge",
+      "bar_x_extent_pixel": [
+        374,
+        393
+      ],
+      "bar_center_x_pixel": 383.5,
+      "error_upper_y_pixel": 176.0,
+      "error_lower_y_pixel": 183.0,
+      "error_upper_cap_roi_xyxy": [
+        377,
+        172,
+        392,
+        179
+      ],
+      "error_lower_cap_roi_xyxy": [
+        377,
+        179,
+        392,
+        186
+      ],
+      "unrounded_mean_degC": -2.9384126590911306,
+      "unrounded_error_halfspan_degC": 0.2019122700557143,
+      "unrounded_error_up_degC": 0.18365424563578203,
+      "unrounded_error_down_degC": 0.22017029447564657,
+      "value": -2.9,
+      "uncertainty_value": 0.2,
+      "uncertainty_type": "SD",
+      "n_reported": "N >= 3",
+      "n_exact": null,
+      "digitization_reading_bound_degC": 0.2,
+      "reading_bound_interpretation": "Conservative image-reading bound on mean and error length; not a confidence interval, SD, SEM, or biological uncertainty.",
+      "image_method_sensitivity_max_degC": 0.03943119559598607,
+      "reported_precision_decimals": 1
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "L91",
+      "mean_y_pixel": 295.1781914893617,
+      "mean_edge_method": "blue_chroma_fractional_edge",
+      "bar_x_extent_pixel": [
+        496,
+        515
+      ],
+      "bar_center_x_pixel": 505.5,
+      "error_upper_y_pixel": 283.5,
+      "error_lower_y_pixel": 307.0,
+      "error_upper_cap_roi_xyxy": [
+        499,
+        281,
+        514,
+        288
+      ],
+      "error_lower_cap_roi_xyxy": [
+        499,
+        304,
+        514,
+        311
+      ],
+      "unrounded_mean_degC": -9.630055323384386,
+      "unrounded_error_halfspan_degC": 0.6778483351870408,
+      "unrounded_error_up_degC": 0.6737057582178139,
+      "unrounded_error_down_degC": 0.6819909121562678,
+      "value": -9.6,
+      "uncertainty_value": 0.7,
+      "uncertainty_type": "SD",
+      "n_reported": "N >= 3",
+      "n_exact": null,
+      "digitization_reading_bound_degC": 0.2,
+      "reading_bound_interpretation": "Conservative image-reading bound on mean and error length; not a confidence interval, SD, SEM, or biological uncertainty.",
+      "image_method_sensitivity_max_degC": 0.039124338042711315,
+      "reported_precision_decimals": 1
+    },
+    {
+      "study_id": "Wilding2018",
+      "literature_site": "K135",
+      "mean_y_pixel": 211.36436170212767,
+      "mean_edge_method": "blue_chroma_fractional_edge",
+      "bar_x_extent_pixel": [
+        617,
+        636
+      ],
+      "bar_center_x_pixel": 626.5,
+      "error_upper_y_pixel": 189.0,
+      "error_lower_y_pixel": 235.0,
+      "error_upper_cap_roi_xyxy": [
+        619,
+        187,
+        634,
+        194
+      ],
+      "error_lower_cap_roi_xyxy": [
+        619,
+        232,
+        634,
+        239
+      ],
+      "unrounded_mean_degC": -4.7949008564119096,
+      "unrounded_error_halfspan_degC": 1.3268520603661225,
+      "unrounded_error_up_degC": 1.2901825827496216,
+      "unrounded_error_down_degC": 1.3635215379826233,
+      "value": -4.8,
+      "uncertainty_value": 1.3,
+      "uncertainty_type": "SD",
+      "n_reported": "N >= 3",
+      "n_exact": null,
+      "digitization_reading_bound_degC": 0.2,
+      "reading_bound_interpretation": "Conservative image-reading bound on mean and error length; not a confidence interval, SD, SEM, or biological uncertainty.",
+      "image_method_sensitivity_max_degC": 0.04986435240737741,
+      "reported_precision_decimals": 1
+    },
+    {
+      "study_id": "Wilkerson2020",
+      "literature_site": "H31",
+      "mean_y_pixel": 455.5,
+      "mean_edge_method": "black_bar_outline_centerline",
+      "bar_x_extent_pixel": [
+        166,
+        284
+      ],
+      "bar_center_x_pixel": 225.0,
+      "error_upper_y_pixel": 428.0,
+      "error_lower_y_pixel": 482.5,
+      "error_upper_cap_roi_xyxy": [
+        218,
+        426,
+        233,
+        433
+      ],
+      "error_lower_cap_roi_xyxy": [
+        218,
+        480,
+        233,
+        487
+      ],
+      "unrounded_mean_degC": -7.198347107438012,
+      "unrounded_error_halfspan_degC": 0.4504132231404958,
+      "unrounded_error_up_degC": 0.4545454545454545,
+      "unrounded_error_down_degC": 0.4462809917355371,
+      "value": -7.2,
+      "uncertainty_value": 0.5,
+      "uncertainty_type": "SEM",
+      "n_reported": "N >= 3",
+      "n_exact": null,
+      "digitization_reading_bound_degC": 0.1,
+      "reading_bound_interpretation": "Conservative image-reading bound on mean and error length; not a confidence interval, SD, SEM, or biological uncertainty.",
+      "image_method_sensitivity_max_degC": 0.03305785123966842,
+      "reported_precision_decimals": 1
+    }
+  ]
+}

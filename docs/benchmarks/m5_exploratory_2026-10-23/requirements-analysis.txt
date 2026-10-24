@@ -1,0 +1,5 @@
+# Actual analysis environment snapshot; not a RANA runtime dependency change.
+# Python 3.13.12
+numpy==2.5.4
+pandas==3.0.6
+matplotlib==3.11.2
