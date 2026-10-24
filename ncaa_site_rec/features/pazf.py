@@ -457,6 +457,7 @@ def score_pazf_site(
             environment,
             chain=chain,
             residue_number=residue_number,
+            insertion_code=insertion_code,
         )
 
         score = compute_steric_score(overlaps)

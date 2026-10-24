@@ -113,9 +113,18 @@ Default thresholds:
 
 These thresholds are engineering heuristics, **not experimentally calibrated success probabilities**.
 
+## Retrospective benchmark pilot (M5)
+
+The M5 first delivery is complete; see the [benchmark evidence and pilot
+index](docs/benchmarks/README.md) for curated T4 lysozyme stability and ferritin
+conjugation records, human image review, exploratory comparisons and reproduction
+instructions. These are small retrospective pilots. They do not establish
+predictive accuracy or generalization; the current reproduction level is curated
+tables to analysis, not a complete portable structure-to-scan pipeline.
+
 ## Computational smoke validation
 
-The current pipeline has been tested on two experimental protein structures:
+The historical smoke runs exercised two experimental protein structures:
 
 | Protein | PDB | Residues scored | Rotamers per site |
 |---|---|---:|---:|
@@ -129,7 +138,10 @@ The earlier smoke-validation phase reported 85 passing tests. See
 
 These results demonstrate successful execution on two different protein structures. They do not establish predictive accuracy for ncAA incorporation or experimental protein function.
 
-These are computational smoke tests. A literature-grounded retrospective benchmark is planned for M5 and has not been performed here.
+This section describes the historical computational smoke tests only. The
+current literature-based retrospective pilot is documented in the
+[M5 benchmark index](docs/benchmarks/README.md). Current insertion-code repair
+checks are recorded separately in the [M6 validation summary](docs/m6_insertion_code_validation.md).
 
 ## Important limitations
 
@@ -151,7 +163,8 @@ These are computational smoke tests. A literature-grounded retrospective benchma
 | v0.1 development | pAzF structural features, geometric scanning, interpretable ranking, CLI, metadata |
 | M4.4 | Cross-protein computational smoke validation |
 | M4.6 | Repository documentation and reproducibility cleanup |
-| M5 | Literature-based retrospective benchmark and baseline comparisons |
+| M5 | First delivery complete: small retrospective literature pilots and exploratory baseline comparisons |
+| M6 | Insertion-code reliability work in progress; broader structure-sensitivity and application scope planned separately |
 | Later release planning | Validation evidence, independent datasets, and packaging criteria to be agreed separately |
 | Future | Additional ncAAs, functional-group accessibility, stronger structural and energetic models |
 
