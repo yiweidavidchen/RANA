@@ -1,0 +1,778 @@
+[
+  {
+    "pdb_id": "1L63",
+    "selected": true,
+    "reason": "Historical M5 reference; retain despite missing terminal residues.",
+    "source_page": "https://www.rcsb.org/structure/1L63",
+    "pdb_doi": "https://doi.org/10.2210/pdb1L63/pdb",
+    "title": "ANALYSIS OF THE INTERACTION BETWEEN CHARGED SIDE CHAINS AND THE ALPHA-HELIX DIPOLE USING DESIGNED THERMOSTABLE MUTANTS OF PHAGE T4 LYSOZYME",
+    "methods": [
+      "X-RAY DIFFRACTION"
+    ],
+    "resolution_A": [
+      1.75
+    ],
+    "full_entity_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL",
+    "sequence_sha256": "4ed2b4805eb5a146827af8d2127dfb66c3df25ee0ae1377927ad6749dfbc16c0",
+    "differences_from_1L63": [],
+    "seqadv_records": [
+      "SEQADV 1L63 THR A   54  UNP  P00720    CYS    54 CONFLICT                       ",
+      "SEQADV 1L63 ALA A   97  UNP  P00720    CYS    97 CONFLICT                       "
+    ],
+    "chains": {
+      "A": {
+        "modeled_residues": 162,
+        "missing_residue_numbers": [
+          163,
+          164
+        ],
+        "coordinate_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYK"
+      }
+    },
+    "target_chain": "A",
+    "models": 1,
+    "missing_heavy_atoms": {},
+    "selected_altloc_atoms": {},
+    "atom_altloc_counts": {
+      "blank": 1292
+    },
+    "zero_occupancy_atom_count": 0,
+    "excluded_nonprotein_residue_counts": {
+      "CL": 2,
+      "BME": 2,
+      "HOH": 140
+    },
+    "official_mmcif_categories": {
+      "_pdbx_struct_assembly.": {
+        "_pdbx_struct_assembly.id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly.details": [
+          "author_defined_assembly"
+        ],
+        "_pdbx_struct_assembly.method_details": [
+          "?"
+        ],
+        "_pdbx_struct_assembly.oligomeric_details": [
+          "monomeric"
+        ],
+        "_pdbx_struct_assembly.oligomeric_count": [
+          "1"
+        ]
+      },
+      "_pdbx_struct_assembly_gen.": {
+        "_pdbx_struct_assembly_gen.assembly_id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.oper_expression": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.asym_id_list": [
+          "A,B,C,D,E,F"
+        ]
+      },
+      "_pdbx_struct_oper_list.": {
+        "_pdbx_struct_oper_list.id": [
+          "1"
+        ],
+        "_pdbx_struct_oper_list.type": [
+          "identity operation"
+        ],
+        "_pdbx_struct_oper_list.name": [
+          "1_555"
+        ],
+        "_pdbx_struct_oper_list.symmetry_operation": [
+          "x,y,z"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][1]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][2]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][3]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[3]": [
+          "0.0000000000"
+        ]
+      },
+      "_pdbx_unobs_or_zero_occ_residues.": {
+        "_pdbx_unobs_or_zero_occ_residues.id": [
+          "1",
+          "2"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.PDB_model_num": [
+          "1",
+          "1"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.polymer_flag": [
+          "Y",
+          "Y"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.occupancy_flag": [
+          "1",
+          "1"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.auth_asym_id": [
+          "A",
+          "A"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.auth_comp_id": [
+          "ASN",
+          "LEU"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.auth_seq_id": [
+          "163",
+          "164"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.PDB_ins_code": [
+          "?",
+          "?"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.label_asym_id": [
+          "A",
+          "A"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.label_comp_id": [
+          "ASN",
+          "LEU"
+        ],
+        "_pdbx_unobs_or_zero_occ_residues.label_seq_id": [
+          "163",
+          "164"
+        ]
+      },
+      "_pdbx_unobs_or_zero_occ_atoms.": {},
+      "_exptl_crystal_grow.": {}
+    },
+    "pdb_mmcif_max_abs_coordinate_difference_A": 1.8920898412488896e-06,
+    "heavy_atom_template_policy": "Standard heavy atoms N/CA/C/O plus residue sidechain; optional terminal OXT and hydrogen atoms are not required.",
+    "pdb_sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+    "cif_sha256": "86e536589631e9da02ff4a374911f0375519ad322f86a15ce936a81901a79e42"
+  },
+  {
+    "pdb_id": "1LW9",
+    "selected": true,
+    "reason": "Same full C54T/C97A sequence, complete chain A, 1.45-A X-ray reference; alternate atoms retained with frozen parser selection.",
+    "source_page": "https://www.rcsb.org/structure/1LW9",
+    "pdb_doi": "https://doi.org/10.2210/pdb1LW9/pdb",
+    "title": "Multiple methionine substitutions are tolerated in T4 lysozyme and have coupled effects on folding and stability",
+    "methods": [
+      "X-RAY DIFFRACTION"
+    ],
+    "resolution_A": [
+      1.45
+    ],
+    "full_entity_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL",
+    "sequence_sha256": "4ed2b4805eb5a146827af8d2127dfb66c3df25ee0ae1377927ad6749dfbc16c0",
+    "differences_from_1L63": [],
+    "seqadv_records": [
+      "SEQADV 1LW9 THR A   54  UNP  P00720    CYS    54 ENGINEERED MUTATION            ",
+      "SEQADV 1LW9 ALA A   97  UNP  P00720    CYS    97 ENGINEERED MUTATION            "
+    ],
+    "chains": {
+      "A": {
+        "modeled_residues": 164,
+        "missing_residue_numbers": [],
+        "coordinate_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+      }
+    },
+    "target_chain": "A",
+    "models": 1,
+    "missing_heavy_atoms": {},
+    "selected_altloc_atoms": {
+      "A:54": [
+        "CA:A",
+        "C:A",
+        "O:A"
+      ],
+      "A:55": [
+        "N:A",
+        "CA:A",
+        "C:A",
+        "O:A",
+        "CB:A",
+        "CG:A",
+        "OD1:A",
+        "ND2:A"
+      ],
+      "A:56": [
+        "N:A",
+        "CA:A",
+        "C:A",
+        "O:A"
+      ],
+      "A:137": [
+        "CD:A",
+        "NE:A",
+        "CZ:A",
+        "NH1:A",
+        "NH2:A"
+      ]
+    },
+    "atom_altloc_counts": {
+      "blank": 1288,
+      "A": 20,
+      "B": 20
+    },
+    "zero_occupancy_atom_count": 0,
+    "excluded_nonprotein_residue_counts": {
+      "K": 1,
+      "CL": 2,
+      "HED": 1,
+      "HOH": 198
+    },
+    "official_mmcif_categories": {
+      "_pdbx_struct_assembly.": {
+        "_pdbx_struct_assembly.id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly.details": [
+          "author_defined_assembly"
+        ],
+        "_pdbx_struct_assembly.method_details": [
+          "?"
+        ],
+        "_pdbx_struct_assembly.oligomeric_details": [
+          "monomeric"
+        ],
+        "_pdbx_struct_assembly.oligomeric_count": [
+          "1"
+        ]
+      },
+      "_pdbx_struct_assembly_gen.": {
+        "_pdbx_struct_assembly_gen.assembly_id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.oper_expression": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.asym_id_list": [
+          "A,B,C,D,E,F"
+        ]
+      },
+      "_pdbx_struct_oper_list.": {
+        "_pdbx_struct_oper_list.id": [
+          "1"
+        ],
+        "_pdbx_struct_oper_list.type": [
+          "identity operation"
+        ],
+        "_pdbx_struct_oper_list.name": [
+          "1_555"
+        ],
+        "_pdbx_struct_oper_list.symmetry_operation": [
+          "x,y,z"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][1]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][2]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][3]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[3]": [
+          "0.0000000000"
+        ]
+      },
+      "_pdbx_unobs_or_zero_occ_residues.": {},
+      "_pdbx_unobs_or_zero_occ_atoms.": {},
+      "_exptl_crystal_grow.": {
+        "_exptl_crystal_grow.crystal_id": [
+          "1"
+        ],
+        "_exptl_crystal_grow.method": [
+          "?"
+        ],
+        "_exptl_crystal_grow.temp": [
+          "?"
+        ],
+        "_exptl_crystal_grow.temp_details": [
+          "?"
+        ],
+        "_exptl_crystal_grow.pH": [
+          "6.7"
+        ],
+        "_exptl_crystal_grow.pdbx_details": [
+          "pH 6.7"
+        ],
+        "_exptl_crystal_grow.pdbx_pH_range": [
+          "."
+        ]
+      }
+    },
+    "pdb_mmcif_max_abs_coordinate_difference_A": 1.8920898412488896e-06,
+    "heavy_atom_template_policy": "Standard heavy atoms N/CA/C/O plus residue sidechain; optional terminal OXT and hydrogen atoms are not required.",
+    "pdb_sha256": "ed944dd178afcbdca73474a0cd003cb63b06f9c3c9498153e8f07c5426db4fca",
+    "cif_sha256": "07927bfc37ba57961a45cf4841c2614939847d8d763037ea458cfa13e1806e0a"
+  },
+  {
+    "pdb_id": "219L",
+    "selected": true,
+    "reason": "Same full C54T/C97A sequence, complete chain A, 1.66-A X-ray reference; title concerns a mutant series, but this entry sequence has no extra substitution/insertion/deletion.",
+    "source_page": "https://www.rcsb.org/structure/219L",
+    "pdb_doi": "https://doi.org/10.2210/pdb219L/pdb",
+    "title": "PROTEIN STRUCTURE PLASTICITY EXEMPLIFIED BY INSERTION AND DELETION MUTANTS IN T4 LYSOZYME",
+    "methods": [
+      "X-RAY DIFFRACTION"
+    ],
+    "resolution_A": [
+      1.66
+    ],
+    "full_entity_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL",
+    "sequence_sha256": "4ed2b4805eb5a146827af8d2127dfb66c3df25ee0ae1377927ad6749dfbc16c0",
+    "differences_from_1L63": [],
+    "seqadv_records": [
+      "SEQADV 219L THR A   54  UNP  P00720    CYS    54 ENGINEERED MUTATION            ",
+      "SEQADV 219L ALA A   97  UNP  P00720    CYS    97 ENGINEERED MUTATION            "
+    ],
+    "chains": {
+      "A": {
+        "modeled_residues": 164,
+        "missing_residue_numbers": [],
+        "coordinate_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+      }
+    },
+    "target_chain": "A",
+    "models": 1,
+    "missing_heavy_atoms": {},
+    "selected_altloc_atoms": {},
+    "atom_altloc_counts": {
+      "blank": 1308
+    },
+    "zero_occupancy_atom_count": 0,
+    "excluded_nonprotein_residue_counts": {
+      "HED": 1,
+      "HOH": 127
+    },
+    "official_mmcif_categories": {
+      "_pdbx_struct_assembly.": {
+        "_pdbx_struct_assembly.id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly.details": [
+          "author_defined_assembly"
+        ],
+        "_pdbx_struct_assembly.method_details": [
+          "?"
+        ],
+        "_pdbx_struct_assembly.oligomeric_details": [
+          "monomeric"
+        ],
+        "_pdbx_struct_assembly.oligomeric_count": [
+          "1"
+        ]
+      },
+      "_pdbx_struct_assembly_gen.": {
+        "_pdbx_struct_assembly_gen.assembly_id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.oper_expression": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.asym_id_list": [
+          "A,B,C"
+        ]
+      },
+      "_pdbx_struct_oper_list.": {
+        "_pdbx_struct_oper_list.id": [
+          "1"
+        ],
+        "_pdbx_struct_oper_list.type": [
+          "identity operation"
+        ],
+        "_pdbx_struct_oper_list.name": [
+          "1_555"
+        ],
+        "_pdbx_struct_oper_list.symmetry_operation": [
+          "x,y,z"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][1]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][2]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][3]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[3]": [
+          "0.0000000000"
+        ]
+      },
+      "_pdbx_unobs_or_zero_occ_residues.": {},
+      "_pdbx_unobs_or_zero_occ_atoms.": {},
+      "_exptl_crystal_grow.": {
+        "_exptl_crystal_grow.crystal_id": [
+          "1"
+        ],
+        "_exptl_crystal_grow.method": [
+          "?"
+        ],
+        "_exptl_crystal_grow.temp": [
+          "?"
+        ],
+        "_exptl_crystal_grow.temp_details": [
+          "?"
+        ],
+        "_exptl_crystal_grow.pH": [
+          "?"
+        ],
+        "_exptl_crystal_grow.pdbx_pH_range": [
+          "?"
+        ],
+        "_exptl_crystal_grow.pdbx_details": [
+          "MUTANT WAS CRYSTALLIZED FROM PHOSPHATE IN CONTRAST TO L1 64AAA_PEG WHICH WAS CRYSTALLIZED FROM PEG."
+        ]
+      }
+    },
+    "pdb_mmcif_max_abs_coordinate_difference_A": 1.8920898412488896e-06,
+    "heavy_atom_template_policy": "Standard heavy atoms N/CA/C/O plus residue sidechain; optional terminal OXT and hydrogen atoms are not required.",
+    "pdb_sha256": "46526c831d07e0ec35099590735e22862b231bade2b172023368a142ff74dfb6",
+    "cif_sha256": "f13f6f5193aecda1959326025b4d2751c815e609b2d24a68bed169c7bf1bda1f"
+  },
+  {
+    "pdb_id": "2LZM",
+    "selected": false,
+    "reason": "Excluded: native C54/C97 background differs from 1L63. Not a pure same-background comparison; no supplemental scan needed to reach three structures.",
+    "source_page": "https://www.rcsb.org/structure/2LZM",
+    "pdb_doi": "https://doi.org/10.2210/pdb2LZM/pdb",
+    "title": "STRUCTURE OF BACTERIOPHAGE T4 LYSOZYME REFINED AT 1.7 ANGSTROMS RESOLUTION",
+    "methods": [
+      "X-RAY DIFFRACTION"
+    ],
+    "resolution_A": [
+      1.7
+    ],
+    "full_entity_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL",
+    "sequence_sha256": "0619a8bdf08b15085930db9c8a635510324e67bfd558bb2f8d1654b896355133",
+    "differences_from_1L63": [
+      "T54C",
+      "A97C"
+    ],
+    "seqadv_records": [],
+    "chains": {
+      "A": {
+        "modeled_residues": 164,
+        "missing_residue_numbers": [],
+        "coordinate_sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+      }
+    },
+    "target_chain": "A",
+    "models": 1,
+    "missing_heavy_atoms": {},
+    "selected_altloc_atoms": {},
+    "atom_altloc_counts": {
+      "blank": 1309
+    },
+    "zero_occupancy_atom_count": 0,
+    "excluded_nonprotein_residue_counts": {
+      "HOH": 118
+    },
+    "official_mmcif_categories": {
+      "_pdbx_struct_assembly.": {
+        "_pdbx_struct_assembly.id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly.details": [
+          "author_defined_assembly"
+        ],
+        "_pdbx_struct_assembly.method_details": [
+          "?"
+        ],
+        "_pdbx_struct_assembly.oligomeric_details": [
+          "monomeric"
+        ],
+        "_pdbx_struct_assembly.oligomeric_count": [
+          "1"
+        ]
+      },
+      "_pdbx_struct_assembly_gen.": {
+        "_pdbx_struct_assembly_gen.assembly_id": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.oper_expression": [
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.asym_id_list": [
+          "A,B"
+        ]
+      },
+      "_pdbx_struct_oper_list.": {
+        "_pdbx_struct_oper_list.id": [
+          "1"
+        ],
+        "_pdbx_struct_oper_list.type": [
+          "identity operation"
+        ],
+        "_pdbx_struct_oper_list.name": [
+          "1_555"
+        ],
+        "_pdbx_struct_oper_list.symmetry_operation": [
+          "x,y,z"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][1]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][2]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][3]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[3]": [
+          "0.0000000000"
+        ]
+      },
+      "_pdbx_unobs_or_zero_occ_residues.": {},
+      "_pdbx_unobs_or_zero_occ_atoms.": {},
+      "_exptl_crystal_grow.": {}
+    },
+    "pdb_mmcif_max_abs_coordinate_difference_A": 1.8920898412488896e-06,
+    "heavy_atom_template_policy": "Standard heavy atoms N/CA/C/O plus residue sidechain; optional terminal OXT and hydrogen atoms are not required.",
+    "pdb_sha256": "a305932376e1e45428c956164117bd3ab1bbc59cdab6b2ae38b7974c0e83ce6f",
+    "cif_sha256": "9fa81cd0454d37c53cd5046b96ef7d993a99c249e77a2da4dc3adf7cdc263d90"
+  },
+  {
+    "pdb_id": "1L97",
+    "selected": false,
+    "reason": "Excluded: I3P plus native C54/C97 background and two ASU protein chains. Not a same-background comparison.",
+    "source_page": "https://www.rcsb.org/structure/1L97",
+    "pdb_doi": "https://doi.org/10.2210/pdb1L97/pdb",
+    "title": "STRUCTURE OF A HINGE-BENDING BACTERIOPHAGE T4 LYSOZYME MUTANT, ILE3-> PRO",
+    "methods": [
+      "X-RAY DIFFRACTION"
+    ],
+    "resolution_A": [
+      2.0
+    ],
+    "full_entity_sequence": "MNPFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL",
+    "sequence_sha256": "254e2b45d42257f40fe115b3013b1f635dd7401e7e8e87bd7dad63ff50a8fb1d",
+    "differences_from_1L63": [
+      "I3P",
+      "T54C",
+      "A97C"
+    ],
+    "seqadv_records": [
+      "SEQADV 1L97 PRO A    3  UNP  P00720    ILE     3 CONFLICT                       ",
+      "SEQADV 1L97 PRO B    3  UNP  P00720    ILE     3 CONFLICT                       "
+    ],
+    "chains": {
+      "A": {
+        "modeled_residues": 164,
+        "missing_residue_numbers": [],
+        "coordinate_sequence": "MNPFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+      },
+      "B": {
+        "modeled_residues": 164,
+        "missing_residue_numbers": [],
+        "coordinate_sequence": "MNPFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+      }
+    },
+    "target_chain": "A",
+    "models": 1,
+    "missing_heavy_atoms": {},
+    "selected_altloc_atoms": {},
+    "atom_altloc_counts": {
+      "blank": 2616
+    },
+    "zero_occupancy_atom_count": 0,
+    "excluded_nonprotein_residue_counts": {
+      "HOH": 201
+    },
+    "official_mmcif_categories": {
+      "_pdbx_struct_assembly.": {
+        "_pdbx_struct_assembly.id": [
+          "1",
+          "2"
+        ],
+        "_pdbx_struct_assembly.details": [
+          "author_defined_assembly",
+          "author_defined_assembly"
+        ],
+        "_pdbx_struct_assembly.method_details": [
+          "?",
+          "?"
+        ],
+        "_pdbx_struct_assembly.oligomeric_details": [
+          "monomeric",
+          "monomeric"
+        ],
+        "_pdbx_struct_assembly.oligomeric_count": [
+          "1",
+          "1"
+        ]
+      },
+      "_pdbx_struct_assembly_gen.": {
+        "_pdbx_struct_assembly_gen.assembly_id": [
+          "1",
+          "2"
+        ],
+        "_pdbx_struct_assembly_gen.oper_expression": [
+          "1",
+          "1"
+        ],
+        "_pdbx_struct_assembly_gen.asym_id_list": [
+          "A,C",
+          "B,D"
+        ]
+      },
+      "_pdbx_struct_oper_list.": {
+        "_pdbx_struct_oper_list.id": [
+          "1"
+        ],
+        "_pdbx_struct_oper_list.type": [
+          "identity operation"
+        ],
+        "_pdbx_struct_oper_list.name": [
+          "1_555"
+        ],
+        "_pdbx_struct_oper_list.symmetry_operation": [
+          "x,y,z"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][1]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[1][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][2]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[2][3]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][1]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][2]": [
+          "0.0000000000"
+        ],
+        "_pdbx_struct_oper_list.matrix[3][3]": [
+          "1.0000000000"
+        ],
+        "_pdbx_struct_oper_list.vector[3]": [
+          "0.0000000000"
+        ]
+      },
+      "_pdbx_unobs_or_zero_occ_residues.": {},
+      "_pdbx_unobs_or_zero_occ_atoms.": {},
+      "_exptl_crystal_grow.": {}
+    },
+    "pdb_mmcif_max_abs_coordinate_difference_A": 1.8920898412488896e-06,
+    "heavy_atom_template_policy": "Standard heavy atoms N/CA/C/O plus residue sidechain; optional terminal OXT and hydrogen atoms are not required.",
+    "pdb_sha256": "e293a4acd03b8844bd00edea0ea02ccd7dbb6c73980a60faa09f93397a7e23da",
+    "cif_sha256": "ef89f3d9b6a1b1cea8db2dcfb66f79bcb0deb215593cef4a759f65bf8f33de76"
+  }
+]

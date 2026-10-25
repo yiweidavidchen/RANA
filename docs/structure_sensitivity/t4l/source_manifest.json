@@ -1,0 +1,156 @@
+{
+  "files": {
+    "1L63.pdb": {
+      "url": "https://files.rcsb.org/download/1L63.pdb",
+      "final_url": "https://files.rcsb.org/download/1L63.pdb",
+      "retrieved_utc": "2026-10-25T04:28:53.903537+00:00",
+      "sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+      "bytes": 157707
+    },
+    "1L63.cif": {
+      "url": "https://files.rcsb.org/download/1L63.cif",
+      "final_url": "https://files.rcsb.org/download/1L63.cif",
+      "retrieved_utc": "2026-10-25T04:28:53.716013+00:00",
+      "sha256": "86e536589631e9da02ff4a374911f0375519ad322f86a15ce936a81901a79e42",
+      "bytes": 206086
+    },
+    "1L63_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/1L63",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/1L63",
+      "retrieved_utc": "2026-10-25T04:26:55.945222+00:00",
+      "sha256": "db32e795a2da62f4b8d8c63bcf9918a0597ae2c084e6fb19d7010db9d7356336",
+      "bytes": 23524
+    },
+    "1L63_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1L63/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1L63/1",
+      "retrieved_utc": "2026-10-25T04:26:54.334319+00:00",
+      "sha256": "cd4e41709cfe1cfb0791bd013c4c1eed243710f525069bb259b52d8a38b053ee",
+      "bytes": 24211
+    },
+    "1LW9.pdb": {
+      "url": "https://files.rcsb.org/download/1LW9.pdb",
+      "final_url": "https://files.rcsb.org/download/1LW9.pdb",
+      "retrieved_utc": "2026-10-25T04:28:54.266623+00:00",
+      "sha256": "ed944dd178afcbdca73474a0cd003cb63b06f9c3c9498153e8f07c5426db4fca",
+      "bytes": 158193
+    },
+    "1LW9.cif": {
+      "url": "https://files.rcsb.org/download/1LW9.cif",
+      "final_url": "https://files.rcsb.org/download/1LW9.cif",
+      "retrieved_utc": "2026-10-25T04:28:54.109067+00:00",
+      "sha256": "07927bfc37ba57961a45cf4841c2614939847d8d763037ea458cfa13e1806e0a",
+      "bytes": 216659
+    },
+    "1LW9_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/1LW9",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/1LW9",
+      "retrieved_utc": "2026-10-25T04:26:56.079552+00:00",
+      "sha256": "c872269921f75284c04e49433516e6bd62baf55af63d65f2b6b3d4a9b61351e3",
+      "bytes": 17109
+    },
+    "1LW9_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1LW9/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1LW9/1",
+      "retrieved_utc": "2026-10-25T04:28:54.338710+00:00",
+      "sha256": "46b20995d766d5c204c006710d8c76c1e9ef319c0bf961430bb1a058fe5e89fb",
+      "bytes": 27643
+    },
+    "219L.pdb": {
+      "url": "https://files.rcsb.org/download/219L.pdb",
+      "final_url": "https://files.rcsb.org/download/219L.pdb",
+      "retrieved_utc": "2026-10-25T04:28:54.819764+00:00",
+      "sha256": "46526c831d07e0ec35099590735e22862b231bade2b172023368a142ff74dfb6",
+      "bytes": 148311
+    },
+    "219L.cif": {
+      "url": "https://files.rcsb.org/download/219L.cif",
+      "final_url": "https://files.rcsb.org/download/219L.cif",
+      "retrieved_utc": "2026-10-25T04:28:54.537303+00:00",
+      "sha256": "f13f6f5193aecda1959326025b4d2751c815e609b2d24a68bed169c7bf1bda1f",
+      "bytes": 193460
+    },
+    "219L_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/219L",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/219L",
+      "retrieved_utc": "2026-10-25T04:26:56.290916+00:00",
+      "sha256": "dadd13a2784830adcc3245de3142bffe27b37c44322e52c081d103ec71a580bf",
+      "bytes": 12238
+    },
+    "219L_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/219L/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/219L/1",
+      "retrieved_utc": "2026-10-25T04:28:54.907030+00:00",
+      "sha256": "af17eddc60a3963f7489904c00a737aec2ff214b4fc531824f612164dda9899e",
+      "bytes": 27411
+    },
+    "2LZM.pdb": {
+      "url": "https://files.rcsb.org/download/2LZM.pdb",
+      "final_url": "https://files.rcsb.org/download/2LZM.pdb",
+      "retrieved_utc": "2026-10-25T04:28:55.386925+00:00",
+      "sha256": "a305932376e1e45428c956164117bd3ab1bbc59cdab6b2ae38b7974c0e83ce6f",
+      "bytes": 149526
+    },
+    "2LZM.cif": {
+      "url": "https://files.rcsb.org/download/2LZM.cif",
+      "final_url": "https://files.rcsb.org/download/2LZM.cif",
+      "retrieved_utc": "2026-10-25T04:28:55.131549+00:00",
+      "sha256": "9fa81cd0454d37c53cd5046b96ef7d993a99c249e77a2da4dc3adf7cdc263d90",
+      "bytes": 191798
+    },
+    "2LZM_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/2LZM",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/2LZM",
+      "retrieved_utc": "2026-10-25T04:28:55.485101+00:00",
+      "sha256": "565554f21ed4a471422434f54b78bc38183b01c798b279948f6fb1dbb433c463",
+      "bytes": 19777
+    },
+    "2LZM_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2LZM/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2LZM/1",
+      "retrieved_utc": "2026-10-25T04:28:55.562871+00:00",
+      "sha256": "aa05fda15617708d9e6e2441a039547c8bbaab847d51dfed469934e4acd8604f",
+      "bytes": 24153
+    },
+    "1L97.pdb": {
+      "url": "https://files.rcsb.org/download/1L97.pdb",
+      "final_url": "https://files.rcsb.org/download/1L97.pdb",
+      "retrieved_utc": "2026-10-25T04:28:55.998731+00:00",
+      "sha256": "e293a4acd03b8844bd00edea0ea02ccd7dbb6c73980a60faa09f93397a7e23da",
+      "bytes": 262359
+    },
+    "1L97.cif": {
+      "url": "https://files.rcsb.org/download/1L97.cif",
+      "final_url": "https://files.rcsb.org/download/1L97.cif",
+      "retrieved_utc": "2026-10-25T04:28:55.867801+00:00",
+      "sha256": "ef89f3d9b6a1b1cea8db2dcfb66f79bcb0deb215593cef4a759f65bf8f33de76",
+      "bytes": 326992
+    },
+    "1L97_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/1L97",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/1L97",
+      "retrieved_utc": "2026-10-25T04:28:56.065060+00:00",
+      "sha256": "1d9bfce65ea9d334ac54bee49c01ab29a96a63287f5eb599f335e591f00d12a3",
+      "bytes": 10910
+    },
+    "1L97_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1L97/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1L97/1",
+      "retrieved_utc": "2026-10-25T04:28:56.170330+00:00",
+      "sha256": "3f7b1b8cb31411b316b84a11ba709e298492868cae8a6fbe0249efc9d52ec9ea",
+      "bytes": 24216
+    }
+  },
+  "discovery": {
+    "source": {
+      "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%20%7B%22type%22%3A%20%22terminal%22%2C%20%22service%22%3A%20%22sequence%22%2C%20%22parameters%22%3A%20%7B%22evalue_cutoff%22%3A%201%2C%20%22identity_cutoff%22%3A%201.0%2C%20%22target%22%3A%20%22pdb_protein_sequence%22%2C%20%22value%22%3A%20%22MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL%22%7D%7D%2C%20%22return_type%22%3A%20%22polymer_entity%22%2C%20%22request_options%22%3A%20%7B%22paginate%22%3A%20%7B%22start%22%3A%200%2C%20%22rows%22%3A%20100%7D%7D%7D",
+      "final_url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%20%7B%22type%22%3A%20%22terminal%22%2C%20%22service%22%3A%20%22sequence%22%2C%20%22parameters%22%3A%20%7B%22evalue_cutoff%22%3A%201%2C%20%22identity_cutoff%22%3A%201.0%2C%20%22target%22%3A%20%22pdb_protein_sequence%22%2C%20%22value%22%3A%20%22MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL%22%7D%7D%2C%20%22return_type%22%3A%20%22polymer_entity%22%2C%20%22request_options%22%3A%20%7B%22paginate%22%3A%20%7B%22start%22%3A%200%2C%20%22rows%22%3A%20100%7D%7D%7D",
+      "retrieved_utc": "2026-10-25T04:26:55.034186+00:00",
+      "sha256": "965f669e8c4a0629397bc303e6d4c1df1d30031cadbfbdc6a83919f870c82ef0",
+      "bytes": 5683
+    },
+    "total_entities": 124,
+    "inspected_first_hits": 100,
+    "search_is_exhaustive": false
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "scope": "M6.3 same-background T4L sensitivity and review fixes; excludes raw scans, structures, papers, local archives, environments, exploratory scripts and M5 records.",
+  "file_count_including_manifest": 32,
+  "files": [
+    {
+      "path": "docs/structure_sensitivity/t4l/analysis_plan.md",
+      "purpose": "Study guidance, report or revision explanation: analysis_plan",
+      "bytes": 7084,
+      "sha256": "9d27e9b2ccb18acd347cdc6198c672b60a37af900712a9e1d1611dddb73dd10a"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/analysis_revision_2026-10-24.json",
+      "purpose": "Frozen configuration, provenance or validation record: analysis_revision_2026-10-24",
+      "bytes": 6462,
+      "sha256": "05d8549474763c125410294de9eb5ee932fb7f51b8b5bc00524fc02277e8c5e0"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/analysis_revision_2026-10-24.md",
+      "purpose": "Study guidance, report or revision explanation: analysis_revision_2026-10-24",
+      "bytes": 4513,
+      "sha256": "973c76a384d5291bd11d139045d62ca3e13bda27601c6a865b9987556fc7ee13"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/analyze.py",
+      "purpose": "Analysis, preparation or targeted test implementation: analyze",
+      "bytes": 17959,
+      "sha256": "ddde046a59f2616231e128ab76a709faa3acdca0c63c8dce43345a6ec1ffe35a"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/audit/site_mapping.csv",
+      "purpose": "Curated comparison/mapping table: site_mapping",
+      "bytes": 138703,
+      "sha256": "dba8afe8ec00f54cf536e718c56ac655921de65fe90a4743ecee57a7635f218a"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/audit/structure_audit.json",
+      "purpose": "Frozen configuration, provenance or validation record: structure_audit",
+      "bytes": 25128,
+      "sha256": "55166a3129a5c6a2af6f16a110a13541fd34b53084ad13d66b1caf346d551a7a"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/audit/structure_selection.csv",
+      "purpose": "Curated comparison/mapping table: structure_selection",
+      "bytes": 3682,
+      "sha256": "18f94f623e918f54de378283601cd768839146d127b00e5d1c4a988812ba681a"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/data_dictionary.md",
+      "purpose": "Study guidance, report or revision explanation: data_dictionary",
+      "bytes": 4781,
+      "sha256": "7660053c02100cc465a1819ed3cab7a44b613d1c9d5c9f05044e34ffe98d82bd"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/execution_summary.json",
+      "purpose": "Frozen configuration, provenance or validation record: execution_summary",
+      "bytes": 13892,
+      "sha256": "99b3e2d72cd876782aed2c9504671a20e567b25280985de8d5f43e4d874940f8"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/frozen_plan.json",
+      "purpose": "Frozen configuration, provenance or validation record: frozen_plan",
+      "bytes": 2268,
+      "sha256": "86130eb295656f0f65b28d26b9fc093bd45875063e1acaa4af109304e8d6ca52"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/README.md",
+      "purpose": "Study guidance, report or revision explanation: README",
+      "bytes": 9321,
+      "sha256": "e8985cb4162f58406ef5320224e5d2e920c396d000b9b139a3a4d56ca39b359e"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/requirements-analysis.txt",
+      "purpose": "Pinned analysis dependency configuration",
+      "bytes": 227,
+      "sha256": "d9999dcde5358d68fa7f0e28092a2784cd686753df19fc7855018dc669d9a376"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/analysis_metadata.json",
+      "purpose": "Frozen configuration, provenance or validation record: analysis_metadata",
+      "bytes": 1919,
+      "sha256": "4288df09d4350b819e792933863e431c39a3afe831118a2cb983fc8542138a45"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/m5_six_sites.csv",
+      "purpose": "Curated comparison/mapping table: m5_six_sites",
+      "bytes": 5606,
+      "sha256": "fa74aa2ac3804092690bbce5e3cfb8576b7a738a0075932c7fc5deea7006824d"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/m5_six_sites.png",
+      "purpose": "Raster figure: m5_six_sites",
+      "bytes": 87847,
+      "sha256": "2dac9d28428c561803668d0201244204a39fdc5794f800c38afa3744a7537242"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/m5_six_sites.svg",
+      "purpose": "Vector figure: m5_six_sites",
+      "bytes": 73122,
+      "sha256": "aa028187e086fb582388f7b38c6f202d4468027bb7e32ba6f7b466317fc615cc"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/metrics_long.csv",
+      "purpose": "Curated comparison/mapping table: metrics_long",
+      "bytes": 140420,
+      "sha256": "d93fbc9323049da8a2dd93345581a1c1b03c2523992ca76847f909ea6ba93d5e"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/pairwise_metrics.csv",
+      "purpose": "Curated comparison/mapping table: pairwise_metrics",
+      "bytes": 1239,
+      "sha256": "b7d0f4221079cdc78dd80c78620be65828980f6c586e74829e47c931fb89b740"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/pairwise_metrics.png",
+      "purpose": "Raster figure: pairwise_metrics",
+      "bytes": 284075,
+      "sha256": "7357fbed347adad1d19898329e9be7d244a8fe5fb566207327361141c71063cd"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/pairwise_metrics.svg",
+      "purpose": "Vector figure: pairwise_metrics",
+      "bytes": 448873,
+      "sha256": "b8123e5fb494c30fdfcf58452843f0065346bf47e95b3558ad8b5942353c24b9"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/rank_ranges.png",
+      "purpose": "Raster figure: rank_ranges",
+      "bytes": 120053,
+      "sha256": "8e1ffee9559163fc777034dd010c760339ae1a4d61a58a875b0d36003bc33fff"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/rank_ranges.svg",
+      "purpose": "Vector figure: rank_ranges",
+      "bytes": 135496,
+      "sha256": "203439ef2c60e4465e464065207c2571e39b99b4fa0e67ad387a006d2430145f"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/site_eligibility.csv",
+      "purpose": "Curated comparison/mapping table: site_eligibility",
+      "bytes": 46487,
+      "sha256": "bbf85acd49af0aa1ad9123e1750c4a52dc4f7ae2c73b32b657a7effbf78808a8"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/site_ranges.csv",
+      "purpose": "Curated comparison/mapping table: site_ranges",
+      "bytes": 49241,
+      "sha256": "e22fddf75660b1c768a31eee9b5246f22694f72a39a8e689792c1d88900e73e4"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/tier_transitions.csv",
+      "purpose": "Curated comparison/mapping table: tier_transitions",
+      "bytes": 1431,
+      "sha256": "fd47a495a540e7f7dda57bb472e125a5f6d5e7e2c2799786d026fa68242bbdf6"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results/top10_overlap.csv",
+      "purpose": "Curated comparison/mapping table: top10_overlap",
+      "bytes": 4562,
+      "sha256": "47d2e3713085c815711cc38dfb3cd60c295a2e5cff7e159b81b61e5fe50fbc45"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/results_report.md",
+      "purpose": "Study guidance, report or revision explanation: results_report",
+      "bytes": 7319,
+      "sha256": "9957a5d05033cb63213157d58f31ab71f3737ade64e93be7fb07729d7494a405"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/run_scans.py",
+      "purpose": "Analysis, preparation or targeted test implementation: run_scans",
+      "bytes": 11014,
+      "sha256": "0ccdb04298c4798cd4b5c4a4ef35da3d11a1df3bd5f8964f35002df141edbdd4"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/source_manifest.json",
+      "purpose": "Frozen configuration, provenance or validation record: source_manifest",
+      "bytes": 8279,
+      "sha256": "23bb9ce50c369b62d63dd2fecf8652de0332a18e9437a9db7dbd84bd86454a8e"
+    },
+    {
+      "path": "docs/structure_sensitivity/t4l/structure_audit.py",
+      "purpose": "Analysis, preparation or targeted test implementation: structure_audit",
+      "bytes": 10857,
+      "sha256": "f65acf020d07bba22176b824526d16ce8af109b1aa69b15f15ff8c1fdc6456c0"
+    },
+    {
+      "path": "tests/test_t4l_structure_sensitivity.py",
+      "purpose": "Analysis, preparation or targeted test implementation: test_t4l_structure_sensitivity",
+      "bytes": 14536,
+      "sha256": "0c92b6acdd11a715a1369cb0e1aa94eee6251299bf8a59b51c486849aa5f0295"
+    }
+  ],
+  "self": "docs/structure_sensitivity/t4l/file_manifest.json; own digest omitted to avoid recursion"
+}

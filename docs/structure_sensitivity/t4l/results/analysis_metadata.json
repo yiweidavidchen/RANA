@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-25T06:04:08.906576+00:00",
+  "analysis_sha256": "ddde046a59f2616231e128ab76a709faa3acdca0c63c8dce43345a6ec1ffe35a",
+  "source": {
+    "run_record_sha256": "cd61fede154691475289577d60a608da25f4f6f54f03214769183740367a238d",
+    "plan_sha256": "86130eb295656f0f65b28d26b9fc093bd45875063e1acaa4af109304e8d6ca52"
+  },
+  "environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "biopython": "1.88",
+    "matplotlib": "3.11.2"
+  },
+  "common_sites": 162,
+  "tier_stable": 143,
+  "tier_changed": 19,
+  "outputs_sha256": {
+    "m5_six_sites.csv": "fa74aa2ac3804092690bbce5e3cfb8576b7a738a0075932c7fc5deea7006824d",
+    "m5_six_sites.png": "2dac9d28428c561803668d0201244204a39fdc5794f800c38afa3744a7537242",
+    "m5_six_sites.svg": "aa028187e086fb582388f7b38c6f202d4468027bb7e32ba6f7b466317fc615cc",
+    "metrics_long.csv": "d93fbc9323049da8a2dd93345581a1c1b03c2523992ca76847f909ea6ba93d5e",
+    "pairwise_metrics.csv": "b7d0f4221079cdc78dd80c78620be65828980f6c586e74829e47c931fb89b740",
+    "pairwise_metrics.png": "7357fbed347adad1d19898329e9be7d244a8fe5fb566207327361141c71063cd",
+    "pairwise_metrics.svg": "b8123e5fb494c30fdfcf58452843f0065346bf47e95b3558ad8b5942353c24b9",
+    "rank_ranges.png": "8e1ffee9559163fc777034dd010c760339ae1a4d61a58a875b0d36003bc33fff",
+    "rank_ranges.svg": "203439ef2c60e4465e464065207c2571e39b99b4fa0e67ad387a006d2430145f",
+    "site_eligibility.csv": "bbf85acd49af0aa1ad9123e1750c4a52dc4f7ae2c73b32b657a7effbf78808a8",
+    "site_ranges.csv": "e22fddf75660b1c768a31eee9b5246f22694f72a39a8e689792c1d88900e73e4",
+    "tier_transitions.csv": "fd47a495a540e7f7dda57bb472e125a5f6d5e7e2c2799786d026fa68242bbdf6",
+    "top10_overlap.csv": "47d2e3713085c815711cc38dfb3cd60c295a2e5cff7e159b81b61e5fe50fbc45"
+  },
+  "scope": "Same-background input sensitivity only; no experimental outcome, model fitting or performance claim."
+}
