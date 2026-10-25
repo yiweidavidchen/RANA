@@ -1,0 +1,108 @@
+{
+  "revision": "M6.3 analysis review fixes, 2026-10-24 (America/Los_Angeles)",
+  "recorded_utc": "2026-10-25T06:08:01.288037+00:00",
+  "base_git_commit": "bc63d0a74036e702c698d349862c976059707ea3",
+  "source_state": "Uncommitted analysis/test/doc revision on codex/m6-t4l-structure-sensitivity; scientific package unchanged.",
+  "previous_analysis_sha256": "6d4b09f28d70d03ff629df81892073e56156a0d0fe180753a83d36b040c58081",
+  "revised_analysis_sha256": "ddde046a59f2616231e128ab76a709faa3acdca0c63c8dce43345a6ec1ffe35a",
+  "test_source_sha256": "0c92b6acdd11a715a1369cb0e1aa94eee6251299bf8a59b51c486849aa5f0295",
+  "verification_script_local": "data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/verify_revision.py",
+  "verification_script_sha256": "ae5b2ccf831d91822b6bfdd929b15c21ae06e8a990c8e5415ef4ca1bcded5360",
+  "original_run_record_sha256": "cd61fede154691475289577d60a608da25f4f6f54f03214769183740367a238d",
+  "frozen_plan_sha256": "86130eb295656f0f65b28d26b9fc093bd45875063e1acaa4af109304e8d6ca52",
+  "historical_execution_summary_sha256": "99b3e2d72cd876782aed2c9504671a20e567b25280985de8d5f43e4d874940f8",
+  "historical_snapshot_local": "data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/before",
+  "original_scan_files_checked_unchanged": 18,
+  "input_checks": "Plan hash against completed run; frozen analysis-plan/audit/mapping/source-manifest hashes; all three scans, sidecars and prepared-input hashes before any CSV parsing. No expected hash is auto-updated.",
+  "eligibility_checks": "Audited unmodeled coordinates retain absent_from_input; modeled coordinates lacking scan rows fail. failed/skipped and parent/mapping mismatch diagnostics remain distinct.",
+  "tier_checks": "Existing three-label enum enforced; each complete 3x3 transition table totals the common-site count; stable/change identities and totals checked against all input tiers.",
+  "commands": {
+    "targeted_tests": "python -B -m pytest tests/test_t4l_structure_sensitivity.py -q -o cache_dir=data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/pytest_cache --basetemp=data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/pytest_tmp --junitxml=data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/tests.xml",
+    "analysis_from_original_scans": "python -B docs/structure_sensitivity/t4l/analyze.py --run-dir data/processed/m6_t4l_structure_sensitivity_2026-10-24/run --output data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/from_scans",
+    "curated_reproduction": "python -B docs/structure_sensitivity/t4l/analyze.py --curated docs/structure_sensitivity/t4l/results/metrics_long.csv --output data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/from_curated"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "analysis_packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "matplotlib": "3.11.2"
+    },
+    "scope": "Existing Windows development venv; no new installation, fresh-environment or cross-platform claim."
+  },
+  "tests": {
+    "passed": 38,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "warnings_reported": 0,
+    "seconds": 27.32,
+    "junit_local": "data/processed/m6_t4l_structure_sensitivity_2026-10-24/analysis_revision_2026-10-24/tests.xml",
+    "junit_sha256": "7cdd601757b71f3f0f64ae6c13c9d2471619413bccbe4a4218ddc13ecfc74ce0",
+    "coverage": "Positive/negative provenance checks; before-parse rejection; audited absence vs missing scan row; failed/skipped and mismatched parent; invalid tiers/counts; normal Python and python -O nonzero failures; SVG whitespace-only/idempotent normalization; existing tie/rank/source/preparation checks."
+  },
+  "comparison": {
+    "byte_identical_csvs": [
+      "m5_six_sites.csv",
+      "metrics_long.csv",
+      "pairwise_metrics.csv",
+      "site_eligibility.csv",
+      "site_ranges.csv",
+      "tier_transitions.csv",
+      "top10_overlap.csv"
+    ],
+    "scientific_values_original_ranks_common_ranks_correlations_toplists_and_eligibility_reasons": "unchanged; seven complete CSV files byte-identical",
+    "common_sites": 162,
+    "common_long_rows": 486,
+    "eligibility_rows": 492,
+    "tier_stable": 143,
+    "tier_changed": 19,
+    "m5_sites": 6,
+    "m5_all_tier_stable": true,
+    "byte_identical_pngs": [
+      "m5_six_sites.png",
+      "pairwise_metrics.png",
+      "rank_ranges.png"
+    ],
+    "svg_changes": {
+      "m5_six_sites.svg": {
+        "old_sha256": "2c6972eec97f1a515d5de0f0221e7659a0e5dfe651218b0c2af931bed098120d",
+        "new_sha256": "aa028187e086fb582388f7b38c6f202d4468027bb7e32ba6f7b466317fc615cc",
+        "old_bytes": 76507,
+        "new_bytes": 73122,
+        "difference": "trailing whitespace only; all other bytes preserved"
+      },
+      "pairwise_metrics.svg": {
+        "old_sha256": "15af1602f6c35e5b0f93c352d1ecd433edc14f0c3a132dbf624047ff02b3865f",
+        "new_sha256": "b8123e5fb494c30fdfcf58452843f0065346bf47e95b3558ad8b5942353c24b9",
+        "old_bytes": 456415,
+        "new_bytes": 448873,
+        "difference": "trailing whitespace only; all other bytes preserved"
+      },
+      "rank_ranges.svg": {
+        "old_sha256": "f32447977d93475cdcf0c4f7a835e181556d829fcf9e3d76ff8a399776daa00d",
+        "new_sha256": "203439ef2c60e4465e464065207c2571e39b99b4fa0e67ad387a006d2430145f",
+        "old_bytes": 139139,
+        "new_bytes": 135496,
+        "difference": "trailing whitespace only; all other bytes preserved"
+      }
+    },
+    "curated_reproduction_byte_identical_files": [
+      "m5_six_sites.csv",
+      "m5_six_sites.png",
+      "m5_six_sites.svg",
+      "metrics_long.csv",
+      "pairwise_metrics.csv",
+      "pairwise_metrics.png",
+      "pairwise_metrics.svg",
+      "rank_ranges.png",
+      "rank_ranges.svg",
+      "site_ranges.csv",
+      "tier_transitions.csv",
+      "top10_overlap.csv"
+    ],
+    "revised_analysis_metadata_sha256": "4288df09d4350b819e792933863e431c39a3afe831118a2cb983fc8542138a45"
+  },
+  "boundaries": "No download or scan, no parameter/rotamer/scoring change, no new structures or experiments, no M5 change, no independent experimental validation. Original scan execution and prior analysis are retained, not rewritten."
+}

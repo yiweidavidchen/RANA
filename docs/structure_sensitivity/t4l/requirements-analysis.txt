@@ -1,0 +1,4 @@
+# Same direct scientific dependency versions as the actual PR #5 environment.
+-r ../../reproducibility/requirements-2fg8.txt
+# Additional existing plotting dependency used here; no project dependency change.
+matplotlib==3.11.2

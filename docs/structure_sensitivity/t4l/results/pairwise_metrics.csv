@@ -1,0 +1,13 @@
+structure_a,structure_b,metric,common_sites,spearman_rho,missing_reason,rank_definition
+1L63,1LW9,rsa,162,0.9866050697482063,,"average ranks, all ties retained; no p-value"
+1L63,1LW9,ca_neighbors_8a,162,0.969590703415088,,"average ranks, all ties retained; no p-value"
+1L63,1LW9,min_steric_score,162,0.9495540962598844,,"average ranks, all ties retained; no p-value"
+1L63,1LW9,low_clash_fraction,162,0.9649287848384508,,"average ranks, all ties retained; no p-value"
+1L63,219L,rsa,162,0.9929711430022563,,"average ranks, all ties retained; no p-value"
+1L63,219L,ca_neighbors_8a,162,0.9773345622254959,,"average ranks, all ties retained; no p-value"
+1L63,219L,min_steric_score,162,0.9693322099297027,,"average ranks, all ties retained; no p-value"
+1L63,219L,low_clash_fraction,162,0.9787584641396222,,"average ranks, all ties retained; no p-value"
+1LW9,219L,rsa,162,0.989812073694482,,"average ranks, all ties retained; no p-value"
+1LW9,219L,ca_neighbors_8a,162,0.9807863182605525,,"average ranks, all ties retained; no p-value"
+1LW9,219L,min_steric_score,162,0.9418793865312938,,"average ranks, all ties retained; no p-value"
+1LW9,219L,low_clash_fraction,162,0.9636932835570715,,"average ranks, all ties retained; no p-value"

@@ -1,0 +1,64 @@
+{
+  "study": "M6.3 T4L same-background reference-structure sensitivity",
+  "frozen_utc": "2026-10-25T04:35:58.642734+00:00",
+  "base_git_commit": "bc63d0a74036e702c698d349862c976059707ea3",
+  "structures": [
+    {
+      "pdb_id": "1L63",
+      "chain": "A",
+      "pdb_sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+      "cif_sha256": "86e536589631e9da02ff4a374911f0375519ad322f86a15ce936a81901a79e42",
+      "modeled_sites": 162
+    },
+    {
+      "pdb_id": "1LW9",
+      "chain": "A",
+      "pdb_sha256": "ed944dd178afcbdca73474a0cd003cb63b06f9c3c9498153e8f07c5426db4fca",
+      "cif_sha256": "07927bfc37ba57961a45cf4841c2614939847d8d763037ea458cfa13e1806e0a",
+      "modeled_sites": 164
+    },
+    {
+      "pdb_id": "219L",
+      "chain": "A",
+      "pdb_sha256": "46526c831d07e0ec35099590735e22862b231bade2b172023368a142ff74dfb6",
+      "cif_sha256": "f13f6f5193aecda1959326025b4d2751c815e609b2d24a68bed169c7bf1bda1f",
+      "modeled_sites": 164
+    }
+  ],
+  "scan": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "low_clash_threshold": 10.0,
+    "favorable_fraction": 0.5,
+    "n_rotamers": 12,
+    "functional_residues": null
+  },
+  "environment": "all available chain-A standard protein heavy atoms; original alternate records/order; no symmetry, hetero, H/D or reconstruction",
+  "analysis_plan_sha256": "9d27e9b2ccb18acd347cdc6198c672b60a37af900712a9e1d1611dddb73dd10a",
+  "audit_sha256": "55166a3129a5c6a2af6f16a110a13541fd34b53084ad13d66b1caf346d551a7a",
+  "mapping_sha256": "dba8afe8ec00f54cf536e718c56ac655921de65fe90a4743ecee57a7635f218a",
+  "source_manifest_sha256": "23bb9ce50c369b62d63dd2fecf8652de0332a18e9437a9db7dbd84bd86454a8e",
+  "common_identity": [
+    "chain",
+    "residue_number",
+    "insertion_code",
+    "residue_name"
+  ],
+  "metrics": {
+    "rsa": false,
+    "ca_neighbors_8a": true,
+    "min_steric_score": true,
+    "low_clash_fraction": false
+  },
+  "display_rank_method": "min",
+  "spearman_rank_method": "average",
+  "top10_ties": "inclusive 10th order-statistic boundary; report actual set sizes and Jaccard",
+  "m5_sites": {
+    "K16": "LYS",
+    "H31": "HIS",
+    "S44": "SER",
+    "N53": "ASN",
+    "L91": "LEU",
+    "K135": "LYS"
+  }
+}

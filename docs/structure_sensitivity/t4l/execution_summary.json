@@ -1,0 +1,381 @@
+{
+  "study": "M6.3 T4L same-background reference-structure sensitivity",
+  "branch": "codex/m6-t4l-structure-sensitivity",
+  "git_commit_executed": "bc63d0a74036e702c698d349862c976059707ea3",
+  "plan_frozen_utc": "2026-10-25T04:35:58.642734+00:00",
+  "plan_sha256": "86130eb295656f0f65b28d26b9fc093bd45875063e1acaa4af109304e8d6ca52",
+  "actual_scan_started_utc": "2026-10-25T04:38:01.440213+00:00",
+  "actual_scan_finished_utc": "2026-10-25T04:39:03.536118+00:00",
+  "run_record_sha256": "cd61fede154691475289577d60a608da25f4f6f54f03214769183740367a238d",
+  "local_ignored_run_record": "data/processed/m6_t4l_structure_sensitivity_2026-10-24/run/run.json",
+  "executed_wrapper_helper_sha256": {
+    "run_scans.py": "8ff5488ee1df841dbba24def0013546533624d127d75563eacd301af25e276da",
+    "structure_audit.py": "f65acf020d07bba22176b824526d16ce8af109b1aa69b15f15ff8c1fdc6456c0"
+  },
+  "executed_sources_local_archive": "data/processed/m6_t4l_structure_sensitivity_2026-10-24/run/executed_sources",
+  "current_script_sha256": {
+    "analyze.py": "6d4b09f28d70d03ff629df81892073e56156a0d0fe180753a83d36b040c58081",
+    "run_scans.py": "0ccdb04298c4798cd4b5c4a4ef35da3d11a1df3bd5f8964f35002df141edbdd4",
+    "structure_audit.py": "f65acf020d07bba22176b824526d16ce8af109b1aa69b15f15ff8c1fdc6456c0"
+  },
+  "wrapper_revision_note": "Actual scans used the archived wrapper, with exact frozen-base HEAD check. Current runner additionally verifies full scientific source content to allow later documentation-only HEADs. This guard revision was tested, not claimed to execute another real scan. No score/parameter/input-policy change.",
+  "scientific_package_sha256": {
+    "ncaa_site_rec/cli.py": "05b7aa841676ae4095738ff72e44f093d476be36fc09d666d98558bdfd55841e",
+    "ncaa_site_rec/models.py": "a9c82fb9c3d77e8194419e0f7f0055c34c43d6370ba0fd7b74dc89b726652e8c",
+    "ncaa_site_rec/__init__.py": "a9b84c8789a0d893280857e52b0211bc0a54eb7451f00c6f62ad4e4ffffcb202",
+    "ncaa_site_rec/features/asa_reference.py": "17e826c507b8768fd1310c91b608a4175754eddd90c2fb3c6cbbbd8d257870d4",
+    "ncaa_site_rec/features/ddg.py": "bb6caaa2d5642eb81e3654729984b4e3fafdef01ee8c349f288161d5d07fbb40",
+    "ncaa_site_rec/features/geometry.py": "e97d27e8734a3633527b7eb5bfab5222660b8636a47f4aafa7322dfaa773d74f",
+    "ncaa_site_rec/features/load_bearing.py": "f580498c0dfbc51749a4b41533e0924d9819c3d12070b03f2547d22f0ec5d23c",
+    "ncaa_site_rec/features/pazf.py": "b8d712ebd9938472b22459fd076c2d026f3ca483f184bc3a5672588d654dfef3",
+    "ncaa_site_rec/features/site_features.py": "a553c540147690144ffbd24585c15d349c7a7c481a13ca4746c39a043e4f7cda",
+    "ncaa_site_rec/features/site_ranking.py": "52ca7e5cc1ffd801429bc4a48f6960909ec3833958d294519f9e663ef3e66260",
+    "ncaa_site_rec/features/site_scan.py": "5503a1c6109930651bddf94ed892c34074e05a3b065b8dc0f6488338eca5a714",
+    "ncaa_site_rec/features/structural.py": "874345ec69fdcd33f7f5c0c90a01a90d556521345e772cc907c96b883922b9ba",
+    "ncaa_site_rec/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/io/prepare_structure.py": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81",
+    "ncaa_site_rec/io/run_metadata.py": "c6eae59416154e7d7e21d7bdb6f9146cd0957b0f5c7eed4713d6269fccbfe4d1",
+    "ncaa_site_rec/io/structure.py": "96296998fceaa8b4b922ce95f24fe84414dc0872a5b94c36052a8a23322c93f4",
+    "ncaa_site_rec/io/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/scoring/rank.py": "32a3c3389d334f3b800539408808c93fccf1f63f7ff10e886851738f2745b4f2",
+    "ncaa_site_rec/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "rdkit": "2026.9.1"
+    }
+  },
+  "analysis_environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "biopython": "1.88",
+    "matplotlib": "3.11.2"
+  },
+  "parameters": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "low_clash_threshold": 10.0,
+    "favorable_fraction": 0.5,
+    "n_rotamers": 12,
+    "functional_residues": null
+  },
+  "structures": {
+    "1L63": {
+      "preparation": {
+        "source_sha256": "dbc42255d5f5670725b4f93c00bc58b9996d32437172949081aa0a493caf0825",
+        "prepared_sha256": "1c59dfef14632a9461537dae00576bd852b4abfaf6c5d85d4827a110bc6f0cb2",
+        "retained_chains": [
+          "A"
+        ],
+        "modeled_sites": 162,
+        "heavy_atom_records_including_altlocs": 1292,
+        "max_abs_coordinate_change_A": 0,
+        "selected_altlocs_preserved": true
+      },
+      "output_validation": {
+        "rows": 162,
+        "status_counts": {
+          "scored": 162
+        },
+        "csv_sha256": "84e0e69451dd06d2f443d23921b0936f6025fe9300af4ffe20cc179adb3a0d15",
+        "metadata_sha256": "d19cf6dd0626677426fa6af97c185c3ec1c255522b3790c7cce3a8f1350536dd"
+      },
+      "started_utc": "2026-10-25T04:38:01.806585+00:00",
+      "finished_utc": "2026-10-25T04:38:17.800376+00:00",
+      "returncode": 0,
+      "actual_argv_sha256": "a0f9eaf6d8445ef8491b468d10ea173cf10962db6cc704f2138f9fe586c4d02a"
+    },
+    "1LW9": {
+      "preparation": {
+        "source_sha256": "ed944dd178afcbdca73474a0cd003cb63b06f9c3c9498153e8f07c5426db4fca",
+        "prepared_sha256": "eb9dc43ec8cddcf1769ba0476b3e1219503fa215368e20048df28458a4bf5967",
+        "retained_chains": [
+          "A"
+        ],
+        "modeled_sites": 164,
+        "heavy_atom_records_including_altlocs": 1328,
+        "max_abs_coordinate_change_A": 0,
+        "selected_altlocs_preserved": true
+      },
+      "output_validation": {
+        "rows": 164,
+        "status_counts": {
+          "scored": 164
+        },
+        "csv_sha256": "f6cfe2eb48573f0bd24b274570e7961d69bf1a94bde5853343f53fcac3783ff7",
+        "metadata_sha256": "6a9f7eddf3f2ba122620fdc8451ca20de3aa8676407d8ebae78f4192d25bc590"
+      },
+      "started_utc": "2026-10-25T04:38:18.172485+00:00",
+      "finished_utc": "2026-10-25T04:38:30.846433+00:00",
+      "returncode": 0,
+      "actual_argv_sha256": "8cb0125d1be74a83352e8532186d681b4f453e308f022274652d57c8f156adb1"
+    },
+    "219L": {
+      "preparation": {
+        "source_sha256": "46526c831d07e0ec35099590735e22862b231bade2b172023368a142ff74dfb6",
+        "prepared_sha256": "beecd2a72584cc59a84652031cf04440b8610ee5472d1c69c53c7b948833dd71",
+        "retained_chains": [
+          "A"
+        ],
+        "modeled_sites": 164,
+        "heavy_atom_records_including_altlocs": 1308,
+        "max_abs_coordinate_change_A": 0,
+        "selected_altlocs_preserved": true
+      },
+      "output_validation": {
+        "rows": 164,
+        "status_counts": {
+          "scored": 164
+        },
+        "csv_sha256": "ee572c86ad20e7b730f99b19de330535701530da953136ff8c5a97e92c682ad8",
+        "metadata_sha256": "6619da441e11e029bed1ee7536f334dde4814dbb94f5ff8906827f6ce092a772"
+      },
+      "started_utc": "2026-10-25T04:38:31.742958+00:00",
+      "finished_utc": "2026-10-25T04:39:03.416089+00:00",
+      "returncode": 0,
+      "actual_argv_sha256": "c4ec8cd8c370895b11bf520008ed50ac8cb5e085e84baacbc5bd03daa7a3731e"
+    }
+  },
+  "crystal_setting_supplement": {
+    "source": "official source mmCIF, _symmetry and _cell categories",
+    "structures": {
+      "1L63": {
+        "_cell.entry_id": [
+          "1L63"
+        ],
+        "_cell.length_a": [
+          "60.900"
+        ],
+        "_cell.length_b": [
+          "60.900"
+        ],
+        "_cell.length_c": [
+          "96.900"
+        ],
+        "_cell.angle_alpha": [
+          "90.00"
+        ],
+        "_cell.angle_beta": [
+          "90.00"
+        ],
+        "_cell.angle_gamma": [
+          "120.00"
+        ],
+        "_cell.Z_PDB": [
+          "6"
+        ],
+        "_cell.pdbx_unique_axis": [
+          "?"
+        ],
+        "_cell.length_a_esd": [
+          "?"
+        ],
+        "_cell.length_b_esd": [
+          "?"
+        ],
+        "_cell.length_c_esd": [
+          "?"
+        ],
+        "_cell.angle_alpha_esd": [
+          "?"
+        ],
+        "_cell.angle_beta_esd": [
+          "?"
+        ],
+        "_cell.angle_gamma_esd": [
+          "?"
+        ],
+        "_symmetry.entry_id": [
+          "1L63"
+        ],
+        "_symmetry.space_group_name_H-M": [
+          "P 32 2 1"
+        ],
+        "_symmetry.pdbx_full_space_group_name_H-M": [
+          "?"
+        ],
+        "_symmetry.cell_setting": [
+          "?"
+        ],
+        "_symmetry.Int_Tables_number": [
+          "154"
+        ],
+        "_symmetry.space_group_name_Hall": [
+          "?"
+        ]
+      },
+      "1LW9": {
+        "_cell.entry_id": [
+          "1LW9"
+        ],
+        "_cell.length_a": [
+          "60.207"
+        ],
+        "_cell.length_b": [
+          "60.207"
+        ],
+        "_cell.length_c": [
+          "95.375"
+        ],
+        "_cell.angle_alpha": [
+          "90.00"
+        ],
+        "_cell.angle_beta": [
+          "90.00"
+        ],
+        "_cell.angle_gamma": [
+          "120.00"
+        ],
+        "_cell.Z_PDB": [
+          "6"
+        ],
+        "_cell.pdbx_unique_axis": [
+          "?"
+        ],
+        "_symmetry.entry_id": [
+          "1LW9"
+        ],
+        "_symmetry.space_group_name_H-M": [
+          "P 32 2 1"
+        ],
+        "_symmetry.pdbx_full_space_group_name_H-M": [
+          "?"
+        ],
+        "_symmetry.Int_Tables_number": [
+          "154"
+        ],
+        "_symmetry.cell_setting": [
+          "?"
+        ]
+      },
+      "219L": {
+        "_cell.entry_id": [
+          "219L"
+        ],
+        "_cell.length_a": [
+          "60.580"
+        ],
+        "_cell.length_b": [
+          "60.580"
+        ],
+        "_cell.length_c": [
+          "97.470"
+        ],
+        "_cell.angle_alpha": [
+          "90.00"
+        ],
+        "_cell.angle_beta": [
+          "90.00"
+        ],
+        "_cell.angle_gamma": [
+          "120.00"
+        ],
+        "_cell.Z_PDB": [
+          "6"
+        ],
+        "_cell.pdbx_unique_axis": [
+          "?"
+        ],
+        "_symmetry.entry_id": [
+          "219L"
+        ],
+        "_symmetry.space_group_name_H-M": [
+          "P 32 2 1"
+        ],
+        "_symmetry.pdbx_full_space_group_name_H-M": [
+          "?"
+        ],
+        "_symmetry.cell_setting": [
+          "?"
+        ],
+        "_symmetry.Int_Tables_number": [
+          "154"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "common_sites": 162,
+    "long_rows": 486,
+    "full_scanned_sites": 490,
+    "full_rotamer_scores": 5880,
+    "missing_input_positions": {
+      "1L63": [
+        163,
+        164
+      ]
+    },
+    "failed": 0,
+    "skipped": 0,
+    "scored_rows_excluded_from_common": 4,
+    "tier_stable": 143,
+    "tier_changed": 19,
+    "m5_six_all_tier_stable": true,
+    "metrics": {
+      "rsa": {
+        "pairwise_spearman_min": 0.9866050697482063,
+        "pairwise_spearman_max": 0.9929711430022563,
+        "site_range_median": 0.0171406583793354,
+        "site_range_max": 0.3439510097919045
+      },
+      "ca_neighbors_8a": {
+        "pairwise_spearman_min": 0.969590703415088,
+        "pairwise_spearman_max": 0.9807863182605525,
+        "site_range_median": 0.0,
+        "site_range_max": 4.0
+      },
+      "min_steric_score": {
+        "pairwise_spearman_min": 0.9418793865312938,
+        "pairwise_spearman_max": 0.9693322099297027,
+        "site_range_median": 0.6858078868395739,
+        "site_range_max": 35.82139668125275
+      },
+      "low_clash_fraction": {
+        "pairwise_spearman_min": 0.9636932835570715,
+        "pairwise_spearman_max": 0.9787584641396222,
+        "site_range_median": 0.0,
+        "site_range_max": 0.33333333333333337
+      }
+    }
+  },
+  "software_checks": {
+    "targeted_tests": 10,
+    "failures_errors_skipped": 0,
+    "warnings_reported": 0,
+    "test_seconds": 7.677,
+    "test_source_sha256": "20795169d680f4c68fbd9970858d7741bc7b1596d1228ab7f04b7468ab7858c4",
+    "junit_local_ignored_path": "data/processed/m6_t4l_structure_sensitivity_2026-10-24/tests.xml",
+    "junit_sha256": "b411ad1dd6a1313b8fc1ee4bf11d4c568b76c9e23f31ba99fe1e89951ba6df01",
+    "curated_reproduction_byte_identical": [
+      "m5_six_sites.csv",
+      "m5_six_sites.png",
+      "m5_six_sites.svg",
+      "metrics_long.csv",
+      "pairwise_metrics.csv",
+      "pairwise_metrics.png",
+      "pairwise_metrics.svg",
+      "rank_ranges.png",
+      "rank_ranges.svg",
+      "site_ranges.csv",
+      "tier_transitions.csv",
+      "top10_overlap.csv"
+    ],
+    "mapping_source_fields_ledger_tier_totals_toplists_and_ranges": "passed",
+    "copied_atom_coordinates_and_selected_altlocs": "exact; zero coordinate change",
+    "current_scientific_source_guard_against_real_checkout": "passed; normalization of CRLF/LF only",
+    "full_unrelated_pytest_suite": "not rerun"
+  },
+  "preservation": {
+    "baseline_files_unchanged": 130,
+    "seven_exploratory_scripts_unchanged_untracked": true,
+    "m5_records_unmodified": true,
+    "fresh_1L63_source_byte_equal_historical": true,
+    "new_1L63_scan_byte_equal_historical": true
+  },
+  "scientific_boundary": "Input sensitivity, not independent experimental validation; no fitting, significance or experimental-success claim. Same sequence does not isolate conformation from coverage/altloc/refinement/crystal effects. No background-mutant comparisons pooled. Existing venv only; no fresh-environment or cross-platform verification."
+}
