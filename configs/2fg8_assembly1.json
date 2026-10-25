@@ -1,0 +1,24 @@
+{
+  "profile_id": "2FG8_official_expanded_assembly1_v1",
+  "reference_pdb": "2FG8",
+  "biological_assembly_id": "1",
+  "source_url": "https://files.rcsb.org/download/2FG8-assembly1.cif.gz",
+  "expanded_mmcif_sha256": "d585f2abd0278ca291a8cd080f0ef4dcd76a3bc777ad42e3a21088b39797f674",
+  "source_chain_ids": ["A", "B", "C", "D", "E", "F", "G", "H", "A-2", "B-2", "C-2", "D-2", "E-2", "F-2", "G-2", "H-2", "A-3", "B-3", "C-3", "D-3", "E-3", "F-3", "G-3", "H-3"],
+  "residues_per_chain": 174,
+  "author_residue_start": 5,
+  "author_residue_end": 178,
+  "sequence": "SSQIRQNYSTDVEAAVNSLVNLYLQASYTYLSLGFYFDRDDVALEGVSHFFRELAEEKREGYERLLKMQNQRGGRALFQDIKKPAEDEWGKTPDAMKAAMALEKKLNQALLDLHALGSARTDPHLCDFLETHFLDEEVKLIKKMGDHLTNLHRLGGPEAGLGEYLFERLTLKHD",
+  "target_source_chain": "A",
+  "scan": {"chain": "A", "ncaa": "pazf", "seed": 42, "low_clash_threshold": 10.0, "favorable_fraction": 0.5, "functional_residues": null, "n_rotamers": 12},
+  "comparison_policy_declared_before_execution": {
+    "source_to_PDB_max_abs_coordinate_A": 0.0006,
+    "historical_prepared_max_abs_coordinate_A": 0.0,
+    "steric_scores_abs_tolerance_A2": 1e-8,
+    "SASA_abs_tolerance_A2": 1e-6,
+    "RSA_abs_tolerance": 1e-8,
+    "relative_tolerance": 0.0,
+    "packing_status_identity_fraction_tier_ranks": "exact; no site deletion or threshold adjustment"
+  },
+  "identity_limit": "Maintainer-approved reference; not confirmation of the authors' exact PDB or full experimental fusion. Expanded-file entry ID may be XXXX; source provenance is the pinned public URL and decompressed hash."
+}

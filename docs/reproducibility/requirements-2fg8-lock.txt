@@ -1,0 +1,16 @@
+# Observed independent CPython 3.13.12 environment, exported after verification.
+# RANA itself is installed from the separately recorded local source snapshot.
+biopython==1.88
+colorama==0.4.6
+iniconfig==2.3.1
+numpy==2.5.4
+packaging==26.3
+pandas==3.0.6
+pillow==13.0.0
+pluggy==1.7.0
+Pygments==2.21.0
+pytest==9.1.1
+python-dateutil==3.0.0
+rdkit==2026.9.1
+six==1.17.0
+tzdata==2026.5
