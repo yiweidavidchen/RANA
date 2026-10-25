@@ -1,0 +1,7 @@
+# Independent M6.2 verification environment; no RANA dependency changes.
+# Reference interpreter: CPython 3.13.12. Install this before the local source.
+numpy==2.5.4
+pandas==3.0.6
+biopython==1.88
+rdkit==2026.9.1
+pytest==9.1.1

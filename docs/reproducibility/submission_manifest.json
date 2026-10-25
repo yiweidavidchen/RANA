@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-24",
+  "branch": "codex/m6-portable-structure-preparation",
+  "base_git_commit": "94426a4b0bb262f73c189765ecadccc75de58689",
+  "file_count": 14,
+  "files": [
+    {
+      "path": "configs/2fg8_assembly1.json",
+      "purpose": "Pinned official 2FG8 assembly-1 profile, chain order, sequence/numbering, frozen scan settings and predeclared comparison tolerances.",
+      "sha256": "e8667d7e454d74c2c4588c70c90c58fc07ef13edcc5d7bca11eff72244b3500e",
+      "bytes": 1557
+    },
+    {
+      "path": "ncaa_site_rec/io/prepare_structure.py",
+      "purpose": "Prepare profile-validated already-expanded mmCIF into one-model protein assembly and target-chain monomer with provenance and atom-level round-trip checks.",
+      "sha256": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81",
+      "bytes": 11560
+    },
+    {
+      "path": "tests/test_prepare_structure.py",
+      "purpose": "Fourteen conversion test cases covering identities/coordinates, gzip, chain mapping, components, overwrite refusal, mismatches, multiple models and altlocs.",
+      "sha256": "c1b85317c8e4edab581162e7d9de651df3ebd28fcf86ed701d9c07892c62d7ca",
+      "bytes": 8223
+    },
+    {
+      "path": "docs/reproducibility/README.md",
+      "purpose": "Fresh-environment installation, public/local input preparation, scans, optional historical comparison, provenance and bounded verification claims.",
+      "sha256": "ba01a08c1f391fa32bfc61ed16e93892dbc7cb45b4804c27a7baac53d3e95ab1",
+      "bytes": 9763
+    },
+    {
+      "path": "docs/reproducibility/requirements-2fg8.txt",
+      "purpose": "Direct dependencies actually used in the fresh verification environment.",
+      "sha256": "f238d146004851f262d65b8b2b0635c077d31120403285440b44a8f0a9a2d9a4",
+      "bytes": 226
+    },
+    {
+      "path": "docs/reproducibility/requirements-2fg8-lock.txt",
+      "purpose": "Observed full runtime snapshot exported after installation; not a pre-existing or cross-platform verified lock.",
+      "sha256": "266d8446b90ece03ff652bcffc2526f81ba752367dfe1a16c47a7fc97b9d1b75",
+      "bytes": 378
+    },
+    {
+      "path": "docs/reproducibility/reproduce_2fg8.py",
+      "purpose": "Download/local-input driver, installed-code audit, preparation, isolated assembly/monomer CLI invocations and execution logs.",
+      "sha256": "e530d2776024cb3c4acedbcc3b64ecb772efacd27a3fe245284dbc8c9bbf2b34",
+      "bytes": 13012
+    },
+    {
+      "path": "docs/reproducibility/compare_2fg8.py",
+      "purpose": "Post-generation atom/serialization and per-site/rotamer comparison against explicit historical references.",
+      "sha256": "13065e4116d83a6acb2353943d9a0a92a2bea914bbc4b2102cf85a48cdc88a3a",
+      "bytes": 8453
+    },
+    {
+      "path": "docs/reproducibility/2fg8_validation.md",
+      "purpose": "Concise human-readable record of actual execution, preparation/scan comparisons, tests and limitations.",
+      "sha256": "373f71bddefa0b7155f59f342c212eeed0da45c7435dd589024531f0ab5d1487",
+      "bytes": 6522
+    },
+    {
+      "path": "docs/reproducibility/2fg8_validation.json",
+      "purpose": "Small curated machine-readable verification summary: code/config/source hashes, environment, chain map, counts and comparison results.",
+      "sha256": "7f0c06608c3be59b7ab3457d1a5e87a3d556b2439ac7c869a9b2d76732259660",
+      "bytes": 13612
+    },
+    {
+      "path": "tests/test_2fg8_reproduction_scripts.py",
+      "purpose": "Synthetic positive/negative wrapper tests including real normal/optimized interpreter subprocesses; no real scans or downloads.",
+      "sha256": "9cb0a360f880776b8d9940a4e5a081cdab1462b90751173b8baa1b3fc7dfee0e",
+      "bytes": 13968
+    },
+    {
+      "path": "docs/reproducibility/2fg8_reliability_revision_2026-10-24.md",
+      "purpose": "Dated English revision summary; distinguish current synthetic verification from the unchanged original execution.",
+      "sha256": "8f22cc20bf7cd9752855c229af8ca7f131c298d73db9f7e43286510d1a74b121",
+      "bytes": 4804
+    },
+    {
+      "path": "docs/reproducibility/2fg8_reliability_revision_2026-10-24.json",
+      "purpose": "Dated machine-readable checks, environment, current/original hashes, test results and limits.",
+      "sha256": "ac89d7d59276cdec202cc2581ce9f03a9cb33c84a821ff615c51262ca8ef356b",
+      "bytes": 6373
+    },
+    {
+      "path": "docs/reproducibility/submission_manifest.json",
+      "purpose": "Explicit proposed file inventory. Self-hash omitted to avoid recursive hashing; Git will identify the manifest.",
+      "sha256": null,
+      "bytes": null,
+      "note": "Self hash and size deliberately omitted; all other entries describe exact current bytes."
+    }
+  ],
+  "excluded": [
+    "Paper PDFs/SI and publisher images",
+    "Full generated structures and scan outputs",
+    "Ignored raw/processed data and virtual environments",
+    "Seven exploratory scripts",
+    "Historical PAUSE_AND_RESUME.md",
+    ".codex local files"
+  ],
+  "scope": "No staging/commit/push. Only pinned 2FG8 profile verification; full generated data and environments remain ignored.",
+  "dependencies": "Existing tracked ncaa_site_rec package and pyproject.toml; direct/observed dependency files included. Source preparation needs only the pinned public mmCIF, not PDFs, historical scans or local caches. Historical comparison requires optional explicit local references, not shipped."
+}

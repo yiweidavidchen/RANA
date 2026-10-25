@@ -1,0 +1,344 @@
+{
+  "milestone": "M6.2 portable 2FG8 assembly preparation and scan reproduction",
+  "verification_date": "2026-10-24",
+  "status": "passed_in_fresh_environment",
+  "base_git_commit": "94426a4b0bb262f73c189765ecadccc75de58689",
+  "uncommitted_package_overlay_sha256": {
+    "ncaa_site_rec/io/prepare_structure.py": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81"
+  },
+  "package_file_sha256": {
+    "ncaa_site_rec/__init__.py": "044c6486385e7c2010f6ed9cb5bbe7614d0016afbff253466d9d21f97674375a",
+    "ncaa_site_rec/cli.py": "05b7aa841676ae4095738ff72e44f093d476be36fc09d666d98558bdfd55841e",
+    "ncaa_site_rec/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/features/asa_reference.py": "17e826c507b8768fd1310c91b608a4175754eddd90c2fb3c6cbbbd8d257870d4",
+    "ncaa_site_rec/features/ddg.py": "627720a826304d444ea7d4815f21f7748fc3c07c891dbe6ec23b7550cc0c1862",
+    "ncaa_site_rec/features/geometry.py": "e97d27e8734a3633527b7eb5bfab5222660b8636a47f4aafa7322dfaa773d74f",
+    "ncaa_site_rec/features/load_bearing.py": "2f3bc12efccf31f5eaa04d6ae0b4b0840893b7c4d064a387a0e4fa39fcfcdfea",
+    "ncaa_site_rec/features/pazf.py": "1cc1bc6a9190efc21cca26ddc9f12ea178913cfdbecad6ebd142fc810f961ac3",
+    "ncaa_site_rec/features/site_features.py": "a553c540147690144ffbd24585c15d349c7a7c481a13ca4746c39a043e4f7cda",
+    "ncaa_site_rec/features/site_ranking.py": "52ca7e5cc1ffd801429bc4a48f6960909ec3833958d294519f9e663ef3e66260",
+    "ncaa_site_rec/features/site_scan.py": "5503a1c6109930651bddf94ed892c34074e05a3b065b8dc0f6488338eca5a714",
+    "ncaa_site_rec/features/structural.py": "874345ec69fdcd33f7f5c0c90a01a90d556521345e772cc907c96b883922b9ba",
+    "ncaa_site_rec/io/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/io/prepare_structure.py": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81",
+    "ncaa_site_rec/io/run_metadata.py": "c6eae59416154e7d7e21d7bdb6f9146cd0957b0f5c7eed4713d6269fccbfe4d1",
+    "ncaa_site_rec/io/structure.py": "96296998fceaa8b4b922ce95f24fe84414dc0872a5b94c36052a8a23322c93f4",
+    "ncaa_site_rec/models.py": "b7c1f0ad4bb8dccb06e0f3610b701c177c7c67bbf8785b2e4608536d8ea186f2",
+    "ncaa_site_rec/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/scoring/rank.py": "6ff510c8ae512f53bc34499507c916a7f3899d17dabe59345e8e5f000960e122"
+  },
+  "driver_sha256": "32d650d7c1580cdcf6e0ddaefda3c2b7e06ab04af3fe5e594989478ab3d97401",
+  "profile_sha256": "e8667d7e454d74c2c4588c70c90c58fc07ef13edcc5d7bca11eff72244b3500e",
+  "source_retrieval": {
+    "url": "https://files.rcsb.org/download/2FG8-assembly1.cif.gz",
+    "final_url": "https://files.rcsb.org/download/2FG8-assembly1.cif.gz",
+    "retrieved_utc": "2026-10-24T11:28:49.762364+00:00",
+    "sha256": "9bedf6e9e326d9504675eb88ffe1847b99b02850430be6ceaff11cc008f5fd66",
+    "bytes": 821699
+  },
+  "environment": {
+    "python": "3.13.12",
+    "os": "Windows 11 x86_64",
+    "packages": {
+      "rana-ncaa-site-recommender": "0.1.0.dev0",
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "rdkit": "2026.9.1"
+    },
+    "fresh_venv": true,
+    "system_site_packages": false,
+    "installation": "Fresh downloads with pip --no-cache-dir, then build/install a noneditable wheel from the recorded source snapshot with --no-deps; isolated build dependencies downloaded by pip."
+  },
+  "independent_execution": {
+    "outside_repository_working_directory": true,
+    "python_isolated_mode": true,
+    "installed_hashes_match_source_snapshot": true,
+    "old_scans_or_papers_used_for_generation": false,
+    "CLI_git_metadata": "null outside a checkout; actual source commit/overlay hashes recorded separately, not backfilled"
+  },
+  "preparation": {
+    "model_count": 1,
+    "explicit_MODEL_serial": 1,
+    "total_protein_residues": 4176,
+    "protein_atoms_including_altlocs": 33648,
+    "chain_mapping": [
+      {
+        "source_assembly_label_asym_id": "A",
+        "output_pdb_chain_id": "A",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "B",
+        "output_pdb_chain_id": "B",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "C",
+        "output_pdb_chain_id": "C",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "D",
+        "output_pdb_chain_id": "D",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "E",
+        "output_pdb_chain_id": "E",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "F",
+        "output_pdb_chain_id": "F",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "G",
+        "output_pdb_chain_id": "G",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "H",
+        "output_pdb_chain_id": "H",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "A-2",
+        "output_pdb_chain_id": "I",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "B-2",
+        "output_pdb_chain_id": "J",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "C-2",
+        "output_pdb_chain_id": "K",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "D-2",
+        "output_pdb_chain_id": "L",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "E-2",
+        "output_pdb_chain_id": "M",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "F-2",
+        "output_pdb_chain_id": "N",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "G-2",
+        "output_pdb_chain_id": "O",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "H-2",
+        "output_pdb_chain_id": "P",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "A-3",
+        "output_pdb_chain_id": "Q",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "B-3",
+        "output_pdb_chain_id": "R",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "C-3",
+        "output_pdb_chain_id": "S",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "D-3",
+        "output_pdb_chain_id": "T",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "E-3",
+        "output_pdb_chain_id": "U",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "F-3",
+        "output_pdb_chain_id": "V",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "G-3",
+        "output_pdb_chain_id": "W",
+        "standard_residues": 174
+      },
+      {
+        "source_assembly_label_asym_id": "H-3",
+        "output_pdb_chain_id": "X",
+        "standard_residues": 174
+      }
+    ],
+    "target_source_chain": "A",
+    "target_output_chain": "A",
+    "omitted_residue_counts": {
+      "CS": 30,
+      "HOH": 441
+    },
+    "maximum_coordinate_serialization_change_A": 0.0
+  },
+  "comparison": {
+    "policy": {
+      "source_to_PDB_max_abs_coordinate_A": 0.0006,
+      "historical_prepared_max_abs_coordinate_A": 0.0,
+      "steric_scores_abs_tolerance_A2": 1e-08,
+      "SASA_abs_tolerance_A2": 1e-06,
+      "RSA_abs_tolerance": 1e-08,
+      "relative_tolerance": 0.0,
+      "packing_status_identity_fraction_tier_ranks": "exact; no site deletion or threshold adjustment"
+    },
+    "generation_completed_before_historical_reads": true,
+    "comparison_script_sha256": "fb6f84089f46c1412df2a289d49806f9ed705ebbb10ab7a571bf845b742d3298",
+    "run_record_sha256": "2f1cea1662b5d0867bd10026003568de3d81deb3be137cfe01302cc5736d3475",
+    "structures": {
+      "assembly": {
+        "generated_sha256": "24c62124541560a877608d13a107492a17ce025ce18dd4d412bbbb86fd0e3f5b",
+        "reference_sha256": "b0921f426e5c6581a2f01ed66816ed4707d619a6a8b3e6f7d7debffc1e94edf3",
+        "byte_identical": false,
+        "atom_identities_equal": true,
+        "chains": 24,
+        "residues": 4176,
+        "atoms_including_altlocs": 33648,
+        "max_abs_coordinate_difference_A": 0.0,
+        "occupancy_and_bfactor_equal": true,
+        "serialization_difference": "explicit MODEL 1/ENDMDL records (and possible line-ending serialization) only; all other text records equal"
+      },
+      "monomer": {
+        "generated_sha256": "88aa29988591b17d545a5c79504174ca856bf6d67022686fed775a3d51af4bae",
+        "reference_sha256": "8cbbf423c182d136091d072966bcf5555a8050925d1ef02b41f5eb7d59d6860c",
+        "byte_identical": false,
+        "atom_identities_equal": true,
+        "chains": 1,
+        "residues": 174,
+        "atoms_including_altlocs": 1402,
+        "max_abs_coordinate_difference_A": 0.0,
+        "occupancy_and_bfactor_equal": true,
+        "serialization_difference": "explicit MODEL 1/ENDMDL records (and possible line-ending serialization) only; all other text records equal"
+      }
+    },
+    "scans": {
+      "assembly": {
+        "sites": 174,
+        "rotamer_scores": 2088,
+        "generated_sha256": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+        "reference_sha256": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+        "exact_columns_equal": [
+          "chain",
+          "residue_number",
+          "insertion_code",
+          "residue_name",
+          "status",
+          "reason",
+          "ca_neighbors_8a",
+          "n_rotamers",
+          "low_clash_fraction",
+          "candidate_tier",
+          "steric_rank",
+          "rsa_rank",
+          "rotamer_robustness_rank",
+          "ranking_reason",
+          "special_residue_flag"
+        ],
+        "max_abs_differences": {
+          "sasa_abs": 0.0,
+          "rsa": 0.0,
+          "min_steric_score": 0.0,
+          "mean_steric_score": 0.0,
+          "median_steric_score": 0.0,
+          "sasa_max": 0.0,
+          "best_chi1": 0.0,
+          "best_chi2": 0.0,
+          "ca_x": 0.0,
+          "ca_y": 0.0,
+          "ca_z": 0.0,
+          "rotamer_scores": 0.0
+        },
+        "all_remaining_columns_equal": true,
+        "status": "pass"
+      },
+      "monomer": {
+        "sites": 174,
+        "rotamer_scores": 2088,
+        "generated_sha256": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+        "reference_sha256": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+        "exact_columns_equal": [
+          "chain",
+          "residue_number",
+          "insertion_code",
+          "residue_name",
+          "status",
+          "reason",
+          "ca_neighbors_8a",
+          "n_rotamers",
+          "low_clash_fraction",
+          "candidate_tier",
+          "steric_rank",
+          "rsa_rank",
+          "rotamer_robustness_rank",
+          "ranking_reason",
+          "special_residue_flag"
+        ],
+        "max_abs_differences": {
+          "sasa_abs": 0.0,
+          "rsa": 0.0,
+          "min_steric_score": 0.0,
+          "mean_steric_score": 0.0,
+          "median_steric_score": 0.0,
+          "sasa_max": 0.0,
+          "best_chi1": 0.0,
+          "best_chi2": 0.0,
+          "ca_x": 0.0,
+          "ca_y": 0.0,
+          "ca_z": 0.0,
+          "rotamer_scores": 0.0
+        },
+        "all_remaining_columns_equal": true,
+        "status": "pass"
+      }
+    },
+    "status": "pass"
+  },
+  "targeted_tests": {
+    "passed": 14,
+    "failed": 0,
+    "warnings": 0,
+    "seconds": 0.96,
+    "environment": "fresh installed wheel; test copy and temporary root outside repository",
+    "test_file_sha256": "c1b85317c8e4edab581162e7d9de651df3ebd28fcf86ed701d9c07892c62d7ca",
+    "initial_collection_issue": "Windows ancestor-directory/junction access; rerun with explicit rootdir and confcutdir passed"
+  },
+  "pip_check": "No broken requirements found",
+  "preserved_files": 173,
+  "M5_records_and_seven_scripts_unchanged": true,
+  "full_pytest": "not repeated; new conversion tests, real preparation and both full CLI scans checked",
+  "local_complete_records": "data/processed/m6_portable_2fg8_2026-10-24/ (ignored): run/, comparison.json, environment files, source snapshot and fresh venv; execution paths/times retained verbatim in run/run.json",
+  "record_sha256": {
+    "run/run.json": "2f1cea1662b5d0867bd10026003568de3d81deb3be137cfe01302cc5736d3475",
+    "comparison.json": "e1e080ddb19438ad6c059a001fd3dbbfe6f20f081b0d795c1f94c13dba11313d",
+    "independent/code_source.json": "a5ca4ca2a6602c11afbe5520d13fd614331986672f5cddf2cfdaa3a968b1f114"
+  },
+  "limits": [
+    "Verified on one OS/interpreter; no cross-platform claim",
+    "Pinned public source revision required; newer revisions rejected pending audit",
+    "Authors' actual PDB/full fusion unconfirmed",
+    "No experimental prediction validation",
+    "No multi-structure sensitivity, BglB or additional ncAA work"
+  ],
+  "committed": false,
+  "pushed": false
+}

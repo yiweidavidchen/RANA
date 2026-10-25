@@ -1,0 +1,104 @@
+{
+  "revision": "M6.2 wrapper reliability checks",
+  "local_date": "2026-10-24",
+  "timezone": "America/Los_Angeles",
+  "recorded_utc": "2026-10-25T03:19:27.627599+00:00",
+  "branch": "codex/m6-portable-structure-preparation",
+  "base_git_commit": "94426a4b0bb262f73c189765ecadccc75de58689",
+  "revision_committed": false,
+  "status": "targeted_synthetic_tests_passed_no_real_scan_rerun",
+  "support_boundary": "Only the pinned official 2FG8 assembly-1 profile and original target A are verified; arbitrary structures/custom profiles and cross-platform execution are not verified.",
+  "changes": [
+    "Replace runtime assertions and numpy testing assertions with explicit conditions/exceptions and finite-array checks.",
+    "Refuse existing/symlink comparison reports and use exclusive creation, including under optimized Python.",
+    "Validate each zero-exit scan CSV against the 174-site profile, including chain/number/insertion-code/parent identities, diagnostics, finite numeric fields and 12 finite rotamer scores.",
+    "Validate CLI metadata configuration, input/output hashes, status/tier counts and rotamer sampling.",
+    "Record per-output completeness, failure stage/reason and preserve partial artifacts; code-source preflight failures now also have a journal."
+  ],
+  "current_script_and_test_sha256": {
+    "docs/reproducibility/compare_2fg8.py": "13065e4116d83a6acb2353943d9a0a92a2bea914bbc4b2102cf85a48cdc88a3a",
+    "docs/reproducibility/reproduce_2fg8.py": "e530d2776024cb3c4acedbcc3b64ecb772efacd27a3fe245284dbc8c9bbf2b34",
+    "tests/test_2fg8_reproduction_scripts.py": "9cb0a360f880776b8d9940a4e5a081cdab1462b90751173b8baa1b3fc7dfee0e"
+  },
+  "unchanged_preparation_module_sha256": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81",
+  "unchanged_profile_sha256": "e8667d7e454d74c2c4588c70c90c58fc07ef13edcc5d7bca11eff72244b3500e",
+  "original_execution": {
+    "summary": "2fg8_validation.json",
+    "summary_sha256": "7f0c06608c3be59b7ab3457d1a5e87a3d556b2439ac7c869a9b2d76732259660",
+    "human_summary_sha256": "373f71bddefa0b7155f59f342c212eeed0da45c7435dd589024531f0ab5d1487",
+    "driver_sha256": "32d650d7c1580cdcf6e0ddaefda3c2b7e06ab04af3fe5e594989478ab3d97401",
+    "comparison_script_sha256": "fb6f84089f46c1412df2a289d49806f9ed705ebbb10ab7a571bf845b742d3298",
+    "preserved": true,
+    "scope": "Earlier fresh-environment actual preparation and both real scans used the original scripts. Those records were not rewritten or attributed to the revised wrappers."
+  },
+  "environment": {
+    "kind": "existing development venv; no dependency downloads/installations",
+    "python": "3.13.12",
+    "platform": "Windows x86_64",
+    "packages": {
+      "pytest": "9.1.1",
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "rdkit": "2026.9.1"
+    }
+  },
+  "tests": {
+    "command_from_repository_root": ".venv/Scripts/python.exe -B -m pytest tests/test_prepare_structure.py tests/test_2fg8_reproduction_scripts.py -q --basetemp=data/processed/m6_portable_2fg8_2026-10-24/revision_tests_final -o cache_dir=data/processed/m6_portable_2fg8_2026-10-24/revision_cache_final --junitxml=data/processed/m6_portable_2fg8_2026-10-24/revision_tests_final.xml",
+    "passed": 92,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "warnings_reported": 0,
+    "console_elapsed_seconds": 124.11,
+    "junit_suite_seconds": 124.018,
+    "original_conversion_cases": 14,
+    "new_wrapper_cases": 78,
+    "real_interpreter_subprocess_cases": 26,
+    "optimized_python_subprocess_cases": 13,
+    "junit_local_ignored_path": "data/processed/m6_portable_2fg8_2026-10-24/revision_tests_final.xml",
+    "junit_sha256": "1c5f624354a56e6bf6f91e7d01dd91152f0677e96fcbd507c7a2c05cf9c4c04f",
+    "coverage": [
+      "Normal and python -O comparison: existing report, invalid status/profile, coordinates/atom identity/occupancy, scores/tiers/ranks/rotamers, jointly nonfinite values; valid comparison passes.",
+      "Zero-exit simulated CLI: missing rows/files, duplicate/wrong identities, failed/skipped/diagnostic rows, wrong rotamer count/length, NaN/Inf/missing values; complete outputs pass.",
+      "Missing/malformed CSV or metadata, metadata hash/count/configuration mismatch, code-preflight failure journal.",
+      "Missing CSV from a zero-exit fake CLI propagates nonzero interpreter exit in normal and optimized Python."
+    ],
+    "not_run": [
+      "Dependency installation/download",
+      "Public structure download",
+      "Real preparation or full scientific CLI scans",
+      "Full unrelated pytest suite"
+    ]
+  },
+  "read_only_existing_output_checks": {
+    "scope": "Apply the revised validator to the previously generated M6.2 CSV/metadata/prepared-input files without executing preparation or scans, and without changing their provenance.",
+    "local_ignored_run_directory": "data/processed/m6_portable_2fg8_2026-10-24/run",
+    "assembly": {
+      "sites": 174,
+      "rotamer_scores": 2088,
+      "status": "complete_scored_output",
+      "csv_sha256": "009b67525e68b3a8b4a657e386e3a3c48324e44ec37d20a62709a6ea7432aca9",
+      "metadata_sha256": "1358070adef3e7755d201406c6d5f41fcb7fc46d6198259a50c81f76dac4ba79"
+    },
+    "monomer": {
+      "sites": 174,
+      "rotamer_scores": 2088,
+      "status": "complete_scored_output",
+      "csv_sha256": "64726abde3858410489759719d37633aa4e364449e24f344ccbd64e2d6b2bdf1",
+      "metadata_sha256": "b00ab30f5dc3f3f2138aec12f483ed63d0ddbb04f7e8c08ef7fa268a920d4a71"
+    }
+  },
+  "completion_semantics": "scans_completed_pending_separate_comparison means both generated outputs passed completeness checks, not historical comparison or scientific validation.",
+  "preservation": {
+    "protected_preexisting_files_unchanged": 173,
+    "seven_exploratory_scripts_unchanged_untracked": true,
+    "m5_frozen_records_unchanged": true,
+    "scientific_algorithms_thresholds_sampling_library_unchanged": true
+  },
+  "limits": [
+    "Synthetic control-flow/data validation tests do not replace the prior actual run or demonstrate experimental predictive performance.",
+    "The revised driver/comparator were not rerun end-to-end on real inputs in a new environment; this revision does not claim otherwise.",
+    "The exact experimental PDB/full construct remains uncertain. No new structure-sensitivity study, protein or ncAA was introduced."
+  ]
+}
