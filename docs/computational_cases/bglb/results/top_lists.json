@@ -1,0 +1,269 @@
+{
+  "steric_rank": {
+    "metric": "min_steric_score",
+    "ascending": true,
+    "boundary": 0.12565344026730332,
+    "actual_size": 10,
+    "identities": [
+      {
+        "chain": "A",
+        "residue_number": 44,
+        "insertion_code": "",
+        "site_label": "P44"
+      },
+      {
+        "chain": "A",
+        "residue_number": 65,
+        "insertion_code": "",
+        "site_label": "E65"
+      },
+      {
+        "chain": "A",
+        "residue_number": 96,
+        "insertion_code": "",
+        "site_label": "E96"
+      },
+      {
+        "chain": "A",
+        "residue_number": 97,
+        "insertion_code": "",
+        "site_label": "E97"
+      },
+      {
+        "chain": "A",
+        "residue_number": 160,
+        "insertion_code": "",
+        "site_label": "N160"
+      },
+      {
+        "chain": "A",
+        "residue_number": 217,
+        "insertion_code": "",
+        "site_label": "K217"
+      },
+      {
+        "chain": "A",
+        "residue_number": 234,
+        "insertion_code": "",
+        "site_label": "P234"
+      },
+      {
+        "chain": "A",
+        "residue_number": 235,
+        "insertion_code": "",
+        "site_label": "E235"
+      },
+      {
+        "chain": "A",
+        "residue_number": 333,
+        "insertion_code": "",
+        "site_label": "E333"
+      },
+      {
+        "chain": "A",
+        "residue_number": 426,
+        "insertion_code": "",
+        "site_label": "E426"
+      }
+    ],
+    "overlap_with_rsa_rank": 2,
+    "overlap_with_rotamer_robustness_rank": 3
+  },
+  "rsa_rank": {
+    "metric": "rsa",
+    "ascending": false,
+    "boundary": 0.7338678278389542,
+    "actual_size": 10,
+    "identities": [
+      {
+        "chain": "A",
+        "residue_number": 4,
+        "insertion_code": "",
+        "site_label": "N4"
+      },
+      {
+        "chain": "A",
+        "residue_number": 10,
+        "insertion_code": "",
+        "site_label": "A10"
+      },
+      {
+        "chain": "A",
+        "residue_number": 44,
+        "insertion_code": "",
+        "site_label": "P44"
+      },
+      {
+        "chain": "A",
+        "residue_number": 45,
+        "insertion_code": "",
+        "site_label": "G45"
+      },
+      {
+        "chain": "A",
+        "residue_number": 92,
+        "insertion_code": "",
+        "site_label": "G92"
+      },
+      {
+        "chain": "A",
+        "residue_number": 157,
+        "insertion_code": "",
+        "site_label": "E157"
+      },
+      {
+        "chain": "A",
+        "residue_number": 280,
+        "insertion_code": "",
+        "site_label": "P280"
+      },
+      {
+        "chain": "A",
+        "residue_number": 309,
+        "insertion_code": "",
+        "site_label": "A309"
+      },
+      {
+        "chain": "A",
+        "residue_number": 362,
+        "insertion_code": "",
+        "site_label": "R362"
+      },
+      {
+        "chain": "A",
+        "residue_number": 426,
+        "insertion_code": "",
+        "site_label": "E426"
+      }
+    ],
+    "overlap_with_rotamer_robustness_rank": 5
+  },
+  "rotamer_robustness_rank": {
+    "metric": "low_clash_fraction",
+    "ascending": false,
+    "boundary": 1.0,
+    "actual_size": 20,
+    "identities": [
+      {
+        "chain": "A",
+        "residue_number": 5,
+        "insertion_code": "",
+        "site_label": "T5"
+      },
+      {
+        "chain": "A",
+        "residue_number": 7,
+        "insertion_code": "",
+        "site_label": "I7"
+      },
+      {
+        "chain": "A",
+        "residue_number": 10,
+        "insertion_code": "",
+        "site_label": "A10"
+      },
+      {
+        "chain": "A",
+        "residue_number": 28,
+        "insertion_code": "",
+        "site_label": "D28"
+      },
+      {
+        "chain": "A",
+        "residue_number": 44,
+        "insertion_code": "",
+        "site_label": "P44"
+      },
+      {
+        "chain": "A",
+        "residue_number": 54,
+        "insertion_code": "",
+        "site_label": "D54"
+      },
+      {
+        "chain": "A",
+        "residue_number": 96,
+        "insertion_code": "",
+        "site_label": "E96"
+      },
+      {
+        "chain": "A",
+        "residue_number": 157,
+        "insertion_code": "",
+        "site_label": "E157"
+      },
+      {
+        "chain": "A",
+        "residue_number": 215,
+        "insertion_code": "",
+        "site_label": "T215"
+      },
+      {
+        "chain": "A",
+        "residue_number": 232,
+        "insertion_code": "",
+        "site_label": "E232"
+      },
+      {
+        "chain": "A",
+        "residue_number": 234,
+        "insertion_code": "",
+        "site_label": "P234"
+      },
+      {
+        "chain": "A",
+        "residue_number": 259,
+        "insertion_code": "",
+        "site_label": "K259"
+      },
+      {
+        "chain": "A",
+        "residue_number": 262,
+        "insertion_code": "",
+        "site_label": "E262"
+      },
+      {
+        "chain": "A",
+        "residue_number": 270,
+        "insertion_code": "",
+        "site_label": "T270"
+      },
+      {
+        "chain": "A",
+        "residue_number": 280,
+        "insertion_code": "",
+        "site_label": "P280"
+      },
+      {
+        "chain": "A",
+        "residue_number": 307,
+        "insertion_code": "",
+        "site_label": "N307"
+      },
+      {
+        "chain": "A",
+        "residue_number": 309,
+        "insertion_code": "",
+        "site_label": "A309"
+      },
+      {
+        "chain": "A",
+        "residue_number": 320,
+        "insertion_code": "",
+        "site_label": "E320"
+      },
+      {
+        "chain": "A",
+        "residue_number": 349,
+        "insertion_code": "",
+        "site_label": "G349"
+      },
+      {
+        "chain": "A",
+        "residue_number": 425,
+        "insertion_code": "",
+        "site_label": "Y425"
+      }
+    ]
+  }
+}

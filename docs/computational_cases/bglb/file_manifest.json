@@ -1,0 +1,207 @@
+{
+  "scope": "M6.4 single-input protein-only 2O9P BglB case: structure review, accepted plan, scripts, curated results and software checks. No raw inputs/full scans or experimental data.",
+  "file_count_including_manifest": 34,
+  "files": [
+    {
+      "path": "docs/computational_cases/bglb/.gitattributes",
+      "purpose": "Scoped LF public-text checkout and byte-preserving curated CSV rules",
+      "bytes": 714,
+      "sha256": "c39faaf1daa4bb520608ad5720bcee14a1e586797a03ec1012127f359161cdfc"
+    },
+    {
+      "path": "docs/computational_cases/bglb/candidate_audit.json",
+      "purpose": "candidate audit",
+      "bytes": 332662,
+      "sha256": "49781c1b948e4adf2e2eb4f884e1692de6b410d69af53ece11edee91bfb2cf7c"
+    },
+    {
+      "path": "docs/computational_cases/bglb/candidate_overview.md",
+      "purpose": "candidate overview",
+      "bytes": 2993,
+      "sha256": "e2a1ac158e8cb3aeb158309c3e7f45a80c7c435b7e4058def70b386d4c544d9b"
+    },
+    {
+      "path": "docs/computational_cases/bglb/case_plan.json",
+      "purpose": "case plan",
+      "bytes": 6777,
+      "sha256": "62572f301b25127473db8d8b372409184f6ad4d75ec7b084881614f9683c0e1b"
+    },
+    {
+      "path": "docs/computational_cases/bglb/case_plan.md",
+      "purpose": "case plan",
+      "bytes": 5920,
+      "sha256": "bf11d435f22a05808743547bfbb20ff5bbda97160c0b22d9a579eaea62f662a7"
+    },
+    {
+      "path": "docs/computational_cases/bglb/curate_case.py",
+      "purpose": "curate case",
+      "bytes": 17344,
+      "sha256": "30eb3a7510bc0e0bb517f655e2cb545e3802227e65a071e3366e46e1477f65b6"
+    },
+    {
+      "path": "docs/computational_cases/bglb/curation_metadata.json",
+      "purpose": "curation metadata",
+      "bytes": 2162,
+      "sha256": "54f53df91027916b1c60fbb486b62baa30e87d280c8f33c2d513c58d7289e630"
+    },
+    {
+      "path": "docs/computational_cases/bglb/curation_revision_2026-10-25.json",
+      "purpose": "New re-curation provenance; original curation metadata preserved",
+      "bytes": 2727,
+      "sha256": "2b8f432c138592a5a375e3fbe5e03291a68a59b8003b2b5177a6e43954ad59da"
+    },
+    {
+      "path": "docs/computational_cases/bglb/data_dictionary.md",
+      "purpose": "data dictionary",
+      "bytes": 3861,
+      "sha256": "33adc7c73de801949220319e31603d2cd0acfc9031014b6b0e710a2702114052"
+    },
+    {
+      "path": "docs/computational_cases/bglb/execution_plan_2026-10-25.json",
+      "purpose": "execution plan 2026-10-25",
+      "bytes": 6199,
+      "sha256": "1480f89b85d4055e0983966cd9fd09982eb8f469bc3d26756404586b32d09053"
+    },
+    {
+      "path": "docs/computational_cases/bglb/execution_summary.json",
+      "purpose": "execution summary",
+      "bytes": 7877,
+      "sha256": "d491a0c3f919449721d40e96e99a9541d553da4363ca9a5a53b2a11cc1337bf0"
+    },
+    {
+      "path": "docs/computational_cases/bglb/methods.md",
+      "purpose": "methods",
+      "bytes": 5528,
+      "sha256": "fe3f4941b8b1338accae56b68dc5afbbf4e7682b65dcf0e8ac147a2b01036ea3"
+    },
+    {
+      "path": "docs/computational_cases/bglb/README.md",
+      "purpose": "README",
+      "bytes": 3648,
+      "sha256": "d932b59328a3cdd0e26e7398f83cf01ce3d2db410218d88985297838b4edcba0"
+    },
+    {
+      "path": "docs/computational_cases/bglb/reliability_revision_2026-10-25.md",
+      "purpose": "Reliability changes, text hashing/encoding policy, validation and historical version boundaries",
+      "bytes": 5493,
+      "sha256": "93980d55bcef9e166226456e0e7989f0c23e5678150f07d7ccf8c7273bdca5b5"
+    },
+    {
+      "path": "docs/computational_cases/bglb/reliability_validation_2026-10-25.json",
+      "purpose": "Machine-readable targeted test, re-curation comparison and preservation summary",
+      "bytes": 4450,
+      "sha256": "af742c1f8211befc5fffed23e9461157d1fe718883646d416f5c1a5feb91f6e0"
+    },
+    {
+      "path": "docs/computational_cases/bglb/reproduction.md",
+      "purpose": "reproduction",
+      "bytes": 5669,
+      "sha256": "4dfca9ac21ec863b82f493e1794457ca3cc82a4c545820caf16a05e12dbf21cc"
+    },
+    {
+      "path": "docs/computational_cases/bglb/requirements-case.txt",
+      "purpose": "requirements-case",
+      "bytes": 168,
+      "sha256": "b92af46a09e019193c24e8938edfa7f65617bd2ec3f3c306bf059582471b83a9"
+    },
+    {
+      "path": "docs/computational_cases/bglb/residue_crosswalk.json",
+      "purpose": "residue crosswalk",
+      "bytes": 553857,
+      "sha256": "1ee23e1fa6b5e747d47d8520c3a7886cc2e7196524d66849c38b540aef916d4a"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/background_context.csv",
+      "purpose": "background context",
+      "bytes": 1402,
+      "sha256": "cad05ac8bf8b6bbdb790702c736459e73e2c29f9964fe7f05c1bd6047e722ccd"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/candidate_overview.csv",
+      "purpose": "candidate overview",
+      "bytes": 12427,
+      "sha256": "ac8a2ed84a2b6770dd99bee85adaf3fb1730e6576474c50290a665a888f465dd"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/coordinate_absences.csv",
+      "purpose": "coordinate absences",
+      "bytes": 1443,
+      "sha256": "0628f6b8e86dc3adaef9119082058a909cfea64a009dbc8667559c814eb0ff39"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/functional_context.csv",
+      "purpose": "functional context",
+      "bytes": 5009,
+      "sha256": "0b8fa7ddd0495e04837b26754a94b9ee23ce152dfb60f66f364aa57c6d6def9f"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/per_site.csv",
+      "purpose": "per site",
+      "bytes": 174294,
+      "sha256": "f3944d378446767455f778ec3cb7ce6f5437e30564edcac618eaf546c9493554"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/top_list_memberships.csv",
+      "purpose": "top list memberships",
+      "bytes": 2482,
+      "sha256": "afe5d987315dc5d0bf0b87a82701a9bde196d41e5afbdd953cec0b2dab9b1fc3"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results/top_lists.json",
+      "purpose": "top lists",
+      "bytes": 6001,
+      "sha256": "f8f7717154626235222afc5d41086c1c566700918ccfc1cb46ccaba4dae80dc9"
+    },
+    {
+      "path": "docs/computational_cases/bglb/results_report.md",
+      "purpose": "results report",
+      "bytes": 6196,
+      "sha256": "5e760d0410df981c23ca9cbfdcf12412cad9dfc21dcb6a74a7a7adb01981bcda"
+    },
+    {
+      "path": "docs/computational_cases/bglb/run_case.py",
+      "purpose": "run case",
+      "bytes": 18367,
+      "sha256": "ed75d19f2c7f53989f7dc830a700ef064f12c06d7b5fc3ce0ae410e860429a82"
+    },
+    {
+      "path": "docs/computational_cases/bglb/site_mapping.md",
+      "purpose": "site mapping",
+      "bytes": 3774,
+      "sha256": "6be8b8bd81f13df8c55ba32af247876e6afd19316ca0c49824d76e516289b7d4"
+    },
+    {
+      "path": "docs/computational_cases/bglb/source_manifest.json",
+      "purpose": "source manifest",
+      "bytes": 7767,
+      "sha256": "b7e8d5bd156c0067de109d977a85d3ddb7c81ef7c29622d2026e9202858a593b"
+    },
+    {
+      "path": "docs/computational_cases/bglb/structure_review.md",
+      "purpose": "structure review",
+      "bytes": 9837,
+      "sha256": "1191336fd699b44d104feaaad8256c5cfe15957d0d997689a50fd6b6bb99f019"
+    },
+    {
+      "path": "docs/computational_cases/bglb/tool_revision_2026-10-25.json",
+      "purpose": "Post-review tool approval and approved scientific LF-content source inventory, distinct from original execution",
+      "bytes": 3183,
+      "sha256": "774bd579a4271f092c7e70c8824a062077595c7cfef0dd12268d627f63c322de"
+    },
+    {
+      "path": "tests/.gitattributes",
+      "purpose": "LF checkout rule only for the new BglB test file",
+      "bytes": 130,
+      "sha256": "57b149e6287d53c447a4a6c9e05584c23adb5e1f0bc4afdcd68550cf3413a8c5"
+    },
+    {
+      "path": "tests/test_bglb_case.py",
+      "purpose": "test bglb case",
+      "bytes": 17241,
+      "sha256": "99cfaaa59dce14cf221c4978da6fcfa41a464814435fa4dfc14ecc1524eb12c6"
+    }
+  ],
+  "self": "docs/computational_cases/bglb/file_manifest.json; own digest omitted to avoid recursion",
+  "excluded": "Original D2D/RCSB inputs, full raw scans/sidecars/logs, local archives/scripts, environments, papers, M5/M6.3 records, exploratory scripts and pause notes.",
+  "revision": "Reliability revision: current tool/content hashing distinguished from original raw execution evidence; original records and generated scientific results preserved."
+}

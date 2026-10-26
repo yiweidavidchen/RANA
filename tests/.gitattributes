@@ -1,0 +1,3 @@
+# Scoped to the new BglB case tests, without normalizing existing tests.
+.gitattributes text eol=lf
+test_bglb_case.py text eol=lf
