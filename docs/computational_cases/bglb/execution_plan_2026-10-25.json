@@ -1,0 +1,148 @@
+{
+  "stage": "Maintainer-accepted single-input execution plan, frozen before first scan",
+  "frozen_utc": "2026-10-25T08:54:59.142562+00:00",
+  "protein": "β-glucosidase B (BglB) from Paenibacillus polymyxa",
+  "main_input": "2O9P chain A, H376Q/G377R engineered apo reference",
+  "scientific_base_commit": "2c690edaae77d4160134c6382abf00901d88d529",
+  "source_sha256": "94573091f10dd18ffc4d3bae84e90f3c151294d2590818133a3d5ee2c8de328d",
+  "source_provenance": {
+    "url": "https://files.rcsb.org/download/2O9P.pdb",
+    "final_url": "https://files.rcsb.org/download/2O9P.pdb",
+    "retrieved_utc": "2026-10-25T07:42:58.686256+00:00",
+    "bytes": 338175,
+    "sha256": "94573091f10dd18ffc4d3bae84e90f3c151294d2590818133a3d5ee2c8de328d",
+    "content_type": "text/plain"
+  },
+  "functional_annotations": [
+    {
+      "foldit_label": "Q19",
+      "chain": "A",
+      "residue_number": 22,
+      "insertion_code": "",
+      "residue_name": "GLN",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "R76",
+      "chain": "A",
+      "residue_number": 79,
+      "insertion_code": "",
+      "residue_name": "ARG",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "H119",
+      "chain": "A",
+      "residue_number": 122,
+      "insertion_code": "",
+      "residue_name": "HIS",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "N163",
+      "chain": "A",
+      "residue_number": 166,
+      "insertion_code": "",
+      "residue_name": "ASN",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "E164",
+      "chain": "A",
+      "residue_number": 167,
+      "insertion_code": "",
+      "residue_name": "GLU",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "N293",
+      "chain": "A",
+      "residue_number": 296,
+      "insertion_code": "",
+      "residue_name": "ASN",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "Y295",
+      "chain": "A",
+      "residue_number": 298,
+      "insertion_code": "",
+      "residue_name": "TYR",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "E353",
+      "chain": "A",
+      "residue_number": 356,
+      "insertion_code": "",
+      "residue_name": "GLU",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "W399",
+      "chain": "A",
+      "residue_number": 402,
+      "insertion_code": "",
+      "residue_name": "TRP",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "E406",
+      "chain": "A",
+      "residue_number": 409,
+      "insertion_code": "",
+      "residue_name": "GLU",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "W407",
+      "chain": "A",
+      "residue_number": 410,
+      "insertion_code": "",
+      "residue_name": "TRP",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    }
+  ],
+  "cli_configuration": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "low_clash_threshold": 10.0,
+    "favorable_fraction": 0.5,
+    "functional_residues": null
+  },
+  "sampling": {
+    "n_rotamers": 12,
+    "sasa_n_points": 500
+  },
+  "numbering": "Input PDB author chain/residue number/insertion code, no Foldit conversion",
+  "environment": "protein-only chain A heavy atoms; assembly 1 monomer identity; no retained water, ligand, ions, H/D, partner subunits or crystal contacts",
+  "selection_origin": "Maintainer research experience with BglB; independent RANA computational application, not evidence of any laboratory ncAA experiments",
+  "future_candidates_not_in_scope": [
+    "2Z1S",
+    "2O9R",
+    "2O9T"
+  ],
+  "context_only": [
+    "2JIE mechanism/ligand background; no new scan"
+  ],
+  "interpretation": "Not natural WT, D2D standard or the maintainer experimental construct. Ligand in a source does not imply ligand-aware RANA scoring; ligand-removed holo retains holo conformation, not experimental apo.",
+  "display_policy": {
+    "full_results": "Every attempted source residue with original status/reason; separately retain absent full-polymer positions -5 through 3.",
+    "independent_rankings": {
+      "steric_rank": "minimum score ascending",
+      "rsa_rank": "RSA descending",
+      "rotamer_robustness_rank": "low-clash fraction descending"
+    },
+    "ties": "Existing minimum/competition ranks. For each top-10 list include all sites tied at the tenth order statistic; report actual list size.",
+    "overview": "Union of the three inclusive top-10 lists, display in structural identity order; not a composite ordering.",
+    "functional_context": "Separate all 11 annotated sites regardless of geometric result; retain background checks Q376/R377. Preserve original cautions and all failed/skipped rows.",
+    "no_optimization": "No selection against expected scores, no second input scan, no experimental probability or performance claim."
+  },
+  "dependencies_sha256": {
+    "case_plan.json": "62572f301b25127473db8d8b372409184f6ad4d75ec7b084881614f9683c0e1b",
+    "candidate_audit.json": "49781c1b948e4adf2e2eb4f884e1692de6b410d69af53ece11edee91bfb2cf7c",
+    "source_manifest.json": "b7e8d5bd156c0067de109d977a85d3ddb7c81ef7c29622d2026e9202858a593b",
+    "site_mapping.md": "6be8b8bd81f13df8c55ba32af247876e6afd19316ca0c49824d76e516289b7d4",
+    "run_case.py": "2c97e23b9e1dd406d812fd933a658bb5dfb988f630147de4738347ce8156b373"
+  }
+}

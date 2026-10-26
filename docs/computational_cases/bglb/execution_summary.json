@@ -1,0 +1,143 @@
+{
+  "protein": "β-glucosidase B (BglB) from Paenibacillus polymyxa",
+  "case_identity": "2O9P A, H376Q/G377R engineered apo reference; not natural WT, D2D standard or maintainer experimental construct",
+  "selection_origin": "Maintainer BglB research experience; independent RANA computational application, not a claim of any laboratory ncAA experiments",
+  "status": "scan_completed",
+  "git_commit_executed": "2c690edaae77d4160134c6382abf00901d88d529",
+  "scientific_base_commit": "2c690edaae77d4160134c6382abf00901d88d529",
+  "plan_frozen_utc": "2026-10-25T08:54:59.142562+00:00",
+  "scan_started_utc": "2026-10-25T08:55:31.698914+00:00",
+  "scan_finished_utc": "2026-10-25T08:56:27.055524+00:00",
+  "run_finished_utc": "2026-10-25T08:56:29.322618+00:00",
+  "execution_plan_sha256": "1480f89b85d4055e0983966cd9fd09982eb8f469bc3d26756404586b32d09053",
+  "run_record_local": "data/processed/m6_bglb_pazf_case_2026-10-25/run/run.json",
+  "run_record_sha256": "14e21a904bc06f66f6b89cafc6189e50df390d6fec42e7525b23b6b06f548956",
+  "actual_argv_sha256": "9808ac34070975b743e9b70e0e85c16cc018e36bdfa3a76f1ea59e7d0e6183ed",
+  "source_provenance": {
+    "url": "https://files.rcsb.org/download/2O9P.pdb",
+    "final_url": "https://files.rcsb.org/download/2O9P.pdb",
+    "retrieved_utc": "2026-10-25T07:42:58.686256+00:00",
+    "bytes": 338175,
+    "sha256": "94573091f10dd18ffc4d3bae84e90f3c151294d2590818133a3d5ee2c8de328d",
+    "content_type": "text/plain"
+  },
+  "source_sha256": "94573091f10dd18ffc4d3bae84e90f3c151294d2590818133a3d5ee2c8de328d",
+  "preparation": {
+    "prepared_sha256": "1983b8a41f785765b0ee5e715dde482ea3e71a239fe42cba77aa120e36561cf1",
+    "protein_heavy_atoms": 3626,
+    "residue_count": 445,
+    "coordinate_change_A": 0.0,
+    "policy": "Exact original A-chain heavy ATOM records; one MODEL; no HETATM or H/D; no renumbering"
+  },
+  "configuration": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "low_clash_threshold": 10.0,
+    "favorable_fraction": 0.5,
+    "functional_residues": null
+  },
+  "sampling": {
+    "n_rotamers": 12,
+    "sasa_n_points": 500
+  },
+  "output_validation": {
+    "rows": 445,
+    "status_counts": {
+      "scored": 445
+    },
+    "tier_counts": {
+      "geometry_limited": 175,
+      "geometry_unfavorable": 158,
+      "geometry_favorable": 112
+    },
+    "csv_sha256": "46b9028fbb07abf0c09d5d77bcca71ab51fafe7f5aecbe7beaa177ec72af5ceb",
+    "metadata_sha256": "00785d7003fdfa7a229b65a68f54f9a5920bb98ce0b447fa44434ff616f968ca",
+    "score_atol": 1e-10,
+    "fraction_atol": 1e-12
+  },
+  "finite_raw_rotamer_scores": 5340,
+  "executed_wrapper_sha256": "2c97e23b9e1dd406d812fd933a658bb5dfb988f630147de4738347ce8156b373",
+  "curation_script_sha256": "1e703629d9d49ca16a4390e5d2928d1cde26b31028bba0e16cacdde6613029df",
+  "scientific_package_sha256": {
+    "ncaa_site_rec/__init__.py": "a9b84c8789a0d893280857e52b0211bc0a54eb7451f00c6f62ad4e4ffffcb202",
+    "ncaa_site_rec/cli.py": "05b7aa841676ae4095738ff72e44f093d476be36fc09d666d98558bdfd55841e",
+    "ncaa_site_rec/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/features/asa_reference.py": "17e826c507b8768fd1310c91b608a4175754eddd90c2fb3c6cbbbd8d257870d4",
+    "ncaa_site_rec/features/ddg.py": "bb6caaa2d5642eb81e3654729984b4e3fafdef01ee8c349f288161d5d07fbb40",
+    "ncaa_site_rec/features/geometry.py": "e97d27e8734a3633527b7eb5bfab5222660b8636a47f4aafa7322dfaa773d74f",
+    "ncaa_site_rec/features/load_bearing.py": "f580498c0dfbc51749a4b41533e0924d9819c3d12070b03f2547d22f0ec5d23c",
+    "ncaa_site_rec/features/pazf.py": "b8d712ebd9938472b22459fd076c2d026f3ca483f184bc3a5672588d654dfef3",
+    "ncaa_site_rec/features/site_features.py": "a553c540147690144ffbd24585c15d349c7a7c481a13ca4746c39a043e4f7cda",
+    "ncaa_site_rec/features/site_ranking.py": "52ca7e5cc1ffd801429bc4a48f6960909ec3833958d294519f9e663ef3e66260",
+    "ncaa_site_rec/features/site_scan.py": "5503a1c6109930651bddf94ed892c34074e05a3b065b8dc0f6488338eca5a714",
+    "ncaa_site_rec/features/structural.py": "874345ec69fdcd33f7f5c0c90a01a90d556521345e772cc907c96b883922b9ba",
+    "ncaa_site_rec/io/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/io/prepare_structure.py": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81",
+    "ncaa_site_rec/io/run_metadata.py": "c6eae59416154e7d7e21d7bdb6f9146cd0957b0f5c7eed4713d6269fccbfe4d1",
+    "ncaa_site_rec/io/structure.py": "96296998fceaa8b4b922ce95f24fe84414dc0872a5b94c36052a8a23322c93f4",
+    "ncaa_site_rec/models.py": "a9c82fb9c3d77e8194419e0f7f0055c34c43d6370ba0fd7b74dc89b726652e8c",
+    "ncaa_site_rec/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/scoring/rank.py": "32a3c3389d334f3b800539408808c93fccf1f63f7ff10e886851738f2745b4f2"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "biopython": "1.88",
+      "rdkit": "2026.9.1"
+    }
+  },
+  "stdout_sha256": "2b9184cba2a38a5e7cb4a2b9028c7a8222c5efbd76477a2b0f9915615be6a9ea",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_empty": true,
+  "curation": {
+    "source_scientific_columns_and_ranks": "All shared raw/curated scientific columns equal exactly after round-trip parsing; no reranking or rewriting",
+    "low_clash_count": "Derived only from raw rotamer_scores <=10.0; validated against original fraction",
+    "top_list_sizes": {
+      "steric_rank": 10,
+      "rsa_rank": 10,
+      "rotamer_robustness_rank": 20
+    },
+    "top_list_union_sites": 31,
+    "functional_sites": 11,
+    "background_sites": 2,
+    "all_attempted_sites": 445,
+    "unobserved_coordinate_positions": 9,
+    "curation_record_sha256": "54f53df91027916b1c60fbb486b62baa30e87d280c8f33c2d513c58d7289e630",
+    "reproduced_byte_identical_artifacts": [
+      "candidate_overview.md",
+      "results/background_context.csv",
+      "results/candidate_overview.csv",
+      "results/coordinate_absences.csv",
+      "results/functional_context.csv",
+      "results/per_site.csv",
+      "results/top_list_memberships.csv",
+      "results/top_lists.json",
+      "results_report.md"
+    ]
+  },
+  "software_checks": {
+    "targeted_tests": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "warnings_reported": 0,
+    "seconds": 7.611,
+    "test_source_sha256": "8abe604f6617db064bb4f7e5be316a7013f087b90240b4d7453d79ec4dfd8b7f",
+    "junit_local": "data/processed/m6_bglb_pazf_case_2026-10-25/tests.xml",
+    "junit_sha256": "7bde39999cb2eca8e334a83cbd9b22e513424475cf1e53d0c6c79591cbebb02b",
+    "preparation": "3626 source heavy ATOM records, all coordinates, identities and author numbers retained exactly",
+    "scope": "Normal and python -O guards; invalid/missing/duplicate output; finite 12 rotamers and score/fraction consistency; metadata/profile checks; tie retention and separate annotation joins. Full unrelated pytest not repeated."
+  },
+  "original_structure_review_snapshot_local": "data/processed/m6_bglb_pazf_case_2026-10-25/pre_scan_snapshot",
+  "future_candidates_pending_only": [
+    "2Z1S",
+    "2O9R",
+    "2O9T"
+  ],
+  "context_only": "2JIE mechanism/ligand reference, no new scan; D2D holo not rescored",
+  "environment_policy": "Protein-only monomer: no retained ligand, water, ions, H/D, partner subunits or crystal neighbors. Source ligand presence is not ligand-aware RANA scoring. Ligand-removed holo remains a holo conformation, not experimental apo.",
+  "scientific_limits": "One fixed engineered apo reference, heuristic geometry only, no corresponding pAzF experimental validation, no success probability, no activity/incorporation/expression/stability/conjugation prediction. No fresh environment/cross-platform validation."
+}

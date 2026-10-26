@@ -1,0 +1,12 @@
+# Only this case's public text; no historical inputs or raw run directories.
+.gitattributes text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+# Preserve curated CSV byte hashes, including their original line endings.
+results/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# These frozen/provenance JSON artifacts retain their original CRLF bytes.
+curation_metadata.json -text !eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+curation_revision_2026-10-25.json -text !eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/top_lists.json -text !eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

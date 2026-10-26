@@ -1,0 +1,10 @@
+chain,residue_number,insertion_code,residue_name,coordinate_status,reason,source_field
+A,-5,,MET,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,-4,,HIS,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,-3,,HIS,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,-2,,HIS,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,-1,,HIS,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,0,,HIS,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,1,,HIS,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,2,,SER,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues
+A,3,,GLU,declared_unobserved,Absent from deposited 2O9P coordinates; not an experimentally tested negative,2O9P.cif _pdbx_unobs_or_zero_occ_residues

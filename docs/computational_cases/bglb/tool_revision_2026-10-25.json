@@ -1,0 +1,34 @@
+{
+  "revision": "reliability-2026-10-25",
+  "text_hash_algorithm": "sha256-utf8-crlf-to-lf-v1",
+  "text_hash_scope": "Current public runner/curator, declared public plan/dependency text and scientific Python source inventories only; validate UTF-8 then replace CRLF bytes with LF only. No whitespace trimming or other normalization. Original structures, CSVs and historical records/archives keep raw byte hashes.",
+  "historical_plan_lf_sha256": "1480f89b85d4055e0983966cd9fd09982eb8f469bc3d26756404586b32d09053",
+  "scientific_base_commit": "2c690edaae77d4160134c6382abf00901d88d529",
+  "scientific_source_lf_sha256": {
+    "ncaa_site_rec/__init__.py": "a9b84c8789a0d893280857e52b0211bc0a54eb7451f00c6f62ad4e4ffffcb202",
+    "ncaa_site_rec/cli.py": "d281f2effd9cc43a22efc7971ad0d5cad0a34bac94f7ef6ba5086c0d0bdb4dec",
+    "ncaa_site_rec/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/features/asa_reference.py": "c6295698058d4577470262c36a3a78844a33ebcbd3f76a3ce1e86cecd084a48b",
+    "ncaa_site_rec/features/ddg.py": "bb6caaa2d5642eb81e3654729984b4e3fafdef01ee8c349f288161d5d07fbb40",
+    "ncaa_site_rec/features/geometry.py": "b97962bb8da4e63c8ff94a1b2a3f85af1aabf5c8b84bcee126c8e1b92d4f5e47",
+    "ncaa_site_rec/features/load_bearing.py": "f580498c0dfbc51749a4b41533e0924d9819c3d12070b03f2547d22f0ec5d23c",
+    "ncaa_site_rec/features/pazf.py": "b8d712ebd9938472b22459fd076c2d026f3ca483f184bc3a5672588d654dfef3",
+    "ncaa_site_rec/features/site_features.py": "dfd465f11ff88a84a86eba06ded9cd427a8ba8fd6e544c330507b0f551766dfb",
+    "ncaa_site_rec/features/site_ranking.py": "b3e2f6938ff01fcbff814ebeb4f5ad5b1a249aeb7dcde5288510e1faa4d4d509",
+    "ncaa_site_rec/features/site_scan.py": "74e73c972b3c87fbb7c03242371e09664d31861bf080afca3beeb91c70c70358",
+    "ncaa_site_rec/features/structural.py": "62ac2d8f3970328d1be8f7ed5c8bbd66f8c7ec15470f773d9d835d9487a795e8",
+    "ncaa_site_rec/io/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/io/prepare_structure.py": "3b4bf3c73d6e7ea108213b3d1d33ef9fdb0e939c896aea55227c33c5b70d8f81",
+    "ncaa_site_rec/io/run_metadata.py": "b08093e3b8ef2208d01c026dbf0f0b7520d3b6464de2432cec669173f7af7423",
+    "ncaa_site_rec/io/structure.py": "7533c15b1bf3953731306b9a316d9bc1d12d7fe8d9ad1c19a9261002bbb11913",
+    "ncaa_site_rec/models.py": "a9c82fb9c3d77e8194419e0f7f0055c34c43d6370ba0fd7b74dc89b726652e8c",
+    "ncaa_site_rec/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ncaa_site_rec/scoring/rank.py": "32a3c3389d334f3b800539408808c93fccf1f63f7ff10e886851738f2745b4f2"
+  },
+  "current_tools_lf_sha256": {
+    "run_case.py": "ed75d19f2c7f53989f7dc830a700ef064f12c06d7b5fc3ce0ae410e860429a82",
+    "curate_case.py": "30eb3a7510bc0e0bb517f655e2cb545e3802227e65a071e3366e46e1477f65b6"
+  },
+  "historical_runner_raw_sha256": "2c97e23b9e1dd406d812fd933a658bb5dfb988f630147de4738347ce8156b373",
+  "purpose": "Detect accidental content/source mismatches, not a tamper-resistant security mechanism. This post-review tool approval does not rewrite or re-date the original pre-scan plan."
+}

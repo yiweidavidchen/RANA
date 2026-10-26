@@ -1,0 +1,166 @@
+{
+  "files": {
+    "Standard_D2D_BglB_WT.pdb": {
+      "original_filename": "Standard_D2D_BglB_WT.pdb",
+      "sha256": "242d4d11f773a532e304986f73c3f9613918fc2733d7a83e6844cc27d00f7aec",
+      "bytes": 580205,
+      "source_type": "maintainer_supplied_file",
+      "maintainer_download_page_url": null,
+      "historical_download_url": null,
+      "claim": "Maintainer reports old D2D-site standard holo pNPG-bound file, with Foldit H373/G374 unchanged; identity and numbering require independent checks.",
+      "recorded_utc": "2026-10-25T07:42:30.764651+00:00"
+    },
+    "2JIE_assembly.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/assembly/2JIE/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/assembly/2JIE/1",
+      "retrieved_utc": "2026-10-25T07:42:58.474783+00:00",
+      "bytes": 2436,
+      "sha256": "1f56c36ded147b0eb93eafab1152815e8c445756f134ca4c24d3cb0171229e77",
+      "content_type": "application/json"
+    },
+    "2JIE_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/2JIE",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/2JIE",
+      "retrieved_utc": "2026-10-25T07:42:58.493117+00:00",
+      "bytes": 14464,
+      "sha256": "29361f909118bde1e9cefb85da96a5fa28cc51b9d1f9f9e9cf6338bc71fedeb2",
+      "content_type": "application/json"
+    },
+    "2JIE_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2JIE/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2JIE/1",
+      "retrieved_utc": "2026-10-25T07:42:58.497818+00:00",
+      "bytes": 24284,
+      "sha256": "b27c4810e11277aedcb95f5df315fc22bcd3d6fc78b5185929692908643365f3",
+      "content_type": "application/json"
+    },
+    "2O9P_entry.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/entry/2O9P",
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/2O9P",
+      "retrieved_utc": "2026-10-25T07:42:58.560721+00:00",
+      "bytes": 14076,
+      "sha256": "9eac951a4643180fca0f4fce1cfe1f394e6aa1e3dabaa9bbf6d101aedc3b136d",
+      "content_type": "application/json"
+    },
+    "2O9P_entity.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2O9P/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2O9P/1",
+      "retrieved_utc": "2026-10-25T07:42:58.565743+00:00",
+      "bytes": 25138,
+      "sha256": "a708233a6d48595db8525f569bb8a8d91027eb81679cfd969a429cb92957957a",
+      "content_type": "application/json"
+    },
+    "2O9P_assembly.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/assembly/2O9P/1",
+      "final_url": "https://data.rcsb.org/rest/v1/core/assembly/2O9P/1",
+      "retrieved_utc": "2026-10-25T07:42:58.613118+00:00",
+      "bytes": 2403,
+      "sha256": "ae1126fe763e637196e37bf46068fae50d68c399f4783f359eebab864dcd0016",
+      "content_type": "application/json"
+    },
+    "2JIE.pdb": {
+      "url": "https://files.rcsb.org/download/2JIE.pdb",
+      "final_url": "https://files.rcsb.org/download/2JIE.pdb",
+      "retrieved_utc": "2026-10-25T07:42:58.637349+00:00",
+      "bytes": 342873,
+      "sha256": "cab04901fd629bee5a423e7103f47aab7036e75faf0ffe430dd14a320756a29c",
+      "content_type": "text/plain"
+    },
+    "2O9P.pdb": {
+      "url": "https://files.rcsb.org/download/2O9P.pdb",
+      "final_url": "https://files.rcsb.org/download/2O9P.pdb",
+      "retrieved_utc": "2026-10-25T07:42:58.686256+00:00",
+      "bytes": 338175,
+      "sha256": "94573091f10dd18ffc4d3bae84e90f3c151294d2590818133a3d5ee2c8de328d",
+      "content_type": "text/plain"
+    },
+    "2JIE.cif": {
+      "url": "https://files.rcsb.org/download/2JIE.cif",
+      "final_url": "https://files.rcsb.org/download/2JIE.cif",
+      "retrieved_utc": "2026-10-25T07:42:58.733231+00:00",
+      "bytes": 415735,
+      "sha256": "5a9d908dc685c4a1f2a99d0de3ee633a5eab402ae5b4e179a3d38d16abc403a9",
+      "content_type": "chemical/x-cif"
+    },
+    "2O9P.cif": {
+      "url": "https://files.rcsb.org/download/2O9P.cif",
+      "final_url": "https://files.rcsb.org/download/2O9P.cif",
+      "retrieved_utc": "2026-10-25T07:42:58.802646+00:00",
+      "bytes": 412195,
+      "sha256": "99303ec0637acd9247aaf2edc7630bd4ad67de1da4fecf97dea22435241dac18",
+      "content_type": "chemical/x-cif"
+    },
+    "G2F.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/chemcomp/G2F",
+      "final_url": "https://data.rcsb.org/rest/v1/core/chemcomp/G2F",
+      "retrieved_utc": "2026-10-25T07:42:58.829747+00:00",
+      "bytes": 8224,
+      "sha256": "d27b2b4f70b4537eb500de74f6f848554e0f3df6548ff05c27ec0f6bade23811",
+      "content_type": "application/json"
+    },
+    "PNW.json": {
+      "url": "https://data.rcsb.org/rest/v1/core/chemcomp/PNW",
+      "final_url": "https://data.rcsb.org/rest/v1/core/chemcomp/PNW",
+      "retrieved_utc": "2026-10-25T07:42:58.880306+00:00",
+      "bytes": 6544,
+      "sha256": "0a8dd52ac3e0a3c04605e24a1e0f8478124029be258addb5feb91c9960e5376b",
+      "content_type": "application/json"
+    },
+    "P22505.json": {
+      "url": "https://rest.uniprot.org/uniprotkb/P22505.json",
+      "final_url": "https://rest.uniprot.org/uniprotkb/P22505.json",
+      "retrieved_utc": "2026-10-25T07:42:59.249475+00:00",
+      "bytes": 16890,
+      "sha256": "840afafc02d421319b763aa834d117fa8163726791a90dd2128b32f2ce7d15cb",
+      "content_type": "application/json"
+    },
+    "d2d_resources.html": {
+      "url": "https://www.d2dcure.com/resources/",
+      "final_url": "https://www.d2dcure.com/resources/",
+      "retrieved_utc": "2026-10-25T07:42:59.286576+00:00",
+      "bytes": 15379,
+      "sha256": "9dba3bf44fddf16166d240a7fac21719d7d542bcfaf0b88bb53d242e22f62deb",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    "d2d_about.html": {
+      "url": "https://www.d2dcure.com/about/",
+      "final_url": "https://www.d2dcure.com/about/",
+      "retrieved_utc": "2026-10-25T07:43:00.660476+00:00",
+      "bytes": 18353,
+      "sha256": "e390265c0be3849e05b71c68f1634ee8fbe7afe39b185712e48de0e7334567a6",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    "d2d_sequence.html": {
+      "url": "https://www.d2dcure.com/about/BglB/sequence.php",
+      "final_url": "https://www.d2dcure.com/about/BglB/sequence.php",
+      "retrieved_utc": "2026-10-25T07:43:01.861056+00:00",
+      "bytes": 52585,
+      "sha256": "4184aa629bc834e21412625f796358564c117fa78f743ceb3d6093231c56e3ea",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    "d2d_public_BglB.pdb": {
+      "url": "https://www.d2dcure.com/resources/structures/BglB.pdb",
+      "final_url": "https://www.d2dcure.com/resources/structures/BglB.pdb",
+      "retrieved_utc": "2026-10-25T07:43:02.117709+00:00",
+      "bytes": 580205,
+      "sha256": "242d4d11f773a532e304986f73c3f9613918fc2733d7a83e6844cc27d00f7aec",
+      "content_type": "application/vnd.palm"
+    }
+  },
+  "errors": {
+    "d2d_public_BglB.fasta": {
+      "url": "https://www.d2dcure.com/resources/structures/BglB.fasta",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  },
+  "attachment_provenance_resolution": {
+    "maintainer_provided_download_url": null,
+    "historical_download_page_url": null,
+    "discovered_public_page": "https://www.d2dcure.com/resources/",
+    "discovered_direct_url": "https://www.d2dcure.com/resources/structures/BglB.pdb",
+    "current_public_download_matches_attachment_exactly": true,
+    "attachment_sha256": "242d4d11f773a532e304986f73c3f9613918fc2733d7a83e6844cc27d00f7aec",
+    "interpretation": "Confirms a current public byte-identical source; does not establish the historical download event or exact preparation history.",
+    "redistribution_status": "No specific coordinate-file redistribution license identified on the checked resource page. Do not include either D2D PDB in public files."
+  }
+}

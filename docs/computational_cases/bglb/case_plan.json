@@ -1,0 +1,159 @@
+{
+  "stage": "M6.4 pre-scan structure review and proposed case plan; no scan run",
+  "recorded_utc": "2026-10-25T08:02:32.462992+00:00",
+  "code_git_commit": "2c690edaae77d4160134c6382abf00901d88d529",
+  "RANA_version": "0.1.0.dev0",
+  "main_input": "2O9P",
+  "case_label": "BglB H376Q/G377R substrate-free (apo) reference computational case",
+  "selection_reason": "Official experimental provenance, explicit engineered background and reproducible public input; D2D coordinate preparation history remains unresolved despite confirmed public file identity.",
+  "source_url": "https://files.rcsb.org/download/2O9P.pdb",
+  "source_sha256": "94573091f10dd18ffc4d3bae84e90f3c151294d2590818133a3d5ee2c8de328d",
+  "target_chain": "A",
+  "identity_fields": [
+    "chain",
+    "residue_number",
+    "insertion_code"
+  ],
+  "expected_coordinate_author_numbers": [
+    4,
+    448
+  ],
+  "expected_coordinate_site_count": 445,
+  "insertion_codes": [
+    ""
+  ],
+  "input_policy": "Future new output only: retain source chain A standard protein heavy ATOM records in original order/numbering, one MODEL; remove water, H/D and nonprotein components. No relaxation, filling, coordinate modification or renumbering.",
+  "environment": "Assembly 1 is monomeric, identity operator. Intrachain protein contacts only; no crystal neighbors, partner subunits or ligand-aware steric analysis.",
+  "configuration": {
+    "ncaa": "pazf",
+    "seed": 42,
+    "n_rotamers": 12,
+    "low_clash_threshold_A2": 10.0,
+    "favorable_fraction": 0.5,
+    "sasa_n_points": 500,
+    "functional_residues": null
+  },
+  "functional_annotations": [
+    {
+      "foldit_label": "Q19",
+      "chain": "A",
+      "residue_number": 22,
+      "insertion_code": "",
+      "residue_name": "GLN",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "R76",
+      "chain": "A",
+      "residue_number": 79,
+      "insertion_code": "",
+      "residue_name": "ARG",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "H119",
+      "chain": "A",
+      "residue_number": 122,
+      "insertion_code": "",
+      "residue_name": "HIS",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "N163",
+      "chain": "A",
+      "residue_number": 166,
+      "insertion_code": "",
+      "residue_name": "ASN",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "E164",
+      "chain": "A",
+      "residue_number": 167,
+      "insertion_code": "",
+      "residue_name": "GLU",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "N293",
+      "chain": "A",
+      "residue_number": 296,
+      "insertion_code": "",
+      "residue_name": "ASN",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "Y295",
+      "chain": "A",
+      "residue_number": 298,
+      "insertion_code": "",
+      "residue_name": "TYR",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "E353",
+      "chain": "A",
+      "residue_number": 356,
+      "insertion_code": "",
+      "residue_name": "GLU",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "W399",
+      "chain": "A",
+      "residue_number": 402,
+      "insertion_code": "",
+      "residue_name": "TRP",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "E406",
+      "chain": "A",
+      "residue_number": 409,
+      "insertion_code": "",
+      "residue_name": "GLU",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    },
+    {
+      "foldit_label": "W407",
+      "chain": "A",
+      "residue_number": 410,
+      "insertion_code": "",
+      "residue_name": "TRP",
+      "source": "Maintainer list plus public tooltip and coordinate parent check; UniProt catalytic roles separate."
+    }
+  ],
+  "annotation_policy": "Join annotations after geometric scoring; no functional mask, penalty, tier/rank modification or combined score. No silent exclusion of functionally annotated sites.",
+  "display_policy": {
+    "full_results": "Every attempted source residue with original status/reason; separately retain absent full-polymer positions -5 through 3.",
+    "independent_rankings": {
+      "steric_rank": "minimum score ascending",
+      "rsa_rank": "RSA descending",
+      "rotamer_robustness_rank": "low-clash fraction descending"
+    },
+    "ties": "Existing minimum/competition ranks. For each top-10 list include all sites tied at the tenth order statistic; report actual list size.",
+    "overview": "Union of the three inclusive top-10 lists, display in structural identity order; not a composite ordering.",
+    "functional_context": "Separate all 11 annotated sites regardless of geometric result; retain background checks Q376/R377. Preserve original cautions and all failed/skipped rows.",
+    "no_optimization": "No selection against expected scores, no second input scan, no experimental probability or performance claim."
+  },
+  "pre_scan_requirements": [
+    "Maintainer review of the recommended 2O9P engineered apo case and numbering discrepancy.",
+    "Record the then-executed code/environment, source/prepared hashes and exact command in a new run directory.",
+    "Validate copied atom identities/coordinates, author numbering and all 11 annotation parents before execution."
+  ],
+  "alternative_status": {
+    "D2D": "Explicit holo candidate, public-byte identity confirmed. Processing history, independent ligand stereochemistry and redistribution permission unresolved. No D2D scan currently planned.",
+    "2JIE": "Functional/ligand context only. Not a pNPG complex: covalent G2F reference. No second scan."
+  },
+  "experimental_boundary": "No corresponding pAzF experiments, no preprint/laboratory/construct equivalence, no unpublished experimental data and no inferred success probability.",
+  "excluded_scope": [
+    "private Hive paths",
+    "maintainer Rosetta HPC models",
+    "nylon hydrolase",
+    "MD",
+    "ML",
+    "second ncAA",
+    "new composite score",
+    "threshold or rotamer changes"
+  ]
+}

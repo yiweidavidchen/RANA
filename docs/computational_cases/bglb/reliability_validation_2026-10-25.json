@@ -1,0 +1,80 @@
+{
+  "revision": "reliability-2026-10-25",
+  "status": "passed",
+  "scope": "Case tooling/source consistency, numeric validation, checkout text policy and re-curation only; no scientific scan, download, parameter change or experimental validation. Not a tamper-resistant security mechanism.",
+  "code_commit": "2c690edaae77d4160134c6382abf00901d88d529",
+  "branch": "codex/m6-bglb-computational-case",
+  "environment": {
+    "python": "3.13.12",
+    "executable": ".venv/Scripts/python.exe",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "commands": {
+    "tests": "python -B -m pytest tests/test_bglb_case.py -q -o cache_dir=data/processed/m6_bglb_pazf_case_2026-10-25/reliability_revision_2026-10-25/pytest_cache_final --basetemp=data/processed/m6_bglb_pazf_case_2026-10-25/reliability_revision_2026-10-25/pytest_tmp_final --junitxml=data/processed/m6_bglb_pazf_case_2026-10-25/reliability_revision_2026-10-25/tests_final.xml",
+    "curation": "python -B docs/computational_cases/bglb/curate_case.py --run-dir data/processed/m6_bglb_pazf_case_2026-10-25/run --output-dir data/processed/m6_bglb_pazf_case_2026-10-25/reliability_revision_2026-10-25/curation_final"
+  },
+  "tests": {
+    "passed": 58,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "warnings_reported": 0,
+    "duration_seconds": 61.192,
+    "xml_sha256": "27cdea41b4f11495cc71aae1c43c780de3bc9d6e04c5bea2f132eb8293b754ca"
+  },
+  "original_versions": {
+    "run_record_sha256": "14e21a904bc06f66f6b89cafc6189e50df390d6fec42e7525b23b6b06f548956",
+    "wrapper_raw_sha256": "2c97e23b9e1dd406d812fd933a658bb5dfb988f630147de4738347ce8156b373",
+    "curation_metadata_sha256": "54f53df91027916b1c60fbb486b62baa30e87d280c8f33c2d513c58d7289e630",
+    "execution_summary_sha256": "d491a0c3f919449721d40e96e99a9541d553da4363ca9a5a53b2a11cc1337bf0",
+    "original_tests": 25
+  },
+  "current_versions": {
+    "text_hash_algorithm": "sha256-utf8-crlf-to-lf-v1",
+    "tool_lf_sha256": {
+      "curate_case.py": "30eb3a7510bc0e0bb517f655e2cb545e3802227e65a071e3366e46e1477f65b6",
+      "run_case.py": "ed75d19f2c7f53989f7dc830a700ef064f12c06d7b5fc3ce0ae410e860429a82"
+    },
+    "tool_approval_raw_sha256": "774bd579a4271f092c7e70c8824a062077595c7cfef0dd12268d627f63c322de",
+    "test_source_raw_sha256": "99cfaaa59dce14cf221c4978da6fcfa41a464814435fa4dfc14ecc1524eb12c6",
+    "curation_metadata_sha256": "2b8f432c138592a5a375e3fbe5e03291a68a59b8003b2b5177a6e43954ad59da"
+  },
+  "comparison": {
+    "all_nine_data_report_artifacts_byte_identical": true,
+    "outputs_raw_sha256": {
+      "candidate_overview.md": "e2a1ac158e8cb3aeb158309c3e7f45a80c7c435b7e4058def70b386d4c544d9b",
+      "results/background_context.csv": "cad05ac8bf8b6bbdb790702c736459e73e2c29f9964fe7f05c1bd6047e722ccd",
+      "results/candidate_overview.csv": "ac8a2ed84a2b6770dd99bee85adaf3fb1730e6576474c50290a665a888f465dd",
+      "results/coordinate_absences.csv": "0628f6b8e86dc3adaef9119082058a909cfea64a009dbc8667559c814eb0ff39",
+      "results/functional_context.csv": "0b8fa7ddd0495e04837b26754a94b9ee23ce152dfb60f66f364aa57c6d6def9f",
+      "results/per_site.csv": "f3944d378446767455f778ec3cb7ce6f5437e30564edcac618eaf546c9493554",
+      "results/top_list_memberships.csv": "afe5d987315dc5d0bf0b87a82701a9bde196d41e5afbdd953cec0b2dab9b1fc3",
+      "results/top_lists.json": "f8f7717154626235222afc5d41086c1c566700918ccfc1cb46ccaba4dae80dc9",
+      "results_report.md": "5e760d0410df981c23ca9cbfdcf12412cad9dfc21dcb6a74a7a7adb01981bcda"
+    },
+    "identities": 445,
+    "rotamer_scores": 5340,
+    "original_ranks_unchanged": true,
+    "annotation_joins_unchanged": true,
+    "inclusive_top_list_sizes": {
+      "steric_rank": 10,
+      "rsa_rank": 10,
+      "rotamer_robustness_rank": 20
+    },
+    "union_sites": 31,
+    "tier_counts": {
+      "geometry_favorable": 112,
+      "geometry_limited": 175,
+      "geometry_unfavorable": 158
+    }
+  },
+  "preservation": {
+    "historical_input_and_existing_files_checked": 345,
+    "all_unchanged": true,
+    "scientific_source_unchanged": true,
+    "seven_exploratory_scripts_unchanged_and_untracked": true,
+    "old_validation_not_rewritten": true
+  },
+  "checkout_encoding_checks": "LF/CRLF exported profiles, regular and optimized Python, explicit UTF-8 under utf8=0, real-content change rejected. No fresh-environment full-scan validation.",
+  "local_evidence_directory": "data/processed/m6_bglb_pazf_case_2026-10-25/reliability_revision_2026-10-25/"
+}

@@ -1,0 +1,6 @@
+# Direct dependency snapshot from the actual existing environment; not a full transitive lock.
+numpy==2.5.4
+pandas==3.0.6
+biopython==1.88
+rdkit==2026.9.1
+pytest==9.1.1
