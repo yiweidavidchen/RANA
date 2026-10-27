@@ -298,3 +298,56 @@ def test_revised_execution_keeps_distinct_approval(curator, provenance_run, dama
         assert actual['tool_revision'] == runner.REVISION
     else:
         with pytest.raises(ValueError): curator.verified_inputs(run_dir)
+
+
+def test_frozen_mapping_matches_approved_git_bytes(case):
+    original = subprocess.check_output(['git', 'show',
+        '4ead407025a4ac7fb6c4cb1e2dfc9ea8351c6f25:docs/computational_cases/bglb/site_mapping.md'])
+    frozen = SCRIPTS/case.FROZEN_MAPPING_FILE
+    plan = case.read_json(SCRIPTS/'execution_plan_2026-10-25.json')
+    assert frozen.read_bytes() == original
+    assert case.sha(frozen) == plan['dependencies_sha256']['site_mapping.md']
+
+
+@pytest.mark.parametrize('optimize', [False, True])
+def test_current_mapping_prose_does_not_control_preflight(case, tmp_path, optimize):
+    profile = tmp_path/'profile'
+    shutil.copytree(SCRIPTS, profile, ignore=shutil.ignore_patterns('__pycache__'))
+    (profile/'site_mapping.md').write_text('# Updated explanation\nβ and new citations only.\n', encoding='utf-8')
+    code = (f'import sys;sys.path.insert(0,{str(profile)!r});import run_case;'
+            'p,a=run_case.approved_plan();'
+            'run_case.require(len(p["functional_annotations"])==11,"changed flags");'
+            'run_case.require(p["cli_configuration"]["low_clash_threshold"]==10.0,"changed configuration")')
+    result = subprocess.run([sys.executable, *(['-O'] if optimize else []), '-B', '-c', code], capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+    frozen = profile/case.FROZEN_MAPPING_FILE
+    frozen.write_bytes(frozen.read_bytes()+b'\nchanged frozen evidence\n')
+    result = subprocess.run([sys.executable, *(['-O'] if optimize else []), '-B', '-c', code], capture_output=True, text=True)
+    assert result.returncode != 0 and 'SHA-256 mismatch' in result.stderr
+
+
+@pytest.mark.parametrize('name', ['case_plan.json', 'candidate_audit.json', 'source_manifest.json', 'execution_plan_2026-10-25.json'])
+def test_other_frozen_dependency_checks_remain(case, tmp_path, monkeypatch, name):
+    profile = tmp_path/'profile'
+    shutil.copytree(SCRIPTS, profile, ignore=shutil.ignore_patterns('__pycache__'))
+    (profile/name).write_text('{}\n', encoding='utf-8')
+    monkeypatch.setattr(case, 'HERE', profile)
+    with pytest.raises(ValueError, match='SHA-256 mismatch'):
+        case.approved_plan()
+
+
+def test_previous_tool_execution_uses_unchanged_old_approval(curator, provenance_run):
+    run_dir, record, _, _ = provenance_run
+    runner = sys.modules['run_case']
+    previous = runner.read_json(SCRIPTS/'tool_revision_2026-10-25.json')
+    original = subprocess.check_output(['git', 'show',
+        '4ead407025a4ac7fb6c4cb1e2dfc9ea8351c6f25:docs/computational_cases/bglb/run_case.py'])
+    archived = run_dir/'executed_sources/run_case.py'
+    archived.write_bytes(original)
+    record.update(tool_revision=previous['revision'], text_hash_algorithm=runner.TEXT_HASH_ALGORITHM,
+                  wrapper_sha256=runner.sha(archived), wrapper_lf_sha256=previous['current_tools_lf_sha256']['run_case.py'],
+                  scientific_package_lf_sha256=previous['scientific_source_lf_sha256'])
+    (run_dir/'run.json').write_text(json.dumps(record), encoding='utf-8')
+    actual, _, _ = curator.verified_inputs(run_dir)
+    assert actual['tool_revision'] == 'reliability-2026-10-25'
+    assert actual['wrapper_lf_sha256'] != runner.text_sha(SCRIPTS/'run_case.py')

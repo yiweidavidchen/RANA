@@ -23,7 +23,9 @@ TIERS = {"geometry_favorable", "geometry_limited", "geometry_unfavorable"}
 FIELDS = ["sasa_abs", "rsa", "ca_neighbors_8a", "min_steric_score", "mean_steric_score",
           "median_steric_score", "low_clash_fraction", "rsa_rank", "steric_rank", "rotamer_robustness_rank",
           "best_chi1", "best_chi2"]
-REVISION = "reliability-2026-10-25"
+REVISION = "documentation-compatibility-2026-10-27"
+APPROVAL_FILE = "tool_revision_2026-10-27.json"
+FROZEN_MAPPING_FILE = "site_mapping_frozen_2026-10-25.md"
 TEXT_HASH_ALGORITHM = "sha256-utf8-crlf-to-lf-v1"
 FRACTION_ATOL = 1e-12
 SCORE_ATOL = 1e-10
@@ -62,7 +64,7 @@ def read_json(path):
 
 def approved_tools():
     """Accidental-change checks, not a tamper-resistant trust mechanism."""
-    approval = read_json(HERE / "tool_revision_2026-10-25.json")
+    approval = read_json(HERE / APPROVAL_FILE)
     require(approval["revision"] == REVISION and approval["text_hash_algorithm"] == TEXT_HASH_ALGORITHM,
             "Unsupported tool revision/hash policy")
     require(set(approval["current_tools_lf_sha256"]) == {"run_case.py", "curate_case.py"}, "Incomplete tool approval")
@@ -78,7 +80,10 @@ def approved_plan():
     require(plan["scientific_base_commit"] == approval["scientific_base_commit"], "Scientific base differs from approval")
     for name, digest in plan["dependencies_sha256"].items():
         if name != "run_case.py":
-            check_text_hash(HERE / name, digest)
+            # Markdown is provenance only; verify the exact approved document
+            # separately from the maintained explanation. JSON checks stay intact.
+            dependency = FROZEN_MAPPING_FILE if name == "site_mapping.md" else name
+            check_text_hash(HERE / dependency, digest)
     return plan, approval
 
 
@@ -120,9 +125,19 @@ def verify_execution_sources(run_dir, record, plan, approval):
     else:
         require(all(k in record for k in ["text_hash_algorithm", "wrapper_lf_sha256", "scientific_package_lf_sha256"]),
                 "Missing revised execution provenance fields")
-        require(record["tool_revision"] == REVISION, "Unknown executed tool revision")
+        if record["tool_revision"] == REVISION:
+            executed_approval = approval
+        else:
+            previous = approval.get("previous_tool_approvals", {}).get(record["tool_revision"])
+            require(previous is not None, "Unknown executed tool revision")
+            check_text_hash(HERE / previous["file"], previous["lf_sha256"])
+            executed_approval = read_json(HERE / previous["file"])
+            require(executed_approval["revision"] == record["tool_revision"]
+                    and executed_approval["scientific_base_commit"] == plan["scientific_base_commit"]
+                    and executed_approval["scientific_source_lf_sha256"] == approval["scientific_source_lf_sha256"],
+                    "Previous executed approval mismatch")
         require(record["text_hash_algorithm"] == TEXT_HASH_ALGORITHM, "Executed hash policy mismatch")
-        require(record["wrapper_lf_sha256"] == approval["current_tools_lf_sha256"]["run_case.py"], "Unapproved revised runner")
+        require(record["wrapper_lf_sha256"] == executed_approval["current_tools_lf_sha256"]["run_case.py"], "Unapproved revised runner")
         check_text_hash(archived, record["wrapper_lf_sha256"])
         require(record["scientific_package_lf_sha256"] == approval["scientific_source_lf_sha256"], "Scientific LF-content record mismatch")
     archived_plan = run_dir / "executed_sources/execution_plan_2026-10-25.json"

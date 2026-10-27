@@ -34,8 +34,8 @@ in this phase; the already-hashed public 2O9P cache was used.
 
 Those commands and 25-test result describe the original archived tools, not the
 revised tools now at these paths. The separate
-[reliability revision](reliability_revision_2026-10-25.md) records the current
-58-test result, new curation command and unchanged data comparison. It does not
+[reliability revision](reliability_revision_2026-10-25.md) records the
+58-test result for that revision, its curation command and unchanged data comparison. It does not
 backfill current hashes into the original execution or claim another real scan.
 
 ## New-reader inputs and dependencies
@@ -47,8 +47,11 @@ No paper PDF, D2D coordinate file, private path or historical run is needed to
 generate a new scan. Public audit/mapping/config files in this directory are
 checked by hash before preparation; changed sources are rejected for review.
 
-Include [tool_revision_2026-10-25.json](tool_revision_2026-10-25.json) with both
-current scripts and the original frozen plan/dependencies. Current tool and
+Include [tool_revision_2026-10-27.json](tool_revision_2026-10-27.json), the unchanged
+[previous approval](tool_revision_2026-10-25.json), both current scripts and the
+original frozen plan/dependencies. These include
+[the restored mapping dependency](site_mapping_frozen_2026-10-25.md), not the
+maintained literature explanation at `site_mapping.md`. Current tool and
 declared public-text dependency hashes use `sha256-utf8-crlf-to-lf-v1`: validate
 UTF-8, replace CRLF with LF, then SHA-256; no other bytes or whitespace are
 ignored. The local `.gitattributes` pins necessary public text to LF and leaves
@@ -74,6 +77,65 @@ and new `--output-dir` names. Curation requires the complete new run directory,
 including its hashed original/prepared inputs, CSV, sidecar and execution sources;
 it verifies them before reading the CSV. The public curated tables allow result
 inspection but are not a replacement for full raw provenance in re-curation.
+
+## Documentation dependency compatibility (2026-10-27)
+
+The mapping Markdown was only hashed by the entry points; its text was never
+parsed for scores, residue mapping, functional labels or selection. Runtime
+configuration and the annotation list come from `execution_plan_2026-10-25.json`
+(`cli_configuration`, `functional_annotations`); coordinate identities and
+reference roles come from `candidate_audit.json` (`structures`,
+`functional_mappings`). Those JSON hashes, the remaining plan dependencies and
+approved scientific-source checks remain enforced.
+
+The original `site_mapping.md` bytes were recovered from approved commit
+`4ead407025a4ac7fb6c4cb1e2dfc9ea8351c6f25` into
+`site_mapping_frozen_2026-10-25.md`. Its raw SHA-256 is
+`6be8b8bd81f13df8c55ba32af247876e6afd19316ca0c49824d76e516289b7d4`, exactly
+the existing plan digest. Only the current tool's lookup path changes: the old
+plan key still has its original value and now resolves to the frozen copy.
+Current text checks retain the declared CRLF-to-LF-only policy; content edits
+to the frozen copy fail. The maintained `site_mapping.md` keeps the later
+literature supplement and is not relabeled as a pre-scan input.
+
+The current tool revision is `documentation-compatibility-2026-10-27`.
+Previously recorded runner revisions remain checked against their original,
+unchanged approvals; current hashes are not substituted into old execution
+records. The original 25-test and later 58-test evidence still describes those
+earlier tools, not this change.
+
+Current targeted checks and re-curation use new ignored directories:
+
+```text
+python -B -m pytest tests/test_bglb_case.py -q -o cache_dir=data/processed/m6_bglb_documentation_compatibility_2026-10-27/pytest_cache --basetemp=data/processed/m6_bglb_documentation_compatibility_2026-10-27/pytest_tmp --junitxml=data/processed/m6_bglb_documentation_compatibility_2026-10-27/tests.xml
+python -B docs/computational_cases/bglb/curate_case.py --run-dir data/processed/m6_bglb_pazf_case_2026-10-25/run --output-dir data/processed/m6_bglb_documentation_compatibility_2026-10-27/curation
+```
+
+Re-curation checks scientific data separately from presentation. The generated
+CSV/JSON tables and candidate memberships must match the frozen outputs. The
+curator retains its historical report template; it does not overwrite the
+manually revised public `results_report.md`, whose readability and literature
+additions are intentional. Historical narrative hashes remain historical, while
+the current manifest hashes the maintained public text. No fresh scan, changed
+scientific settings or new experimental validation is implied.
+
+For this compatibility revision, **66 targeted tests passed** in the existing
+Windows Python 3.13.12 environment, with no failures, errors, skips or reported
+warnings. Current-document editing passed preflight; modifying the frozen
+mapping or the other frozen JSON dependencies failed, including the mapping
+check under optimized Python. The previous tool revision also retained its
+original approval check.
+
+The six re-curated CSVs and `top_lists.json` are byte-identical to the original
+outputs, retaining all 445 sites, original scientific fields/ranks, functional
+annotations, inclusive list sizes 10 / 10 / 20 and the 31-site union.
+`candidate_overview.md` is also byte-identical. The generated historical
+`results_report.md` matches its original hash; the maintained public report
+intentionally differs in prose while retaining the same result-table lines.
+The new curation metadata records the current tool hashes without altering the
+original run or earlier verification records. Detailed current evidence is
+limited to `tests.xml` and `curation/curation_metadata.json` under the new local
+directory shown above; no fresh-environment full-scan validation is claimed.
 
 ## Interpretation boundaries
 

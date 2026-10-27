@@ -1,12 +1,18 @@
 {
   "scope": "M6.4 single-input protein-only 2O9P BglB case: structure review, accepted plan, scripts, curated results and software checks. No raw inputs/full scans or experimental data.",
-  "file_count_including_manifest": 34,
+  "file_count_including_manifest": 36,
   "files": [
     {
       "path": "docs/computational_cases/bglb/.gitattributes",
       "purpose": "Scoped LF public-text checkout and byte-preserving curated CSV rules",
       "bytes": 714,
       "sha256": "c39faaf1daa4bb520608ad5720bcee14a1e586797a03ec1012127f359161cdfc"
+    },
+    {
+      "path": "docs/computational_cases/bglb/README.md",
+      "purpose": "README",
+      "bytes": 3648,
+      "sha256": "d932b59328a3cdd0e26e7398f83cf01ce3d2db410218d88985297838b4edcba0"
     },
     {
       "path": "docs/computational_cases/bglb/candidate_audit.json",
@@ -75,12 +81,6 @@
       "sha256": "fe3f4941b8b1338accae56b68dc5afbbf4e7682b65dcf0e8ac147a2b01036ea3"
     },
     {
-      "path": "docs/computational_cases/bglb/README.md",
-      "purpose": "README",
-      "bytes": 3648,
-      "sha256": "d932b59328a3cdd0e26e7398f83cf01ce3d2db410218d88985297838b4edcba0"
-    },
-    {
       "path": "docs/computational_cases/bglb/reliability_revision_2026-10-25.md",
       "purpose": "Reliability changes, text hashing/encoding policy, validation and historical version boundaries",
       "bytes": 5493,
@@ -95,8 +95,8 @@
     {
       "path": "docs/computational_cases/bglb/reproduction.md",
       "purpose": "reproduction",
-      "bytes": 5669,
-      "sha256": "4dfca9ac21ec863b82f493e1794457ca3cc82a4c545820caf16a05e12dbf21cc"
+      "bytes": 9696,
+      "sha256": "424143d5288a7ecbdad4f3582c60f9c320c6c925064392281e974be60fdde3f1"
     },
     {
       "path": "docs/computational_cases/bglb/requirements-case.txt",
@@ -155,18 +155,24 @@
     {
       "path": "docs/computational_cases/bglb/results_report.md",
       "purpose": "results report",
-      "bytes": 6196,
-      "sha256": "5e760d0410df981c23ca9cbfdcf12412cad9dfc21dcb6a74a7a7adb01981bcda"
+      "bytes": 8381,
+      "sha256": "c505e4d27d1ff9fb915a78d2767c6f8e6303e1520e57ff367389f09d012b65e6"
     },
     {
       "path": "docs/computational_cases/bglb/run_case.py",
       "purpose": "run case",
-      "bytes": 18367,
-      "sha256": "ed75d19f2c7f53989f7dc830a700ef064f12c06d7b5fc3ce0ae410e860429a82"
+      "bytes": 19417,
+      "sha256": "2568154873a8cd9ab474ce118e9ecc54cc9b18ea3c17888402924ac22f6bae64"
     },
     {
       "path": "docs/computational_cases/bglb/site_mapping.md",
       "purpose": "site mapping",
+      "bytes": 18855,
+      "sha256": "80fa1924b63c6c05389fe017190f0f3525fe54b0b6a232135ae50343a501b99e"
+    },
+    {
+      "path": "docs/computational_cases/bglb/site_mapping_frozen_2026-10-25.md",
+      "purpose": "Exact pre-scan Markdown restored from approved commit 4ead407; hash-checked provenance dependency, not current literature explanation",
       "bytes": 3774,
       "sha256": "6be8b8bd81f13df8c55ba32af247876e6afd19316ca0c49824d76e516289b7d4"
     },
@@ -189,6 +195,12 @@
       "sha256": "774bd579a4271f092c7e70c8824a062077595c7cfef0dd12268d627f63c322de"
     },
     {
+      "path": "docs/computational_cases/bglb/tool_revision_2026-10-27.json",
+      "purpose": "Current compatibility tool approval; frozen document mapping and unchanged previous tool approval binding",
+      "bytes": 3907,
+      "sha256": "03df16f212a41d04cd1d2bf1df05c66b5cfd8e68a8e656d7b376c7dab33c52f3"
+    },
+    {
       "path": "tests/.gitattributes",
       "purpose": "LF checkout rule only for the new BglB test file",
       "bytes": 130,
@@ -197,8 +209,8 @@
     {
       "path": "tests/test_bglb_case.py",
       "purpose": "test bglb case",
-      "bytes": 17241,
-      "sha256": "99cfaaa59dce14cf221c4978da6fcfa41a464814435fa4dfc14ecc1524eb12c6"
+      "bytes": 20475,
+      "sha256": "25feca567ac15dc975662e4d08e10e8b017c3ecb7c774afbfce3a68409404823"
     }
   ],
   "self": "docs/computational_cases/bglb/file_manifest.json; own digest omitted to avoid recursion",
