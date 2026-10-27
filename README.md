@@ -1,31 +1,57 @@
 # RANA
 
-**RANA** is a structure-guided screening tool for prioritizing protein sites for non-canonical amino acid (ncAA) incorporation.
+RANA helps protein engineers and chemical biologists shortlist protein positions
+for non-canonical amino acid (ncAA) substitution experiments. It screens how
+well a proposed side chain fits a supplied protein structure and reports the
+geometric evidence for each site.
 
-> **Core question:** Where can we introduce new chemical functionality into an existing protein structure?
+RANA `0.1.0.dev0` currently supports **p-azido-L-phenylalanine (pAzF / AzF;
+PDB CCD `4II`)** only. This aromatic ncAA carries a bioorthogonal azide handle.
+The results describe accommodation in a fixed structure. They do not predict
+incorporation efficiency, expression, stability, retained activity or labeling
+efficiency.
 
-**Mission**: RANA aims to reduce the experimental search burden of ncAA incorporation through structure-guided site prioritization.
+## Input and screening
 
-RANA `0.1.0.dev0` focuses on **p-azido-L-phenylalanine (pAzF / AzF; PDB CCD `4II`)**, an aromatic ncAA containing a bioorthogonal azide handle.
+Provide a protein PDB file and the chain to screen. Residue identities retain
+the input chain, author residue number and insertion code. The retained protein
+chains define the surrounding structural environment, so an isolated chain and
+a complete assembly can give different results. Input preparation must make that
+choice explicit; the ranking command does not reconstruct missing residues or
+a biological assembly automatically.
 
-The current implementation evaluates fixed-structure geometric accommodation. It does **not** predict experimental incorporation success, protein stability, retained activity, or labeling efficiency.
+For each site, RANA:
 
-## Current capabilities
+- Computes solvent-accessible surface area (SASA), the area exposed to solvent,
+  and relative SASA (RSA), normalized by a reference area for that residue type.
+- Counts nearby Cα atoms as a measure of local packing.
+- Samples 12 discrete side-chain conformations, or rotamers, for pAzF and scores
+  heavy-atom van der Waals overlaps with the retained protein environment.
+- Reports the minimum overlap score and the low-clash fraction: the fraction of
+  sampled conformations that meet the overlap cutoff.
+- Provides separate steric, accessibility and rotamer-robustness ranks, together
+  with heuristic geometric tiers. Optional functional-residue annotations add
+  distance features.
 
-Given a protein PDB structure, RANA can:
+The protein backbone and surrounding coordinates remain fixed. The calculation
+does not model structural relaxation or the energetic consequences of substitution.
 
-- Enumerate residues in a selected protein chain.
-- Compute solvent-accessible surface area (SASA) and relative SASA (RSA).
-- Estimate local packing using neighboring Cα atoms.
-- Optionally calculate distances to user-specified functional residues.
-- Generate and evaluate 12 discrete pAzF side-chain rotamers per site.
-- Calculate heuristic van der Waals overlap scores using heavy atoms.
-- Report minimum steric score and low-clash rotamer fraction.
-- Provide independent steric, accessibility, and rotamer-robustness ranks.
-- Assign interpretable geometric screening tiers.
-- Export a residue-level CSV and JSON reproducibility metadata.
+## Examples and evidence
 
-The current scoring uses a fixed protein backbone and discrete side-chain sampling. It does not explicitly model protein relaxation or energetic consequences of substitution.
+The M5 literature retrospective pilot and M6 are complete.
+The [M6 summary](docs/m6_summary.md) connects the four deliveries and explains
+their results, verification levels and remaining limits.
+
+- [Quick start](#quick-start) and [reproducible examples](docs/examples.md):
+  installation, public T4 lysozyme/RNase A inputs and example commands.
+- [M5 benchmark evidence](docs/benchmarks/README.md): curated T4 lysozyme stability
+  and ferritin conjugation observations, human image review and exploratory analysis.
+- [2FG8 ferritin reproduction](docs/reproducibility/README.md): the verified
+  profile for rebuilding assembly and monomer inputs from public coordinates.
+- [T4 lysozyme structure sensitivity](docs/structure_sensitivity/t4l/README.md):
+  how scores, tiers and rankings change across three references with the same sequence.
+- [BglB pAzF computational case](docs/computational_cases/bglb/README.md):
+  a single-reference application with functional annotations shown separately.
 
 ## Installation
 
@@ -93,9 +119,22 @@ data/processed/t4l_pazf_ranked.csv
 data/processed/t4l_pazf_ranked.metadata.json
 ```
 
-The CSV contains residue identities, structural features, steric scores, rotamer statistics, ranking information, screening tiers, and diagnostic status fields. Rows remain in residue order. The three independent ranks use minimum steric score (ascending), RSA (descending), and low-clash fraction (descending), with shared minimum ranks for ties. There is no composite score. SASA, packing, and functional distances do not determine the tiers.
+The CSV retains each attempted residue, its structural features, steric scores,
+rotamer statistics, ranks, tier and diagnostic status. Rows follow chain,
+author residue number and insertion-code order. Failed or skipped rows retain
+their diagnostic reason.
 
-The metadata records input structure identity and SHA-256 hash, selected parameters, output hash, available Git revision information, and run summary statistics. Run from the repository root for meaningful Git provenance; record dependency versions separately, since the CLI does not include them in its sidecar.
+Lower minimum steric scores indicate less overlap among the sampled conformations.
+Higher RSA indicates greater relative solvent exposure; a higher low-clash fraction
+means more of the sampled conformations meet the cutoff. The three independent
+ranks use minimum steric score in ascending order and RSA and low-clash fraction
+in descending order. Tied sites share the minimum rank. There is no composite
+score, and SASA, packing and functional distances do not determine the tiers.
+
+The JSON sidecar records the input structure identity and SHA-256 hash, parameters,
+output hash, available Git revision and run summary. Run from the repository root
+for meaningful Git provenance. Record dependency versions separately: the CLI
+sidecar does not include them.
 
 ### Screening tiers
 
@@ -108,7 +147,7 @@ The metadata records input structure identity and SHA-256 hash, selected paramet
 
 Default thresholds:
 
-- Low-clash steric score: ≤ 10.0
+- Low-clash steric score: ≤ 10.0 Å²
 - Favorable low-clash rotamer fraction: ≥ 0.5
 
 These thresholds are engineering heuristics, **not experimentally calibrated success probabilities**.
@@ -119,8 +158,10 @@ The M5 first delivery is complete; see the [benchmark evidence and pilot
 index](docs/benchmarks/README.md) for curated T4 lysozyme stability and ferritin
 conjugation records, human image review, exploratory comparisons and reproduction
 instructions. These are small retrospective pilots. They do not establish
-predictive accuracy or generalization; the current reproduction level is curated
-tables to analysis, not a complete portable structure-to-scan pipeline.
+predictive accuracy or generalization. The M5 delivery reproduces analysis from
+curated tables. The later [2FG8 workflow](docs/reproducibility/README.md) separately
+verifies a specific structure-preparation-to-scan path; it does not make the
+entire M5 literature workflow reproducible from raw sources.
 
 ## Computational smoke validation
 
@@ -145,7 +186,6 @@ checks are recorded separately in the [M6 validation summary](docs/m6_insertion_
 
 ## Important limitations
 
-- Only pAzF is currently supported.
 - Protein structures are treated as fixed during site scoring.
 - Steric overlap is a geometric heuristic, not a substitution free energy.
 - Explicit hydrogen and deuterium atoms are excluded from steric scoring.
@@ -164,9 +204,10 @@ checks are recorded separately in the [M6 validation summary](docs/m6_insertion_
 | M4.4 | Cross-protein computational smoke validation |
 | M4.6 | Repository documentation and reproducibility cleanup |
 | M5 | First delivery complete: small retrospective literature pilots and exploratory baseline comparisons |
-| M6 | Insertion-code reliability work in progress; broader structure-sensitivity and application scope planned separately |
-| Later release planning | Validation evidence, independent datasets, and packaging criteria to be agreed separately |
-| Future | Additional ncAAs, functional-group accessibility, stronger structural and energetic models |
+| M6 | Complete: insertion-code repair, pinned 2FG8 preparation/reproduction, same-background T4L sensitivity and the BglB computational case; see the [summary](docs/m6_summary.md) |
+| M7 (planned) | Support for a second ncAA, with pBpA as a candidate; not implemented |
+| Later release planning | Future release criteria remain to be defined: validation evidence, independent datasets and packaging |
+| Future research | Functional-group accessibility and stronger structural or energetic models |
 
 ## Status
 
