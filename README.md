@@ -44,7 +44,8 @@ their results, verification levels and remaining limits.
 
 - [Quick start](#quick-start) and [reproducible examples](docs/examples.md):
   installation, public T4 lysozyme/RNase A inputs and example commands.
-- [M5 benchmark evidence](docs/benchmarks/README.md): curated T4 lysozyme stability
+- [M5 reading guide](docs/benchmarks/reading_guide.md) and
+  [benchmark evidence](docs/benchmarks/README.md): curated T4 lysozyme stability
   and ferritin conjugation observations, human image review and exploratory analysis.
 - [2FG8 ferritin reproduction](docs/reproducibility/README.md): the verified
   profile for rebuilding assembly and monomer inputs from public coordinates.
